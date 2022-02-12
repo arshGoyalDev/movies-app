@@ -1,6 +1,7 @@
 @use 'variables' as *;
 @use 'mixins' as *;
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap');
 
 // -------------------- //
 // reset
@@ -37,7 +38,7 @@ input{
 body{
   color: $text-primary;
   font-weight: $fw-regular;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Cabin', sans-serif;
   background: $background;
 }
 

@@ -1,7 +1,8 @@
-import NavBar from './components/NavBar';
 import './components/styles/App.scss';
 
-function App() {
+import NavBar from './components/NavBar';
+
+const App = () => {
   return (
     <div className="App">
       <NavBar />
