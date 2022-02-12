@@ -1,3 +1,5 @@
+@use 'variables' as *;
+@use 'mixins' as *;
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
 // -------------------- //
@@ -19,6 +21,8 @@ a{
 
 button,
 input{
+  color: inherit;
+  font-size: inherit;
   font-weight: inherit;
   font-family: inherit;
   background: transparent;
@@ -31,8 +35,10 @@ input{
 // -------------------- //
 
 body{
-  font-weight: 400;
+  color: $text-primary;
+  font-weight: $fw-regular;
   font-family: 'Inter', sans-serif;
+  background: $background;
 }
 
 // -------------------- //
@@ -40,3 +46,8 @@ body{
 // -------------------- //
 
 // focus
+
+*:focus{
+  border-radius: 5px;
+  outline: 2px solid $text-primary;
+}
