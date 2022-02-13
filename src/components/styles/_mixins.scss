@@ -10,6 +10,12 @@
   }
 }
 
+@mixin media-md-2 {
+  @media (min-width: 56rem) {
+    @content;
+  }
+}
+
 @mixin media-lg {
   @media (min-width: 80em) {
     @content;

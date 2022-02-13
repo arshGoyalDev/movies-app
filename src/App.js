@@ -1,12 +1,14 @@
 import './components/styles/App.scss';
 
 import NavBar from './components/NavBar';
+import Trending from './components/Trending';
 
 const App = () => {
   return (
     <div className="App">
       <NavBar />
-    </div>
+      <Trending category="all" />
+   </div>
   );
 }
 

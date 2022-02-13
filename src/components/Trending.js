@@ -8,14 +8,15 @@ import {
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 
-import TrendingItem from './TrendingItem';
+import TrendingItem from "./TrendingItem";
 
-const Trending = () => {
+const Trending = ({category}) => {
   const [trendingData, setTrendingData] = useState([]);
+  const [index, setIndex] = useState(0);
 
   const fetchData = async () => {
     const res = await fetch(
-      `https://api.themoviedb.org/3/trending/all/week?api_key=${process.env.REACT_APP_API_KEY}`
+      `https://api.themoviedb.org/3/trending/${category}/week?api_key=${process.env.REACT_APP_API_KEY}`
     );
     const data = await res.json();
     setTrendingData(data.results);
@@ -26,23 +27,65 @@ const Trending = () => {
   }, []);
 
   useEffect(() => {
-    trendingData.map((item) => {
-      console.log(item);
-    });
-  }, [trendingData]);
+    const timeout = setTimeout(() => {
+      index === trendingData.length - 1 ? setIndex(0) : setIndex(index + 1);
+    }, 5000);
+
+    return () => clearTimeout(timeout);
+  }, [index]);
+
+  const prevBtnClick = () => {
+    index === 0 ? setIndex(trendingData.length - 1) : setIndex(index - 1);
+  };
+
+  const nextBtnClick = () => {
+    index === trendingData.length - 1 ? setIndex(0) : setIndex(index + 1);
+  };
+
+  const clickThumbnail = (e) => {
+    setIndex(parseInt(e.target.getAttribute("data-index")));
+  };
 
   return (
     <div className="trending">
       <div className="trending--items">
         {trendingData.map((item) => (
-          <TrendingItem key={item.title ? item.title : item.name} data={item} />
+          <TrendingItem
+            key={item.title ? item.title : item.name}
+            data={item}
+            index={index}
+            trendingData={trendingData}
+          />
         ))}
+
+        <div className="trending--items--thumbnails">
+          {trendingData.map((item) => (
+            <div
+              className={`trending--items--thumbnails--thumbnail ${
+                trendingData.indexOf(item) === index ? "active" : ""
+              }`}
+              key={item.title ? item.title : item.name}
+              onClick={clickThumbnail}
+              data-index={trendingData.indexOf(item)}
+            >
+              <div className="trending--items--thumbnails--thumbnail--background">
+                <img
+                  src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
+                  alt={item.title ? item.title : item.name}
+                />
+              </div>
+              <h3 data-index={trendingData.indexOf(item)}>
+                {item.title ? item.title : item.name}
+              </h3>
+            </div>
+          ))}
+        </div>
       </div>
       <div className="trending--controls">
-        <button className="trending--control--prev">
+        <button className="trending--controls--prev" onClick={prevBtnClick}>
           <FontAwesomeIcon icon={faChevronLeft} />
         </button>
-        <button className="trending--control--next">
+        <button className="trending--controls--next" onClick={nextBtnClick}>
           <FontAwesomeIcon icon={faChevronRight} />
         </button>
       </div>

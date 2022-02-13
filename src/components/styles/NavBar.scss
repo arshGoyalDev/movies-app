@@ -19,6 +19,8 @@
 
   &--menu {
     position: absolute;
+    z-index: 1000;
+    background: $background;
     top: 74px;
     left: 50%;
     width: 100%;
@@ -40,6 +42,7 @@
 
       button{
         padding: 2px;
+        cursor: pointer;
       }
     }
 
@@ -48,7 +51,7 @@
 
       &--input {
         width: 75%;
-        padding: 10px 5px;
+        padding: 7px 5px;
         border: 2px solid $text-secondary;
         border-radius: 5px;
         outline: none;
@@ -66,7 +69,7 @@
 
       &--btn {
         width: 23%;
-        padding: 12px 0;
+        padding: 8.5px 0;
         margin-left: 5px;
         background: $text-tertiary;
         border-radius: 5px;
@@ -74,18 +77,18 @@
 
       @include media-sm {
         &--input{
-          width: 250px;
+          width: 200px;
         }
 
         &--btn{
           width: auto;
-          padding: 12px 30px;
+          padding: 8.5px 30px;
         }
       }
     }
   }
 
-  @include media-md {
+  @include media-md-2 {
     gap: 40px;
     padding: 30px 50px;
 
@@ -95,12 +98,13 @@
 
     &--menu{
       position: initial;
+      z-index: 1;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 0;
       transform: translateX(0) scaleY(1);
-      box-shadow: 0;
+      box-shadow: none;
 
       &.active{
         transform: translateX(0) scaleY(1);
@@ -120,7 +124,11 @@
     }
   }
 
-  @include media-md {
+  @include media-lg {
     padding: 30px 100px;
+  }
+
+  @include media-xl {
+    padding: 30px 160px;
   }
 }

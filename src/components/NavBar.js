@@ -5,7 +5,7 @@ import "./styles/NavBar.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
-const NavBar = ({}) => {
+const NavBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [menuVisible, setMenuVisible] = useState(false);
 
@@ -23,13 +23,14 @@ const NavBar = ({}) => {
         <ul className="nav--menu--list">
           <li><button>Movies</button></li>
           <li><button>Tv Shows</button></li>
+          <li><button>People</button></li>
         </ul>
 
         <div className="nav--menu--search">
           <input
             type="input"
             className="nav--menu--search--input"
-            placeholder="Search for a movie or tv show"
+            placeholder="Search"
             value={searchTerm}
             onChange={(e) => {
               setSearchTerm(e.target.value);

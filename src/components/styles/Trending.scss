@@ -1,0 +1,260 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.trending {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  padding: 0 30px;
+  margin-top: 20px;
+  overflow: hidden;
+
+  &--items {
+    position: relative;
+    width: 100%;
+    height: 200px;
+
+    &--item {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      visibility: hidden;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: 0.5s;
+
+      &.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      &--poster {
+        z-index: -1;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      &--details {
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        padding: 20px;
+
+        h1 {
+          font-size: 1.5rem;
+          margin-bottom: 8px;
+        }
+
+        p {
+          display: none;
+        }
+
+        button {
+          font-weight: $fw-bold;
+          padding: 5px 20px;
+          background: $text-tertiary;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    &--thumbnails {
+      position: absolute;
+      bottom: -80px;
+      display: none;
+      align-items: flex-end;
+      gap: 30px;
+      width: 100%;
+      overflow-x: auto;
+      z-index: 100;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+
+      &--thumbnail {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        min-width: 140px;
+        height: 200px;
+        border: 5px solid $text-tertiary;
+        background: rgba($color: #000, $alpha: 0.6);
+        border-radius: 10px;
+        cursor: pointer;
+
+        &.active {
+          min-width: 200px;
+          height: 260px;
+        }
+
+        &--background {
+          position: absolute;
+          z-index: -1;
+          width: 100%;
+          height: 100%;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        h3 {
+          padding: 20px;
+        }
+      }
+    }
+  }
+
+  &--controls {
+    z-index: 10;
+    position: absolute;
+    right: 50px;
+    bottom: 20px;
+
+    button {
+      padding: 5px 10px;
+      background: rgba($color: $text-tertiary, $alpha: 0.7);
+      cursor: pointer;
+    }
+
+    &--prev {
+      border-radius: 5px 0 0 5px;
+    }
+
+    &--next {
+      border-radius: 0 5px 5px 0;
+    }
+  }
+
+  @include media-md {
+    height: 300px;
+
+    &--items {
+      height: 300px;
+    }
+  }
+
+  @include media-md-2 {
+    height: 340px;
+    padding: 0 50px;
+
+    &--items {
+      height: 340px;
+
+      &--item {
+        border-radius: 20px;
+
+        &--poster {
+          position: initial;
+          display: flex;
+          justify-content: flex-end;
+          background: linear-gradient(to right, #000 45%, rgba(0, 0, 0, 0.4));
+          right: 0;
+          width: 100%;
+
+          img {
+            position: absolute;
+            z-index: -1;
+            width: 80%;
+          }
+        }
+
+        &--details {
+          padding: 40px;
+          top: 13%;
+
+          h1 {
+            font-size: 2rem;
+            margin-bottom: 2px;
+          }
+
+          p {
+            display: block;
+            max-width: 300px;
+            color: $text-secondary;
+            margin-bottom: 13px;
+          }
+        }
+      }
+    }
+
+    &--controls {
+      right: 90px;
+    }
+  }
+
+  @include media-lg {
+    height: 635px;
+    padding: 0 100px;
+
+    &--items {
+      height: 480px;
+
+      &--item {
+        &--poster {
+          img {
+            width: 65%;
+          }
+        }
+        &--details {
+          top: 4%;
+
+          h1 {
+            max-width: 600px;
+            margin-bottom: 5px;
+            font-size: 3rem;
+          }
+
+          p {
+            font-size: 1.3rem;
+          }
+
+          button {
+            padding: 10px 30px;
+          }
+        }
+      }
+
+      &--thumbnails {
+        display: flex;
+        z-index: 5;
+      }
+    }
+
+    &--controls {
+      display: none;
+    }
+  }
+
+  @include media-xl {
+    padding: 0 120px;
+    height: 655px;
+
+    &--items {
+      &--item {
+        &--poster {
+          background: linear-gradient(to right, #000 30%, rgba(0, 0, 0, 0.4));
+          img {
+            width: 75%;
+          }
+        }
+      }
+
+      height: 500px;
+    }
+  }
+}

@@ -42,6 +42,10 @@ body{
   background: $background;
 }
 
+.App{
+  overflow-x: hidden;
+}
+
 // -------------------- //
 // utility classes
 // -------------------- //
@@ -51,4 +55,11 @@ body{
 *:focus{
   border-radius: 5px;
   outline: 2px solid $text-primary;
+}
+
+// selection
+
+*::selection{
+  background: $text-primary;
+  color: $background;
 }
