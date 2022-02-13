@@ -3,6 +3,7 @@ import './components/styles/App.scss';
 import {Routes, Route} from 'react-router-dom';
 
 import NavBar from './components/NavBar';
+
 import Home from './pages/Home';
 import Movies from './pages/Movies';
 import TvShows from './pages/TvShows';

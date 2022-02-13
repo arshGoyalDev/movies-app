@@ -10,7 +10,7 @@ import {
 
 import TrendingItem from "./TrendingItem";
 
-const Trending = ({category}) => {
+const Trending = ({ category }) => {
   const [trendingData, setTrendingData] = useState([]);
   const [index, setIndex] = useState(0);
 
@@ -24,6 +24,7 @@ const Trending = ({category}) => {
 
   useEffect(() => {
     fetchData();
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
@@ -32,6 +33,7 @@ const Trending = ({category}) => {
     }, 5000);
 
     return () => clearTimeout(timeout);
+    // eslint-disable-next-line
   }, [index]);
 
   const prevBtnClick = () => {
