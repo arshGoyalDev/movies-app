@@ -1,0 +1,43 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.loading {
+  &--trending {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(
+      120deg,
+      rgba(0, 0, 0, 0.2) 30%,
+      rgba(0, 0, 0, 0.2) 38%,
+      rgba(0, 0, 0, 0.1) 40%,
+      rgba(0, 0, 0, 0.2) 48%
+    );
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    animation: load 2s infinite;
+    animation: skeleton 1s infinite;  
+    border-radius: 20px;
+
+    @include media-md {
+      height: 300px;
+    }
+
+    @include media-md-2 {
+      height: 340px
+    }
+
+    @include media-lg {
+      height: 480px;
+    }
+
+    @include media-xl {
+      height: 600px;
+    }
+  }
+}
+
+@keyframes skeleton {
+  100% {
+    background-position: -100% 0;
+  }
+}

@@ -49,9 +49,9 @@ const Trending = ({ category }) => {
   };
 
   return (
-    <>
+    <div className="trending">
       {trendingData !== "" ? (
-        <div className="trending">
+        <>
           <div className="trending--items">
             <TrendingItem
               key={
@@ -92,12 +92,11 @@ const Trending = ({ category }) => {
               <FontAwesomeIcon icon={faChevronRight} />
             </button>
           </div>
-        </div>
+        </>
       ) : (
-        <div className="loading---trending"></div>
-        // <h1>Hello World</h1>
+        <div className="loading--trending"></div>
       )}
-    </>
+    </div>
   );
 };
 
