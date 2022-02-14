@@ -23,7 +23,7 @@
 }
 
 @mixin media-xl {
-  @media (min-width: 95em) {
+  @media (min-width: 97em) {
     @content;
   }
 }

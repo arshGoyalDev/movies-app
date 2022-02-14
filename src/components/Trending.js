@@ -11,7 +11,7 @@ import {
 import TrendingItem from "./TrendingItem";
 
 const Trending = ({ category }) => {
-  const [trendingData, setTrendingData] = useState([]);
+  const [trendingData, setTrendingData] = useState("");
   const [index, setIndex] = useState(0);
 
   const fetchData = async () => {
@@ -49,49 +49,55 @@ const Trending = ({ category }) => {
   };
 
   return (
-    <div className="trending">
-      <div className="trending--items">
-        {trendingData.map((item) => (
-          <TrendingItem
-            key={item.title ? item.title : item.name}
-            data={item}
-            index={index}
-            trendingData={trendingData}
-          />
-        ))}
-
-        <div className="trending--items--thumbnails">
-          {trendingData.map((item) => (
-            <div
-              className={`trending--items--thumbnails--thumbnail ${
-                trendingData.indexOf(item) === index ? "active" : ""
-              }`}
-              key={item.title ? item.title : item.name}
-              onClick={clickThumbnail}
-              data-index={trendingData.indexOf(item)}
-            >
-              <div className="trending--items--thumbnails--thumbnail--background">
-                <img
-                  src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
-                  alt={item.title ? item.title : item.name}
-                />
-              </div>
-              <h3 data-index={trendingData.indexOf(item)}>
-                {item.title ? item.title : item.name}
-              </h3>
+    <>
+      {trendingData !== "" ? (
+        <div className="trending">
+          <div className="trending--items">
+            <TrendingItem
+              key={
+                trendingData[index].title
+                  ? trendingData[index].title
+                  : trendingData[index].name
+              }
+              data={trendingData[index]}
+            />
+            <div className="trending--items--thumbnails">
+              {trendingData.map((item) => (
+                <button
+                  className={`trending--items--thumbnails--thumbnail ${
+                    trendingData.indexOf(item) === index ? "active" : ""
+                  }`}
+                  key={item.title ? item.title : item.name}
+                  onClick={clickThumbnail}
+                  data-index={trendingData.indexOf(item)}
+                >
+                  <div className="trending--items--thumbnails--thumbnail--background">
+                    <img
+                      src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
+                      alt={item.title ? item.title : item.name}
+                    />
+                  </div>
+                  <h3 data-index={trendingData.indexOf(item)}>
+                    {item.title ? item.title : item.name}
+                  </h3>
+                </button>
+              ))}
             </div>
-          ))}
+          </div>
+          <div className="trending--controls">
+            <button className="trending--controls--prev" onClick={prevBtnClick}>
+              <FontAwesomeIcon icon={faChevronLeft} />
+            </button>
+            <button className="trending--controls--next" onClick={nextBtnClick}>
+              <FontAwesomeIcon icon={faChevronRight} />
+            </button>
+          </div>
         </div>
-      </div>
-      <div className="trending--controls">
-        <button className="trending--controls--prev" onClick={prevBtnClick}>
-          <FontAwesomeIcon icon={faChevronLeft} />
-        </button>
-        <button className="trending--controls--next" onClick={nextBtnClick}>
-          <FontAwesomeIcon icon={faChevronRight} />
-        </button>
-      </div>
-    </div>
+      ) : (
+        <div className="loading---trending"></div>
+        // <h1>Hello World</h1>
+      )}
+    </>
   );
 };
 

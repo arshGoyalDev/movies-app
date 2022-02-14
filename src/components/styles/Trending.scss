@@ -18,16 +18,8 @@
       position: absolute;
       width: 100%;
       height: 100%;
-      opacity: 0;
-      visibility: hidden;
       border-radius: 10px;
       overflow: hidden;
-      transition: 0.5s;
-
-      &.active {
-        opacity: 1;
-        visibility: visible;
-      }
 
       &--poster {
         z-index: -1;
@@ -69,17 +61,32 @@
 
     &--thumbnails {
       position: absolute;
-      bottom: -80px;
+      bottom: -40px;
       display: none;
       align-items: flex-end;
       gap: 30px;
       width: 100%;
       overflow-x: auto;
       z-index: 100;
-      scrollbar-width: none;
+      scrollbar-width: thin;
+      scrollbar-color: transparent transparent;
+      transition: 0.3s;
 
       &::-webkit-scrollbar {
-        width: 0;
+        height: 8px;
+
+        &-thumb {
+          background: transparent;
+          border-radius: 10px;
+        }
+      }
+
+      &:hover {
+        scrollbar-color: $text-tertiary transparent;
+
+        &::-webkit-scrollbar-thumb {
+          background: $text-tertiary;
+        }
       }
 
       &--thumbnail {
@@ -87,16 +94,27 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        min-width: 140px;
-        height: 200px;
-        border: 5px solid $text-tertiary;
-        background: rgba($color: #000, $alpha: 0.6);
+        min-width: 120px;
+        height: 160px;
+        border: 5px solid darken($color: $text-tertiary, $amount: 10%);
+        background: rgba($color: #000, $alpha: 0.7);
         border-radius: 10px;
         cursor: pointer;
+        transition: 0.5s;
+        outline: none;
+
+        &:focus{
+          border-color: lighten($color: $text-tertiary, $amount: 8%);
+        }
 
         &.active {
-          min-width: 200px;
-          height: 260px;
+          min-width: 150px;
+          height: 200px;
+          background: rgba($color: #000, $alpha: 0.5);
+
+          h3 {
+            padding: 20px;
+          }
         }
 
         &--background {
@@ -113,7 +131,9 @@
         }
 
         h3 {
-          padding: 20px;
+          font-size: 1rem;
+          padding: 10px;
+          transition: 0.5s;
         }
       }
     }
@@ -162,7 +182,7 @@
           position: initial;
           display: flex;
           justify-content: flex-end;
-          background: linear-gradient(to right, #000 45%, rgba(0, 0, 0, 0.4));
+          background: linear-gradient(to right, #000 24%, rgba(0, 0, 0, 0.4));
           right: 0;
           width: 100%;
 
@@ -198,16 +218,17 @@
   }
 
   @include media-lg {
-    height: 635px;
-    padding: 0 100px;
+    height: 522px;
+    padding: 0 60px;
 
     &--items {
       height: 480px;
 
       &--item {
         &--poster {
+          background: linear-gradient(to right, #000 30%, rgba(0, 0, 0, 0.4));
           img {
-            width: 65%;
+            width: 75%;
           }
         }
         &--details {
@@ -242,9 +263,11 @@
 
   @include media-xl {
     padding: 0 120px;
-    height: 655px;
+    height: 642px;
 
     &--items {
+      height: 600px;
+
       &--item {
         &--poster {
           background: linear-gradient(to right, #000 30%, rgba(0, 0, 0, 0.4));
@@ -252,9 +275,27 @@
             width: 75%;
           }
         }
+
+        &--details {
+          top: 8%;
+        }
       }
 
-      height: 500px;
+      &--thumbnails {
+        &--thumbnail {
+          min-width: 150px;
+          height: 200px;
+
+          &.active {
+            min-width: 190px;
+            height: 260px;
+          }
+
+          h3 {
+            font-size: 1rem;
+          }
+        }
+      }
     }
   }
 }
