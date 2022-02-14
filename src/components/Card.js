@@ -17,7 +17,7 @@ const Card = ({ data }) => {
         />
       </div>
       <div className="card--body">
-        <Link to={`/${data.media_type}/${data.id}`}>
+        <Link to={`/${data.title ? "movie" : "tv"}/${data.id}`}>
           <button className="card--body--more-btn">
             <FontAwesomeIcon icon={faEllipsis} />
           </button>

@@ -35,11 +35,25 @@ input{
 // body
 // -------------------- //
 
+html{
+  scrollbar-width: thin;
+  scrollbar-color: $text-tertiary transparent;
+}
+
 body{
   color: $text-primary;
   font-weight: $fw-regular;
   font-family: 'Cabin', sans-serif;
   background: $background;
+  
+  &::-webkit-scrollbar{
+    width: 8px;
+  
+    &-thumb{
+      background: $text-tertiary;
+      border-radius: 10px;
+    }
+  }
 }
 
 .App{

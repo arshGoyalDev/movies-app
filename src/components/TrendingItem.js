@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 const TrendingItem = ({ data }) => {
-  console.log(data);
   return (
     <div className="trending--items--item">
       <div className="trending--items--item--poster">

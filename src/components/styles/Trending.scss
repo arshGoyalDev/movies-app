@@ -219,7 +219,7 @@
 
   @include media-lg {
     height: 522px;
-    padding: 0 60px;
+    padding: 0 100px;
 
     &--items {
       height: 480px;
@@ -262,7 +262,7 @@
   }
 
   @include media-xl {
-    padding: 0 120px;
+    padding: 0 160px;
     height: 642px;
 
     &--items {
