@@ -26,12 +26,12 @@ const NavBar = () => {
       <div className={`nav--menu ${menuVisible && "active"}`}>
         <ul className="nav--menu--list">
           <li>
-            <Link to="/movies">
+            <Link to="/movie">
               <button>Movies</button>
             </Link>
           </li>
           <li>
-            <Link to="/tv-shows">
+            <Link to="/tv">
               <button>Tv Shows</button>
             </Link>
           </li>

@@ -15,8 +15,14 @@ const App = () => {
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/movies" element={<Movies />} />
-        <Route path="/tv-shows" element={<TvShows />} />
+
+        <Route path="/movie" element={<Movies />}>
+          <Route path=":movieName" element={<Movies />} />
+        </Route>
+
+        <Route path="/tv" element={<TvShows />} >
+          <Route path=":TvShowName" element={<TvShows />} />
+        </Route>
       </Routes>
    </div>
   );

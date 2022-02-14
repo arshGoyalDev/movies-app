@@ -1,0 +1,46 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.card {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  width: 100%;
+  height: 180px;
+  border-radius: 10px;
+  background: rgba($color: #000, $alpha: 0.4);
+  overflow: hidden;
+
+  &--backdrop {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &--body {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &--more-btn {
+      padding: 3px 5px;
+      background: $background;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+
+  @include media-md {
+    min-width: 360px;
+  }
+}

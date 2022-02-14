@@ -10,21 +10,17 @@ import {
 
 import TrendingItem from "./TrendingItem";
 
+import { fetchData } from "../utils";
+
 const Trending = ({ category }) => {
   const [trendingData, setTrendingData] = useState("");
   const [index, setIndex] = useState(0);
 
-  const fetchData = async () => {
-    const res = await fetch(
-      `https://api.themoviedb.org/3/trending/${category}/week?api_key=${process.env.REACT_APP_API_KEY}`
-    );
-    const data = await res.json();
-    setTrendingData(data.results);
-  };
-
   useEffect(() => {
-    fetchData();
-    // eslint-disable-next-line
+    fetchData(
+      `https://api.themoviedb.org/3/trending/${category}/week?api_key=${process.env.REACT_APP_API_KEY}`,
+      setTrendingData
+    );
   }, []);
 
   useEffect(() => {
