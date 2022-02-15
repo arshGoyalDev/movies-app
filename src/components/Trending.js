@@ -18,7 +18,7 @@ const Trending = ({ category }) => {
 
   useEffect(() => {
     fetchData(
-      `https://api.themoviedb.org/3/trending/${category}/week?api_key=${process.env.REACT_APP_API_KEY}`,
+      `https://api.themoviedb.org/3/trending/${category}/day?api_key=${process.env.REACT_APP_API_KEY}`,
       setTrendingData,
       true, false
     );

@@ -6,7 +6,7 @@ const TrendingItem = ({ data }) => {
       <div className="trending--items--item--poster">
         <img
           loading="lazy"
-          src={`https:/p/w500${data.backdrop_path}`}
+          src={`https://image.tmdb.org/t/p/w500${data.backdrop_path}`}
           alt={data.title ? data.title : data.name}
         />
       </div>
