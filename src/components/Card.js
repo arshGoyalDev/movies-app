@@ -18,7 +18,7 @@ const Card = ({ data }) => {
           alt={data.title ? data.title : data.name}
         />
       </div>
-      <div className={`card--body ${data.vote_average !== 0 ? 'rated' : ""}`}>
+      <div className={`card--body ${data.vote_average !== 0 ? "rated" : ""}`}>
         {data.vote_average !== 0 && (
           <div className="card--body--rating">
             <FontAwesomeIcon icon={faHeart} />{" "}
@@ -26,16 +26,21 @@ const Card = ({ data }) => {
           </div>
         )}
         <div className="card--body--more">
-          <Link to={`/${data.title ? "movie" : "tv"}/${data.id}`}>
-            <button className="card--body--more--btn">
-              <FontAwesomeIcon icon={faEllipsis} />
-            </button>
-          </Link>
-          <Link to={`/${data.title ? "movie" : "tv"}/${data.id}`}>
-            <h3 className="card--body--more--title">
-              {data.title ? data.title : data.name}
-            </h3>
-          </Link>
+          <div>
+            <Link to={`/${data.title ? "movie" : "tv"}/${data.id}`}>
+              <button className="card--body--more--btn">
+                <FontAwesomeIcon icon={faEllipsis} />
+              </button>
+            </Link>
+            <Link to={`/${data.title ? "movie" : "tv"}/${data.id}`}>
+              <h3 className="card--body--more--title">
+                {data.title ? data.title : data.name}
+              </h3>
+            </Link>
+          </div>
+          <div className="card--body--more--progress">
+            <div className="card--body--more--progress--completed"></div>
+          </div>
         </div>
       </div>
     </div>

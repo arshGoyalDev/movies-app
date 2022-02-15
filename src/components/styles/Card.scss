@@ -4,6 +4,7 @@
 .card {
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: flex-end;
   padding: 20px;
   width: 100%;
@@ -33,14 +34,14 @@
     display: flex;
     align-items: flex-end;
     gap: 10px;
-    
-    &.rated{      
+
+    &.rated {
       flex-direction: column;
       justify-content: space-between;
       align-items: flex-start;
     }
 
-    &--rating{
+    &--rating {
       display: flex;
       gap: 7px;
       width: max-content;
@@ -52,9 +53,12 @@
     }
 
     &--more {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      width: 100%;
+      div {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
 
       &--btn {
         padding: 3px 5px;
@@ -63,7 +67,7 @@
         cursor: pointer;
       }
 
-      &--title{
+      &--title {
         padding: 3px;
       }
     }
@@ -71,5 +75,76 @@
 
   @include media-md {
     min-width: 360px;
+  }
+
+  @include media-lg {
+    transition: 0.5s;
+
+    &--body {
+      &--rating,
+      &--more {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: 0.3s;
+      }
+
+      &--more--progress {
+        position: relative;
+        width: 100%;
+        height: 4px;
+        background: darken($color: $text-secondary, $amount: 20%);
+        border-radius: 50px;
+        margin-top: 5px;
+        opacity: 0;
+        overflow: hidden;
+
+        &--completed {
+          position: absolute;
+          width: 0;
+          height: 100%;
+          background: $text-primary;
+          border-radius: 50px;
+          transition: 1s;
+        }
+      }
+    }
+
+    &:hover {
+      background: rgba($color: #000, $alpha: 0.6);
+
+      .card--body {
+        &--rating,
+        &--more {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        &--more--progress {
+          opacity: 1;
+
+          &--completed {
+            width: 50%;
+          }
+        }
+      }
+    }
+
+    &--body:hover {
+      .card--body {
+        &--rating,
+        &--more {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        &--more--progress {
+          opacity: 1;
+
+          &--completed {
+            width: 50%;
+          }
+        }
+      }
+    }
   }
 }
