@@ -4,12 +4,14 @@ import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
+import { lazy } from "react";
 
 const Card = ({ data }) => {
   return (
     <div className="card">
       <div className="card--backdrop">
         <img
+          loading="lazy"
           src={`https://image.tmdb.org/t/p/w500${
             data.backdrop_path ? data.backdrop_path : data.poster_path
           }`}
