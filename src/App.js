@@ -1,13 +1,13 @@
-import './components/styles/App.scss';
-import './components/styles/Loading.scss';
+import "./components/styles/App.scss";
+import "./components/styles/Loading.scss";
 
-import {Routes, Route} from 'react-router-dom';
+import { Routes, Route } from "react-router-dom";
 
-import NavBar from './components/NavBar';
+import NavBar from "./components/NavBar";
 
-import Home from './pages/Home';
-import Movies from './pages/Movies';
-import TvShows from './pages/TvShows';
+import Home from "./pages/Home";
+import Movies from "./pages/Movies";
+import TvShows from "./pages/TvShows";
 
 const App = () => {
   return (
@@ -20,12 +20,12 @@ const App = () => {
           <Route path=":movieName" element={<Movies />} />
         </Route>
 
-        <Route path="/tv" element={<TvShows />} >
+        <Route path="/tv" element={<TvShows />}>
           <Route path=":TvShowName" element={<TvShows />} />
         </Route>
       </Routes>
-   </div>
+    </div>
   );
-}
+};
 
 export default App;

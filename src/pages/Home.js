@@ -4,7 +4,7 @@ import List from '../components/List';
 const Home = () => {
   return (
     <>
-      <Trending category="all" />
+      <Trending queryType="all" />
       <List queryType="movie" query="popular" all={false} />
       <List queryType="tv" query="popular" all={false} />
       <List queryType="movie" query="top_rated" all={false} />

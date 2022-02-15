@@ -12,7 +12,7 @@
     }
 
     @include media-md-2 {
-      height: 340px
+      height: 340px;
     }
 
     @include media-lg {
@@ -35,7 +35,7 @@
   }
 }
 
-.loading{
+.loading {
   &--trending,
   &--card {
     background: linear-gradient(
@@ -48,7 +48,7 @@
     background-size: 200% 100%;
     background-position: 100% 0;
     animation: load 2s infinite;
-    animation: skeleton 1s infinite;  
+    animation: skeleton 1s infinite;
   }
 }
 

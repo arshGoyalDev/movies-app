@@ -7,7 +7,7 @@
   justify-content: space-between;
   padding: 30px 30px 15px;
 
-  a{
+  a {
     outline: none;
 
     p {
@@ -45,7 +45,7 @@
       gap: 15px;
       list-style: none;
 
-      button{
+      button {
         padding: 2px;
         cursor: pointer;
       }
@@ -81,11 +81,11 @@
       }
 
       @include media-sm {
-        &--input{
+        &--input {
           width: 200px;
         }
 
-        &--btn{
+        &--btn {
           width: auto;
           padding: 8.5px 30px;
         }
@@ -97,11 +97,11 @@
     gap: 40px;
     padding: 30px 50px;
 
-    &--menu-btn{
+    &--menu-btn {
       display: none;
     }
 
-    &--menu{
+    &--menu {
       position: initial;
       z-index: 1;
       display: flex;
@@ -111,19 +111,19 @@
       transform: translateX(0) scaleY(1);
       box-shadow: none;
 
-      &.active{
+      &.active {
         transform: translateX(0) scaleY(1);
       }
 
-      &--list{
+      &--list {
         flex-direction: row;
-        
-        button{
+
+        button {
           padding: 5px 10px;
         }
       }
 
-      &--search{
+      &--search {
         margin-top: 0;
       }
     }

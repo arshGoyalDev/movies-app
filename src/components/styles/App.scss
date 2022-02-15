@@ -1,7 +1,7 @@
-@use 'variables' as *;
-@use 'mixins' as *;
+@use "variables" as *;
+@use "mixins" as *;
 
-@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap");
 
 // -------------------- //
 // reset
@@ -9,19 +9,19 @@
 
 *,
 *::before,
-*::after{
+*::after {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-a{
+a {
   color: inherit;
   text-decoration: none;
 }
 
 button,
-input{
+input {
   color: inherit;
   font-size: inherit;
   font-weight: inherit;
@@ -30,33 +30,32 @@ input{
   border: 0;
 }
 
-
 // -------------------- //
 // body
 // -------------------- //
 
-html{
+html {
   scrollbar-width: thin;
   scrollbar-color: $text-tertiary transparent;
 }
 
-body{
+body {
   color: $text-primary;
   font-weight: $fw-regular;
-  font-family: 'Cabin', sans-serif;
+  font-family: "Cabin", sans-serif;
   background: $background;
-  
-  &::-webkit-scrollbar{
+
+  &::-webkit-scrollbar {
     width: 8px;
-  
-    &-thumb{
+
+    &-thumb {
       background: $text-tertiary;
       border-radius: 10px;
     }
   }
 }
 
-.App{
+.App {
   overflow-x: hidden;
   padding-bottom: 40px;
 }
@@ -67,14 +66,14 @@ body{
 
 // focus
 
-*:focus{
+*:focus {
   border-radius: 5px;
   outline: 2px solid $text-primary;
 }
 
 // selection
 
-*::selection{
+*::selection {
   background: $text-primary;
   color: $background;
 }

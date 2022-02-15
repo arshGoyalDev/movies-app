@@ -1,4 +1,3 @@
-
 // fetch data
 export const fetchData = async (url, functionName, results, genres) => {
   const res = await fetch(url);
@@ -6,4 +5,4 @@ export const fetchData = async (url, functionName, results, genres) => {
 
   results && functionName(data.results);
   genres && functionName(data.genres);
-}
+};

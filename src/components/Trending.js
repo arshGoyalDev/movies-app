@@ -2,26 +2,28 @@ import { useState, useEffect } from "react";
 
 import "./styles/Trending.scss";
 
+import { fetchData } from "../utils";
+
+import TrendingItem from "./TrendingItem";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronLeft,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 
-import TrendingItem from "./TrendingItem";
-
-import { fetchData } from "../utils";
-
-const Trending = ({ category }) => {
+const Trending = ({ queryType }) => {
   const [trendingData, setTrendingData] = useState("");
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
     fetchData(
-      `https://api.themoviedb.org/3/trending/${category}/day?api_key=${process.env.REACT_APP_API_KEY}`,
+      `https://api.themoviedb.org/3/trending/${queryType}/day?api_key=${process.env.REACT_APP_API_KEY}`,
       setTrendingData,
-      true, false
+      true,
+      false
     );
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {

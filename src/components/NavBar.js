@@ -2,10 +2,10 @@ import { useState } from "react";
 
 import "./styles/NavBar.scss";
 
+import { Link } from "react-router-dom";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-
-import { Link } from "react-router-dom";
 
 const NavBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -18,7 +18,7 @@ const NavBar = () => {
   return (
     <nav className="nav">
       <Link to="/">
-      <p>Movies.Info</p>
+        <p>Movies.Info</p>
       </Link>
       <button className="nav--menu-btn" onClick={clickHandler}>
         <FontAwesomeIcon icon={faBars} />{" "}

@@ -5,7 +5,7 @@ import Categories from '../components/Categories';
 const TvShows = () => {
   return (
     <>
-      <Trending category="tv" />
+      <Trending queryType="tv" />
       <Categories query="tv" />
       <List queryType="tv" query="popular" all={true} />
       <List queryType="tv" query="top_rated" all={true} />

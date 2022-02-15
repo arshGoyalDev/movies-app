@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
-import { lazy } from "react";
 
 const Card = ({ data }) => {
   return (

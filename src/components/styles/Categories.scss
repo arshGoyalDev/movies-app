@@ -1,21 +1,21 @@
-@use 'variables' as *;
-@use 'mixins' as *;
+@use "variables" as *;
+@use "mixins" as *;
 
 .categories {
   display: flex;
   flex-wrap: wrap;
   margin-top: 50px;
   padding: 0 30px;
-  gap: 10px;  
+  gap: 10px;
 
-  &--category{
+  &--category {
     padding: 15px 40px;
     background: lighten($color: $background, $amount: 10%);
     border-radius: 5px;
     cursor: pointer;
   }
 
-  @include media-md-2{
+  @include media-md-2 {
     padding: 0 50px;
   }
 

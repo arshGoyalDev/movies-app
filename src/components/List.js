@@ -1,17 +1,19 @@
 import { useState, useEffect } from "react";
 
+import "./styles/List.scss";
+
 import { fetchData } from "../utils";
 
 import Card from "./Card";
 
-import "./styles/List.scss";
+import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
 
 const List = ({ queryType, query, all }) => {
   const [listData, setListData] = useState("");
+  const loadingArray = [1, 2, 3, 4, 5, 6, 7];
 
   useEffect(() => {
     fetchData(
@@ -21,11 +23,8 @@ const List = ({ queryType, query, all }) => {
       true,
       false
     );
+    // eslint-disable-next-line
   }, []);
-
-  const loadingArray = [1, 2, 3, 4, 5, 6, 7];
-
-  console.log(listData);
 
   return (
     <div className="list">
