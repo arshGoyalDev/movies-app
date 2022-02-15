@@ -21,7 +21,6 @@ const Trending = ({ queryType }) => {
       `https://api.themoviedb.org/3/trending/${queryType}/day?api_key=${process.env.REACT_APP_API_KEY}`,
       setTrendingData,
       true,
-      false
     );
     // eslint-disable-next-line
   }, []);

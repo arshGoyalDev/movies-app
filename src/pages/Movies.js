@@ -7,6 +7,7 @@ const Movies = () => {
     <>
       <Trending queryType="movie" />
       <Categories query="movie" />
+      <List queryType="movie" query="upcoming" all={true} />
       <List queryType="movie" query="popular" all={true} />
       <List queryType="movie" query="top_rated" all={true} />
     </>

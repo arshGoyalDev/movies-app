@@ -104,7 +104,7 @@
         outline: none;
 
         &:focus{
-          border-color: lighten($color: $text-tertiary, $amount: 8%);
+          border-color: lighten($color: $text-tertiary, $amount: 15%);
         }
 
         &.active {

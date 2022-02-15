@@ -28,15 +28,44 @@
   }
 
   &--body {
+    width: 100%;
+    height: 100%;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     gap: 10px;
+    
+    &.rated{      
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
 
-    &--more-btn {
-      padding: 3px 5px;
-      background: $background;
+    &--rating{
+      display: flex;
+      gap: 7px;
+      width: max-content;
+      color: $background;
+      padding: 5px 10px;
+      background: #ff4d6d;
       border-radius: 5px;
-      cursor: pointer;
+      cursor: default;
+    }
+
+    &--more {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      &--btn {
+        padding: 3px 5px;
+        background: $background;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      &--title{
+        padding: 3px;
+      }
     }
   }
 

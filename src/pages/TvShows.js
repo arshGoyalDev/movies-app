@@ -7,6 +7,7 @@ const TvShows = () => {
     <>
       <Trending queryType="tv" />
       <Categories query="tv" />
+      <List queryType="tv" query="on_the_air" all={true} />
       <List queryType="tv" query="popular" all={true} />
       <List queryType="tv" query="top_rated" all={true} />
     </>

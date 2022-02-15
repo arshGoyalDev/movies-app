@@ -14,7 +14,6 @@ const Categories = ({ query }) => {
       `https://api.themoviedb.org/3/genre/${query}/list?api_key=46f3e66941cef78aa9e97f804729bc67&language=en-US`,
       setCategoryList,
       false,
-      true
     );
     // eslint-disable-next-line
   }, []);

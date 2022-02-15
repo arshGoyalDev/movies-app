@@ -21,7 +21,6 @@ const List = ({ queryType, query, all }) => {
     `,
       setListData,
       true,
-      false
     );
     // eslint-disable-next-line
   }, []);
@@ -30,7 +29,7 @@ const List = ({ queryType, query, all }) => {
     <div className="list">
       <div className="list--header">
         <h2 className="list--header--heading">
-          {query.replace("_", " ")} {queryType === "tv" ? "tv shows" : "movies"}
+          {query.replaceAll("_", " ")} {queryType === "tv" ? "tv shows" : "movies"}
         </h2>
         {!all && (
           <Link to={`/${queryType}`}>
