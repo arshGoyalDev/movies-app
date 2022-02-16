@@ -18,14 +18,14 @@ const App = () => {
         <Route path="/" element={<Home />} />
 
         <Route path="/movie" element={<Query key="movie" type="movie" />}>
-          <Route path=":tvShowID" element={<Home />} />
+        <Route path=":id" element={<div>Hello World! I am breathing</div>} />
         </Route>
 
         <Route path="/tv" element={<Query key="tv-shows" type="tv" />}>
-          <Route path=":tvShowID" element={<Home />} />
+          <Route path=":id" element={<div>Hello World! I am breathing</div>} />
         </Route>
 
-        <Route path="category/:query" element={<Categories />}>
+        <Route path="category/:query" element={<Category />}>
           <Route path=":categoryId" element={<Category />} />
         </Route>
 

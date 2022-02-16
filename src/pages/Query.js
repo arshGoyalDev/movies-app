@@ -2,7 +2,7 @@ import Trending from "../components/Trending";
 import List from "../components/List";
 import Categories from "../components/Categories";
 
-import { Outlet, useParams } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 const Query = ({ type }) => {
   return (
