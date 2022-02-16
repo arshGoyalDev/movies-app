@@ -85,7 +85,7 @@
     transition: 0.5s;
 
     &--body {
-      &--rating,
+      // &--rating,
       &--more {
         opacity: 0;
         transform: translateY(10px);
@@ -117,7 +117,7 @@
       background: rgba($color: #000, $alpha: 0.6);
 
       .card--body {
-        &--rating,
+        // &--rating,
         &--more {
           opacity: 1;
           transform: translateY(0);
