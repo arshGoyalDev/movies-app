@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsis, faHeart } from "@fortawesome/free-solid-svg-icons";
 
-const Card = ({ data }) => {
+const BackDropCard = ({ data }) => {
   return (
     <div className="card">
       <div className="card--backdrop">
@@ -50,4 +50,4 @@ const Card = ({ data }) => {
   );
 };
 
-export default Card;
+export default BackDropCard;

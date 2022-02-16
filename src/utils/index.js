@@ -1,7 +1,7 @@
 // fetch data
-export const fetchData = async (url, functionName, results) => {
+export const fetchData = async (url, setFunction, results) => {
   const res = await fetch(url);
   const data = await res.json();
 
-  functionName(results ? data.results : data.genres);
+  setFunction(results ? data.results : data.genres);
 };

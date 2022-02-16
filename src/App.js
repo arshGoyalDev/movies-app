@@ -8,7 +8,6 @@ import Category from "./pages/Category";
 
 import Home from "./pages/Home";
 import Query from "./pages/Query";
-import Categories from "./components/Categories";
 
 const App = () => {
   return (
@@ -18,7 +17,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
 
         <Route path="/movie" element={<Query key="movie" type="movie" />}>
-        <Route path=":id" element={<div>Hello World! I am breathing</div>} />
+          <Route path=":id" element={<div>Hello World! I am breathing</div>} />
         </Route>
 
         <Route path="/tv" element={<Query key="tv-shows" type="tv" />}>

@@ -23,7 +23,10 @@ const Categories = ({ query }) => {
       {categoryList !== "" ? (
         categoryList.map((category) => (
           <Link key={category.id} to={`/category/${query}/${category.id}`}>
-            <button className="categories--category">{category.name}</button>
+            <div className="categories--category">
+              <div>{category.name}</div>
+            </div>
+            {/* <button className="categories--category">{category.name}</button> */}
           </Link>
         ))
       ) : (
