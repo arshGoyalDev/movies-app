@@ -4,16 +4,12 @@ import Genres from "../components/Genres";
 
 import { Outlet } from "react-router-dom";
 
-const Query = ({ type}) => {
+const Query = ({ type }) => {
   return (
     <>
       <Trending queryType={type} />
       <Genres query={type} />
-      <List
-        queryType={type}
-        query={type === "movie" ? "upcoming" : "on_the_air"}
-        all={true}
-      />
+      <List queryType={type} query={type === "movie" ? "upcoming" : "on_the_air"} all={true} />
       <List
         heading={false}
         queryType={type}

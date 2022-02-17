@@ -2,17 +2,20 @@ import "../styles/Card.scss";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsis, faHeart } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 const PosterCard = ({ data }) => {
+  const navigate = useNavigate();
+
   const clickHandler = () => {
-    console.log("Clicked", data.title ? data.title : data.name);
+    navigate(`/${data.title ? "movie" : "tv"}/${data.id}`);
   };
 
   return (
     <div className="poster-card" onClick={clickHandler}>
       <div className="poster-card--poster">
         {!data.poster_path ? (
-          <p>No Image Available</p>
+          <p>Sorry! No image Available</p>
         ) : (
           <img
             src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}

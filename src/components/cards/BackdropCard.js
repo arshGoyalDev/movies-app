@@ -2,17 +2,20 @@ import "../styles/Card.scss";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsis, faHeart } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 const BackDropCard = ({ data }) => {
+  const navigate = useNavigate();
+
   const clickHandler = () => {
-    console.log("Clicked", data.title ? data.title : data.name);
+    navigate(`/${data.title ? "movie" : "tv"}/${data.id}`);
   };
 
   return (
     <div className="backdrop-card" onClick={clickHandler}>
       <div className="backdrop-card--backdrop">
         {!data.backdrop_path ? (
-          <p>Sorry No Image Available</p>
+          <p>Sorry! No image Available</p>
         ) : (
           <img
             loading="lazy"
@@ -33,16 +36,12 @@ const BackDropCard = ({ data }) => {
         )}
         <div className="backdrop-card--body--details">
           <div>
-            {/* <Link to={`/${data.title ? "movie" : "tv"}/${data.id}`}> */}
             <button className="backdrop-card--body--details--btn">
               <FontAwesomeIcon icon={faEllipsis} />
             </button>
-            {/* </Link> */}
-            {/* {/* <Link to={`/${data.title ? "movie" : "tv"}/${data.id}`}> */}
             <h3 className="backdrop-card--body--details--title">
               {data.title ? data.title : data.name}
             </h3>
-            {/* </Link> */}
           </div>
           <div className="backdrop-card--body--details--progress">
             <div className="backdrop-card--body--details--progress--completed"></div>

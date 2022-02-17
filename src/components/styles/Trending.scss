@@ -113,7 +113,7 @@
           background: rgba($color: #000, $alpha: 0.5);
 
           h3 {
-            padding: 20px;
+            opacity: 0;
           }
         }
 
@@ -133,7 +133,7 @@
         h3 {
           font-size: 1rem;
           padding: 10px;
-          transition: 0.5s;
+          transition: 0.3s;
         }
       }
     }

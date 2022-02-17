@@ -4,6 +4,7 @@ import "./components/styles/Loading.scss";
 import { Routes, Route } from "react-router-dom";
 
 import NavBar from "./components/NavBar";
+import Details from "./components/Details";
 
 import Home from "./pages/Home";
 import Query from "./pages/Query";
@@ -17,11 +18,11 @@ const App = () => {
         <Route path="/" element={<Home />} />
 
         <Route path="/movie" element={<Query key="movies" type="movie" />}>
-          <Route path=":id" element={<div>Hello World! I am breathing</div>} />
+          <Route path=":id" element={<Details query="movie" />} />
         </Route>
 
         <Route path="/tv" element={<Query key="tv-shows" type="tv" />}>
-          <Route path=":id" element={<div>Hello World! I am breathing</div>} />
+          <Route path=":id" element={<Details query="tv" />} />
         </Route>
 
         <Route path="genre/:query" element={<Genre />}>
