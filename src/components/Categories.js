@@ -19,7 +19,7 @@ const Categories = ({ query, setSelectedCategory }) => {
   }, []);
 
   const clickHandler = (e) => {
-    setSelectedCategory(e.target.innerHTML);
+    setSelectedCategory(e.target.innerHTML.replace("&amp;", "&"));
   };
 
   return (

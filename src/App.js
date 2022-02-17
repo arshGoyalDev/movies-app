@@ -1,14 +1,15 @@
+import { useState } from "react";
+
 import "./components/styles/App.scss";
 import "./components/styles/Loading.scss";
 
 import { Routes, Route } from "react-router-dom";
 
 import NavBar from "./components/NavBar";
-import Category from "./pages/Category";
 
 import Home from "./pages/Home";
 import Query from "./pages/Query";
-import { useState } from "react";
+import Category from "./pages/Category";
 
 const App = () => {
   const [selectedCategory, setSelectedCategory] = useState("");

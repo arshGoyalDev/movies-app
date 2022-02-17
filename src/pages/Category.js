@@ -47,7 +47,7 @@ const Category = ({ selectedCategory, setSelectedCategory }) => {
                 />
               ))
             : loadingArray.map((item) => (
-                <div key={item} className="loading--card--2"></div>
+                <div key={item} className="loading--card--poster"></div>
               ))}
         </div>
       </div>

@@ -4,10 +4,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsis, faHeart } from "@fortawesome/free-solid-svg-icons";
 
 const BackDropCard = ({ data }) => {
-
   const clickHandler = () => {
     console.log("Clicked", data.title ? data.title : data.name);
-  }
+  };
 
   return (
     <div className="backdrop-card" onClick={clickHandler}>
@@ -29,8 +28,7 @@ const BackDropCard = ({ data }) => {
       >
         {data.vote_average !== 0 && (
           <div className="backdrop-card--body--rating">
-            <FontAwesomeIcon icon={faHeart} />{" "}
-            {data.vote_average}
+            <FontAwesomeIcon icon={faHeart} /> {data.vote_average}
           </div>
         )}
         <div className="backdrop-card--body--details">

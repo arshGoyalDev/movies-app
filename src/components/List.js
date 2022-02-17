@@ -56,7 +56,7 @@ const List = ({ heading, queryType, query, all, page }) => {
                 />
               ))
           : loadingArray.map((item) => (
-              <div key={item} className="loading--card--1"></div>
+              <div key={item} className="loading--card--backdrop"></div>
             ))}
       </div>
     </div>
