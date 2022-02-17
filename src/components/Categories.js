@@ -6,7 +6,7 @@ import { fetchData } from "../utils";
 
 import { Link } from "react-router-dom";
 
-const Categories = ({ query }) => {
+const Categories = ({ query, setSelectedCategory }) => {
   const [categoryList, setCategoryList] = useState("");
 
   useEffect(() => {
@@ -18,15 +18,18 @@ const Categories = ({ query }) => {
     // eslint-disable-next-line
   }, []);
 
+  const clickHandler = (e) => {
+    setSelectedCategory(e.target.innerHTML);
+  };
+
   return (
     <div className="categories">
       {categoryList !== "" ? (
         categoryList.map((category) => (
           <Link key={category.id} to={`/category/${query}/${category.id}`}>
-            <div className="categories--category">
-              <div>{category.name}</div>
-            </div>
-            {/* <button className="categories--category">{category.name}</button> */}
+            <button className="categories--category" onClick={clickHandler}>
+              {category.name}
+            </button>
           </Link>
         ))
       ) : (

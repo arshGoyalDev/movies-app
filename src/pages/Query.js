@@ -4,11 +4,11 @@ import Categories from "../components/Categories";
 
 import { Outlet } from "react-router-dom";
 
-const Query = ({ type }) => {
+const Query = ({ type, setSelectedCategory }) => {
   return (
     <>
       <Trending queryType={type} />
-      <Categories query={type} />
+      <Categories query={type} setSelectedCategory={setSelectedCategory} />
       <List
         queryType={type}
         query={type === "movie" ? "upcoming" : "on_the_air"}

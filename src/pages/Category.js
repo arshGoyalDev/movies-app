@@ -9,7 +9,7 @@ import { fetchData } from "../utils";
 import Categories from "../components/Categories";
 import PosterCard from "../components/cards/PosterCard";
 
-const Category = () => {
+const Category = ({ selectedCategory, setSelectedCategory }) => {
   const [data, setData] = useState("");
   const params = useParams();
 
@@ -28,11 +28,17 @@ const Category = () => {
 
   return (
     <>
-      <Categories query={params.query === "movie" ? "movie" : "tv"} />
+      <Categories
+        query={params.query === "movie" ? "movie" : "tv"}
+        setSelectedCategory={setSelectedCategory}
+      />
 
-      <div className="container">
-        <h2>{params.query === "movie" ? "movies" : "tv shows"}</h2>
-        <div className="container--cards">
+      <div className="category">
+        <h2>
+          <span>{selectedCategory}</span>
+          {params.query === "movie" ? " movies" : " tv shows"}
+        </h2>
+        <div className="category--cards">
           {data !== ""
             ? data.map((item) => (
                 <PosterCard
