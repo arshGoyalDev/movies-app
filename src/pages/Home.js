@@ -4,7 +4,7 @@ import List from "../components/List";
 import {Link} from 'react-router-dom';
 
 const Home = () => {
-  const categoriesData = [
+  const genreData = [
     {
       value: "Animation",
       img: "https://images.unsplash.com/photo-1635280370067-59d389602df1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
@@ -50,22 +50,22 @@ const Home = () => {
   return (
     <>
       <Trending queryType="all" />
-      <div className="home--categories">
+      <div className="home--genres">
         <div>
-          {categoriesData.map((category) => (
-            <div key={category.value} className="home--categories--category">
-              <div className="home--categories--category--backdrop">
-                <img src={category.img} alt={category.value} />
+          {genreData.map((genre) => (
+            <div key={genre.value} className="home--genres--genre">
+              <div className="home--genres--genre--backdrop">
+                <img src={genre.img} alt={genre.value} />
               </div>
-              <h3>{category.value}</h3>
-              <div className="home--categories--category--options">
-                <Link to={`category/movie/${category.id.movie}`}>
-                  <button className="home--categories--category--options--option">
+              <h3>{genre.value}</h3>
+              <div className="home--genres--genre--options">
+                <Link to={`genre/movie/${genre.id.movie}`}>
+                  <button className="home--genres--genre--options--option">
                     Movies
                   </button>
                 </Link>
-                <Link to={`category/tv/${category.id.tv}`}>
-                  <button className="home--categories--category--options--option">
+                <Link to={`genre/tv/${genre.id.tv}`}>
+                  <button className="home--genres--genre--options--option">
                     Tv Shows
                   </button>
                 </Link>

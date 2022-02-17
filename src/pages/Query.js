@@ -1,6 +1,6 @@
 import Trending from "../components/Trending";
 import List from "../components/List";
-import Categories from "../components/Categories";
+import Genres from "../components/Genres";
 
 import { Outlet } from "react-router-dom";
 
@@ -8,7 +8,7 @@ const Query = ({ type}) => {
   return (
     <>
       <Trending queryType={type} />
-      <Categories query={type} />
+      <Genres query={type} />
       <List
         queryType={type}
         query={type === "movie" ? "upcoming" : "on_the_air"}
