@@ -42,7 +42,7 @@ const Trending = ({ queryType }) => {
     index === trendingData.length - 1 ? setIndex(0) : setIndex(index + 1);
   };
 
-  const clickThumbnail = (e) => {
+  const clickCard = (e) => {
     setIndex(parseInt(e.target.getAttribute("data-index")));
   };
 
@@ -59,17 +59,17 @@ const Trending = ({ queryType }) => {
               }
               data={trendingData[index]}
             />
-            <div className="trending--items--thumbnails">
+            <div className="trending--items--cards">
               {trendingData.map((item) => (
                 <button
-                  className={`trending--items--thumbnails--thumbnail ${
+                  className={`trending--items--cards--card ${
                     trendingData.indexOf(item) === index ? "active" : ""
                   }`}
                   key={item.title ? item.title : item.name}
-                  onClick={clickThumbnail}
+                  onClick={clickCard}
                   data-index={trendingData.indexOf(item)}
                 >
-                  <div className="trending--items--thumbnails--thumbnail--background">
+                  <div className="trending--items--cards--card--background">
                     <img
                       src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
                       alt={item.title ? item.title : item.name}

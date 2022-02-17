@@ -1,7 +1,7 @@
 @use "variables" as *;
 @use "mixins" as *;
 
-.card {
+.backdrop-card {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -12,6 +12,7 @@
   border-radius: 10px;
   background: rgba($color: #000, $alpha: 0.4);
   overflow: hidden;
+  cursor: pointer;
 
   &--backdrop {
     position: absolute;
@@ -27,7 +28,7 @@
       object-fit: cover;
     }
 
-    p{
+    p {
       padding: 20px;
     }
   }
@@ -56,7 +57,7 @@
       cursor: default;
     }
 
-    &--more {
+    &--details {
       width: 100%;
       div {
         display: flex;
@@ -85,14 +86,13 @@
     transition: 0.5s;
 
     &--body {
-      // &--rating,
-      &--more {
+      &--details {
         opacity: 0;
         transform: translateY(10px);
         transition: 0.3s;
       }
 
-      &--more--progress {
+      &--details--progress {
         position: relative;
         width: 100%;
         height: 4px;
@@ -116,14 +116,13 @@
     &:hover {
       background: rgba($color: #000, $alpha: 0.6);
 
-      .card--body {
-        // &--rating,
-        &--more {
+      .backdrop-card--body {
+        &--details {
           opacity: 1;
           transform: translateY(0);
         }
 
-        &--more--progress {
+        &--details--progress {
           opacity: 1;
 
           &--completed {
@@ -133,20 +132,17 @@
       }
     }
 
-    &--body:hover {
-      .card--body {
-        &--rating,
-        &--more {
-          opacity: 1;
-          transform: translateY(0);
-        }
+    &--body:hover .card--body {
+      &--details {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-        &--more--progress {
-          opacity: 1;
+      &--details--progress {
+        opacity: 1;
 
-          &--completed {
-            width: 50%;
-          }
+        &--completed {
+          width: 50%;
         }
       }
     }

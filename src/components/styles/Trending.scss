@@ -59,7 +59,7 @@
       }
     }
 
-    &--thumbnails {
+    &--cards {
       position: absolute;
       bottom: -40px;
       display: none;
@@ -89,7 +89,7 @@
         }
       }
 
-      &--thumbnail {
+      &--card {
         position: relative;
         display: flex;
         flex-direction: column;
@@ -250,7 +250,7 @@
         }
       }
 
-      &--thumbnails {
+      &--cards {
         display: flex;
         z-index: 5;
       }
@@ -281,7 +281,7 @@
         }
       }
 
-      &--thumbnails {
+      &--cards {
         &--thumbnail {
           min-width: 150px;
           height: 200px;

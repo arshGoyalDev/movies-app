@@ -1,16 +1,21 @@
+import "./styles/Category.scss";
+
 import { useEffect, useState } from "react";
 
 import { useParams } from "react-router-dom";
-import Categories from "../components/Categories";
 
 import { fetchData } from "../utils";
+
+import Categories from "../components/Categories";
+import PosterCard from "../components/cards/PosterCard";
 
 const Category = () => {
   const [data, setData] = useState("");
   const params = useParams();
 
   const loadingArray = [
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+    22, 23, 24, 25, 26, 27, 28, 29, 30,
   ];
 
   useEffect(() => {
@@ -26,15 +31,17 @@ const Category = () => {
       <Categories query={params.query === "movie" ? "movie" : "tv"} />
 
       <div className="container">
-        <h2>{params.query === 'movie' ? "movies" : "tv shows"}</h2>
+        <h2>{params.query === "movie" ? "movies" : "tv shows"}</h2>
         <div className="container--cards">
           {data !== ""
             ? data.map((item) => (
-                <div key={item.title ? item.title : item.name} className="container--cards--card">
-                </div>
+                <PosterCard
+                  key={item.title ? item.title : item.name}
+                  data={item}
+                />
               ))
             : loadingArray.map((item) => (
-                <div key={item} className="loading--card"></div>
+                <div key={item} className="loading--card--2"></div>
               ))}
         </div>
       </div>

@@ -4,7 +4,7 @@ import "./styles/List.scss";
 
 import { fetchData } from "../utils";
 
-import Card from "./Card";
+import BackdropCard from "./cards/BackdropCard";
 
 import { Link } from "react-router-dom";
 
@@ -50,10 +50,13 @@ const List = ({ heading, queryType, query, all, page }) => {
           ? listData
               .slice(0, !all ? 7 : listData.length)
               .map((item) => (
-                <Card key={item.title ? item.title : item.name} data={item} />
+                <BackdropCard
+                  key={item.title ? item.title : item.name}
+                  data={item}
+                />
               ))
           : loadingArray.map((item) => (
-              <div key={item} className="loading--card"></div>
+              <div key={item} className="loading--card--1"></div>
             ))}
       </div>
     </div>
@@ -63,6 +66,6 @@ const List = ({ heading, queryType, query, all, page }) => {
 List.defaultProps = {
   heading: true,
   page: 1,
-}
+};
 
 export default List;
