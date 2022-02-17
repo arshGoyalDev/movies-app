@@ -2,11 +2,15 @@
 @use "mixins" as *;
 
 .categories {
-  display: flex;
-  flex-wrap: wrap;
   margin-top: 20px;
   padding: 0 30px;
-  gap: 10px;
+  
+  div{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+  }
 
   &--category {
     padding: 15px 40px;

@@ -12,15 +12,13 @@ import Query from "./pages/Query";
 import Category from "./pages/Category";
 
 const App = () => {
-  const [selectedCategory, setSelectedCategory] = useState("");
-
   return (
     <div className="App">
       <NavBar />
       <Routes>
         <Route
           path="/"
-          element={<Home setSelectedCategory={setSelectedCategory} />}
+          element={<Home />}
         />
 
         <Route
@@ -29,7 +27,6 @@ const App = () => {
             <Query
               key="movies"
               type="movie"
-              setSelectedCategory={setSelectedCategory}
             />
           }
         >
@@ -42,7 +39,6 @@ const App = () => {
             <Query
               key="tv-shows"
               type="tv"
-              setSelectedCategory={setSelectedCategory}
             />
           }
         >
@@ -53,8 +49,6 @@ const App = () => {
           path="category/:query"
           element={
             <Category
-              selectedCategory={selectedCategory}
-              setSelectedCategory={setSelectedCategory}
             />
           }
         >
@@ -62,8 +56,6 @@ const App = () => {
             path=":categoryId"
             element={
               <Category
-                selectedCategory={selectedCategory}
-                setSelectedCategory={setSelectedCategory}
               />
             }
           />
