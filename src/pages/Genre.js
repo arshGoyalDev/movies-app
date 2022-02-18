@@ -16,7 +16,7 @@ const Genre = () => {
   const [data, setData] = useState("");
   const [resultsCount, setResultsCount] = useState("");
   const [page, setPage] = useState(1);
-  const params = useParams();
+  const {query, genreId} = useParams();
 
   const loadingArray = [
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
@@ -24,17 +24,17 @@ const Genre = () => {
   ];
 
   useEffect(() => {
-    fetchGenreData(params.query, params.genreId).then((fetchedData) => {
+    fetchGenreData(query, genreId).then((fetchedData) => {
       setData(fetchedData.results);
       setResultsCount(fetchedData.total_results);
       setLoading(false);
     });
 
     setLoading(true);
-  }, [params]);
+  }, [query, genreId]);
 
   const InfiniteScrollFunction = () => {
-    fetchMoreData(params.query, params.genreId, page).then((fetchedData) => {
+    fetchMoreData(query, genreId, page).then((fetchedData) => {
       setData([...data, ...fetchedData.results]);
     });
     setPage(page + 1);
@@ -42,10 +42,10 @@ const Genre = () => {
 
   return (
     <>
-      <Genres query={params.query === "movie" ? "movie" : "tv"} />
+      <Genres query={query === "movie" ? "movie" : "tv"} id={genreId} />
 
       <div className="genre">
-        <h2>{params.query === "movie" ? " movies" : " tv shows"}</h2>
+        <h2>{query === "movie" ? " movies" : " tv shows"}</h2>
         <InfiniteScroll
           dataLength={data.length}
           next={InfiniteScrollFunction}

@@ -13,10 +13,16 @@
   }
 
   &--genre {
+    font-weight: $fw-bold;
     padding: 15px 40px;
     background: lighten($color: $background, $amount: 10%);
     border-radius: 5px;
     cursor: pointer;
+
+    &.selected{
+      background: $text-primary;
+      color: $background;
+    }
   }
 
   @include media-md {
