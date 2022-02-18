@@ -6,7 +6,7 @@ import { fetchData } from "../utils";
 
 import { Link } from "react-router-dom";
 
-const Genres = ({ query, id }) => {
+const Genres = ({ query, selected, id }) => {
   const [genreList, setGenreList] = useState("");
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const Genres = ({ query, id }) => {
         {genreList !== "" ? (
           genreList.map((genre) => (
             <Link key={genre.id} to={`/genre/${query}/${genre.id}`}>
-              <button className={`genres--genre ${genre.id === parseInt(id) ? "selected" : ""}`}>
+              <button className={`genres--genre ${selected ? (genre.id === parseInt(id) ? "selected" : "") : ""}`}>
                 {genre.name}
               </button>
             </Link>
@@ -40,6 +40,7 @@ const Genres = ({ query, id }) => {
 
 Genres.defaultProps = {
   query: "movie",
+  selected: false,
   id: 27,
 }
 

@@ -44,6 +44,7 @@ body {
   font-weight: $fw-regular;
   font-family: "Cabin", sans-serif;
   background: $background;
+  overflow: hidden;
 
   &::-webkit-scrollbar {
     width: 8px;
@@ -76,4 +77,9 @@ body {
 *::selection {
   background: $text-primary;
   color: $background;
+}
+
+
+main{
+  position: relative;
 }

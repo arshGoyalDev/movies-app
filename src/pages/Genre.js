@@ -41,8 +41,8 @@ const Genre = () => {
   };
 
   return (
-    <>
-      <Genres query={query === "movie" ? "movie" : "tv"} id={genreId} />
+    <main>
+      <Genres query={query === "movie" ? "movie" : "tv"} selected={true} id={genreId} />
 
       <div className="genre">
         <h2>{query === "movie" ? " movies" : " tv shows"}</h2>
@@ -70,7 +70,7 @@ const Genre = () => {
           </div>
         </InfiniteScroll>
       </div>
-    </>
+    </main>
   );
 };
 

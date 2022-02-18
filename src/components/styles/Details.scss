@@ -1,0 +1,116 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.details {
+  position: fixed;
+  z-index: 20;
+  bottom: 0;
+  width: 100%;
+  height: 90vh;
+  padding: 20px 30px;
+  background: $background;
+  overflow: auto;
+
+  &--title {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 20px;
+
+    p {
+      color: $text-secondary;
+    }
+  }
+
+  &--cast {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+
+    &--card {
+      position: relative;
+      min-width: 120px;
+      max-width: 140px;
+      height: 160px;
+      background: rgba($color: #000, $alpha: 0.6);
+      border-radius: 5px;
+      overflow: hidden;
+
+      &--photo {
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      &--body {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        justify-content: flex-end;
+        padding: 10px;
+        width: 100%;
+        height: 100%;
+
+        .role {
+          color: $text-secondary;
+        }
+      }
+    }
+  }
+
+  &--other {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      div {
+        margin: 0;
+        padding: 0;
+
+        h3 {
+          margin-bottom: 4px;
+        }
+
+        p {
+          color: lighten($color: $text-secondary, $amount: 10%);
+          max-width: 360px;
+        }
+
+        div {
+          display: flex;
+          flex-direction: column;
+          gap: 3px;
+        }
+      }
+    }
+  }
+
+  @include media-md-2 {
+    padding: 20px 50px;
+  }
+
+  @include media-lg {
+    padding: 30px 100px;
+  }
+
+  @include media-xl {
+    padding: 30px 160px;
+  }
+}

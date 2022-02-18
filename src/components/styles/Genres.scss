@@ -4,8 +4,8 @@
 .genres {
   margin-top: 20px;
   padding: 0 30px;
-  
-  div{
+
+  div {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -19,7 +19,7 @@
     border-radius: 5px;
     cursor: pointer;
 
-    &.selected{
+    &.selected {
       background: $text-primary;
       color: $background;
     }
@@ -42,16 +42,16 @@
   }
 }
 
-// for home page 
+// for home page
 
 .home--genres {
   margin-top: 30px;
   padding: 0 30px;
-  
-  & > div{
+
+  & > div {
     width: 100%;
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
     gap: 20px;
   }
 
@@ -79,7 +79,7 @@
       }
     }
 
-    h3{
+    h3 {
       transition: 0.5s;
     }
 
@@ -95,7 +95,7 @@
       opacity: 0;
       transition: 0.5s;
 
-      &--option{
+      &--option {
         padding: 10px 30px;
         background: darken($color: $text-tertiary, $amount: 10%);
         box-shadow: 0 0 40px rgba($color: #000, $alpha: 0.6);
@@ -106,11 +106,11 @@
 
     &:hover,
     &:focus {
-      .home--genres--genre--options{
+      .home--genres--genre--options {
         opacity: 1;
       }
-      
-      h3{
+
+      h3 {
         opacity: 0;
       }
     }
@@ -118,8 +118,8 @@
 
   @include media-md {
     margin-top: 50px;
-    
-    & > div{
+
+    & > div {
       flex-direction: row;
       overflow: auto;
       scrollbar-width: thin;
@@ -127,25 +127,24 @@
       overflow-x: auto;
       transition: 0.5s;
 
-      &:hover{
+      &:hover {
         scrollbar-color: $text-tertiary transparent;
 
         &::-webkit-scrollbar-thumb {
           background: $text-tertiary;
         }
-
       }
-  
-      &::-webkit-scrollbar{
+
+      &::-webkit-scrollbar {
         height: 5px;
-  
+
         &-thumb {
           border-radius: 10px;
         }
-      }  
+      }
     }
 
-    &--genre{
+    &--genre {
       min-width: 360px;
     }
   }
