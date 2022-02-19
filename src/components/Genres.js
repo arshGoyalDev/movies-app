@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import "./styles/Genres.scss";
 
-import { fetchData } from "../utils";
+import { fetchData } from "../utils/fetch";
 
 import { Link } from "react-router-dom";
 

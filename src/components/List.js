@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import "./styles/List.scss";
 
-import { fetchData } from "../utils";
+import { fetchData } from "../utils/fetch";
 
 import BackdropCard from "./cards/BackdropCard";
 

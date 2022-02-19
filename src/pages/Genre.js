@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 import { useParams } from "react-router-dom";
 
-import { fetchGenreData, fetchMoreData } from "../utils";
+import { fetchGenreData, fetchMoreData } from "../utils/fetch";
 
 import Genres from "../components/Genres";
 import PosterCard from "../components/cards/PosterCard";
@@ -16,7 +16,7 @@ const Genre = () => {
   const [data, setData] = useState("");
   const [resultsCount, setResultsCount] = useState("");
   const [page, setPage] = useState(1);
-  const {query, genreId} = useParams();
+  const { query, genreId } = useParams();
 
   const loadingArray = [
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
@@ -42,7 +42,11 @@ const Genre = () => {
 
   return (
     <main>
-      <Genres query={query === "movie" ? "movie" : "tv"} selected={true} id={genreId} />
+      <Genres
+        query={query === "movie" ? "movie" : "tv"}
+        selected={true}
+        id={genreId}
+      />
 
       <div className="genre">
         <h2>{query === "movie" ? " movies" : " tv shows"}</h2>

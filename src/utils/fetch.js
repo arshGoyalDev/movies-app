@@ -29,11 +29,19 @@ const fetchMoreData = async (query, genreId, page) => {
 };
 
 // fetch details for given query Args: query, id, setFunction, setLoading
-const fetchDetails = async (query, id, setDetails, setSimilar, setVideos, setCast, setLoading) => {
+const fetchDetails = async (
+  query,
+  id,
+  setDetails,
+  setSimilar,
+  setVideos,
+  setCastCrew,
+  setLoading
+) => {
   let url = `https://api.themoviedb.org/3/${query}/${id}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`;
   let urlSimilar = `https://api.themoviedb.org/3/${query}/${id}/similar?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`;
   let urlVideos = `https://api.themoviedb.org/3/${query}/${id}/videos?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`;
-  let urlCast = `https://api.themoviedb.org/3/${query}/${id}/credits?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
+  let urlCastCrew = `https://api.themoviedb.org/3/${query}/${id}/credits?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`;
 
   const res = await fetch(url);
   const data = await res.json();
@@ -47,11 +55,11 @@ const fetchDetails = async (query, id, setDetails, setSimilar, setVideos, setCas
   const dataVideos = await resVideos.json();
   setVideos(dataVideos.results);
 
-  const resCast = await fetch(urlCast);
-  const dataCast = await resCast.json();
-  setCast(dataCast.cast);
+  const resCastCrew = await fetch(urlCastCrew);
+  const dataCastCrew = await resCastCrew.json();
+  setCastCrew(dataCastCrew);
 
   setLoading(false);
-}
+};
 
 export { fetchData, fetchGenreData, fetchMoreData, fetchDetails };
