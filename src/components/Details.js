@@ -9,6 +9,8 @@ import { fetchDetails } from "../utils/fetch";
 import { releaseDate, convertMinsToHrsMins } from "../utils/time";
 
 import ProfileCard from "./cards/ProfileCard";
+import EmbeddedVideo from "./EmbeddedVideo";
+import { faChainSlash } from "@fortawesome/free-solid-svg-icons";
 
 const Details = ({ query }) => {
   const { id } = useParams();
@@ -31,9 +33,17 @@ const Details = ({ query }) => {
     );
   }, [id, query]);
 
+  let keys = "";
+
   const removeDuplicates = (array, key) => {
     return [...new Map(array.map((item) => [item[key], item])).values()];
   };
+
+  for (var key in castCrew) {
+    if (key !== "id") {
+      keys += [key + " "];
+    }
+  }
 
   return (
     <div className="details">
@@ -41,7 +51,7 @@ const Details = ({ query }) => {
         <>
           <div className="details--title">
             <h1>{details.title ? details.title : details.name}</h1>
-            <p>{details.tagline}</p>
+            <p>{details.tagline ? details.tagline : ""}</p>
           </div>
           <div className="details--other">
             <div className="overview">
@@ -95,26 +105,32 @@ const Details = ({ query }) => {
               </p>
             </div>
           </div>
-          {castCrew.cast.length !== 0 && (
-            <div className="details--cast">
-              <h3>Cast</h3>
-              <div>
-                {removeDuplicates(castCrew.cast, "name").map((item) => (
-                  <ProfileCard key={item.name} data={item} />
+          {keys
+            .split(" ")
+            .slice(0, 2)
+            .map((item) => (
+              castCrew[item].length !== 0 && (
+                <div key={item} className={`details--${item}`}>
+                  <h3>{item}</h3>
+                  <div>
+                    {removeDuplicates(castCrew[item], "name").map(
+                      (personData) => (
+                        <ProfileCard key={personData.name} data={personData} />
+                      ))}
+                  </div>
+                </div>
+              )))}
+          <div className="details--videos">
+            <h3>Videos</h3>
+            <div>
+              {videos
+                .reverse()
+                .filter((video) => video.name.includes("Trailer"))
+                .map((video) => (
+                  <EmbeddedVideo key={video.id} id={video.key} />
                 ))}
-              </div>
             </div>
-          )}
-          {castCrew.crew.length !== 0 && (
-            <div className="details--crew">
-              <h3>Crew</h3>
-              <div>
-                {removeDuplicates(castCrew.crew, "name").map((item) => (
-                  <ProfileCard key={item.name} data={item} />
-                ))}
-              </div>
-            </div>
-          )}
+          </div>
         </>
       ) : (
         ""
