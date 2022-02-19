@@ -10,7 +10,6 @@ import { releaseDate, convertMinsToHrsMins } from "../utils/time";
 
 import ProfileCard from "./cards/ProfileCard";
 import EmbeddedVideo from "./EmbeddedVideo";
-import { faChainSlash } from "@fortawesome/free-solid-svg-icons";
 
 const Details = ({ query }) => {
   const { id } = useParams();
@@ -19,6 +18,7 @@ const Details = ({ query }) => {
   const [videos, setVideos] = useState([]);
   const [castCrew, setCastCrew] = useState([]);
   const [loading, setLoading] = useState(true);
+  let keys = "";
 
   useEffect(() => {
     setLoading(true);
@@ -33,13 +33,11 @@ const Details = ({ query }) => {
     );
   }, [id, query]);
 
-  let keys = "";
-
   const removeDuplicates = (array, key) => {
     return [...new Map(array.map((item) => [item[key], item])).values()];
   };
 
-  for (var key in castCrew) {
+  for (let key in castCrew) {
     if (key !== "id") {
       keys += [key + " "];
     }
@@ -108,18 +106,24 @@ const Details = ({ query }) => {
           {keys
             .split(" ")
             .slice(0, 2)
-            .map((item) => (
-              castCrew[item].length !== 0 && (
-                <div key={item} className={`details--${item}`}>
-                  <h3>{item}</h3>
-                  <div>
-                    {removeDuplicates(castCrew[item], "name").map(
-                      (personData) => (
-                        <ProfileCard key={personData.name} data={personData} />
-                      ))}
+            .map(
+              (item) =>
+                castCrew[item].length !== 0 && (
+                  <div key={item} className={`details--${item}`}>
+                    <h3>{item}</h3>
+                    <div>
+                      {removeDuplicates(castCrew[item], "name").map(
+                        (personData) => (
+                          <ProfileCard
+                            key={personData.name}
+                            data={personData}
+                          />
+                        )
+                      )}
+                    </div>
                   </div>
-                </div>
-              )))}
+                )
+            )}
           <div className="details--videos">
             <h3>Videos</h3>
             <div>

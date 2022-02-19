@@ -141,11 +141,14 @@
   }
 
   &--videos {
-    padding-inline: 20px;
+    h3 {
+      padding-inline: 20px;
+    }
 
     & > div {
       display: flex;
       gap: 15px;
+      padding-inline: 20px;
       margin-top: 10px;
       overflow-x: auto;
 
@@ -180,15 +183,16 @@
     &--crew h3,
     &--crew > div,
     &--other,
-    &--videos {
+    &--videos h3,
+    &--videos > div {
       padding-inline: 50px;
     }
   }
 
   @include media-lg {
     width: 80%;
-    padding-block: 60px;
-    border-radius: 30px;
+    padding-block: 50px;
+    border-radius: 30px 30px 0 0;
 
     &--title,
     &--cast h3,
@@ -196,7 +200,8 @@
     &--crew h3,
     &--crew > div,
     &--other,
-    &--videos {
+    &--videos h3,
+    &--videos > div {
       padding-inline: 60px;
     }
 
