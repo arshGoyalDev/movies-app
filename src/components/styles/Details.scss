@@ -9,7 +9,7 @@
   transform: translateX(-50%);
   width: 90%;
   height: 80vh;
-  padding: 20px 0;
+  padding-block: 20px;
   background: $background;
   border-radius: 20px 20px 0 0;
   margin: 0 auto;
@@ -29,12 +29,42 @@
     display: flex;
     flex-direction: column;
     gap: 2px;
-    padding: 0 20px;
+    padding-inline: 20px;
     margin-bottom: 20px;
 
     p {
       color: $text-secondary;
       padding-left: 5px;
+    }
+  }
+
+  &--other {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-inline: 20px;
+    margin-bottom: 20px;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      margin: 0;
+
+      h3 {
+        margin-bottom: 4px;
+      }
+
+      p {
+        max-width: 360px;
+        color: lighten($color: $text-secondary, $amount: 10%);
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+      }
     }
   }
 
@@ -48,12 +78,12 @@
     & > div {
       display: flex;
       gap: 10px;
+      padding-inline: 20px;
       overflow-x: auto;
-      padding: 0 20px;
 
       @supports (scrollbar-width: none) {
-        scrollbar-width: none;
         padding-bottom: 20px !important;
+        scrollbar-width: none;
       }
 
       &::-webkit-scrollbar {
@@ -66,10 +96,11 @@
       min-width: 120px;
       max-width: 140px;
       height: 160px;
-      border: 5px solid $text-tertiary;
       background: rgba($color: #000, $alpha: 0.6);
+      border: 5px solid $text-tertiary;
       border-radius: 10px;
       overflow: hidden;
+      cursor: default;
 
       &--photo {
         position: absolute;
@@ -87,11 +118,11 @@
       &--body {
         display: flex;
         flex-direction: column;
-        gap: 2px;
         justify-content: flex-end;
-        padding: 10px;
+        gap: 2px;
         width: 100%;
         height: 100%;
+        padding: 10px;
 
         .role {
           color: $text-secondary;
@@ -100,41 +131,8 @@
     }
   }
 
-  &--other {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding: 0 20px;
-
-    div {
-      display: flex;
-      flex-direction: column;
-      margin: 0;
-      padding: 0;
-
-      h3 {
-        margin-bottom: 4px;
-      }
-
-      p {
-        color: lighten($color: $text-secondary, $amount: 10%);
-        max-width: 360px;
-      }
-
-      div {
-        display: flex;
-        flex-direction: column;
-        gap: 3px;
-      }
-    }
-  }
-
-  &--crew {
-    margin-top: 20px;
-  }
-
   @include media-md {
-    padding: 40px 0;
+    padding-block: 40px;
 
     &--title,
     &--cast h3,
@@ -142,11 +140,21 @@
     &--crew h3,
     &--crew > div,
     &--other {
-      padding: 0 50px;
+      padding-inline: 50px;
     }
   }
 
   @include media-lg {
     width: 80%;
+    padding-block: 60px;
+
+    &--title,
+    &--cast h3,
+    &--cast > div,
+    &--crew h3,
+    &--crew > div,
+    &--other {
+      padding-inline: 60px;
+    }
   }
 }

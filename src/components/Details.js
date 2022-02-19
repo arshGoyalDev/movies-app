@@ -3,9 +3,10 @@ import { useState, useEffect } from "react";
 import "./styles/Details.scss";
 
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { fetchDetails } from "../utils/fetch";
-import { releaseDate, convertMinsToHrsMins } from '../utils/time';
+import { releaseDate, convertMinsToHrsMins } from "../utils/time";
 
 import ProfileCard from "./cards/ProfileCard";
 
@@ -30,6 +31,10 @@ const Details = ({ query }) => {
     );
   }, [id, query]);
 
+  const removeDuplicates = (array, key) => {
+    return [...new Map(array.map((item) => [item[key], item])).values()];
+  };
+
   return (
     <div className="details">
       {!loading ? (
@@ -37,15 +42,6 @@ const Details = ({ query }) => {
           <div className="details--title">
             <h1>{details.title ? details.title : details.name}</h1>
             <p>{details.tagline}</p>
-            <p>Release Date: {releaseDate(details.release_date ? details.release_date : details.on_air_date)}</p>
-          </div>
-          <div className="details--cast">
-            <h3>Cast</h3>
-            <div>
-              {castCrew.cast.map((item) => (
-                <ProfileCard key={item.name} data={item} />
-              ))}
-            </div>
           </div>
           <div className="details--other">
             <div className="overview">
@@ -58,9 +54,13 @@ const Details = ({ query }) => {
                 {details.genres
                   .slice(0, details.genres.length - 1)
                   .map((item) => (
-                    <span key={item.id}>{item.name + ", "}</span>
+                    <Link key={item.id} to={`/genre/${query}/${item.id}`}>
+                      <span>{item.name + ", "}</span>
+                    </Link>
                   ))}
-                <span>{details.genres[details.genres.length - 1].name}</span>
+                  <Link to={`/genre/${query}/${details.genres[details.genres.length - 1].id}`}>
+                    <span>{details.genres[details.genres.length - 1].name}</span>
+                  </Link>
               </p>
             </div>
             {details.runtime ? (
@@ -80,11 +80,29 @@ const Details = ({ query }) => {
                 </div>
               </div>
             )}
+            <div className="release-date">
+              <h3>Release Date</h3>
+              <p>
+                {releaseDate(
+                  details.release_date
+                    ? details.release_date
+                    : details.on_air_date
+                )}
+              </p>
+            </div>
+          </div>
+          <div className="details--cast">
+            <h3>Cast</h3>
+            <div>
+              {removeDuplicates(castCrew.cast, "name").map((item) => (
+                <ProfileCard key={item.name} data={item} />
+              ))}
+            </div>
           </div>
           <div className="details--crew">
             <h3>Crew</h3>
             <div>
-              {castCrew.crew.map((item) => (
+              {removeDuplicates(castCrew.crew, "name").map((item) => (
                 <ProfileCard key={item.name} data={item} />
               ))}
             </div>
