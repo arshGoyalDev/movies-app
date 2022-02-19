@@ -58,9 +58,13 @@ const Details = ({ query }) => {
                       <span>{item.name + ", "}</span>
                     </Link>
                   ))}
-                  <Link to={`/genre/${query}/${details.genres[details.genres.length - 1].id}`}>
-                    <span>{details.genres[details.genres.length - 1].name}</span>
-                  </Link>
+                <Link
+                  to={`/genre/${query}/${
+                    details.genres[details.genres.length - 1].id
+                  }`}
+                >
+                  <span>{details.genres[details.genres.length - 1].name}</span>
+                </Link>
               </p>
             </div>
             {details.runtime ? (
@@ -86,27 +90,31 @@ const Details = ({ query }) => {
                 {releaseDate(
                   details.release_date
                     ? details.release_date
-                    : details.on_air_date
+                    : details.first_air_date
                 )}
               </p>
             </div>
           </div>
-          <div className="details--cast">
-            <h3>Cast</h3>
-            <div>
-              {removeDuplicates(castCrew.cast, "name").map((item) => (
-                <ProfileCard key={item.name} data={item} />
-              ))}
+          {castCrew.cast.length !== 0 && (
+            <div className="details--cast">
+              <h3>Cast</h3>
+              <div>
+                {removeDuplicates(castCrew.cast, "name").map((item) => (
+                  <ProfileCard key={item.name} data={item} />
+                ))}
+              </div>
             </div>
-          </div>
-          <div className="details--crew">
-            <h3>Crew</h3>
-            <div>
-              {removeDuplicates(castCrew.crew, "name").map((item) => (
-                <ProfileCard key={item.name} data={item} />
-              ))}
+          )}
+          {castCrew.crew.length !== 0 && (
+            <div className="details--crew">
+              <h3>Crew</h3>
+              <div>
+                {removeDuplicates(castCrew.crew, "name").map((item) => (
+                  <ProfileCard key={item.name} data={item} />
+                ))}
+              </div>
             </div>
-          </div>
+          )}
         </>
       ) : (
         ""

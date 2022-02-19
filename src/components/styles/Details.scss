@@ -4,13 +4,15 @@
 .details {
   position: fixed;
   z-index: 20;
-  bottom: 0;
+  bottom: -1px;
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
   height: 80vh;
   padding-block: 20px;
   background: $background;
+  border: 1px solid $text-tertiary;
+  border-bottom: 0;
   border-radius: 20px 20px 0 0;
   margin: 0 auto;
   overflow: auto;
@@ -18,7 +20,7 @@
 
   @supports (backdrop-filter: blur(60px)) {
     background: rgba($color: $background, $alpha: 0.8);
-    backdrop-filter: blur(60px);
+    backdrop-filter: blur(40px);
   }
 
   &::-webkit-scrollbar {
@@ -34,7 +36,6 @@
 
     p {
       color: $text-secondary;
-      padding-left: 5px;
     }
   }
 
@@ -63,13 +64,20 @@
       div {
         display: flex;
         flex-direction: column;
-        gap: 3px;
+        gap: 5px;
       }
+    }
+
+    .genre p {
+      display: flex;
+      gap: 5px;
     }
   }
 
   &--cast,
   &--crew {
+    margin-bottom: 5px;
+
     h3 {
       padding-inline: 20px;
       margin-bottom: 10px;
