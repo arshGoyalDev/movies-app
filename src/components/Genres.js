@@ -5,6 +5,7 @@ import "./styles/Genres.scss";
 import { fetchData } from "../utils/fetch";
 
 import { Link } from "react-router-dom";
+import SimpleLoader from "./loaders/SimpleLoader";
 
 const Genres = ({ query, selected, id }) => {
   const [genreList, setGenreList] = useState("");
@@ -31,7 +32,7 @@ const Genres = ({ query, selected, id }) => {
             </Link>
           ))
         ) : (
-          <div className="loading--genre"></div>
+          <SimpleLoader className="loading--genre" />
         )}
       </div>
     </div>

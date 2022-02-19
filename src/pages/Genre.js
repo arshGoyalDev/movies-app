@@ -10,6 +10,8 @@ import Genres from "../components/Genres";
 import PosterCard from "../components/cards/PosterCard";
 
 import InfiniteScroll from "react-infinite-scroll-component";
+import SimpleLoader from "../components/loaders/SimpleLoader";
+import LoadingSpinner from "../components/loaders/LoadingSpinner";
 
 const Genre = () => {
   const [loading, setLoading] = useState(true);
@@ -54,11 +56,7 @@ const Genre = () => {
           dataLength={data.length}
           next={InfiniteScrollFunction}
           hasMore={data.length !== resultsCount}
-          loader={
-            <div className="loading--spinner">
-              <div></div>
-            </div>
-          }
+          loader={<LoadingSpinner />}
         >
           <div className="genre--cards">
             {!loading
@@ -69,7 +67,7 @@ const Genre = () => {
                   />
                 ))
               : loadingArray.map((item) => (
-                  <div key={item} className="loading--card--poster"></div>
+                  <SimpleLoader key={item} className="loading--card--poster" />
                 ))}
           </div>
         </InfiniteScroll>

@@ -11,6 +11,7 @@ import {
   faChevronLeft,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
+import SimpleLoader from "./loaders/SimpleLoader";
 
 const Trending = ({ queryType }) => {
   const [trendingData, setTrendingData] = useState("");
@@ -20,7 +21,7 @@ const Trending = ({ queryType }) => {
     fetchData(
       `https://api.themoviedb.org/3/trending/${queryType}/day?api_key=${process.env.REACT_APP_API_KEY}`,
       setTrendingData,
-      true,
+      true
     );
     // eslint-disable-next-line
   }, []);
@@ -92,7 +93,7 @@ const Trending = ({ queryType }) => {
           </div>
         </>
       ) : (
-        <div className="loading--trending"></div>
+        <SimpleLoader className="loading--trending" />
       )}
     </div>
   );

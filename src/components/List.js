@@ -5,23 +5,25 @@ import "./styles/List.scss";
 import { fetchData } from "../utils/fetch";
 
 import BackdropCard from "./cards/BackdropCard";
+import SImpleLoader from "./loaders/SimpleLoader";
 
 import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
-const List = ({ heading, queryType, query, all, page }) => {
-  const [listData, setListData] = useState("");
+const List = ({ heading, queryType, query, all, page, defined, data }) => {
+  const [listData, setListData] = useState(defined ? data : "");
   const loadingArray = [1, 2, 3, 4, 5, 6, 7];
 
   useEffect(() => {
-    fetchData(
-      `https://api.themoviedb.org/3/${queryType}/${query}?api_key=46f3e66941cef78aa9e97f804729bc67&language=en-US&page=${page}
+    !defined &&
+      fetchData(
+        `https://api.themoviedb.org/3/${queryType}/${query}?api_key=46f3e66941cef78aa9e97f804729bc67&language=en-US&page=${page}
     `,
-      setListData,
-      true
-    );
+        setListData,
+        true
+      );
     // eslint-disable-next-line
   }, []);
 
@@ -31,7 +33,7 @@ const List = ({ heading, queryType, query, all, page }) => {
         <div className="list--header">
           <h2 className="list--header--heading">
             {query.replaceAll("_", " ")}{" "}
-            {queryType === "tv" ? "tv shows" : "movies"}
+            {queryType === "movie" ? "movies" : "tv shows"}
           </h2>
           {!all && (
             <Link to={`/${queryType}`}>
@@ -56,7 +58,7 @@ const List = ({ heading, queryType, query, all, page }) => {
                 />
               ))
           : loadingArray.map((item) => (
-              <div key={item} className="loading--card--backdrop"></div>
+              <SImpleLoader key={item} className="loading--card--backdrop" />
             ))}
       </div>
     </div>
@@ -66,6 +68,7 @@ const List = ({ heading, queryType, query, all, page }) => {
 List.defaultProps = {
   heading: true,
   page: 1,
+  defined: false,
 };
 
 export default List;
