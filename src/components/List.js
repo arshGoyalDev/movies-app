@@ -5,7 +5,7 @@ import "./styles/List.scss";
 import { fetchData } from "../utils/fetch";
 
 import BackdropCard from "./cards/BackdropCard";
-import SImpleLoader from "./loaders/SimpleLoader";
+import SimpleLoader from "./loaders/SimpleLoader";
 
 import { Link } from "react-router-dom";
 
@@ -58,7 +58,7 @@ const List = ({ heading, queryType, query, all, page, defined, data }) => {
                 />
               ))
           : loadingArray.map((item) => (
-              <SImpleLoader key={item} className="loading--card--backdrop" />
+              <SimpleLoader key={item} className="loading--card--backdrop" />
             ))}
       </div>
     </div>

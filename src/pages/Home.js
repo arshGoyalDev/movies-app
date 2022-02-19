@@ -1,7 +1,7 @@
 import Trending from "../components/Trending";
 import List from "../components/List";
 
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const genreData = [

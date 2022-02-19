@@ -5,13 +5,11 @@ import "./styles/Trending.scss";
 import { fetchData } from "../utils/fetch";
 
 import TrendingItem from "./TrendingItem";
+import SimpleLoader from "./loaders/SimpleLoader";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faChevronLeft,
-  faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
-import SimpleLoader from "./loaders/SimpleLoader";
+import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+
 
 const Trending = ({ queryType }) => {
   const [trendingData, setTrendingData] = useState("");

@@ -8,10 +8,10 @@ import { fetchGenreData, fetchMoreData } from "../utils/fetch";
 
 import Genres from "../components/Genres";
 import PosterCard from "../components/cards/PosterCard";
-
-import InfiniteScroll from "react-infinite-scroll-component";
 import SimpleLoader from "../components/loaders/SimpleLoader";
 import LoadingSpinner from "../components/loaders/LoadingSpinner";
+
+import InfiniteScroll from "react-infinite-scroll-component";
 
 const Genre = () => {
   const [loading, setLoading] = useState(true);
