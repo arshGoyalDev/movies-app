@@ -18,10 +18,8 @@ const Details = ({ query }) => {
   const [videos, setVideos] = useState([]);
   const [castCrew, setCastCrew] = useState([]);
   const [loading, setLoading] = useState(true);
-  let keys = "";
 
   useEffect(() => {
-    setLoading(true);
     fetchDetails(
       query,
       id,
@@ -31,17 +29,12 @@ const Details = ({ query }) => {
       setCastCrew,
       setLoading
     );
+    setLoading(true);
   }, [id, query]);
 
   const removeDuplicates = (array, key) => {
     return [...new Map(array.map((item) => [item[key], item])).values()];
   };
-
-  for (let key in castCrew) {
-    if (key !== "id") {
-      keys += [key + " "];
-    }
-  }
 
   return (
     <div className="details">
@@ -50,7 +43,7 @@ const Details = ({ query }) => {
           <div className="details--title">
             <h1>{details.title ? details.title : details.name}</h1>
             <p>{details.tagline ? details.tagline : ""}</p>
-          </div>
+          </div> 
           <div className="details--other">
             <div className="overview">
               <h3>Overview</h3>
@@ -103,27 +96,22 @@ const Details = ({ query }) => {
               </p>
             </div>
           </div>
-          {keys
-            .split(" ")
-            .slice(0, 2)
-            .map(
-              (item) =>
-                castCrew[item].length !== 0 && (
-                  <div key={item} className={`details--${item}`}>
-                    <h3>{item}</h3>
-                    <div>
-                      {removeDuplicates(castCrew[item], "name").map(
-                        (personData) => (
-                          <ProfileCard
-                            key={personData.name}
-                            data={personData}
-                          />
-                        )
-                      )}
-                    </div>
+          {Object.keys(castCrew).map(function (key) {
+            if (key !== "id") {
+              return (
+                <div key={key} className={`details--${key}`}>
+                  <h3>{key}</h3>
+                  <div>
+                    {removeDuplicates(castCrew[key], "name").map(
+                      (personData) => (
+                        <ProfileCard key={personData.name} data={personData} />
+                      )
+                    )}
                   </div>
-                )
-            )}
+                </div>
+              );
+            }
+          })}
           <div className="details--videos">
             <h3>Videos</h3>
             <div>
