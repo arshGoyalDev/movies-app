@@ -1,9 +1,12 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-regular-svg-icons";
+
 const ProfileCard = ({ data }) => {
   return (
     <div key={data.name} className="details--cast--card">
       <div className="details--cast--card--photo">
         {!data.profile_path ? (
-          <p style={{ padding: "5px" }}>Sorry! No photo available</p>
+          <FontAwesomeIcon icon={faUser} />
         ) : (
           <img src={`https://image.tmdb.org/t/p/w500${data.profile_path}`} />
         )}
