@@ -16,13 +16,10 @@ const App = () => {
   const [detailsVisible, setDetailsVisible] = useState(false);
 
   useEffect(() => {
-    // scrollToTop();
-    // const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
-    // };
   }, [detailsVisible]);
 
   return (
