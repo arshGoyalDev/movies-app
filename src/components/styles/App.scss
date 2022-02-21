@@ -55,6 +55,10 @@ body {
   }
 }
 
+.overflow--hidden {
+  overflow: hidden;
+}
+
 .App {
   overflow-x: hidden;
   padding-bottom: 40px;
@@ -76,8 +80,4 @@ body {
 *::selection {
   background: $text-primary;
   color: $background;
-}
-
-main {
-  position: relative;
 }

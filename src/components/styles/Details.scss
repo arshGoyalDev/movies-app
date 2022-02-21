@@ -4,10 +4,10 @@
 .details--wrapper {
   position: fixed;
   z-index: 20;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 87%;
 }
 
 .details {
@@ -23,7 +23,7 @@
   border-bottom: 0;
   border-radius: 20px 20px 0 0;
   margin: 0 auto;
-  box-shadow: 0 0 60px rgba($color: #fff, $alpha: 0.1);
+  // box-shadow: 0 0 60px rgba($color: #fff, $alpha: 0.1);
   animation: come-up 0.5s ease-out;
   overflow-y: auto;
   scrollbar-width: none;
@@ -40,7 +40,7 @@
   &--close {
     position: absolute;
     transform: translateX(-50%);
-    top: 13%;
+    top: 0;
     left: 50%;
     width: 90%;
     display: flex;

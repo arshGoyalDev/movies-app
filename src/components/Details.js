@@ -12,9 +12,9 @@ import ProfileCard from "./cards/ProfileCard";
 import EmbeddedVideo from "./EmbeddedVideo";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmarkCircle, faUser } from "@fortawesome/free-regular-svg-icons";
+import { faXmarkCircle } from "@fortawesome/free-regular-svg-icons";
 
-const Details = ({ query }) => {
+const Details = ({ query, setScrollable }) => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [details, setDetails] = useState({});
@@ -34,7 +34,8 @@ const Details = ({ query }) => {
       setLoading
     );
     setLoading(true);
-  }, [id, query]);
+    setScrollable(false);
+  }, [id, query, setScrollable]);
 
   const removeDuplicates = (array, key) => {
     return [...new Map(array.map((item) => [item[key], item])).values()];
@@ -43,11 +44,14 @@ const Details = ({ query }) => {
   return (
     <div className="details--wrapper">
       <div className="details--close">
-        {/* <Link to={`/${query}`}> */}
-          <button onClick={() => navigate(-1)}>
-            <FontAwesomeIcon icon={faXmarkCircle} />
-          </button>
-        {/* </Link> */}
+        <button
+          onClick={() => {
+            navigate(-1);
+            setScrollable(true);
+          }}
+        >
+          <FontAwesomeIcon icon={faXmarkCircle} />
+        </button>
       </div>
       <div className="details">
         {!loading ? (
@@ -113,21 +117,23 @@ const Details = ({ query }) => {
             {Object.keys(castCrew).map(function (key) {
               let output = "";
               if (key !== "id") {
-                output = (
-                  <div key={key} className={`details--${key}`}>
-                    <h3>{key}</h3>
-                    <div>
-                      {removeDuplicates(castCrew[key], "name").map(
-                        (personData) => (
-                          <ProfileCard
-                            key={personData.name}
-                            data={personData}
-                          />
-                        )
-                      )}
+                if (castCrew[key].length !== 0) {
+                  output = (
+                    <div key={key} className={`details--${key}`}>
+                      <h3>{key}</h3>
+                      <div>
+                        {removeDuplicates(castCrew[key], "name").map(
+                          (personData) => (
+                            <ProfileCard
+                              key={personData.name}
+                              data={personData}
+                            />
+                          )
+                        )}
+                      </div>
                     </div>
-                  </div>
-                );
+                  );
+                }
               }
               return output;
             })}
