@@ -10,6 +10,7 @@ import { releaseDate, convertMinsToHrsMins } from "../utils/time";
 
 import ProfileCard from "./cards/ProfileCard";
 import EmbeddedVideo from "./EmbeddedVideo";
+import DetailsLoader from "./loaders/DetailsLoader";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmarkCircle } from "@fortawesome/free-regular-svg-icons";
@@ -75,11 +76,7 @@ const Details = ({ query, setDetailsVisible }) => {
                         <span>{item.name + ", "}</span>
                       </Link>
                     ))}
-                  <Link
-                    to={`/genre/${query}/${
-                      details.genres[details.genres.length - 1].id
-                    }`}
-                  >
+                  <Link to={`/genre/${query}/${details.genres[details.genres.length - 1].id }`}>
                     <span>
                       {details.genres[details.genres.length - 1].name}
                     </span>
@@ -122,23 +119,16 @@ const Details = ({ query, setDetailsVisible }) => {
                     <div key={key} className={`details--${key}`}>
                       <h3>{key}</h3>
                       <div>
-                        {removeDuplicates(castCrew[key], "name").map(
-                          (personData) => (
-                            <ProfileCard
-                              key={personData.name}
-                              data={personData}
-                            />
-                          )
-                        )}
+                        {removeDuplicates(castCrew[key], "name").map((personData) => (
+                          <ProfileCard key={personData.name} data={personData} />
+                        ))}
                       </div>
                     </div>
                   );
-                }
-              }
+                }}
               return output;
             })}
-            {videos.filter((video) => video.name.includes("Trailer")).length !==
-              0 && (
+            {videos.filter((video) => video.name.includes("Trailer")).length !== 0 && (
               <div className="details--videos">
                 <h3>Videos</h3>
                 <div>
@@ -151,9 +141,7 @@ const Details = ({ query, setDetailsVisible }) => {
               </div>
             )}
           </>
-        ) : (
-          ""
-        )}
+        ) : <DetailsLoader /> }
       </div>
     </div>
   );

@@ -52,7 +52,7 @@
     }
   }
 
-  &--spinner{
+  &--spinner {
     display: flex;
     justify-content: center;
     margin-block: 5rem;
@@ -65,15 +65,87 @@
       border-radius: 50%;
     }
   }
+
+  &--details {
+    padding-inline: 20px;
+
+    &--heading {
+      width: 100%;
+      height: 40px;
+      border-radius: 8px;
+    }
+
+    &--overview {
+      width: 100%;
+      height: 400px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    &--cast-crew,
+    &--videos {
+      margin-top: 20px;
+    }
+
+    &--category {
+      &--heading {
+        width: 50%;
+        height: 20px;
+        border-radius: 5px;
+      }
+
+      &--cards {
+        margin-top: 10px;
+        width: 100%;
+        height: 100px;
+        border-radius: 8px;
+      }
+    }
+
+    .videos--cards {
+      height: 160px;
+    }
+
+    @include media-sm {
+      &--heading {
+        max-width: 400px;
+      }
+
+      &--category {
+        &--heading {
+          max-width: 200px;
+        }
+        &--cards {
+          height: 120px;
+        }
+      }
+    }
+
+    @include media-md {
+      padding-inline: 50px;
+    }
+
+    @include media-lg {
+      padding-inline: 60px;
+
+      .videos--cards {
+        height: 220px;
+      }  
+    }
+  }
 }
 
 .loading {
   &--trending,
   &--card--backdrop,
-  &--card--poster {
+  &--card--poster,
+  &--details--heading,
+  &--details--overview,
+  &--details--category--heading,
+  &--details--category--cards {
     background: linear-gradient(
       120deg,
-      rgba(0, 0, 0, 0.3) 30%,
+      rgba(0, 0, 0, 0.4) 30%,
       rgba(0, 0, 0, 0.4) 38%,
       rgba(0, 0, 0, 0.3) 40%,
       rgba(0, 0, 0, 0.4) 48%
@@ -92,7 +164,7 @@
 }
 
 @keyframes rotate {
-  100%{
+  100% {
     transform: rotate(360deg);
   }
 }
