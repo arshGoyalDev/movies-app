@@ -74,10 +74,12 @@
 
       &--btn {
         width: 23%;
+        color: $background;
+        font-weight: $fw-bold;
         padding: 8.5px 0;
-        margin-left: 5px;
-        background: $text-tertiary;
+        background: $call-to-action;
         border-radius: 5px;
+        margin-left: 5px;
       }
 
       @include media-sm {

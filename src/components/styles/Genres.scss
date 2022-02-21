@@ -14,14 +14,15 @@
 
   &--genre {
     font-weight: $fw-bold;
+    color: $background;
     padding: 15px 40px;
-    background: lighten($color: $background, $amount: 10%);
+    background: $call-to-action;
     border-radius: 5px;
     cursor: pointer;
+    transition: 0.3s;
 
     &.selected {
-      background: $text-primary;
-      color: $background;
+      background: lighten($color: $call-to-action, $amount: 25%);
     }
   }
 
@@ -96,8 +97,11 @@
       transition: 0.5s;
 
       &--option {
+        color: $background;
+        font-weight: $fw-medium;
         padding: 10px 30px;
-        background: darken($color: $text-tertiary, $amount: 10%);
+        background: $call-to-action;
+        // background: darken($color: $text-tertiary, $amount: 10%);
         box-shadow: 0 0 40px rgba($color: #000, $alpha: 0.6);
         border-radius: 5px;
         cursor: pointer;
