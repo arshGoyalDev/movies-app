@@ -9,7 +9,7 @@ import { fetchGenreData, fetchMoreData } from "../utils/fetch";
 import Genres from "../components/Genres";
 import PosterCard from "../components/cards/PosterCard";
 import SimpleLoader from "../components/loaders/SimpleLoader";
-import LoadingSpinner from "../components/loaders/LoadingSpinner";
+import SpinnerLoader from "../components/loaders/SpinnerLoader";
 
 import InfiniteScroll from "react-infinite-scroll-component";
 
@@ -56,7 +56,7 @@ const Genre = () => {
           dataLength={data.length}
           next={InfiniteScrollFunction}
           hasMore={data.length !== resultsCount}
-          loader={<LoadingSpinner />}
+          loader={<SpinnerLoader />}
         >
           <div className="genre--cards">
             {!loading

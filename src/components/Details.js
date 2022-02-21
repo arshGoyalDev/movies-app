@@ -14,7 +14,7 @@ import EmbeddedVideo from "./EmbeddedVideo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmarkCircle } from "@fortawesome/free-regular-svg-icons";
 
-const Details = ({ query, setScrollable }) => {
+const Details = ({ query, setDetailsVisible }) => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [details, setDetails] = useState({});
@@ -34,8 +34,8 @@ const Details = ({ query, setScrollable }) => {
       setLoading
     );
     setLoading(true);
-    setScrollable(false);
-  }, [id, query, setScrollable]);
+    setDetailsVisible(true);
+  }, [id, query, setDetailsVisible]);
 
   const removeDuplicates = (array, key) => {
     return [...new Map(array.map((item) => [item[key], item])).values()];
@@ -47,7 +47,7 @@ const Details = ({ query, setScrollable }) => {
         <button
           onClick={() => {
             navigate(-1);
-            setScrollable(true);
+            setDetailsVisible(false);
           }}
         >
           <FontAwesomeIcon icon={faXmarkCircle} />
@@ -137,12 +137,12 @@ const Details = ({ query, setScrollable }) => {
               }
               return output;
             })}
-            {videos.length !== 0 && (
+            {videos.filter((video) => video.name.includes("Trailer")).length !==
+              0 && (
               <div className="details--videos">
                 <h3>Videos</h3>
                 <div>
                   {videos
-                    .reverse()
                     .filter((video) => video.name.includes("Trailer"))
                     .map((video) => (
                       <EmbeddedVideo key={video.id} id={video.key} />
