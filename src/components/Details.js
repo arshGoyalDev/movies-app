@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 
 import "./styles/Details.scss";
 
-import { useNavigate, useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 import { fetchDetails } from "../utils/fetch";
 import { releaseDate, convertMinsToHrsMins } from "../utils/time";
@@ -18,7 +18,6 @@ import { faXmarkCircle } from "@fortawesome/free-regular-svg-icons";
 
 const Details = ({ query, setDetailsVisible }) => {
   const { id } = useParams();
-  const navigate = useNavigate();
   const [details, setDetails] = useState({});
   const [castCrew, setCastCrew] = useState([]);
   const [videos, setVideos] = useState([]);
@@ -43,19 +42,14 @@ const Details = ({ query, setDetailsVisible }) => {
     return [...new Map(array.map((item) => [item[key], item])).values()];
   };
 
-  console.log(similar);
-
   return (
     <div className="details--wrapper">
       <div className="details--close">
-        <button
-          onClick={() => {
-            navigate(-1);
-            setDetailsVisible(false);
-          }}
-        >
-          <FontAwesomeIcon icon={faXmarkCircle} />
-        </button>
+        <Link to={`/${query}`}>
+          <button>
+            <FontAwesomeIcon icon={faXmarkCircle} />
+          </button>
+        </Link>
       </div>
       <div className="details">
         {!loading ? (
@@ -120,25 +114,18 @@ const Details = ({ query, setDetailsVisible }) => {
             </div>
             {Object.keys(castCrew).map(function (key) {
               let output = "";
-              if (key !== "id") {
-                if (castCrew[key].length !== 0) {
-                  output = (
-                    <div key={key} className={`details--${key}`}>
-                      <h3>{key}</h3>
-                      <div>
-                        {removeDuplicates(castCrew[key], "name").map(
-                          (personData) => (
-                            <ProfileCard
-                              key={personData.name}
-                              data={personData}
-                            />
-                          )
-                        )}
-                      </div>
+              if (key !== "id" && castCrew[key].length !== 0) {
+                output = (
+                  <div key={key} className={`details--${key}`}>
+                    <h3>{key}</h3>
+                    <div>
+                      {removeDuplicates(castCrew[key], "name").map(
+                        (personData) => (
+                          <ProfileCard key={personData.name} data={personData} />
+                        ))}
                     </div>
-                  );
-                }
-              }
+                  </div>
+                )};
               return output;
             })}
             {videos.filter((video) => video.name.includes("Trailer")).length !==
@@ -159,7 +146,7 @@ const Details = ({ query, setDetailsVisible }) => {
                 <h3>similar {query === "movie" ? "movies" : "tv shows"}</h3>
                 <div>
                   {similar.map((item) => (
-                    <BackdropCard data={item} />
+                    <BackdropCard key={item.id} data={item} />
                   ))}
                 </div>
               </div>
