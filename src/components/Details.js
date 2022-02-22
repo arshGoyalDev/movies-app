@@ -10,6 +10,7 @@ import { releaseDate, convertMinsToHrsMins } from "../utils/time";
 
 import ProfileCard from "./cards/ProfileCard";
 import EmbeddedVideo from "./EmbeddedVideo";
+import BackdropCard from "./cards/BackdropCard";
 import DetailsLoader from "./loaders/DetailsLoader";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -19,9 +20,9 @@ const Details = ({ query, setDetailsVisible }) => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [details, setDetails] = useState({});
-  const [similar, setSimilar] = useState([]);
-  const [videos, setVideos] = useState([]);
   const [castCrew, setCastCrew] = useState([]);
+  const [videos, setVideos] = useState([]);
+  const [similar, setSimilar] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -29,9 +30,9 @@ const Details = ({ query, setDetailsVisible }) => {
       query,
       id,
       setDetails,
-      setSimilar,
-      setVideos,
       setCastCrew,
+      setVideos,
+      setSimilar,
       setLoading
     );
     setLoading(true);
@@ -41,6 +42,8 @@ const Details = ({ query, setDetailsVisible }) => {
   const removeDuplicates = (array, key) => {
     return [...new Map(array.map((item) => [item[key], item])).values()];
   };
+
+  console.log(similar);
 
   return (
     <div className="details--wrapper">
@@ -76,7 +79,11 @@ const Details = ({ query, setDetailsVisible }) => {
                         <span>{item.name + ", "}</span>
                       </Link>
                     ))}
-                  <Link to={`/genre/${query}/${details.genres[details.genres.length - 1].id }`}>
+                  <Link
+                    to={`/genre/${query}/${
+                      details.genres[details.genres.length - 1].id
+                    }`}
+                  >
                     <span>
                       {details.genres[details.genres.length - 1].name}
                     </span>
@@ -119,16 +126,23 @@ const Details = ({ query, setDetailsVisible }) => {
                     <div key={key} className={`details--${key}`}>
                       <h3>{key}</h3>
                       <div>
-                        {removeDuplicates(castCrew[key], "name").map((personData) => (
-                          <ProfileCard key={personData.name} data={personData} />
-                        ))}
+                        {removeDuplicates(castCrew[key], "name").map(
+                          (personData) => (
+                            <ProfileCard
+                              key={personData.name}
+                              data={personData}
+                            />
+                          )
+                        )}
                       </div>
                     </div>
                   );
-                }}
+                }
+              }
               return output;
             })}
-            {videos.filter((video) => video.name.includes("Trailer")).length !== 0 && (
+            {videos.filter((video) => video.name.includes("Trailer")).length !==
+              0 && (
               <div className="details--videos">
                 <h3>Videos</h3>
                 <div>
@@ -140,8 +154,20 @@ const Details = ({ query, setDetailsVisible }) => {
                 </div>
               </div>
             )}
+            {similar.length !== 0 && (
+              <div className="details--similar">
+                <h3>similar {query === "movie" ? "movies" : "tv shows"}</h3>
+                <div>
+                  {similar.map((item) => (
+                    <BackdropCard data={item} />
+                  ))}
+                </div>
+              </div>
+            )}
           </>
-        ) : <DetailsLoader /> }
+        ) : (
+          <DetailsLoader />
+        )}
       </div>
     </div>
   );
