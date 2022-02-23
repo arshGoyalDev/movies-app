@@ -48,12 +48,11 @@ const Details = ({ query, setDetailsVisible }) => {
         className="details--wrapper"
         onClick={() => {
           navigate(`/${query}`);
+          setDetailsVisible(false);
         }}
       >
         <div className="close-btn">
-          <button>
-            <FontAwesomeIcon icon={faXmarkCircle} />
-          </button>
+          <button><FontAwesomeIcon icon={faXmarkCircle} /></button>
         </div>
       </div>
       <div className="details">
@@ -126,10 +125,7 @@ const Details = ({ query, setDetailsVisible }) => {
                     <div>
                       {removeDuplicates(castCrew[key], "name").map(
                         (personData) => (
-                          <ProfileCard
-                            key={personData.name}
-                            data={personData}
-                          />
+                          <ProfileCard key={personData.name} data={personData}/>
                         ))}
                     </div>
                   </div>
@@ -143,9 +139,8 @@ const Details = ({ query, setDetailsVisible }) => {
                 <div>
                   {videos
                     .filter((video) => video.name.includes("Trailer"))
-                    .map((video) => (
-                      <EmbeddedVideo key={video.id} id={video.key} />
-                    ))}
+                    .map((video) => (<EmbeddedVideo key={video.id} id={video.key} />)
+                    )}
                 </div>
               </div>
             )}
@@ -153,9 +148,7 @@ const Details = ({ query, setDetailsVisible }) => {
               <div className="details--similar">
                 <h3>similar {query === "movie" ? "movies" : "tv shows"}</h3>
                 <div>
-                  {similar.map((item) => (
-                    <BackdropCard key={item.id} data={item} />
-                  ))}
+                  {similar.map((item) => (<BackdropCard key={item.id} data={item} />))}
                 </div>
               </div>
             )}
