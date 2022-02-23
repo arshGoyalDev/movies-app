@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 
 import "./styles/Details.scss";
 
-import { Link, useParams } from "react-router-dom";
-// import { Link } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 import { fetchDetails } from "../utils/fetch";
 import { releaseDate, convertMinsToHrsMins } from "../utils/time";
@@ -18,6 +17,7 @@ import { faXmarkCircle } from "@fortawesome/free-regular-svg-icons";
 
 const Details = ({ query, setDetailsVisible }) => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [details, setDetails] = useState({});
   const [castCrew, setCastCrew] = useState([]);
   const [videos, setVideos] = useState([]);
@@ -43,13 +43,18 @@ const Details = ({ query, setDetailsVisible }) => {
   };
 
   return (
-    <div className="details--wrapper">
-      <div className="details--close">
-        <Link to={`/${query}`}>
+    <>
+      <div
+        className="details--wrapper"
+        onClick={() => {
+          navigate(`/${query}`);
+        }}
+      >
+        <div className="close-btn">
           <button>
             <FontAwesomeIcon icon={faXmarkCircle} />
           </button>
-        </Link>
+        </div>
       </div>
       <div className="details">
         {!loading ? (
@@ -121,11 +126,14 @@ const Details = ({ query, setDetailsVisible }) => {
                     <div>
                       {removeDuplicates(castCrew[key], "name").map(
                         (personData) => (
-                          <ProfileCard key={personData.name} data={personData} />
+                          <ProfileCard
+                            key={personData.name}
+                            data={personData}
+                          />
                         ))}
                     </div>
                   </div>
-                )};
+                )}
               return output;
             })}
             {videos.filter((video) => video.name.includes("Trailer")).length !==
@@ -156,7 +164,7 @@ const Details = ({ query, setDetailsVisible }) => {
           <DetailsLoader />
         )}
       </div>
-    </div>
+    </>
   );
 };
 
