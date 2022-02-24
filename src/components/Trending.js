@@ -56,7 +56,7 @@ const Trending = ({ queryType }) => {
                   ? trendingData[index].title
                   : trendingData[index].name
               }
-              data={trendingData[index]}
+              data={trendingData[parseInt(index)]}
             />
             <div className="trending--items--cards">
               {trendingData.map((item) => (
