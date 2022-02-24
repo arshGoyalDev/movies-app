@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { fetchResults } from "../utils/fetch";
 import PosterCard from "../components/cards/PosterCard";
+import SimpleLoader from "../components/loaders/SimpleLoader";
 
 const Results = () => {
   const params = useParams();
@@ -13,9 +14,11 @@ const Results = () => {
     tvShows: [],
   });
   const [loading, setLoading] = useState(true);
+  const loadingArray = [1, 2, 3, 4, 5, 6, 7];
 
   useEffect(() => {
     fetchResults(searchQuery, setResults, setLoading);
+    setLoading(true);
   }, [searchQuery, params]);
 
   return (
@@ -24,36 +27,44 @@ const Results = () => {
         Results for <span>{searchQuery}</span>
       </h1>
 
-      {!loading ? (
-        <div className="results--container">
-          <div className="results--container--result">
-            <h2>Movies</h2>
-            <div className="cards-container">
-              {results.movies.length !== 0 ? (
+      <div className="results--container">
+        <div className="results--container--result">
+          <h2>Movies</h2>
+          <div className="cards-container">
+            {!loading ? (
+              results.movies.length !== 0 ? (
                 results.movies.map((item) => (
                   <PosterCard key={item.id} data={item} />
                 ))
               ) : (
                 <p>No Results</p>
-              )}
-            </div>
+              )
+            ) : (
+              loadingArray.map((key) => (
+                <SimpleLoader key={key} className="loading--card--poster" />
+              ))
+            )}
           </div>
-          <div className="results--container--result">
-            <h2>Tv Shows</h2>
-            <div className="cards-container">
-              {results.tvShows.length !== 0 ? (
+        </div>
+        <div className="results--container--result">
+          <h2>Tv Shows</h2>
+          <div className="cards-container">
+            {!loading ? (
+              results.tvShows.length !== 0 ? (
                 results.tvShows.map((item) => (
                   <PosterCard key={item.id} data={item} />
                 ))
               ) : (
                 <p>No Results</p>
-              )}
-            </div>
+              )
+            ) : (
+              loadingArray.map((key) => (
+                <SimpleLoader key={key} className="loading--card--poster" />
+              ))
+            )}
           </div>
         </div>
-      ) : (
-        ""
-      )}
+      </div>
     </div>
   );
 };
