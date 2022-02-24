@@ -11,6 +11,7 @@ import Details from "./components/Details";
 import Home from "./pages/Home";
 import Query from "./pages/Query";
 import Genre from "./pages/Genre";
+import Results from "./pages/Results";
 
 const App = () => {
   const [detailsVisible, setDetailsVisible] = useState(false);
@@ -50,6 +51,8 @@ const App = () => {
         <Route path="genre/:query" element={<Genre />}>
           <Route path=":genreId" element={<Genre />} />
         </Route>
+
+        <Route path="search/:searchQuery" element={<Results />} />
 
         <Route path="*" element={<div>It nothing here</div>} />
       </Routes>

@@ -39,14 +39,18 @@ const Details = ({ query, setDetailsVisible }) => {
   }, [id, query, setDetailsVisible]);
 
   useEffect(() => {
-    if (loading == 'almost') {
+    if (loading === "almost") {
       let filteredVideos = videos.filter((video) => {
         let name = video.name.toLowerCase();
-        if (name.includes('trailer') || name.includes('teaser')) {
-          return video;
-        };
+        let output;
+
+        if (name.includes("trailer") || name.includes("teaser")) {
+          output = video;
+        }
+        return output;
       });
-      loading == 'almost' && setVideos(filteredVideos);
+
+      loading === "almost" && setVideos(filteredVideos);
       setLoading(false);
     }
   }, [videos, loading]);
@@ -65,7 +69,9 @@ const Details = ({ query, setDetailsVisible }) => {
         }}
       >
         <div className="close-btn">
-          <button><FontAwesomeIcon icon={faXmarkCircle} /></button>
+          <button>
+            <FontAwesomeIcon icon={faXmarkCircle} />
+          </button>
         </div>
       </div>
       <div className="details">
@@ -95,7 +101,9 @@ const Details = ({ query, setDetailsVisible }) => {
                       details.genres[details.genres.length - 1].id
                     }`}
                   >
-                    <span>{details.genres[details.genres.length - 1].name}</span>
+                    <span>
+                      {details.genres[details.genres.length - 1].name}
+                    </span>
                   </Link>
                 </p>
               </div>
@@ -109,7 +117,9 @@ const Details = ({ query, setDetailsVisible }) => {
                   <h3>Seasons</h3>
                   <div>
                     {details.seasons.map((season) => (
-                      <span key={season.name}>{season.name} : {season.episode_count + " episodes"}</span>
+                      <span key={season.name}>
+                        {season.name} : {season.episode_count + " episodes"}
+                      </span>
                     ))}
                   </div>
                 </div>
@@ -134,18 +144,25 @@ const Details = ({ query, setDetailsVisible }) => {
                     <div>
                       {removeDuplicates(castCrew[key], "name").map(
                         (personData) => (
-                          <ProfileCard key={personData.name} data={personData} />
-                        ))}
+                          <ProfileCard
+                            key={personData.name}
+                            data={personData}
+                          />
+                        )
+                      )}
                     </div>
                   </div>
-                );}
+                );
+              }
               return output;
             })}
             {videos.length !== 0 && (
               <div className="details--videos">
                 <h3>Videos</h3>
                 <div>
-                  {videos.map((video) => <EmbeddedVideo key={video.id} id={video.key} /> )}
+                  {videos.map((video) => (
+                    <EmbeddedVideo key={video.id} id={video.key} />
+                  ))}
                 </div>
               </div>
             )}

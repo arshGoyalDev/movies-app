@@ -30,13 +30,7 @@ const fetchMoreData = async (query, genreId, page) => {
 
 // fetch details for given query Args: query, id, setFunction, setLoading
 const fetchDetails = async (
-  query,
-  id,
-  setDetails,
-  setCastCrew,
-  setVideos,
-  setSimilar,
-  setLoading
+  query, id, setDetails, setCastCrew, setVideos, setSimilar, setLoading
 ) => {
   let url = `https://api.themoviedb.org/3/${query}/${id}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`;
   let urlCastCrew = `https://api.themoviedb.org/3/${query}/${id}/credits?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`;
@@ -60,4 +54,21 @@ const fetchDetails = async (
   setLoading('almost');
 };
 
-export { fetchData, fetchGenreData, fetchMoreData, fetchDetails };
+const fetchResults = async (searchQuery, setResults, setLoading) => {
+  let urlTv = `https://api.themoviedb.org/3/search/tv?api_key=46f3e66941cef78aa9e97f804729bc67&language=en-US&page=1&query=${searchQuery}&include_adult=false`;
+  let urlMovies = `https://api.themoviedb.org/3/search/movie?api_key=46f3e66941cef78aa9e97f804729bc67&language=en-US&query=${searchQuery}&page=1&include_adult=false`;
+
+  const resTv = await fetch(urlTv);
+  const resMovies = await fetch(urlMovies);
+
+  const dataTv = await resTv.json();
+  const dataMovies = await resMovies.json();
+
+  setResults({
+    movies: dataMovies.results,
+    tvShows: dataTv.results,
+  })
+  setLoading(false);
+};
+
+export { fetchData, fetchGenreData, fetchMoreData, fetchDetails, fetchResults };
