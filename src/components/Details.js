@@ -38,6 +38,19 @@ const Details = ({ query, setDetailsVisible }) => {
     setDetailsVisible(true);
   }, [id, query, setDetailsVisible]);
 
+  useEffect(() => {
+    if (loading == 'almost') {
+      let filteredVideos = videos.filter((video) => {
+        let name = video.name.toLowerCase();
+        if (name.includes('trailer') || name.includes('teaser')) {
+          return video;
+        };
+      });
+      loading == 'almost' && setVideos(filteredVideos);
+      setLoading(false);
+    }
+  }, [videos, loading]);
+
   const removeDuplicates = (array, key) => {
     return [...new Map(array.map((item) => [item[key], item])).values()];
   };
@@ -82,9 +95,7 @@ const Details = ({ query, setDetailsVisible }) => {
                       details.genres[details.genres.length - 1].id
                     }`}
                   >
-                    <span>
-                      {details.genres[details.genres.length - 1].name}
-                    </span>
+                    <span>{details.genres[details.genres.length - 1].name}</span>
                   </Link>
                 </p>
               </div>
@@ -98,9 +109,7 @@ const Details = ({ query, setDetailsVisible }) => {
                   <h3>Seasons</h3>
                   <div>
                     {details.seasons.map((season) => (
-                      <span key={season.name}>
-                        {season.name} : {season.episode_count + " episodes"}
-                      </span>
+                      <span key={season.name}>{season.name} : {season.episode_count + " episodes"}</span>
                     ))}
                   </div>
                 </div>
@@ -125,22 +134,18 @@ const Details = ({ query, setDetailsVisible }) => {
                     <div>
                       {removeDuplicates(castCrew[key], "name").map(
                         (personData) => (
-                          <ProfileCard key={personData.name} data={personData}/>
+                          <ProfileCard key={personData.name} data={personData} />
                         ))}
                     </div>
                   </div>
-                )}
+                );}
               return output;
             })}
-            {videos.filter((video) => video.name.includes("Trailer")).length !==
-              0 && (
+            {videos.length !== 0 && (
               <div className="details--videos">
                 <h3>Videos</h3>
                 <div>
-                  {videos
-                    .filter((video) => video.name.includes("Trailer"))
-                    .map((video) => (<EmbeddedVideo key={video.id} id={video.key} />)
-                    )}
+                  {videos.map((video) => <EmbeddedVideo key={video.id} id={video.key} /> )}
                 </div>
               </div>
             )}
@@ -148,7 +153,9 @@ const Details = ({ query, setDetailsVisible }) => {
               <div className="details--similar">
                 <h3>similar {query === "movie" ? "movies" : "tv shows"}</h3>
                 <div>
-                  {similar.map((item) => (<BackdropCard key={item.id} data={item} />))}
+                  {similar.map((item) => (
+                    <BackdropCard key={item.id} data={item} />
+                  ))}
                 </div>
               </div>
             )}

@@ -57,7 +57,7 @@ const fetchDetails = async (
   setCastCrew(dataCastCrew);
   setVideos(dataVideos.results);
   setSimilar(dataSimilar.results);
-  setLoading(false);
+  setLoading('almost');
 };
 
 export { fetchData, fetchGenreData, fetchMoreData, fetchDetails };
