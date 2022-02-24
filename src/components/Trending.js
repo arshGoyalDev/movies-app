@@ -32,7 +32,7 @@ const Trending = ({ queryType }) => {
     return () => clearTimeout(timeout);
     // eslint-disable-next-line
   }, [index]);
-
+  
   const prevBtnClick = () => {
     index === 0 ? setIndex(trendingData.length - 1) : setIndex(index - 1);
   };
@@ -50,14 +50,14 @@ const Trending = ({ queryType }) => {
       {trendingData !== "" ? (
         <>
           <div className="trending--items">
-            <TrendingItem
+            {/* <TrendingItem
               key={
                 trendingData[index].title
                   ? trendingData[index].title
                   : trendingData[index].name
               }
               data={trendingData[index]}
-            />
+            /> */}
             <div className="trending--items--cards">
               {trendingData.map((item) => (
                 <button
