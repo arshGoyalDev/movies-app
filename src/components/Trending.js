@@ -52,7 +52,7 @@ const Trending = ({ queryType }) => {
       {trendingData !== "" ? (
         <>
           <div className="trending--items">
-            {trendingData[index] !== undefined ? (
+            {trendingData[parseInt(index)] !== undefined ? (
               <TrendingItem
                 key={
                   trendingData[index].title
