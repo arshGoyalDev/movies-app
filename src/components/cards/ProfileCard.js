@@ -8,7 +8,7 @@ const ProfileCard = ({ data }) => {
         {!data.profile_path ? (
           <FontAwesomeIcon icon={faUser} />
         ) : (
-          <img src={`https://image.tmdb.org/t/p/w500${data.profile_path}`} />
+          <img src={`https://image.tmdb.org/t/p/w500${data.profile_path}`} alt={data.name} />
         )}
       </div>
 
