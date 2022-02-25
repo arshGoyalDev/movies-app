@@ -31,7 +31,7 @@ const BackDropCard = ({ data }) => {
       >
         {data.vote_average !== 0 && (
           <div className="backdrop-card--body--rating">
-            <FontAwesomeIcon icon={faHeart} /> {data.vote_average}
+            <FontAwesomeIcon icon={faHeart} /> {data.vote_average.toFixed(1)}
           </div>
         )}
         <div className="backdrop-card--body--details">
