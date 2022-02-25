@@ -1,0 +1,63 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.footer {
+  position: relative;
+  padding-block: 20px;
+  margin: 40px 30px 0;
+  // border-top: 2px solid lighten($color: $background, $amount: 10%);
+  // border-top: rgba($color: #, $alpha: 1.0);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 102%;
+    height: 2px;
+    background: lighten($color: $background, $amount: 5%);
+  }
+
+  &--info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &--attribution {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+
+    &--api {
+      display: flex;
+      align-items: flex-end;
+      flex-direction: column;
+      gap: 5px;
+      text-align: right;
+
+      a {
+        width: max-content;
+
+        img {
+          width: 200px;
+        }
+      }
+    }
+  }
+
+  @include media-md-2 {
+    margin-inline: 50px;
+  }
+
+  @include media-lg {
+    margin-inline: 100px;
+  }
+
+  @include media-xl {
+    margin-inline: 160px;
+  }
+}

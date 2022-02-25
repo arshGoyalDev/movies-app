@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom";
 
 import NavBar from "./components/NavBar";
 import Details from "./components/Details";
+import Footer from "./components/Footer";
 
 import Home from "./pages/Home";
 import Query from "./pages/Query";
@@ -56,6 +57,8 @@ const App = () => {
 
         <Route path="*" element={<div>It nothing here</div>} />
       </Routes>
+
+      <Footer />
     </div>
   );
 };

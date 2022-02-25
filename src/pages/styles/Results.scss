@@ -1,13 +1,16 @@
+@use "../../components/styles/variables" as *;
+@use "../../components/styles/mixins" as *;
+
 .results {
   padding-inline: 30px;
   margin-top: 15px;
 
   h1 {
-    color: darken($color: #f5f5f5, $amount: 30%);
+    color: darken($color: $text-primary, $amount: 30%);
     text-transform: capitalize;
 
     span {
-      color: #f5f5f5;
+      color: $text-primary;
     }
   }
 
@@ -32,7 +35,7 @@
     }
   }
 
-  @media (min-width: 33em) {
+  @include media-sm {
     &--container {
       &--result .cards-container {
         flex-direction: row;
@@ -42,15 +45,15 @@
     }
   }
 
-  @media (min-width: 56rem) {
+  @include media-md-2 {
     padding-inline: 50px;
   }
 
-  @media (min-width: 80em) {
+  @include media-lg {
     padding-inline: 100px;
   }
 
-  @media (min-width: 97em) {
+  @include media-xl {
     padding-inline: 160px;
   }
 }

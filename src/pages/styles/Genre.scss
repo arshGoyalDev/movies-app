@@ -1,3 +1,5 @@
+@use '../../components/styles/mixins' as *;
+
 .genre {
   margin-top: 30px;
   padding: 0 30px;
@@ -20,16 +22,16 @@
     }
   }
 
-  @media (min-width: 56rem) {
+   @include media-md-2 {
     padding: 0 50px;
     margin-top: 40px;
   }
 
-  @media (min-width: 80em) {
+   @include media-lg {
     padding: 0 100px;
   }
 
-  @media (min-width: 97em) {
+   @include media-xl{
     padding: 0 160px;
   }
 }
