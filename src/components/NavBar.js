@@ -15,6 +15,7 @@ const NavBar = () => {
   const search = () => {
     if (searchTerm.replaceAll(" ", "").length !== 0) {
       navigate(`/search/q=${searchTerm.replaceAll(" ", "-")}`);
+      setMenuVisible(false);
     }
   };
 
@@ -35,12 +36,12 @@ const NavBar = () => {
         <ul className="nav--menu--list">
           <li>
             <Link to="/movie">
-              <button>Movies</button>
+              <button onClick={() => setMenuVisible(false)}>Movies</button>
             </Link>
           </li>
           <li>
             <Link to="/tv">
-              <button>Tv Shows</button>
+              <button onClick={() => setMenuVisible(false)}>Tv Shows</button>
             </Link>
           </li>
         </ul>

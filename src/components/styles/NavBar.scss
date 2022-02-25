@@ -46,8 +46,33 @@
       list-style: none;
 
       button {
+        position: relative;
+        width: 100%;
+        text-align: start;
         padding: 2px;
         cursor: pointer;
+
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: 1px;
+          left: 50%;
+          transform: translateX(-50%) scaleX(0);
+          transform-origin: right;
+          width: 85%;
+          height: 2px;
+          background: $text-secondary;
+          transition: transform 0.2s;
+        }
+
+        &:hover::before {
+          transform-origin: left;
+          transform: translateX(-50%) scaleX(1);
+        }
+
+        &:focus {
+          outline: none;
+        }
       }
     }
 
@@ -137,5 +162,9 @@
 
   @include media-xl {
     padding: 30px 160px;
+
+    &--menu--list button::before {
+      display: block;
+    }
   }
 }
