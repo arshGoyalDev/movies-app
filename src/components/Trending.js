@@ -52,18 +52,18 @@ const Trending = ({ queryType }) => {
       {trendingData !== "" ? (
         <>
           <div className="trending--items">
-            {trendingData[parseInt(index)] !== undefined ? (
-              <TrendingItem
-                key={
-                  trendingData[index].title
-                    ? trendingData[index].title
-                    : trendingData[index].name
-                }
-                data={trendingData[index]}
-              />
-            ) : (
-              ""
-            )}
+            {trendingData.map((item) => {
+              let output;
+              if (trendingData.indexOf(item) === index) {
+                output = (
+                  <TrendingItem
+                    key={item.title ? item.title : item.name}
+                    data={item}
+                  />
+                );
+              }
+              return output;
+            })}
             <div className="trending--items--cards">
               {trendingData.map((item) => (
                 <button
