@@ -45,8 +45,7 @@
   }
 
   @include media-md {
-
-    &--info{
+    &--info {
       justify-content: space-between;
       flex-direction: row;
     }
