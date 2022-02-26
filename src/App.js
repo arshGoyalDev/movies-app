@@ -13,6 +13,7 @@ import Home from "./pages/Home";
 import Query from "./pages/Query";
 import Genre from "./pages/Genre";
 import Results from "./pages/Results";
+import Error from "./components/Error";
 
 const App = () => {
   const [detailsVisible, setDetailsVisible] = useState(false);
@@ -55,7 +56,7 @@ const App = () => {
 
         <Route path="search/:searchQuery" element={<Results />} />
 
-        <Route path="*" element={<div>It nothing here</div>} />
+        <Route path="*" element={<Error />} />
       </Routes>
 
       <Footer />

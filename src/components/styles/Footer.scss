@@ -5,8 +5,6 @@
   position: relative;
   padding-block: 20px;
   margin: 40px 30px 0;
-  // border-top: 2px solid lighten($color: $background, $amount: 10%);
-  // border-top: rgba($color: #, $alpha: 1.0);
 
   &::before {
     content: "";
@@ -21,23 +19,20 @@
 
   &--info {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
   }
 
   &--attribution {
+    margin-top: 10px;
     display: flex;
-    align-items: flex-end;
-    justify-content: center;
+    align-items: center;
     flex-direction: column;
     gap: 15px;
 
     &--api {
-      display: flex;
-      align-items: flex-end;
-      flex-direction: column;
-      gap: 5px;
-      text-align: right;
+      text-align: center;
 
       a {
         width: max-content;
@@ -45,6 +40,27 @@
         img {
           width: 200px;
         }
+      }
+    }
+  }
+
+  @include media-md {
+
+    &--info{
+      justify-content: space-between;
+      flex-direction: row;
+    }
+    &--attribution {
+      margin-top: 0;
+      align-items: flex-end;
+      justify-content: center;
+
+      &--api {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        gap: 5px;
+        text-align: right;
       }
     }
   }

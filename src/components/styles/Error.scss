@@ -1,0 +1,58 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 30px;
+
+  .small{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .large {
+    display: none;
+  }
+  
+  &--actions {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    
+    button {
+      color: $background;
+      font-weight: $fw-bold;
+      padding: 8px 20px;
+      background: $call-to-action;
+      border-radius: 5px;
+    }
+  }
+
+  @include media-md-2 {
+    .small {
+      width: 50%;
+    }
+  }
+
+  @include media-lg {
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
+
+    .small {
+      display: none;
+    }
+
+    .large {
+      width: 40%;
+      display: block;
+    }
+
+    &--actions {
+      align-items: flex-start;
+    }
+  }
+}
