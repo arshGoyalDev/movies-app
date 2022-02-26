@@ -37,7 +37,7 @@ const Results = () => {
                   <PosterCard key={item.id} data={item} />
                 ))
               ) : (
-                <p>No Results</p>
+                <p>😔 No Results</p>
               )
             ) : (
               loadingArray.map((key) => (
@@ -55,7 +55,7 @@ const Results = () => {
                   <PosterCard key={item.id} data={item} />
                 ))
               ) : (
-                <p>No Results</p>
+                <p>😔 No Results</p>
               )
             ) : (
               loadingArray.map((key) => (
