@@ -4,8 +4,7 @@ import "./styles/Details.scss";
 
 import { Link, useNavigate, useParams } from "react-router-dom";
 
-import { fetchDetails } from "../utils/fetch";
-import { releaseDate, convertMinsToHrsMins } from "../utils/time";
+import { fetchDetails, releaseDate, convertMinsToHrsMins } from "../utils";
 
 import ProfileCard from "./cards/ProfileCard";
 import EmbeddedVideo from "./EmbeddedVideo";

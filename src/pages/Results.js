@@ -1,8 +1,11 @@
 import "./styles/Results.scss";
 
-import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { fetchResults } from "../utils/fetch";
+
+import { useParams } from "react-router-dom";
+
+import { fetchResults } from "../utils";
+
 import PosterCard from "../components/cards/PosterCard";
 import SimpleLoader from "../components/loaders/SimpleLoader";
 

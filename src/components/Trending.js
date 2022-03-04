@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import "./styles/Trending.scss";
 
-import { fetchData } from "../utils/fetch";
+import { fetchData } from "../utils";
 
 import TrendingItem from "./TrendingItem";
 import SimpleLoader from "./loaders/SimpleLoader";

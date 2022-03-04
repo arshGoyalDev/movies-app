@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 import { useParams } from "react-router-dom";
 
-import { fetchGenreData, fetchMoreData } from "../utils/fetch";
+import { fetchGenreData, fetchMoreData } from "../utils";
 
 import Genres from "../components/Genres";
 import PosterCard from "../components/cards/PosterCard";
