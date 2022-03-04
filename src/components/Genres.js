@@ -13,7 +13,7 @@ const Genres = ({ query, selected, id }) => {
 
   useEffect(() => {
     fetchData(
-      `https://api.themoviedb.org/3/genre/${query}/list?api_key=46f3e66941cef78aa9e97f804729bc67&language=en-US`,
+      `https://api.themoviedb.org/3/genre/${query}/list?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`,
       setGenreList,
       false
     );

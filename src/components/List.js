@@ -19,7 +19,7 @@ const List = ({ heading, queryType, query, all, page, defined, data }) => {
   useEffect(() => {
     !defined &&
       fetchData(
-        `https://api.themoviedb.org/3/${queryType}/${query}?api_key=46f3e66941cef78aa9e97f804729bc67&language=en-US&page=${page}
+        `https://api.themoviedb.org/3/${queryType}/${query}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=${page}
     `,
         setListData,
         true
