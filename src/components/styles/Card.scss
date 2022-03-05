@@ -83,7 +83,7 @@
   }
 
   @include media-lg {
-    background: transparent;
+    background: rgba($color: #000, $alpha: 0.2);
     transition: 0.5s;
 
     &--body {

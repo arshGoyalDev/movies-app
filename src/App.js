@@ -8,12 +8,12 @@ import { Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Details from "./components/Details";
 import Footer from "./components/Footer";
+import Error from "./components/Error";
 
 import Home from "./pages/Home";
 import Query from "./pages/Query";
 import Genre from "./pages/Genre";
 import Results from "./pages/Results";
-import Error from "./components/Error";
 
 const App = () => {
   const [detailsVisible, setDetailsVisible] = useState(false);
