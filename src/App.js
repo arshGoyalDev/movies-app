@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import NavBar from "./components/NavBar";
-import Details from "./components/Details";
+import { Details } from "./components/Details";
 import Footer from "./components/Footer";
 import Error from "./components/Error";
 

@@ -1,5 +1,5 @@
-@use "variables" as *;
-@use "mixins" as *;
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
 
 .details--wrapper {
   position: fixed;
@@ -124,12 +124,13 @@
     }
 
     &--card {
+      display: grid;
+      place-items: center;
       position: relative;
-      min-width: 120px;
-      max-width: 140px;
-      height: 160px;
+      min-width: 140px;
+      max-width: 160px;
+      height: 180px;
       background: rgba($color: #000, $alpha: 0.6);
-      border: 5px solid $text-tertiary;
       border-radius: 10px;
       overflow: hidden;
       cursor: default;
@@ -153,11 +154,12 @@
       &--body {
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
         gap: 2px;
-        width: 100%;
-        height: 100%;
+        border: 2px solid $text-secondary;
+        width: 95%;
+        height: 95%;
         padding: 10px;
+        border-radius: 10px;
 
         .role {
           color: $text-secondary;
@@ -267,6 +269,65 @@
     &--similar > h3,
     &--similar > div {
       padding-inline: 60px;
+    }
+
+    &--cast--card,
+    &--crew--card {
+      background: transparent;
+      transition: 0.5s;
+
+      &--photo {
+        top: 0;
+        left: 0;
+        transition: width 0.5s;
+        
+        img {
+          height: 200px;
+          transition: 1s;
+        }
+      }
+
+      .not {
+        width: 100% !important;
+        background: rgba($color: $background, $alpha: 1);
+      }
+      
+      &:hover {
+        background: rgba($color: $background, $alpha: 0.6);
+
+        .details--cast--card {
+          &--photo {
+            width: 300px;
+            
+            img {
+              width: 300px;
+            }
+          }
+
+          &--body {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+      }
+
+      &--body {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        border: 2px solid $text-secondary;
+        width: 95%;
+        height: 95%;
+        padding: 10px;
+        border-radius: 10px;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.5s;
+
+        .role {
+          color: $text-secondary;
+        }
+      }
     }
 
     &--videos > div .video {

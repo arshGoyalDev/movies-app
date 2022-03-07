@@ -27,40 +27,40 @@ const fetchMoreData = async (query, genreId, page) => {
   return data;
 };
 
-// fetch details for given query Args: query, id, setDetails, setCastCrew, setVideos, setSimilar, setLoading
+// fetch details for given query Args: query, id, setDetails, setCastCrew, setVideos, setRecommended, setLoading
 const fetchDetails = async (
   query,
   id,
   setDetails,
   setCastCrew,
   setVideos,
-  setSimilar,
+  setRecommended,
   setLoading
 ) => {
   let url = `https://api.themoviedb.org/3/${query}/${id}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`;
   let urlCastCrew = `https://api.themoviedb.org/3/${query}/${id}/credits?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`;
   let urlVideos = `https://api.themoviedb.org/3/${query}/${id}/videos?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`;
-  let urlSimilar = `https://api.themoviedb.org/3/${query}/${id}/recommendations?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`;
+  let urlRecommended = `https://api.themoviedb.org/3/${query}/${id}/recommendations?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`;
   let urlReviews = `https://api.themoviedb.org/3/${query}/${id}/reviews?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`
 
   const res = await fetch(url);
   const resCastCrew = await fetch(urlCastCrew);
   const resVideos = await fetch(urlVideos);
-  const resSimilar = await fetch(urlSimilar);
+  const resRecommended = await fetch(urlRecommended);
   const resReviews = await fetch(urlReviews);
 
   const data = await res.json();
   const dataCastCrew = await resCastCrew.json();
   const dataVideos = await resVideos.json();
-  const dataSimilar = await resSimilar.json();
+  const dataRecommended = await resRecommended.json();
   const dataReviews = await resReviews.json();
 
   setDetails(data);
   setCastCrew(dataCastCrew);
   setVideos(dataVideos.results);
-  setSimilar(dataSimilar.results);
+  setRecommended(dataRecommended.results);
   console.log(dataReviews);
-  setLoading("almost");
+  setLoading('almost');
 };
 
 // fetch results for given Args: searchQuery, setResults, setLoading
