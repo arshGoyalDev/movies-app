@@ -7,6 +7,7 @@ import { fetchDetails } from "../../utils";
 import { DetailsLoader } from "../loaders";
 import DetailsOther from "./DetailsOther";
 import CastCrew from "./CastCrew";
+import Reviews from "./Reviews";
 import Videos from "./Videos";
 import Recommended from "./Recommended";
 
@@ -18,6 +19,7 @@ const Details = ({ query, setDetailsVisible }) => {
   const navigate = useNavigate();
   const [details, setDetails] = useState({});
   const [castCrew, setCastCrew] = useState([]);
+  const [reviews, setReviews] = useState([]);
   const [videos, setVideos] = useState([]);
   const [recommended, setRecommended] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -28,6 +30,7 @@ const Details = ({ query, setDetailsVisible }) => {
       id,
       setDetails,
       setCastCrew,
+      setReviews,
       setVideos,
       setRecommended,
       setLoading
@@ -77,7 +80,8 @@ const Details = ({ query, setDetailsVisible }) => {
             </div>
             <DetailsOther details={details} query={query} />
             <CastCrew data={castCrew} />
-            {/* <Videos data={videos} /> */}
+            <Reviews data={reviews} />
+            <Videos data={videos} />
             <Recommended data={recommended} />
           </>
         ) : (

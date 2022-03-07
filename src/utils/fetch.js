@@ -33,6 +33,7 @@ const fetchDetails = async (
   id,
   setDetails,
   setCastCrew,
+  setReviews,
   setVideos,
   setRecommended,
   setLoading
@@ -45,21 +46,21 @@ const fetchDetails = async (
 
   const res = await fetch(url);
   const resCastCrew = await fetch(urlCastCrew);
+  const resReviews = await fetch(urlReviews);
   const resVideos = await fetch(urlVideos);
   const resRecommended = await fetch(urlRecommended);
-  const resReviews = await fetch(urlReviews);
 
   const data = await res.json();
   const dataCastCrew = await resCastCrew.json();
+  const dataReviews = await resReviews.json();
   const dataVideos = await resVideos.json();
   const dataRecommended = await resRecommended.json();
-  const dataReviews = await resReviews.json();
 
   setDetails(data);
   setCastCrew(dataCastCrew);
+  setReviews(dataReviews);
   setVideos(dataVideos.results);
   setRecommended(dataRecommended.results);
-  console.log(dataReviews);
   setLoading('almost');
 };
 

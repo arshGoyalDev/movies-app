@@ -54,7 +54,7 @@
 
   @supports (backdrop-filter: blur(60px)) {
     background: rgba($color: $background, $alpha: 0.8);
-    backdrop-filter: blur(40px);
+    backdrop-filter: blur(30px);
   }
 
   &::-webkit-scrollbar {
@@ -112,15 +112,6 @@
   &--crew {
     h3 {
       text-transform: capitalize;
-      padding-inline: 20px;
-      margin-bottom: 10px;
-    }
-
-    & > div {
-      display: flex;
-      gap: 10px;
-      padding-inline: 20px;
-      overflow-x: auto;
     }
 
     &--card {
@@ -168,18 +159,32 @@
     }
   }
 
-  &--videos {
-    h3 {
-      padding-inline: 20px;
+  &--reviews {
+    &--cards {
+      .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-width: 300px;
+        max-width: 300px;
+        padding: 15px;
+        border: 2px solid $text-tertiary;
+        border-radius: 10px;
+        box-shadow: 0 0 40px rgba($color: #000, $alpha: 0.6);
+        cursor: default;
+
+        &--footer {
+          margin-top: 10px;
+          .author-name {
+            color: $text-secondary;
+          }
+        }
+      }
     }
+  }
 
+  &--videos {
     & > div {
-      display: flex;
-      gap: 15px;
-      padding-inline: 20px;
-      margin-top: 10px;
-      overflow-x: auto;
-
       .video {
         min-width: 260px;
         height: 160px;
@@ -194,19 +199,12 @@
     }
   }
 
-  &--similar {
+  &--recommended {
     & > h3 {
       text-transform: capitalize;
-      padding-inline: 20px;
     }
 
     & > div {
-      display: flex;
-      gap: 10px;
-      padding-inline: 20px;
-      margin-top: 15px;
-      overflow-x: auto;
-
       & > div {
         min-width: 280px !important;
         max-width: 280px !important;
@@ -215,18 +213,32 @@
     }
   }
 
-  &--cast > div,
-  &--crew > div,
-  &--videos > div,
-  &--similar > div {
-    padding-bottom: 20px;
+  &--cast,
+  &--crew,
+  &--reviews,
+  &--videos,
+  &--recommended {
+    margin-bottom: 20px;
 
-    @supports (scrollbar-width: none) {
-      scrollbar-width: none;
+    h3 {
+      padding-inline: 20px;
     }
 
-    &::-webkit-scrollbar {
-      height: 0;
+    & > div {
+      display: flex;
+      gap: 15px;
+      overflow-x: auto;
+      overflow-y: visible;
+      padding-inline: 20px;
+      margin-top: 10px;
+
+      @supports (scrollbar-width: none) {
+        scrollbar-width: none;
+      }
+
+      &::-webkit-scrollbar {
+        height: 0;
+      }
     }
   }
 
@@ -239,10 +251,12 @@
     &--crew h3,
     &--crew > div,
     &--other,
+    &--reviews h3,
+    &--reviews > div,
     &--videos h3,
     &--videos > div,
-    &--similar > h3,
-    &--similar > div {
+    &--recommended > h3,
+    &--recommended > div {
       padding-inline: 50px;
     }
   }
@@ -264,10 +278,12 @@
     &--crew h3,
     &--crew > div,
     &--other,
+    &--reviews h3,
+    &--reviews > div,
     &--videos h3,
     &--videos > div,
-    &--similar > h3,
-    &--similar > div {
+    &--recommended > h3,
+    &--recommended > div {
       padding-inline: 60px;
     }
 
@@ -280,26 +296,29 @@
         top: 0;
         left: 0;
         transition: width 0.5s;
-        
+        font-size: 1rem;
+
         img {
-          height: 200px;
           transition: 1s;
         }
       }
 
       .not {
+        border: 2px solid $text-secondary;
+        font-size: 3rem;
         width: 100% !important;
         background: rgba($color: $background, $alpha: 1);
       }
-      
+
       &:hover {
         background: rgba($color: $background, $alpha: 0.6);
 
         .details--cast--card {
           &--photo {
             width: 280px;
-            
+
             img {
+              height: 200px;
               width: 280px;
             }
           }
