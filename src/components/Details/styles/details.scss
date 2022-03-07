@@ -171,7 +171,7 @@
         border: 2px solid $text-tertiary;
         border-radius: 10px;
         box-shadow: 0 0 40px rgba($color: #000, $alpha: 0.6);
-        cursor: default;
+        cursor: pointer;
 
         &--footer {
           margin-top: 10px;
@@ -299,6 +299,7 @@
         font-size: 1rem;
 
         img {
+          height: 200px;
           transition: 1s;
         }
       }
@@ -318,7 +319,6 @@
             width: 280px;
 
             img {
-              height: 200px;
               width: 280px;
             }
           }
