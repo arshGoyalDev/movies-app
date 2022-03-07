@@ -4,7 +4,7 @@ const ReviewCard = ({ data }) => {
       href={data.url}
       className="card"
       target="_blank"
-      rel="norefferer noopener"
+      rel="noreferrer noopener"
     >
       <div className="card--body">{data.content.slice(0, 150)}...</div>
       <div className="card--footer">

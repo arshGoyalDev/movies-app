@@ -78,6 +78,7 @@ const Details = ({ query, setDetailsVisible }) => {
               <h1>{details.title ? details.title : details.name}</h1>
               <p>{details.tagline ? details.tagline : ""}</p>
             </div>
+            
             <DetailsOther details={details} query={query} />
             <CastCrew data={castCrew} />
             <Reviews data={reviews} />

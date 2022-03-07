@@ -1,10 +1,6 @@
 import { ProfileCard } from "../cards";
 
 const CastCrew = ({ data }) => {
-  const removeDuplicates = (array, key) => {
-    return [...new Map(array.map((item) => [item[key], item])).values()];
-  };
-
   return (
     <>
       {Object.keys(data).map((key) => {
