@@ -1,5 +1,4 @@
 import "./components/styles/App.scss";
-import "./components/styles/Loading.scss";
 
 import { useEffect, useState } from "react";
 

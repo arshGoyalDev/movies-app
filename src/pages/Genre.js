@@ -7,9 +7,8 @@ import { useParams } from "react-router-dom";
 import { fetchGenreData, fetchMoreData } from "../utils";
 
 import Genres from "../components/Genres";
-import PosterCard from "../components/cards/PosterCard";
-import SimpleLoader from "../components/loaders/SimpleLoader";
-import SpinnerLoader from "../components/loaders/SpinnerLoader";
+import { PosterCard } from "../components/cards";
+import { SimpleLoader, SpinnerLoader } from "../components/loaders";
 
 import InfiniteScroll from "react-infinite-scroll-component";
 

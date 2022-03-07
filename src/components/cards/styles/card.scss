@@ -1,5 +1,6 @@
-@use "variables" as *;
-@use "mixins" as *;
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
 
 .backdrop-card {
   position: relative;

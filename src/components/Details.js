@@ -6,10 +6,10 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 
 import { fetchDetails, releaseDate, convertMinsToHrsMins } from "../utils";
 
-import ProfileCard from "./cards/ProfileCard";
+import { ProfileCard } from "./cards";
 import EmbeddedVideo from "./EmbeddedVideo";
 import BackdropCard from "./cards/BackdropCard";
-import DetailsLoader from "./loaders/DetailsLoader";
+import { DetailsLoader } from "./loaders";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmarkCircle } from "@fortawesome/free-regular-svg-icons";

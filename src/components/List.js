@@ -4,8 +4,8 @@ import "./styles/List.scss";
 
 import { fetchData } from "../utils";
 
-import BackdropCard from "./cards/BackdropCard";
-import SimpleLoader from "./loaders/SimpleLoader";
+import { BackdropCard } from "./cards";
+import { SimpleLoader } from "./loaders";
 
 import { Link } from "react-router-dom";
 

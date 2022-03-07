@@ -1,4 +1,4 @@
-import "../styles/Card.scss";
+import "./styles/card.scss";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsis, faHeart } from "@fortawesome/free-solid-svg-icons";
