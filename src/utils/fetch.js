@@ -61,8 +61,8 @@ const fetchDetails = async (
 
 // fetch results for given Args: searchQuery, setResults, setLoading
 const fetchResults = async (searchQuery, setResults, setLoading) => {
-  let urlTv = `https://api.themoviedb.org/3/search/tv?api_key=46f3e66941cef78aa9e97f804729bc67&language=en-US&page=1&query=${searchQuery}&include_adult=false`;
-  let urlMovies = `https://api.themoviedb.org/3/search/movie?api_key=46f3e66941cef78aa9e97f804729bc67&language=en-US&query=${searchQuery}&page=1&include_adult=false`;
+  let urlTv = `https://api.themoviedb.org/3/search/tv?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1&query=${searchQuery}&include_adult=false`;
+  let urlMovies = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&query=${searchQuery}&page=1&include_adult=false`;
 
   const resTv = await fetch(urlTv);
   const resMovies = await fetch(urlMovies);

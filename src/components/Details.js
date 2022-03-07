@@ -6,10 +6,9 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 
 import { fetchDetails, releaseDate, convertMinsToHrsMins } from "../utils";
 
-import { ProfileCard } from "./cards";
-import EmbeddedVideo from "./EmbeddedVideo";
-import BackdropCard from "./cards/BackdropCard";
+import { ProfileCard, BackdropCard } from "./cards";
 import { DetailsLoader } from "./loaders";
+import EmbeddedVideo from "./EmbeddedVideo";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmarkCircle } from "@fortawesome/free-regular-svg-icons";
@@ -88,22 +87,26 @@ const Details = ({ query, setDetailsVisible }) => {
               <div className="genre">
                 <h3>Genre</h3>
                 <p>
-                  {details.genres
-                    .slice(0, details.genres.length - 1)
-                    .map((item) => (
-                      <Link key={item.id} to={`/genre/${query}/${item.id}`}>
-                        <span>{item.name + ", "}</span>
+                  {details.genres[1] !== undefined ? (
+                    <>
+                      {details.genres
+                        .slice(0, details.genres.length - 1)
+                        .map((item) => (
+                          <Link key={item.id} to={`/genre/${query}/${item.id}`}>
+                            <span>{item.name + ", "}</span>
+                          </Link>
+                        ))}
+                      <Link
+                        to={`/genre/${query}/${
+                          details.genres[details.genres.length - 1]?.id
+                        }`}
+                      >
+                        <span>
+                          {details.genres[details.genres.length - 1]?.name}
+                        </span>
                       </Link>
-                    ))}
-                  <Link
-                    to={`/genre/${query}/${
-                      details.genres[details.genres.length - 1].id
-                    }`}
-                  >
-                    <span>
-                      {details.genres[details.genres.length - 1].name}
-                    </span>
-                  </Link>
+                    </>
+                  ) : ( <span>No genres</span> )}
                 </p>
               </div>
               {details.runtime ? (
@@ -123,16 +126,14 @@ const Details = ({ query, setDetailsVisible }) => {
                   </div>
                 </div>
               )}
-              <div className="release-date">
-                <h3>Release Date</h3>
-                <p>
-                  {releaseDate(
-                    details.release_date
-                      ? details.release_date
-                      : details.first_air_date
-                  )}
-                </p>
-              </div>
+              {query === 'movie' && (
+                <div className="release-date">
+                  <h3>Release Date</h3>
+                  <p>
+                    {details.release_date ? releaseDate(details.release_date) : "Not Defined"}
+                  </p>
+                </div>
+              )}
             </div>
             {Object.keys(castCrew).map(function (key) {
               let output = "";
@@ -147,12 +148,10 @@ const Details = ({ query, setDetailsVisible }) => {
                             key={personData.name}
                             data={personData}
                           />
-                        )
-                      )}
+                        ))}
                     </div>
                   </div>
-                );
-              }
+                )}
               return output;
             })}
             {videos.length !== 0 && (

@@ -11,7 +11,7 @@ import SimpleLoader from "../components/loaders/SimpleLoader";
 
 const Results = () => {
   const params = useParams();
-  const searchQuery = params.searchQuery.replace("q=", "").replaceAll("-", " ");
+  const searchQuery = params.searchQuery.replaceAll("-", " ");
   const [results, setResults] = useState({
     movies: [],
     tvShows: [],

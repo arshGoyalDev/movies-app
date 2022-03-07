@@ -14,7 +14,7 @@ const NavBar = () => {
 
   const search = () => {
     if (searchTerm.replaceAll(" ", "").length !== 0) {
-      navigate(`/search/q=${searchTerm.replaceAll(" ", "-")}`);
+      navigate(`/search/${searchTerm.replaceAll(" ", "-")}`);
       setMenuVisible(false);
     }
   };
