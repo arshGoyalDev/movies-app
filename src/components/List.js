@@ -17,13 +17,12 @@ const List = ({ heading, queryType, query, all, page, defined, data }) => {
   const loadingArray = [1, 2, 3, 4, 5, 6, 7];
 
   useEffect(() => {
-    !defined &&
-      fetchData(
-        `https://api.themoviedb.org/3/${queryType}/${query}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=${page}
+    fetchData(
+      `https://api.themoviedb.org/3/${queryType}/${query}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=${page}
     `,
-        setListData,
-        true
-      );
+      setListData,
+      true
+    );
     // eslint-disable-next-line
   }, []);
 
