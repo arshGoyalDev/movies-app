@@ -14,8 +14,8 @@ const CastCrew = ({ data }) => {
             <div key={key} className={`details--${key}`}>
               <h3>{key}</h3>
               <div>
-                {removeDuplicates(data[key], "name").map((personData) => (
-                  <ProfileCard key={personData.name} data={personData} />
+                {data[key].map((member) => (
+                  <ProfileCard key={member.credit_id} data={member} />
                 ))}
               </div>
             </div>

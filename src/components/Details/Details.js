@@ -77,7 +77,7 @@ const Details = ({ query, setDetailsVisible }) => {
             </div>
             <DetailsOther details={details} query={query} />
             <CastCrew data={castCrew} />
-            <Videos data={videos} />
+            {/* <Videos data={videos} /> */}
             <Recommended data={recommended} />
           </>
         ) : (
