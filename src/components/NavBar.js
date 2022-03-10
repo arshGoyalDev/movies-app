@@ -50,7 +50,7 @@ const NavBar = () => {
           <input
             type="input"
             className="nav--menu--search--input"
-            placeholder="Search"
+            placeholder="search..."
             value={searchTerm}
             onChange={(e) => {
               setSearchTerm(e.target.value);
