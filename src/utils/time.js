@@ -1,6 +1,6 @@
 
 // format release date Args: date
-const releaseDate = (date) => {
+const modifyDate = (date) => {
   let releaseDate = new Date(date);
   let month = releaseDate.toLocaleString("default", { month: "long" });
   date = addThToDate(releaseDate.getDate());
@@ -31,4 +31,4 @@ const convertMinsToHrsMins = (mins) => {
   return `${hours} ${mins}`;
 };
 
-export {releaseDate, convertMinsToHrsMins};
+export {modifyDate, convertMinsToHrsMins};

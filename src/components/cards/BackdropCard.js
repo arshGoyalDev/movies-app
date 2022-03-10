@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsis, faHeart } from "@fortawesome/free-solid-svg-icons";
 
 import { useNavigate } from "react-router-dom";
+import { faImage } from "@fortawesome/free-regular-svg-icons";
 
 const BackDropCard = ({ data }) => {
   const navigate = useNavigate();
@@ -14,9 +15,13 @@ const BackDropCard = ({ data }) => {
 
   return (
     <div className="backdrop-card" onClick={clickHandler}>
-      <div className="backdrop-card--backdrop">
+      <div
+        className={`backdrop-card--backdrop ${
+          !data.backdrop_path ? "no-backdrop" : ""
+        }`}
+      >
         {!data.backdrop_path ? (
-          <p>Sorry! No image Available</p>
+          <FontAwesomeIcon icon={faImage} />
         ) : (
           <img
             loading="lazy"

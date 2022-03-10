@@ -1,4 +1,4 @@
-import './styles/ProfileCard.scss';
+import "./styles/ProfileCard.scss";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
@@ -6,11 +6,7 @@ import { faUser } from "@fortawesome/free-regular-svg-icons";
 const ProfileCard = ({ data }) => {
   return (
     <div key={data.name} className="profile-card">
-      <div
-        className={`profile-card--photo ${
-          !data.profile_path ? "not" : ""
-        }`}
-      >
+      <div className={`profile-card--photo ${!data.profile_path ? "not" : ""}`}>
         {!data.profile_path ? (
           <FontAwesomeIcon icon={faUser} />
         ) : (

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import { releaseDate, convertMinsToHrsMins } from "../../utils";
+import { modifyDate, convertMinsToHrsMins } from "../../utils";
 
 const DetailsOther = ({ details, query }) => {
   return (
@@ -56,7 +56,7 @@ const DetailsOther = ({ details, query }) => {
           <h3>Release Date</h3>
           <p>
             {details.release_date
-              ? releaseDate(details.release_date)
+              ? modifyDate(details.release_date)
               : "Not Defined"}
           </p>
         </div>

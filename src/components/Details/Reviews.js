@@ -1,7 +1,6 @@
 import { ReviewCard } from "../cards";
 
 const Reviews = ({ data }) => {
-  console.log(data);
   return (
     <>
       {data.results.length !== 0 && (

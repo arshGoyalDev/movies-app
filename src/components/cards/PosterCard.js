@@ -2,6 +2,7 @@ import "./styles/PosterCard.scss";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsis, faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faImage } from "@fortawesome/free-regular-svg-icons";
 
 import { useNavigate } from "react-router-dom";
 
@@ -14,9 +15,13 @@ const PosterCard = ({ data }) => {
 
   return (
     <div className="poster-card" onClick={clickHandler}>
-      <div className="poster-card--poster">
+      <div
+        className={`poster-card--poster ${
+          !data.poster_path ? "no-poster" : ""
+        }`}
+      >
         {!data.poster_path ? (
-          <p>Sorry! No image Available</p>
+          <FontAwesomeIcon icon={faImage} />
         ) : (
           <img
             src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}

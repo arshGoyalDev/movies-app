@@ -1,2 +1,8 @@
-export { fetchData, fetchGenreData, fetchMoreData, fetchDetails, fetchResults } from './fetch';
-export {releaseDate, convertMinsToHrsMins} from './time';
+export {
+  fetchData,
+  fetchGenreData,
+  fetchMoreData,
+  fetchDetails,
+  fetchResults,
+} from "./fetch";
+export { modifyDate, convertMinsToHrsMins } from "./time";
