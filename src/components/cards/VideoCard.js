@@ -5,8 +5,6 @@ import CardImage from "./CardImage";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 
-import { modifyDate } from "../../utils";
-
 const VideoCard = ({ data, backdrop }) => {
   return (
     <div className="video-card">
