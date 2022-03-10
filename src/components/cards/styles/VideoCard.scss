@@ -4,6 +4,7 @@
 .video-card {
   position: relative;
   min-width: 300px;
+  max-width: 300px;
   height: 160px;
   background: rgba($color: $background, $alpha: 0.7);
   border-radius: 10px;
