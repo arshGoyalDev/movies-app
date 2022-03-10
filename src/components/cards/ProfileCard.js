@@ -1,11 +1,13 @@
+import './styles/ProfileCard.scss';
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 
 const ProfileCard = ({ data }) => {
   return (
-    <div key={data.name} className="details--cast--card">
+    <div key={data.name} className="profile-card">
       <div
-        className={`details--cast--card--photo ${
+        className={`profile-card--photo ${
           !data.profile_path ? "not" : ""
         }`}
       >
@@ -20,7 +22,7 @@ const ProfileCard = ({ data }) => {
         )}
       </div>
 
-      <div className="details--cast--card--body">
+      <div className="profile-card--body">
         <p className="name">{data.name}</p>
         <p className="role">{data.character ? data.character : data.job}</p>
       </div>

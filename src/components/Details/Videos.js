@@ -1,6 +1,6 @@
-import EmbeddedVideo from "../EmbeddedVideo";
+import { VideoCard } from "../cards";
 
-const Videos = ({data}) => {
+const Videos = ({ data, backdrop }) => {
   return (
     <div className="details--videos">
       {data.length !== 0 && (
@@ -8,7 +8,7 @@ const Videos = ({data}) => {
           <h3>Videos</h3>
           <div>
             {data.map((video) => (
-              <EmbeddedVideo key={video.id} id={video.key} />
+              <VideoCard key={video.id} data={video} backdrop={backdrop} />
             ))}
           </div>
         </>

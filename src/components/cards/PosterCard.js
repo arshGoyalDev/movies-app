@@ -1,3 +1,5 @@
+import "./styles/PosterCard.scss";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsis, faHeart } from "@fortawesome/free-solid-svg-icons";
 

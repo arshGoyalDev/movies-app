@@ -1,22 +1,19 @@
 import { useState, useEffect } from "react";
 
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import { fetchDetails } from "../../utils";
 
-import { DetailsLoader } from "../loaders";
 import DetailsOther from "./DetailsOther";
 import CastCrew from "./CastCrew";
 import Reviews from "./Reviews";
 import Videos from "./Videos";
 import Recommended from "./Recommended";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmarkCircle } from "@fortawesome/free-regular-svg-icons";
+import DetailsWrapper from "./DetailsWrapper";
+import { DetailsLoader } from "../loaders";
 
 const Details = ({ query, setDetailsVisible }) => {
   const { id } = useParams();
-  const navigate = useNavigate();
   const [details, setDetails] = useState({});
   const [castCrew, setCastCrew] = useState([]);
   const [reviews, setReviews] = useState([]);
@@ -58,19 +55,7 @@ const Details = ({ query, setDetailsVisible }) => {
 
   return (
     <>
-      <div
-        className="details--wrapper"
-        onClick={() => {
-          navigate(`/${query}`);
-          setDetailsVisible(false);
-        }}
-      >
-        <div className="close-btn">
-          <button>
-            <FontAwesomeIcon icon={faXmarkCircle} />
-          </button>
-        </div>
-      </div>
+      <DetailsWrapper query={query} setDetailsVisible={setDetailsVisible} />
       <div className="details">
         {!loading ? (
           <>
@@ -82,7 +67,7 @@ const Details = ({ query, setDetailsVisible }) => {
             <DetailsOther details={details} query={query} />
             <CastCrew data={castCrew} />
             <Reviews data={reviews} />
-            <Videos data={videos} />
+            <Videos data={videos} backdrop={details.backdrop_path} />
             <Recommended data={recommended} />
           </>
         ) : (
