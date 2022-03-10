@@ -1,18 +1,23 @@
 import "./styles/VideoCard.scss";
 
+import CardImage from "./CardImage";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faImage } from "@fortawesome/free-regular-svg-icons";
+import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 
 import { modifyDate } from "../../utils";
-import CardImage from "./CardImage";
 
 const VideoCard = ({ data, backdrop }) => {
   return (
     <div className="video-card">
       <CardImage imagePath={backdrop} name={data.name} />
-      <div className="video-card--details">
+      <div className="video-card--body">
         <h4>{data.name}</h4>
-        <span>{modifyDate(data.published_at)}</span>
+      </div>
+      <div className="video-card--play">
+        <button className="play-btn">
+          <FontAwesomeIcon icon={faPlayCircle} />
+        </button>
       </div>
     </div>
   );
