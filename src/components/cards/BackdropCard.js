@@ -1,10 +1,11 @@
 import "./styles/BackdropCard.scss";
 
+import CardImage from "./CardImage";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsis, faHeart } from "@fortawesome/free-solid-svg-icons";
 
 import { useNavigate } from "react-router-dom";
-import { faImage } from "@fortawesome/free-regular-svg-icons";
 
 const BackDropCard = ({ data }) => {
   const navigate = useNavigate();
@@ -15,21 +16,7 @@ const BackDropCard = ({ data }) => {
 
   return (
     <div className="backdrop-card" onClick={clickHandler}>
-      <div
-        className={`backdrop-card--backdrop ${
-          !data.backdrop_path ? "no-backdrop" : ""
-        }`}
-      >
-        {!data.backdrop_path ? (
-          <FontAwesomeIcon icon={faImage} />
-        ) : (
-          <img
-            loading="lazy"
-            src={`https://image.tmdb.org/t/p/w500${data.backdrop_path}`}
-            alt={data.title ? data.title : data.name}
-          />
-        )}
-      </div>
+      <CardImage imagePath={data.backdrop_path} name={data.title ? data.title : data.name} />
       <div
         className={`backdrop-card--body ${
           data.vote_average !== 0 ? "rated" : ""

@@ -1,5 +1,5 @@
-@use '../../styles/variables' as *;
-@use '../../styles/mixins' as *;
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
 
 .poster-card {
   position: relative;
@@ -9,30 +9,6 @@
   box-shadow: 3px 3px 40px rgba($color: #000, $alpha: 0.5);
   overflow: hidden;
   cursor: pointer;
-
-  &--poster {
-    position: absolute;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-
-    &.no-poster {
-      display: grid;
-      place-items: center;
-      font-size: 5rem;
-      background: rgba($color: #000, $alpha: 0.6);
-    }
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    p{
-      padding: 20px;
-    }
-  }
 
   &--body {
     display: flex;
