@@ -13,9 +13,12 @@ import Home from "./pages/Home";
 import Query from "./pages/Query";
 import Genre from "./pages/Genre";
 import Results from "./pages/Results";
+import VideoPlayer from "./components/VideoPlayer";
 
 const App = () => {
   const [detailsVisible, setDetailsVisible] = useState(false);
+  const [playing, setPlaying] = useState(false);
+  const [videoDetails, setVideoDetails] = useState({});
 
   useEffect(() => {
     window.scrollTo({
@@ -35,7 +38,12 @@ const App = () => {
           <Route
             path=":id"
             element={
-              <Details query="movie" setDetailsVisible={setDetailsVisible} />
+              <Details
+                query="movie"
+                setDetailsVisible={setDetailsVisible}
+                setPlaying={setPlaying}
+                setVideoDetails={setVideoDetails}
+              />
             }
           />
         </Route>
@@ -44,7 +52,12 @@ const App = () => {
           <Route
             path=":id"
             element={
-              <Details query="tv" setDetailsVisible={setDetailsVisible} />
+              <Details
+                query="tv"
+                setDetailsVisible={setDetailsVisible}
+                setPlaying={setPlaying}
+                setVideoDetails={setVideoDetails}
+              />
             }
           />
         </Route>
@@ -57,6 +70,15 @@ const App = () => {
 
         <Route path="*" element={<Error />} />
       </Routes>
+
+      {playing && (
+        <VideoPlayer
+          playing={playing}
+          setPlaying={setPlaying}
+          videoDetails={videoDetails}
+          setVideoDetails={setVideoDetails}
+        />
+      )}
 
       <Footer />
     </div>
