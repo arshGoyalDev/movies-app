@@ -73,7 +73,6 @@ const App = () => {
 
       {playing && (
         <VideoPlayer
-          playing={playing}
           setPlaying={setPlaying}
           videoDetails={videoDetails}
           setVideoDetails={setVideoDetails}

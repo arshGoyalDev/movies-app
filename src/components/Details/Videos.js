@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import { VideoCard } from "../cards";
 
 const Videos = ({ data, backdrop, setPlaying, setVideoDetails }) => {
