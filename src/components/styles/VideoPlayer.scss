@@ -47,6 +47,9 @@
   @include media-lg {
     width: 780px;
 
+    &--header {
+      padding: 13px 20px;
+    }
     iframe {
       height: 440px;
     }
