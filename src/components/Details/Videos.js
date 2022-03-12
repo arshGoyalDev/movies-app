@@ -19,6 +19,7 @@ const Videos = ({ data, backdrop, setPlaying, setVideoDetails }) => {
       return output;
     });
     setVideos(filteredVideos);
+    // eslint-disable-next-line
   }, []);
 
   return (
