@@ -4,5 +4,6 @@ export {
   fetchMoreData,
   fetchDetails,
   fetchResults,
+  fetchProfileDetails
 } from "./fetch";
 export { modifyDate, convertMinsToHrsMins } from "./time";

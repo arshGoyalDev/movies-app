@@ -82,4 +82,14 @@ const fetchResults = async (searchQuery, setResults, setLoading) => {
   setLoading(false);
 };
 
-export { fetchData, fetchGenreData, fetchMoreData, fetchDetails, fetchResults };
+const fetchProfileDetails = async (id, setData, setLoading) => {
+  const url = `https://api.themoviedb.org/3/person/${id}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`;
+
+  const res = await fetch(url);
+  const data = await res.json();
+
+  setData(data);
+  setLoading(false);
+}
+
+export { fetchData, fetchGenreData, fetchMoreData, fetchDetails, fetchResults, fetchProfileDetails };
