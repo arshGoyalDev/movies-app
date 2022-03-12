@@ -12,7 +12,7 @@ import Recommended from "./Recommended";
 import DetailsWrapper from "./DetailsWrapper";
 import { DetailsLoader } from "../loaders";
 
-const Details = ({ query, setDetailsVisible, setVideoDetails }) => {
+const Details = ({ query, setDetailsVisible, setVideoDetails, setProfileDetails }) => {
   const { id } = useParams();
   const [details, setDetails] = useState({});
   const [castCrew, setCastCrew] = useState([]);
@@ -48,7 +48,7 @@ const Details = ({ query, setDetailsVisible, setVideoDetails }) => {
             </div>
 
             <DetailsOther details={details} query={query} />
-            <CastCrew data={castCrew} />
+            <CastCrew data={castCrew} setProfileDetails={setProfileDetails} />
             <Reviews data={reviews} />
             <Videos
               data={videos}

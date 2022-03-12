@@ -9,7 +9,7 @@ import Footer from "./components/Footer";
 import Error from "./components/Error";
 
 import { Details } from "./components/Details";
-import { VideoPlayer } from "./components/more";
+import { ProfileDetails, VideoPlayer } from "./components/more";
 
 import Home from "./pages/Home";
 import Query from "./pages/Query";
@@ -19,7 +19,7 @@ import Results from "./pages/Results";
 const App = () => {
   const [detailsVisible, setDetailsVisible] = useState(false);
   const [videoDetails, setVideoDetails] = useState({});
-  // const [cast, setcast] = useState(second)
+  const [profileDetails, setProfileDetails] = useState({});
 
   useEffect(() => {
     window.scrollTo({
@@ -43,6 +43,7 @@ const App = () => {
                 query="movie"
                 setDetailsVisible={setDetailsVisible}
                 setVideoDetails={setVideoDetails}
+                setProfileDetails={setProfileDetails}
               />
             }
           />
@@ -56,6 +57,7 @@ const App = () => {
                 query="tv"
                 setDetailsVisible={setDetailsVisible}
                 setVideoDetails={setVideoDetails}
+                setProfileDetails={setProfileDetails}
               />
             }
           />
@@ -74,6 +76,13 @@ const App = () => {
         <VideoPlayer
           videoDetails={videoDetails}
           setVideoDetails={setVideoDetails}
+        />
+      )}
+
+      {profileDetails.visible && (
+        <ProfileDetails
+          profileDetails={profileDetails}
+          setProfileDetails={setProfileDetails}
         />
       )}
 

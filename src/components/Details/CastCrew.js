@@ -1,6 +1,6 @@
 import { ProfileCard } from "../cards";
 
-const CastCrew = ({ data }) => {
+const CastCrew = ({ data, setProfileDetails }) => {
   return (
     <>
       {Object.keys(data).map((key) => {
@@ -11,7 +11,11 @@ const CastCrew = ({ data }) => {
               <h3>{key}</h3>
               <div>
                 {data[key].map((member) => (
-                  <ProfileCard key={member.credit_id} data={member} />
+                  <ProfileCard
+                    key={member.credit_id}
+                    data={member}
+                    setProfileDetails={setProfileDetails}
+                  />
                 ))}
               </div>
             </div>

@@ -3,9 +3,17 @@ import "./styles/ProfileCard.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 
-const ProfileCard = ({ data }) => {
+const ProfileCard = ({ data, setProfileDetails }) => {
+
+  const showProfileDetails = () => {
+    setProfileDetails({
+      visible: true,
+      id: data.id,
+    });
+  }
+
   return (
-    <div key={data.name} className="profile-card">
+    <div key={data.name} className="profile-card" onClick={showProfileDetails}>
       <div className={`profile-card--photo ${!data.profile_path ? "not" : ""}`}>
         {!data.profile_path ? (
           <FontAwesomeIcon icon={faUser} />
