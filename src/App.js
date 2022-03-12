@@ -13,7 +13,7 @@ import Home from "./pages/Home";
 import Query from "./pages/Query";
 import Genre from "./pages/Genre";
 import Results from "./pages/Results";
-import VideoPlayer from "./components/More/VideoPlayer";
+import {VideoPlayer} from "./components/more";
 
 const App = () => {
   const [detailsVisible, setDetailsVisible] = useState(false);
