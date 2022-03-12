@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import { VideoCard } from "../cards";
 
-const Videos = ({ data, backdrop, setPlaying, setVideoDetails }) => {
+const Videos = ({ data, backdrop, setVideoDetails }) => {
   const [videos, setVideos] = useState(data);
 
   useEffect(() => {
@@ -33,7 +33,6 @@ const Videos = ({ data, backdrop, setPlaying, setVideoDetails }) => {
                 key={video.id}
                 data={video}
                 backdrop={backdrop}
-                setPlaying={setPlaying}
                 setVideoDetails={setVideoDetails}
               />
             ))}

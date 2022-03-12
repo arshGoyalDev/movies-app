@@ -5,20 +5,21 @@ import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import NavBar from "./components/NavBar";
-import { Details } from "./components/Details";
 import Footer from "./components/Footer";
 import Error from "./components/Error";
+
+import { Details } from "./components/Details";
+import { VideoPlayer } from "./components/more";
 
 import Home from "./pages/Home";
 import Query from "./pages/Query";
 import Genre from "./pages/Genre";
 import Results from "./pages/Results";
-import {VideoPlayer} from "./components/more";
 
 const App = () => {
   const [detailsVisible, setDetailsVisible] = useState(false);
-  const [playing, setPlaying] = useState(false);
   const [videoDetails, setVideoDetails] = useState({});
+  // const [cast, setcast] = useState(second)
 
   useEffect(() => {
     window.scrollTo({
@@ -41,7 +42,6 @@ const App = () => {
               <Details
                 query="movie"
                 setDetailsVisible={setDetailsVisible}
-                setPlaying={setPlaying}
                 setVideoDetails={setVideoDetails}
               />
             }
@@ -55,7 +55,6 @@ const App = () => {
               <Details
                 query="tv"
                 setDetailsVisible={setDetailsVisible}
-                setPlaying={setPlaying}
                 setVideoDetails={setVideoDetails}
               />
             }
@@ -71,9 +70,8 @@ const App = () => {
         <Route path="*" element={<Error />} />
       </Routes>
 
-      {playing && (
+      {videoDetails.visible && (
         <VideoPlayer
-          setPlaying={setPlaying}
           videoDetails={videoDetails}
           setVideoDetails={setVideoDetails}
         />

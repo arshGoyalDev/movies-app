@@ -5,10 +5,10 @@ import CardImage from "./CardImage";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 
-const VideoCard = ({ data, backdrop, setPlaying, setVideoDetails }) => {
+const VideoCard = ({ data, backdrop, setVideoDetails }) => {
   const playVideo = () => {
-    setPlaying(true);
     setVideoDetails({
+      visible: true,
       name: data.name,
       key: data.key,
     });

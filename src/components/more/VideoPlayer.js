@@ -3,9 +3,8 @@ import "./styles/VideoPlayer.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
-const VideoPlayer = ({ setPlaying, videoDetails, setVideoDetails }) => {
+const VideoPlayer = ({ videoDetails, setVideoDetails }) => {
   const closePlayer = (e) => {
-    setPlaying(false);
     setVideoDetails({});
   };
 
