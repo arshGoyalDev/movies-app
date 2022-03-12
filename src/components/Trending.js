@@ -6,6 +6,7 @@ import { fetchData } from "../utils";
 
 import TrendingItem from "./TrendingItem";
 import SimpleLoader from "./loaders/SimpleLoader";
+import { TrendingCard } from "./cards";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -43,10 +44,6 @@ const Trending = ({ queryType }) => {
     index === trendingData.length - 1 ? setIndex(0) : setIndex(index + 1);
   };
 
-  const clickCard = (e) => {
-    setIndex(parseInt(e.target.getAttribute("data-index")));
-  };
-
   return (
     <div className="trending">
       {trendingData !== "" ? (
@@ -62,24 +59,7 @@ const Trending = ({ queryType }) => {
             />
             <div className="trending--items--cards">
               {trendingData.map((item) => (
-                <button
-                  className={`trending--items--cards--card ${
-                    trendingData.indexOf(item) === index ? "active" : ""
-                  }`}
-                  key={item.title ? item.title : item.name}
-                  onClick={clickCard}
-                  data-index={trendingData.indexOf(item)}
-                >
-                  <div className="trending--items--cards--card--background">
-                    <img
-                      src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
-                      alt={item.title ? item.title : item.name}
-                    />
-                  </div>
-                  <h3 data-index={trendingData.indexOf(item)}>
-                    {item.title ? item.title : item.name}
-                  </h3>
-                </button>
+                <TrendingCard data={item} trendingData={trendingData} index={index} setIndex={setIndex} />
               ))}
             </div>
           </div>

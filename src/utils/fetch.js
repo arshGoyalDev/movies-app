@@ -59,9 +59,9 @@ const fetchDetails = async (
   setDetails(data);
   setCastCrew(dataCastCrew);
   setReviews(dataReviews);
-  setVideos(dataVideos.results);
+  setVideos(dataVideos.results.reverse());
   setRecommended(dataRecommended.results);
-  setLoading('almost');
+  setLoading(false);
 };
 
 // fetch results for given Args: searchQuery, setResults, setLoading

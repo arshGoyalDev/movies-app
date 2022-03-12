@@ -36,23 +36,6 @@ const Details = ({ query, setDetailsVisible, setPlaying, setVideoDetails }) => {
     setDetailsVisible(true);
   }, [id, query, setDetailsVisible]);
 
-  useEffect(() => {
-    if (loading === "almost") {
-      let filteredVideos = videos.filter((video) => {
-        let name = video.name.toLowerCase();
-        let output;
-
-        if (name.includes("trailer") || name.includes("teaser")) {
-          output = video;
-        }
-        return output;
-      });
-
-      loading === "almost" && setVideos(filteredVideos);
-      setLoading(false);
-    }
-  }, [videos, loading]);
-
   return (
     <>
       <DetailsWrapper query={query} setDetailsVisible={setDetailsVisible} />

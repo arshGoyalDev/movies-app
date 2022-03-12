@@ -69,6 +69,10 @@
   &--details {
     padding-inline: 20px;
 
+    & > div {
+      padding: 0 !important;
+    }
+
     &--heading {
       width: 100%;
       height: 40px;

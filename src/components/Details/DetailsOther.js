@@ -40,16 +40,20 @@ const DetailsOther = ({ details, query }) => {
           <p>{convertMinsToHrsMins(details.runtime)}</p>
         </div>
       ) : (
-        <div className="seasons">
-          <h3>Seasons</h3>
-          <div>
-            {details.seasons.map((season) => (
-              <span key={season.name}>
-                {season.name} : {season.episode_count + " episodes"}
-              </span>
-            ))}
-          </div>
-        </div>
+        <>
+          {details.seasons && (
+            <div className="seasons">
+              <h3>Seasons</h3>
+              <div>
+                {details.seasons?.map((season) => (
+                  <span key={season.name}>
+                    {season.name} : {season.episode_count + " episodes"}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+        </>
       )}
       {query === "movie" && (
         <div className="release-date">
