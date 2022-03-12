@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 
 import "./styles/Trending.scss";
 
-import { fetchData } from "../utils";
+import { fetchData } from "../../utils";
 
 import TrendingItem from "./TrendingItem";
-import SimpleLoader from "./loaders/SimpleLoader";
-import { TrendingCard } from "./cards";
+import SimpleLoader from "../loaders/SimpleLoader";
+import { TrendingCard } from "../cards";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -24,8 +24,7 @@ const Trending = ({ queryType }) => {
       setTrendingData,
       true
     );
-    // eslint-disable-next-line
-  }, []);
+  }, [queryType]);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -57,9 +56,16 @@ const Trending = ({ queryType }) => {
               }
               data={trendingData[index]}
             />
+
             <div className="trending--items--cards">
               {trendingData.map((item) => (
-                <TrendingCard data={item} trendingData={trendingData} index={index} setIndex={setIndex} />
+                <TrendingCard
+                  key={item.id}
+                  data={item}
+                  trendingData={trendingData}
+                  index={index}
+                  setIndex={setIndex}
+                />
               ))}
             </div>
           </div>
