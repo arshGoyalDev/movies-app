@@ -19,7 +19,6 @@ const VideoPlayer = ({ setPlaying, videoDetails, setVideoDetails }) => {
             <FontAwesomeIcon icon={faXmark} />
           </button>
         </div>
-        {/* <div className="video-player--player"> */}
         <iframe
           width="560"
           height="315"
@@ -29,7 +28,6 @@ const VideoPlayer = ({ setPlaying, videoDetails, setVideoDetails }) => {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         ></iframe>
-        {/* <div></div> */}
       </div>
     </>
   );
