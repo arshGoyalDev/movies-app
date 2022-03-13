@@ -2,6 +2,6 @@ import "./styles/loader.scss";
 
 import DetailsLoader from "./DetailsLoader";
 import SimpleLoader from "./SimpleLoader";
-import SpinnerLoader from "./SpinnerLoader";
+import InfiniteLoader from "./InfiniteLoader";
 
-export { DetailsLoader, SimpleLoader, SpinnerLoader };
+export { DetailsLoader, SimpleLoader, InfiniteLoader };

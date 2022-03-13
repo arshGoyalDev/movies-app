@@ -52,17 +52,22 @@
     }
   }
 
-  &--spinner {
+  &--infinite {
     display: flex;
     justify-content: center;
+    gap: 40px;
     margin-block: 5rem;
 
     div {
-      width: 100px;
-      height: 100px;
-      border-top: 2px solid $text-primary;
-      animation: rotate 1s linear infinite;
-      border-radius: 50%;
+      height: 60px;
+      width: 3px;
+      background: $text-primary;
+      animation: loader-5 0.6s cubic-bezier(0, 0, 0.03, 0.9) infinite;
+    }
+
+    .second-line {
+      margin-top: 50px;
+      animation-delay: 0.2s;
     }
   }
 
@@ -134,7 +139,7 @@
 
       .videos--cards {
         height: 220px;
-      }  
+      }
     }
   }
 }
@@ -170,5 +175,26 @@
 @keyframes rotate {
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-5 {
+  0%,
+  88%,
+  100% {
+    opacity: 0;
+  }
+
+  0% {
+    transform: translateY(-6vmin);
+  }
+
+  33% {
+    opacity: 1;
+  }
+
+  33%,
+  88% {
+    transform: translateY(3vmin);
   }
 }

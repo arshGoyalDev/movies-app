@@ -6,16 +6,23 @@ import { useParams } from "react-router-dom";
 
 import Genres from "../components/Genres";
 import { PosterCard } from "../components/cards";
-import { SimpleLoader, SpinnerLoader } from "../components/loaders";
+import { SimpleLoader, InfiniteLoader } from "../components/loaders";
 
 import InfiniteScroll from "react-infinite-scroll-component";
 
 const Genre = () => {
   const { query, genreId } = useParams();
+  
   const [loading, setLoading] = useState(true);
   const [genreData, setGenreData] = useState("");
   const [page, setPage] = useState(1);
   const [totalResults, setTotalResults] = useState(1);
+
+  const loadingArray = [
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+    22, 23, 24, 25, 26, 27, 28, 29, 30,
+  ];
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,11 +38,6 @@ const Genre = () => {
 
     fetchData();
   }, [query, genreId]);
-
-  const loadingArray = [
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
-    22, 23, 24, 25, 26, 27, 28, 29, 30,
-  ];
 
   const InfiniteScrollFunction = async () => {
     const url = `https://api.themoviedb.org/3/discover/${query}?api_key=${
@@ -64,7 +66,7 @@ const Genre = () => {
           dataLength={genreData.length}
           next={InfiniteScrollFunction}
           hasMore={genreData.length !== totalResults}
-          loader={<SpinnerLoader />}
+          loader={<InfiniteLoader />}
         >
           <div className="genre--cards">
             {!loading

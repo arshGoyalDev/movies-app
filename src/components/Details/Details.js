@@ -35,6 +35,10 @@ const Details = ({
     }
   }, [details, castCrew, reviews, videos, recommended]);
 
+  useEffect(() => {
+    setDetailsVisible(true);
+  }, [])
+
   return (
     <>
       <DetailsWrapper query={query} setDetailsVisible={setDetailsVisible} />
