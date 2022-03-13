@@ -8,9 +8,11 @@ import { modifyDate } from "../../utils";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
+import { useSelector } from "react-redux";
 
-const ProfileDetails = ({ profileDetails, setProfileDetails }) => {
-  const data = useFetch(`person/${profileDetails.id}?language=en-US&`, false);
+const ProfileDetails = () => {
+  const {id} = useSelector((state) => state.profileDetails.value);
+  const data = useFetch(`person/${id}?language=en-US&`, false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

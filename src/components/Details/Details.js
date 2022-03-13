@@ -15,7 +15,6 @@ import { DetailsLoader } from "../loaders";
 const Details = ({
   query,
   setDetailsVisible,
-  setProfileDetails,
 }) => {
   const { id } = useParams();
 
@@ -53,7 +52,7 @@ const Details = ({
             </div>
 
             <DetailsOther details={details} query={query} />
-            <CastCrew data={castCrew} setProfileDetails={setProfileDetails} />
+            <CastCrew data={castCrew} />
             <Reviews data={reviews} />
             <Videos
               data={videos.reverse()}

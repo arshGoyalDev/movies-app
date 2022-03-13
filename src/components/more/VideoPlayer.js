@@ -9,9 +9,10 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 const VideoPlayer = () => {
   const dispatch = useDispatch();
-  const videoDetails = useSelector((state) => state.videoDetails.value);
+  const {key, name} = useSelector((state) => state.videoDetails.value);
 
-  const closePlayer = (e) => {
+  const closePlayer = () => {
+    console.log("hello")
     dispatch(clearVideoDetails());
   };
 
@@ -20,20 +21,23 @@ const VideoPlayer = () => {
       <div className="video-wrapper" onClick={closePlayer}></div>
       <div className="video-player">
         <div className="video-player--header">
-          <h2>{videoDetails.name}</h2>
+          <h2>{name}</h2>
           <button className="close-btn" onClick={closePlayer}>
             <FontAwesomeIcon icon={faXmark} />
           </button>
         </div>
+        <div className="video-player--video">
         <iframe
           width="560"
           height="315"
-          src={`https://www.youtube.com/embed/${videoDetails.key}?controls=0`}
+          src={`https://www.youtube.com/embed/${key}?controls=0`}
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         ></iframe>
+
+        </div>
       </div>
     </>
   );

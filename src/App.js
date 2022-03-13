@@ -20,8 +20,8 @@ import { useSelector } from "react-redux";
 
 const App = () => {
   const [detailsVisible, setDetailsVisible] = useState(false);
-  const videoDetails = useSelector((state) => state.videoDetails.value);
-  const [profileDetails, setProfileDetails] = useState({});
+  const {visible: videoVisible} = useSelector((state) => state.videoDetails.value);
+  const {visible: profileVisible } = useSelector((state) => state.profileDetails.value);
 
   useEffect(() => {
     window.scrollTo({
@@ -41,11 +41,7 @@ const App = () => {
           <Route
             path=":id"
             element={
-              <Details
-                query="movie"
-                setDetailsVisible={setDetailsVisible}
-                setProfileDetails={setProfileDetails}
-              />
+              <Details query="movie" setDetailsVisible={setDetailsVisible} />
             }
           />
         </Route>
@@ -54,11 +50,7 @@ const App = () => {
           <Route
             path=":id"
             element={
-              <Details
-                query="tv"
-                setDetailsVisible={setDetailsVisible}
-                setProfileDetails={setProfileDetails}
-              />
+              <Details query="tv" setDetailsVisible={setDetailsVisible} />
             }
           />
         </Route>
@@ -72,16 +64,9 @@ const App = () => {
         <Route path="*" element={<Error />} />
       </Routes>
 
-      {videoDetails.visible && (
-      <VideoPlayer />
-      )}
+      {videoVisible && <VideoPlayer />}
 
-      {profileDetails.visible && (
-        <ProfileDetails
-          profileDetails={profileDetails}
-          setProfileDetails={setProfileDetails}
-        />
-      )}
+      {profileVisible && <ProfileDetails />}
 
       <Footer />
     </div>

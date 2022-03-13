@@ -11,6 +11,7 @@ import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 
 const VideoCard = ({ data, backdrop }) => {
   const dispatch = useDispatch();
+
   const playVideo = () => {
     dispatch(
       updateVideoDetails({

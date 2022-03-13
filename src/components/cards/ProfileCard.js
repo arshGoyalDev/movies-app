@@ -1,16 +1,23 @@
 import "./styles/ProfileCard.scss";
 
+import { useDispatch } from "react-redux";
+
+import { updateProfileDetails } from "../../features/profileSlice";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 
-const ProfileCard = ({ data, setProfileDetails }) => {
+const ProfileCard = ({ data }) => {
+  const dispatch = useDispatch();
 
   const showProfileDetails = () => {
-    setProfileDetails({
-      visible: true,
-      id: data.id,
-    });
-  }
+    dispatch(
+      updateProfileDetails({
+        visible: true,
+        id: data.id,
+      })
+    );
+  };
 
   return (
     <div key={data.name} className="profile-card" onClick={showProfileDetails}>

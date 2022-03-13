@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   value: {},
-}
+};
 
 const videoSlice = createSlice({
   name: "videoDetails",
@@ -17,7 +17,7 @@ const videoSlice = createSlice({
   },
 });
 
-export const {updateVideoDetails, clearVideoDetails} = videoSlice.actions;
+export const { updateVideoDetails, clearVideoDetails } = videoSlice.actions;
 
-export {videoSlice};
+export { videoSlice };
 export default videoSlice.reducer;
