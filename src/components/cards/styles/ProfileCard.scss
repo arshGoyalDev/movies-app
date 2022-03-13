@@ -31,6 +31,7 @@
 
   &--body {
     display: flex;
+    justify-content: flex-end;
     flex-direction: column;
     gap: 2px;
     border: 2px solid $text-secondary;
@@ -49,7 +50,6 @@
     transition: 0.5s;
 
     &--photo {
-      top: 0;
       left: 0;
       transition: width 0.5s;
       font-size: 1rem;
@@ -68,14 +68,14 @@
     }
 
     &:hover {
-      background: rgba($color: $background, $alpha: 0.6);
+      background: rgba($color: $background, $alpha: 0.7);
 
       .profile-card {
         &--photo {
-          width: 280px;
+          width: 250px;
 
           img {
-            width: 280px;
+            width: 250px;
           }
         }
 
