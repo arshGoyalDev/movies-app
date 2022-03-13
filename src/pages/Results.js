@@ -12,6 +12,7 @@ import SimpleLoader from "../components/loaders/SimpleLoader";
 const Results = () => {
   const params = useParams();
   const searchQuery = params.searchQuery.replaceAll("-", " ");
+  
   const results = {
     movies: useFetch(
       `search/movie?language=en-US&query=${searchQuery}&page=1&include_adult=false&`,
@@ -23,6 +24,7 @@ const Results = () => {
     ),
   };
   const [loading, setLoading] = useState(true);
+  
   const loadingArray = [1, 2, 3, 4, 5, 6, 7];
 
   useEffect(() => {

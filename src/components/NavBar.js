@@ -9,6 +9,7 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 const NavBar = () => {
   const navigate = useNavigate();
+  
   const [searchTerm, setSearchTerm] = useState("");
   const [menuVisible, setMenuVisible] = useState(false);
 

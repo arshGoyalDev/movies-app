@@ -19,6 +19,7 @@ const Details = ({
   setProfileDetails,
 }) => {
   const { id } = useParams();
+
   const details = useFetch(`${query}/${id}?language=en-US&`, false);
   const castCrew = useFetch(`${query}/${id}/credits?language=en-US&`, false);
   const reviews = useFetch(`${query}/${id}/reviews?language=en-US&`, false);
@@ -27,6 +28,7 @@ const Details = ({
     `${query}/${id}/recommendations?language=en-US&page=1&`,
     "results"
   );
+  
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
