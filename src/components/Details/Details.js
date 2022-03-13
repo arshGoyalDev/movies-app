@@ -28,7 +28,7 @@ const Details = ({
     `${query}/${id}/recommendations?language=en-US&page=1&`,
     "results"
   );
-  
+
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -39,7 +39,8 @@ const Details = ({
 
   useEffect(() => {
     setDetailsVisible(true);
-  }, [])
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <>

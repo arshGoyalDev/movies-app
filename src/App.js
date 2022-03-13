@@ -8,7 +8,7 @@ import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import Error from "./components/Error";
 
-import { Details } from "./components/Details";
+import Details from "./components/Details";
 import { ProfileDetails, VideoPlayer } from "./components/more";
 
 import Home from "./pages/Home";
