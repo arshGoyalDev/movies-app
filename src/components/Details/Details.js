@@ -15,7 +15,6 @@ import { DetailsLoader } from "../loaders";
 const Details = ({
   query,
   setDetailsVisible,
-  setVideoDetails,
   setProfileDetails,
 }) => {
   const { id } = useParams();
@@ -59,7 +58,6 @@ const Details = ({
             <Videos
               data={videos.reverse()}
               backdrop={details.backdrop_path}
-              setVideoDetails={setVideoDetails}
             />
             <Recommended data={recommended} />
           </>

@@ -1,11 +1,18 @@
 import "./styles/VideoPlayer.scss";
 
+import { useDispatch, useSelector } from "react-redux";
+
+import { clearVideoDetails } from "../../features/videoSlice";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
-const VideoPlayer = ({ videoDetails, setVideoDetails }) => {
+const VideoPlayer = () => {
+  const dispatch = useDispatch();
+  const videoDetails = useSelector((state) => state.videoDetails.value);
+
   const closePlayer = (e) => {
-    setVideoDetails({});
+    dispatch(clearVideoDetails());
   };
 
   return (

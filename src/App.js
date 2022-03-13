@@ -16,9 +16,11 @@ import Query from "./pages/Query";
 import Genre from "./pages/Genre";
 import Results from "./pages/Results";
 
+import { useSelector } from "react-redux";
+
 const App = () => {
   const [detailsVisible, setDetailsVisible] = useState(false);
-  const [videoDetails, setVideoDetails] = useState({});
+  const videoDetails = useSelector((state) => state.videoDetails.value);
   const [profileDetails, setProfileDetails] = useState({});
 
   useEffect(() => {
@@ -42,7 +44,6 @@ const App = () => {
               <Details
                 query="movie"
                 setDetailsVisible={setDetailsVisible}
-                setVideoDetails={setVideoDetails}
                 setProfileDetails={setProfileDetails}
               />
             }
@@ -56,7 +57,6 @@ const App = () => {
               <Details
                 query="tv"
                 setDetailsVisible={setDetailsVisible}
-                setVideoDetails={setVideoDetails}
                 setProfileDetails={setProfileDetails}
               />
             }
@@ -73,10 +73,7 @@ const App = () => {
       </Routes>
 
       {videoDetails.visible && (
-        <VideoPlayer
-          videoDetails={videoDetails}
-          setVideoDetails={setVideoDetails}
-        />
+      <VideoPlayer />
       )}
 
       {profileDetails.visible && (

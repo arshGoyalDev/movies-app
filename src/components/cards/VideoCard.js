@@ -2,16 +2,23 @@ import "./styles/VideoCard.scss";
 
 import CardImage from "./CardImage";
 
+import { useDispatch } from "react-redux";
+
+import { updateVideoDetails } from "../../features/videoSlice";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 
-const VideoCard = ({ data, backdrop, setVideoDetails }) => {
+const VideoCard = ({ data, backdrop }) => {
+  const dispatch = useDispatch();
   const playVideo = () => {
-    setVideoDetails({
-      visible: true,
-      name: data.name,
-      key: data.key,
-    });
+    dispatch(
+      updateVideoDetails({
+        visible: true,
+        name: data.name,
+        key: data.key,
+      })
+    );
   };
 
   return (
