@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 import { useParams } from "react-router-dom";
 
-import { fetchResults } from "../utils";
+import { useFetch } from "../hooks";
 
 import PosterCard from "../components/cards/PosterCard";
 import SimpleLoader from "../components/loaders/SimpleLoader";
@@ -12,17 +12,24 @@ import SimpleLoader from "../components/loaders/SimpleLoader";
 const Results = () => {
   const params = useParams();
   const searchQuery = params.searchQuery.replaceAll("-", " ");
-  const [results, setResults] = useState({
-    movies: [],
-    tvShows: [],
-  });
+  const results = {
+    movies: useFetch(
+      `search/movie?language=en-US&query=${searchQuery}&page=1&include_adult=false&`,
+      "results"
+    ),
+    tv: useFetch(
+      `search/tv?language=en-US&query=${searchQuery}&page=1&include_adult=false&`,
+      "results"
+    ),
+  };
   const [loading, setLoading] = useState(true);
   const loadingArray = [1, 2, 3, 4, 5, 6, 7];
 
   useEffect(() => {
-    fetchResults(searchQuery, setResults, setLoading);
-    setLoading(true);
-  }, [searchQuery, params]);
+    if (results.movies && results.tv) {
+      setLoading(false);
+    }
+  }, [results.movies, results.tv]);
 
   return (
     <div className="results">
@@ -53,8 +60,8 @@ const Results = () => {
           <h2>Tv Shows</h2>
           <div className="cards-container">
             {!loading ? (
-              results.tvShows.length !== 0 ? (
-                results.tvShows.map((item) => (
+              results.tv.length !== 0 ? (
+                results.tv.map((item) => (
                   <PosterCard key={item.id} data={item} />
                 ))
               ) : (

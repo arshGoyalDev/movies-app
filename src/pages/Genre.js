@@ -4,8 +4,6 @@ import { useEffect, useState } from "react";
 
 import { useParams } from "react-router-dom";
 
-import { fetchGenreData, fetchMoreData } from "../utils";
-
 import Genres from "../components/Genres";
 import { PosterCard } from "../components/cards";
 import { SimpleLoader, SpinnerLoader } from "../components/loaders";
@@ -13,31 +11,42 @@ import { SimpleLoader, SpinnerLoader } from "../components/loaders";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 const Genre = () => {
-  const [loading, setLoading] = useState(true);
-  const [data, setData] = useState("");
-  const [resultsCount, setResultsCount] = useState("");
-  const [page, setPage] = useState(1);
   const { query, genreId } = useParams();
+  const [loading, setLoading] = useState(true);
+  const [genreData, setGenreData] = useState("");
+  const [page, setPage] = useState(1);
+  const [totalResults, setTotalResults] = useState(1);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const url = `https://api.themoviedb.org/3/discover/${query}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${genreId}&with_watch_monetization_types=flatrate`;
+
+      const res = await fetch(url);
+      const data = await res.json();
+
+      setTotalResults(data.total_results);
+      setGenreData(data.results);
+      setLoading(false);
+    };
+
+    fetchData();
+  }, [query, genreId]);
 
   const loadingArray = [
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
     22, 23, 24, 25, 26, 27, 28, 29, 30,
   ];
 
-  useEffect(() => {
-    fetchGenreData(query, genreId).then((fetchedData) => {
-      setData(fetchedData.results);
-      setResultsCount(fetchedData.total_results);
-      setLoading(false);
-    });
+  const InfiniteScrollFunction = async () => {
+    const url = `https://api.themoviedb.org/3/discover/${query}?api_key=${
+      process.env.REACT_APP_API_KEY
+    }&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${
+      page + 1
+    }&with_genres=${genreId}&with_watch_monetization_types=flatrate`;
 
-    setLoading(true);
-  }, [query, genreId]);
-
-  const InfiniteScrollFunction = () => {
-    fetchMoreData(query, genreId, page).then((fetchedData) => {
-      setData([...data, ...fetchedData.results]);
-    });
+    const res = await fetch(url);
+    const fetchedData = await res.json();
+    setGenreData([...genreData, ...fetchedData.results]);
     setPage(page + 1);
   };
 
@@ -52,14 +61,14 @@ const Genre = () => {
       <div className="genre">
         <h2>{query === "movie" ? " movies" : " tv shows"}</h2>
         <InfiniteScroll
-          dataLength={data.length}
+          dataLength={genreData.length}
           next={InfiniteScrollFunction}
-          hasMore={data.length !== resultsCount}
+          hasMore={genreData.length !== totalResults}
           loader={<SpinnerLoader />}
         >
           <div className="genre--cards">
             {!loading
-              ? data.map((item) => (
+              ? genreData.map((item) => (
                   <PosterCard
                     key={item.title ? item.title : item.name}
                     data={item}

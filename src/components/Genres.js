@@ -2,30 +2,28 @@ import { useEffect, useState } from "react";
 
 import "./styles/Genres.scss";
 
-import { fetchData } from "../utils";
+import { useFetch } from "../hooks";
 
 import { Link } from "react-router-dom";
 
 import SimpleLoader from "./loaders/SimpleLoader";
 
 const Genres = ({ query, selected, id }) => {
-  const [genreList, setGenreList] = useState("");
+  const genreData = useFetch(`genre/${query}/list?language=en-US&`, 'genres');
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchData(
-      `https://api.themoviedb.org/3/genre/${query}/list?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`,
-      setGenreList,
-      false
-    );
-    // eslint-disable-next-line
-  }, []);
+    if (genreData) {
+      setLoading(false);
+    }
+  }, [genreData]);
 
   return (
     <div className="genres">
       <h2>Genres</h2>
       <div>
-        {genreList !== "" ? (
-          genreList.map((genre) => (
+        {!loading ? (
+          genreData.map((genre) => (
             <Link key={genre.id} to={`/genre/${query}/${genre.id}`}>
               <button className={`genres--genre ${selected ? (genre.id === parseInt(id) ? "selected" : "") : ""}`}>
                 {genre.name}

@@ -1,21 +1,24 @@
-import './styles/ProfileDetails.scss';
+import "./styles/ProfileDetails.scss";
 
 import { useState, useEffect } from "react";
 
-import { fetchProfileDetails } from "../../utils";
+import { useFetch } from "../../hooks";
+
+import { modifyDate } from "../../utils";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 
 const ProfileDetails = ({ profileDetails, setProfileDetails }) => {
-  const [data, setData] = useState({});
+  const data = useFetch(`person/${profileDetails.id}?language=en-US&`, false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchProfileDetails(profileDetails.id, setData, setLoading);
-  }, [profileDetails]);
-
-  console.log(data);
+    if (data) {
+      console.log(data);
+      setLoading(false);
+    }
+  }, [data]);
 
   return (
     <>
@@ -31,8 +34,17 @@ const ProfileDetails = ({ profileDetails, setProfileDetails }) => {
                   alt={data.name}
                 />
               ) : (
-                <FontAwesomeIcon icon={faUser}/>
+                <FontAwesomeIcon icon={faUser} />
               )}
+              <div className="introduction-details">
+                <h2>{data.name}</h2>
+                {data.biography && <p>{data.biography}</p>}
+                {data.birthday && <p>Born on: {modifyDate(data.birthday)}</p>}
+                {data.place_of_birth && (
+                  <p>Place of birth: {data.place_of_birth}</p>
+                )}
+                <p>Known for: {data.known_for_department}</p>
+              </div>
             </div>
           </>
         ) : (

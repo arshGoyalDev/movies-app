@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import "./styles/Trending.scss";
 
-import { fetchData } from "../../utils";
+import { useFetch } from "../../hooks";
 
 import TrendingItem from "./TrendingItem";
 import SimpleLoader from "../loaders/SimpleLoader";
@@ -15,21 +15,20 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const Trending = ({ queryType }) => {
-  const [trendingData, setTrendingData] = useState("");
+  let trendingData = useFetch(`trending/${queryType}/day?`, "results");
+  const [loading, setLoading] = useState(true);
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    fetchData(
-      `https://api.themoviedb.org/3/trending/${queryType}/day?api_key=${process.env.REACT_APP_API_KEY}`,
-      setTrendingData,
-      true
-    );
-  }, [queryType]);
+    if (trendingData) {
+      setLoading(false);
+    }
+  }, [trendingData]);
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      index === trendingData.length - 1 ? setIndex(0) : setIndex(index + 1);
-    }, 5000);
+      const timeout = setTimeout(() => {
+        !loading && index === trendingData.length - 1 ? setIndex(0) : setIndex(index + 1);
+      }, 5000);
 
     return () => clearTimeout(timeout);
     // eslint-disable-next-line
@@ -45,7 +44,7 @@ const Trending = ({ queryType }) => {
 
   return (
     <div className="trending">
-      {trendingData !== "" ? (
+      {!loading ? (
         <>
           <div className="trending--items">
             <TrendingItem
@@ -56,7 +55,6 @@ const Trending = ({ queryType }) => {
               }
               data={trendingData[index]}
             />
-
             <div className="trending--items--cards">
               {trendingData.map((item) => (
                 <TrendingCard

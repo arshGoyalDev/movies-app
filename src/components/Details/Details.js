@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import { useParams } from "react-router-dom";
 
-import { fetchDetails } from "../../utils";
+import { useFetch } from "../../hooks";
 
 import DetailsOther from "./DetailsOther";
 import CastCrew from "./CastCrew";
@@ -12,29 +12,28 @@ import Recommended from "./Recommended";
 import DetailsWrapper from "./DetailsWrapper";
 import { DetailsLoader } from "../loaders";
 
-const Details = ({ query, setDetailsVisible, setVideoDetails, setProfileDetails }) => {
+const Details = ({
+  query,
+  setDetailsVisible,
+  setVideoDetails,
+  setProfileDetails,
+}) => {
   const { id } = useParams();
-  const [details, setDetails] = useState({});
-  const [castCrew, setCastCrew] = useState([]);
-  const [reviews, setReviews] = useState([]);
-  const [videos, setVideos] = useState([]);
-  const [recommended, setRecommended] = useState([]);
+  const details = useFetch(`${query}/${id}?language=en-US&`, false);
+  const castCrew = useFetch(`${query}/${id}/credits?language=en-US&`, false);
+  const reviews = useFetch(`${query}/${id}/reviews?language=en-US&`, false);
+  const videos = useFetch(`${query}/${id}/videos?language=en-US&`, "results");
+  const recommended = useFetch(
+    `${query}/${id}/recommendations?language=en-US&page=1&`,
+    "results"
+  );
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchDetails(
-      query,
-      id,
-      setDetails,
-      setCastCrew,
-      setReviews,
-      setVideos,
-      setRecommended,
-      setLoading
-    );
-    setLoading(true);
-    setDetailsVisible(true);
-  }, [id, query, setDetailsVisible]);
+    if (details && castCrew && reviews && videos && recommended) {
+      setLoading(false);
+    }
+  }, [details, castCrew, reviews, videos, recommended]);
 
   return (
     <>
@@ -51,7 +50,7 @@ const Details = ({ query, setDetailsVisible, setVideoDetails, setProfileDetails 
             <CastCrew data={castCrew} setProfileDetails={setProfileDetails} />
             <Reviews data={reviews} />
             <Videos
-              data={videos}
+              data={videos.reverse()}
               backdrop={details.backdrop_path}
               setVideoDetails={setVideoDetails}
             />

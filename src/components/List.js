@@ -2,29 +2,29 @@ import { useState, useEffect } from "react";
 
 import "./styles/List.scss";
 
-import { fetchData } from "../utils";
-
 import { BackdropCard } from "./cards";
 import { SimpleLoader } from "./loaders";
+
+import { useFetch } from "../hooks";
 
 import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
-const List = ({ heading, queryType, query, all, page, defined, data }) => {
-  const [listData, setListData] = useState(defined ? data : "");
+const List = ({ heading, queryType, query, all, page }) => {
+  const listData = useFetch(
+    `${queryType}/${query}?language=en-US&page=${page}&`,
+    "results"
+  );
+  const [loading, setLoading] = useState(true);
   const loadingArray = [1, 2, 3, 4, 5, 6, 7];
 
   useEffect(() => {
-    fetchData(
-      `https://api.themoviedb.org/3/${queryType}/${query}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=${page}
-    `,
-      setListData,
-      true
-    );
-    // eslint-disable-next-line
-  }, []);
+    if (listData) {
+      setLoading(false);
+    }
+  }, [listData]);
 
   return (
     <div className={`list ${!heading ? "list--full" : ""}`}>
@@ -47,7 +47,7 @@ const List = ({ heading, queryType, query, all, page, defined, data }) => {
         </div>
       )}
       <div className="list--body">
-        {listData !== ""
+        {!loading
           ? listData
               .slice(0, !all ? 7 : listData.length)
               .map((item) => (
