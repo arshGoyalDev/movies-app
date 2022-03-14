@@ -46,7 +46,7 @@ const ProfileDetails = () => {
               )}
               <div className="introduction--details">
                 <h2>{data.name}</h2>
-                {data.biography && <p>{data.biography}</p>}
+                {data.biography && <p className="biography">{data.biography}</p>}
                 {data.birthday && <p>Born on: {modifyDate(data.birthday)}</p>}
                 {data.place_of_birth && (
                   <p>Place of birth: {data.place_of_birth}</p>
