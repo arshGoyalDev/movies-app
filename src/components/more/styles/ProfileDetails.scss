@@ -29,6 +29,7 @@
     button {
       padding: 5px 10px;
       font-size: 1.3rem;
+      cursor: pointer;
     }
   }
 
@@ -71,8 +72,13 @@
         color: $text-secondary;
 
         &:not(:last-child) {
-          margin-bottom: 3px;
+          margin-bottom: 7px;
           font-weight: $fw-medium;
+        }
+
+        span {
+          display: block;
+          margin-top: 2px;
         }
       }
 
