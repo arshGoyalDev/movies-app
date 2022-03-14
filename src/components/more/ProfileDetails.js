@@ -86,6 +86,7 @@ const ProfileDetails = () => {
                     {images.slice(1, images.length).map((image) => (
                       <img
                         key={image.file_path}
+                        loading="lazy"
                         src={`https://image.tmdb.org/t/p/w500${image.file_path}`}
                         alt={data.name}
                       />
