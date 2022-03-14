@@ -15,10 +15,6 @@
   transition: 0.5s;
   outline: none;
 
-  &:focus {
-    border-color: lighten($color: $text-tertiary, $amount: 15%);
-  }
-
   &.active {
     min-width: 150px;
     height: 200px;

@@ -6,7 +6,7 @@ import { Outlet } from "react-router-dom";
 
 const Query = ({ type }) => {
   return (
-    <main>
+    <div>
       <Trending queryType={type} />
       <Genres query={type} />
       <List queryType={type} query={type === "movie" ? "upcoming" : "on_the_air"} all={true} />
@@ -35,7 +35,7 @@ const Query = ({ type }) => {
       />
 
       <Outlet />
-    </main>
+    </div>
   );
 };
 

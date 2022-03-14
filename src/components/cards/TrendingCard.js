@@ -7,7 +7,7 @@ const TrendingCard = ({data, trendingData, index, setIndex}) => {
   };
 
   return (
-    <button
+    <div
       className={`trending-card ${
         trendingData.indexOf(data) === index ? "active" : ""
       }`}
@@ -24,7 +24,7 @@ const TrendingCard = ({data, trendingData, index, setIndex}) => {
       <h3 data-index={trendingData.indexOf(data)}>
         {data.title ? data.title : data.name}
       </h3>
-    </button>
+    </div>
   );
 };
 

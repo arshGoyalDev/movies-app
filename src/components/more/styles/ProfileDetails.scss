@@ -5,7 +5,7 @@
   position: fixed;
   z-index: 100;
   inset: 0;
-  background: rgba($color: $background, $alpha: 0.8);
+  background: rgba($color: #000, $alpha: 0.7);
 }
 
 .profile-details {
@@ -13,7 +13,55 @@
   z-index: 120;
   top: 50%;
   left: 50%;
+  width: 340px;
+  background: $background;
   transform: translate(-50%, -50%);
   border-radius: 10px;
   overflow: hidden;
+
+  &--header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px 10px 25px;
+    border-bottom: 2px solid $text-tertiary;
+
+    button {
+      padding: 5px 10px;
+      font-size: 1.3rem;
+    }
+  }
+
+  .introduction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 400px;
+    overflow-y: auto;
+    padding: 20px 20px;
+
+    img {
+      width: 160px;
+      border-radius: 10px;
+    }
+
+    &--details {
+      margin-top: 20px;
+      text-align: center;
+
+      h2 {
+        margin-bottom: 5px;
+      }
+      
+      p{
+        display: block;
+        color: $text-secondary;
+
+        &:not(:last-child) {
+          margin-bottom: 3px;
+          font-weight: $fw-medium;
+        }
+      }
+    }
+  }
 }

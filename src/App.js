@@ -20,8 +20,12 @@ import { useSelector } from "react-redux";
 
 const App = () => {
   const [detailsVisible, setDetailsVisible] = useState(false);
-  const {visible: videoVisible} = useSelector((state) => state.videoDetails.value);
-  const {visible: profileVisible } = useSelector((state) => state.profileDetails.value);
+  const { visible: videoVisible } = useSelector(
+    (state) => state.videoDetails.value
+  );
+  const { visible: profileVisible } = useSelector(
+    (state) => state.profileDetails.value
+  );
 
   useEffect(() => {
     window.scrollTo({
@@ -34,39 +38,41 @@ const App = () => {
     <div className="App">
       <NavBar />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
 
-        <Route path="/movie" element={<Query key="movies" type="movie" />}>
-          <Route
-            path=":id"
-            element={
-              <Details query="movie" setDetailsVisible={setDetailsVisible} />
-            }
-          />
-        </Route>
+          <Route path="/movie" element={<Query key="movies" type="movie" />}>
+            <Route
+              path=":id"
+              element={
+                <Details query="movie" setDetailsVisible={setDetailsVisible} />
+              }
+            />
+          </Route>
 
-        <Route path="/tv" element={<Query key="tv-shows" type="tv" />}>
-          <Route
-            path=":id"
-            element={
-              <Details query="tv" setDetailsVisible={setDetailsVisible} />
-            }
-          />
-        </Route>
+          <Route path="/tv" element={<Query key="tv-shows" type="tv" />}>
+            <Route
+              path=":id"
+              element={
+                <Details query="tv" setDetailsVisible={setDetailsVisible} />
+              }
+            />
+          </Route>
 
-        <Route path="genre/:query" element={<Genre />}>
-          <Route path=":genreId" element={<Genre />} />
-        </Route>
+          <Route path="genre/:query" element={<Genre />}>
+            <Route path=":genreId" element={<Genre />} />
+          </Route>
 
-        <Route path="search/:searchQuery" element={<Results />} />
+          <Route path="search/:searchQuery" element={<Results />} />
 
-        <Route path="*" element={<Error />} />
-      </Routes>
+          <Route path="*" element={<Error />} />
+        </Routes>
 
-      {videoVisible && <VideoPlayer />}
+        {videoVisible && <VideoPlayer />}
 
-      {profileVisible && <ProfileDetails />}
+        {profileVisible && <ProfileDetails />}
+      </main>
 
       <Footer />
     </div>
