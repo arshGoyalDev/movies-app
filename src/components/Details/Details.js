@@ -58,7 +58,7 @@ const Details = ({
               data={videos.reverse()}
               backdrop={details.backdrop_path}
             />
-            <Recommended data={recommended} />
+            <Recommended data={recommended} query={query} />
           </>
         ) : (
           <DetailsLoader />

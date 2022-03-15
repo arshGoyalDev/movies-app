@@ -52,11 +52,16 @@
 
         button {
           font-weight: $fw-bold;
-          padding: 5px 20px;
-          background: rgba($color: $text-primary, $alpha: 0.4);
-          // background: $text-tertiary;
+          padding: 3px 18px;
+          border: 2px solid $text-secondary;
           border-radius: 5px;
           cursor: pointer;
+          transition: 0.3s;
+
+          &:hover {
+            border-color: $call-to-action;
+            background: $call-to-action;
+          }
         }
       }
     }
@@ -199,7 +204,7 @@
           }
 
           button {
-            padding: 10px 30px;
+            padding: 7px 30px;
           }
         }
       }
@@ -224,8 +229,6 @@
 
       &--item {
         &--poster {
-          // background: rgba($color: #000000, $alpha: 0.4);
-          // background: linear-gradient(to right, rgba(0, 0, 0, 0.4) 60%, #000);
           background: linear-gradient(to right, #000 25%, rgba(0, 0, 0, 0.4));
           
           img {
