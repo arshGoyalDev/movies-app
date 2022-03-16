@@ -11,8 +11,31 @@
   cursor: pointer;
 
   &--body {
+    position: absolute;
+    bottom: 0;
     display: flex;
+    gap: 5px;
     flex-direction: column;
+    width: 100%;
+    padding: 12px 15px 15px;
+    background: rgba($color: #000, $alpha: 0.9);
+    border-top: 1px solid $text-tertiary;
+    border-bottom: 0;
+
+    @supports (backdrop-filter: blur(40px)) {
+      background: rgba($color: #000, $alpha: 0.2);
+      backdrop-filter: blur(40px);
+    }
+
+    .name {
+      font-weight: $fw-bold;
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+    }
+
+    .release-date {
+      color: $text-secondary;
+    }
   }
 
   @include media-sm {

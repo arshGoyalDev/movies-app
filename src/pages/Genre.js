@@ -72,7 +72,7 @@ const Genre = () => {
             {!loading
               ? genreData.map((item) => (
                   <PosterCard
-                    key={item.title ? item.title : item.name}
+                    key={item.id}
                     data={item}
                   />
                 ))

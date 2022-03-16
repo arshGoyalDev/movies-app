@@ -1,11 +1,11 @@
 import "./styles/PosterCard.scss";
 
 import CardImage from "./CardImage";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEllipsis, faHeart } from "@fortawesome/free-solid-svg-icons";
+import Rating from "../Rating";
 
 import { useNavigate } from "react-router-dom";
+
+import { modifyDate } from "../../utils/time";
 
 const PosterCard = ({ data }) => {
   const navigate = useNavigate();
@@ -16,37 +16,14 @@ const PosterCard = ({ data }) => {
 
   return (
     <div className="poster-card" onClick={clickHandler}>
-      <CardImage imagePath={data.poster_path} name={data.title ? data.title : data.name} />
-      <div
-        className={`poster-card--body ${
-          data.vote_average !== 0 ? "rated" : ""
-        }`}
-      >
-        {data.vote_average !== 0 && (
-          <div className="poster-card--body--rating">
-            <FontAwesomeIcon icon={faHeart} /> {data.vote_average.toFixed(1)}
-          </div>
-        )}
-        <div className="poster-card--body--details">
-          <div className="poster-card--body--details--more">
-            <button className="poster-card--body--details--more--btn">
-              <FontAwesomeIcon icon={faEllipsis} />
-            </button>
-
-            <h3 className="poster-card--body--details--more--title">
-              {data.title
-                ? data.title.length >= 30
-                  ? data.title.slice(0, 30) + "..."
-                  : data.title
-                : data.name.length >= 30
-                ? data.name.slice(0, 30) + "..."
-                : data.name}
-            </h3>
-          </div>
-          <div className="poster-card--body--details--progress">
-            <div className="poster-card--body--details--progress--completed"></div>
-          </div>
-        </div>
+      <CardImage
+        imagePath={data.poster_path}
+        name={data.title ? data.title : data.name}
+      />
+      <div className="poster-card--body">
+        <p className="release-date">{modifyDate(data.release_date ? data.release_date : data.first_air_date)}</p>
+        <p className="name">{data.title ? data.title : data.name}</p>
+        <Rating rating={data.vote_average} />
       </div>
     </div>
   );

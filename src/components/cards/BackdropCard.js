@@ -1,10 +1,9 @@
 import "./styles/BackdropCard.scss";
 
 import CardImage from "./CardImage";
-
+import Rating from "../Rating";
 
 import { useNavigate } from "react-router-dom";
-import Rating from "../Rating";
 
 const BackDropCard = ({ data }) => {
   const navigate = useNavigate();
@@ -22,7 +21,7 @@ const BackDropCard = ({ data }) => {
       <div className="backdrop-card--body">
         <div className="card-details">
           <Rating rating={data.vote_average} />
-          <p>{data.title ? data.title : data.name}</p>
+          <p className="title">{data.title ? data.title : data.name}</p>
         </div>
         <div className="divider"></div>
         <button>More</button>
