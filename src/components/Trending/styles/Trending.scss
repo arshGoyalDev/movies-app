@@ -50,21 +50,7 @@
         }
 
         .rating {
-          display: flex;
-          align-items: center;
-          gap: 5px;
           margin-top: 8px;
-          
-          i {
-            font-size: 1rem;
-            color: $text-primary;
-            margin-right: 10px;
-          }
-
-          .votes {
-            font-weight: $fw-bold;
-            color: $text-primary;
-          }
         }
 
         button {
@@ -185,7 +171,7 @@
           }
 
           .rating {
-            margin-top: 6px;
+            margin-top: 10px;
           }
 
           button {

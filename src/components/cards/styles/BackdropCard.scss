@@ -9,54 +9,49 @@
   align-items: flex-end;
   width: 100%;
   height: 180px;
-  padding: 20px;
   background: rgba($color: #000, $alpha: 0.4);
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
 
   &--body {
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    bottom: 0;
     display: flex;
-    align-items: flex-end;
-    gap: 10px;
+    align-items: center;
+    width: 100%;
+    padding: 15px 15px 10px;
+    background: rgba($color: #000, $alpha: 0.4);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid $text-tertiary;
+    border-bottom: 0;
 
-    &.rated {
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: flex-start;
-    }
-
-    &--rating {
+    .card-details {
       display: flex;
+      flex-direction: column;
       gap: 7px;
-      width: max-content;
-      color: $background;
-      padding: 5px 10px;
-      background: $rating-background;
-      border-radius: 5px;
-      cursor: default;
+      margin-right: 10px;
+
+      p{
+        font-weight: $fw-bold;
+        font-size: 1.2rem;
+      }
     }
 
-    &--details {
-      width: 100%;
-      div {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
+    .divider {
+      margin-inline: auto 15px;
+      width: 2px;
+      min-height: 40px;
+      max-height: 70px;
+      background: $text-secondary;
+      border-radius: 10px;
+    }
 
-      &--btn {
-        padding: 3px 5px;
-        background: $background;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-
-      &--title {
-        padding: 3px;
-      }
+    button {
+      padding: 5px 20px;
+      border-radius: 5px;
+      background: rgba($color: #000, $alpha: 0.4);
+      cursor: pointer;
     }
   }
 
@@ -67,57 +62,5 @@
   @include media-lg {
     background: rgba($color: #000, $alpha: 0.2);
     transition: 0.5s;
-
-    &--body {
-      &--rating,
-      &--details {
-        opacity: 0;
-        transition: 0.3s;
-      }
-
-      &--details {
-        transform: translateY(10px);
-      }
-
-      &--details--progress {
-        position: relative;
-        width: 100%;
-        height: 4px;
-        background: darken($color: $text-secondary, $amount: 20%);
-        border-radius: 50px;
-        margin-top: 5px;
-        opacity: 0;
-        overflow: hidden;
-
-        &--completed {
-          position: absolute;
-          width: 0;
-          height: 100%;
-          background: $text-primary;
-          border-radius: 50px;
-          transition: 1s;
-        }
-      }
-    }
-
-    &:hover {
-      background: rgba($color: #000, $alpha: 0.6);
-
-      .backdrop-card--body {
-        &--rating,
-        &--details {
-          opacity: 1;
-          transform: translateY(0);
-        }
-
-        &--details--progress {
-          opacity: 1;
-
-          &--completed {
-            width: 50%;
-          }
-        }
-      }
-    }
   }
 }
