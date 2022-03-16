@@ -8,7 +8,7 @@
   padding: 0 30px;
   margin-top: 20px;
   overflow: hidden;
-  
+
   &--items {
     position: relative;
     width: 100%;
@@ -43,14 +43,32 @@
 
         h1 {
           font-size: 1.5rem;
-          margin-bottom: 8px;
         }
 
         p {
           display: none;
         }
 
+        .rating {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          margin-top: 8px;
+          
+          i {
+            font-size: 1rem;
+            color: $text-primary;
+            margin-right: 10px;
+          }
+
+          .votes {
+            font-weight: $fw-bold;
+            color: $text-primary;
+          }
+        }
+
         button {
+          margin-top: 10px;
           font-weight: $fw-bold;
           padding: 3px 18px;
           border: 2px solid $text-secondary;
@@ -71,7 +89,7 @@
       bottom: -40px;
       display: none;
       align-items: flex-end;
-      gap: 30px;
+      gap: 15px;
       width: 100%;
       overflow-x: auto;
       z-index: 100;
@@ -141,14 +159,13 @@
           position: initial;
           display: flex;
           justify-content: flex-end;
-          background: linear-gradient(to right, #000 24%, rgba(0, 0, 0, 0.4));
+          background: rgba($color: #000, $alpha: 0.6);
           right: 0;
           width: 100%;
 
           img {
             position: absolute;
             z-index: -1;
-            width: 80%;
           }
         }
 
@@ -165,7 +182,14 @@
             display: block;
             max-width: 300px;
             color: $text-secondary;
-            margin-bottom: 13px;
+          }
+
+          .rating {
+            margin-top: 6px;
+          }
+
+          button {
+            margin-top: 13px;
           }
         }
       }
@@ -185,9 +209,9 @@
 
       &--item {
         &--poster {
-          background: linear-gradient(to right, #000 30%, rgba(0, 0, 0, 0.4));
+          // background: linear-gradient(to right, #000 30%, rgba(0, 0, 0, 0.4));
           img {
-            width: 75%;
+            // width: 75%;
           }
         }
         &--details {
@@ -229,10 +253,10 @@
 
       &--item {
         &--poster {
-          background: linear-gradient(to right, #000 25%, rgba(0, 0, 0, 0.4));
-          
+          // background: linear-gradient(to right, #000 25%, transparent);
+
           img {
-            width: 75%;
+            // width: 75%;
           }
         }
 
@@ -261,12 +285,12 @@
 }
 
 @keyframes show-up {
-  0%{
+  0% {
     opacity: 0;
     transform: translateX(100px);
   }
 
-  100%{
+  100% {
     opacity: 1;
     transform: translateX(0);
   }

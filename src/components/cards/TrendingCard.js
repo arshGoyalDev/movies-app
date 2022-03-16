@@ -17,7 +17,7 @@ const TrendingCard = ({data, trendingData, index, setIndex}) => {
     >
       <div className="trending-card--background">
         <img
-          src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
+          src={`https://image.tmdb.org/t/p/w500${data.backdrop_path}`}
           alt={data.title ? data.title : data.name}
         />
       </div>
