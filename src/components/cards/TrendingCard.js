@@ -1,7 +1,7 @@
+import CardImage from "./CardImage";
 import "./styles/TrendingCard.scss";
 
-const TrendingCard = ({data, trendingData, index, setIndex}) => {
-
+const TrendingCard = ({ data, trendingData, index, setIndex }) => {
   const clickCard = (e) => {
     setIndex(parseInt(e.target.getAttribute("data-index")));
   };
@@ -15,12 +15,10 @@ const TrendingCard = ({data, trendingData, index, setIndex}) => {
       onClick={clickCard}
       data-index={trendingData.indexOf(data)}
     >
-      <div className="trending-card--background">
-        <img
-          src={`https://image.tmdb.org/t/p/w500${data.backdrop_path}`}
-          alt={data.title ? data.title : data.name}
-        />
-      </div>
+      <CardImage
+        imagePath={data.backdrop_path}
+        name={data.title ? data.title : data.name}
+      />
       <h3 data-index={trendingData.indexOf(data)}>
         {data.title ? data.title : data.name}
       </h3>
