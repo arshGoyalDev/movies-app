@@ -1,7 +1,7 @@
 @use "variables" as *;
 @use "mixins" as *;
 
-@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
 
 // -------------------- //
 // reset
@@ -42,7 +42,8 @@ html {
 body {
   color: $text-primary;
   font-weight: $fw-regular;
-  font-family: "Cabin", sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+  // font-family: 'Montserrat', sans-serif;
   background: $background;
 
   &::-webkit-scrollbar {
