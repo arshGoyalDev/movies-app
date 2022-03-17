@@ -1,7 +1,6 @@
 import { BackdropCard } from "../cards";
 
 const Recommended = ({ data, query }) => {
-  console.log(query);
   return (
     <div className="details--recommended">
       {data.length !== 0 && (
