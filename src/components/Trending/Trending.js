@@ -26,14 +26,14 @@ const Trending = ({ queryType }) => {
   }, [trendingData]);
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      !loading && index === trendingData.length - 1
-        ? setIndex(0)
-        : setIndex(index + 1);
-    }, 5000);
+    // const timeout = setTimeout(() => {
+    //   !loading && index === trendingData.length - 1
+    //     ? setIndex(0)
+    //     : setIndex(index + 1);
+    // }, 5000);
 
-    return () => clearTimeout(timeout);
-    // eslint-disable-next-line
+    // return () => clearTimeout(timeout);
+    // // eslint-disable-next-line
   }, [index]);
 
   const prevBtnClick = () => {
@@ -48,26 +48,24 @@ const Trending = ({ queryType }) => {
     <div className="trending">
       {!loading ? (
         <>
-          <div className="trending--items">
-            <TrendingItem
-              key={
-                trendingData[index].title
-                  ? trendingData[index].title
-                  : trendingData[index].name
-              }
-              data={trendingData[index]}
-            />
-            <div className="trending--items--cards">
-              {trendingData.map((item) => (
-                <TrendingCard
-                  key={item.id}
-                  data={item}
-                  trendingData={trendingData}
-                  index={index}
-                  setIndex={setIndex}
-                />
-              ))}
-            </div>
+          <TrendingItem
+            key={
+              trendingData[index].title
+                ? trendingData[index].title
+                : trendingData[index].name
+            }
+            data={trendingData[index]}
+          />
+          <div className="trending--cards">
+            {trendingData.map((item) => (
+              <TrendingCard
+                key={item.id}
+                data={item}
+                trendingData={trendingData}
+                index={index}
+                setIndex={setIndex}
+              />
+            ))}
           </div>
           <div className="trending--controls">
             <button className="trending--controls--prev" onClick={prevBtnClick}>

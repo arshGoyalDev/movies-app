@@ -25,7 +25,7 @@
   &--menu {
     width: 100%;
     padding: 30px 25px;
-    max-width: 360px;
+    max-width: 340px;
     border-radius: 20px;
     background: $background;
     transform: scale(0) translate(0, -80px);
@@ -97,7 +97,7 @@
 
       &--input {
         width: 80%;
-        padding: 5px 5px;
+        padding: 6px 7px;
         border: 2px solid $text-secondary;
         border-radius: 5px;
         outline: none;
@@ -116,20 +116,9 @@
       &--btn {
         color: $background;
         font-weight: $fw-bold;
-        padding: 5px 15px;
+        padding: 6px 30px;
         background: $call-to-action;
         border-radius: 5px;
-      }
-
-      @include media-sm {
-        &--input {
-          width: 200px;
-        }
-
-        &--btn {
-          width: auto;
-          padding: 8.5px 30px;
-        }
       }
     }
   }
@@ -155,12 +144,22 @@
         gap: 10px;
         flex-direction: row;
 
-        li:first-child {
-          display: none;
-        }
+        li {
+          &:first-child {
+            display: none;
+          }
 
-        button {
-          padding: 5px 15px;
+          &:hover {
+            button {
+              background: rgba($color: #fff, $alpha: 0.1);
+            }
+          }
+
+          button {
+            border-radius: 5px;
+            padding: 7px 15px;
+            transition: 0.3s;
+          }
         }
       }
 
