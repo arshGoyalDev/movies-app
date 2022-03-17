@@ -22,7 +22,7 @@ A app to show data about popular, trending, upcoming movies & tv shows and much 
 
 ### Links
 
-- [Live Site]("https://movies-app-eta-ten.vercel.app/movie")
+- [Live Site](https://movies-app-bay-rho.vercel.app)
 
 
 
