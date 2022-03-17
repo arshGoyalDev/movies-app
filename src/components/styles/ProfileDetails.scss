@@ -1,5 +1,5 @@
-@use "../../styles/variables" as *;
-@use "../../styles/mixins" as *;
+@use "variables" as *;
+@use "mixins" as *;
 
 .profile-details-wrapper {
   position: fixed;
@@ -79,17 +79,21 @@
           margin-bottom: 5px;
         }
         
+        .biography {
+          color: $text-secondary;
+        }
+
         p{
           display: block;
-          color: $text-secondary;
-  
+          
           &:not(:last-child) {
             margin-bottom: 7px;
             font-weight: $fw-medium;
           }
-  
+          
           span {
             display: block;
+            color: $text-secondary;
             margin-top: 2px;
           }
         }

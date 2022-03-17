@@ -2,7 +2,7 @@ import "./styles/VideoPlayer.scss";
 
 import { useDispatch, useSelector } from "react-redux";
 
-import { clearVideoDetails } from "../../features/videoSlice";
+import { clearVideoDetails } from "../features/videoSlice";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";

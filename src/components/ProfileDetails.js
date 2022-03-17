@@ -2,11 +2,11 @@ import "./styles/ProfileDetails.scss";
 
 import { useState, useEffect } from "react";
 
-import { useFetch } from "../../hooks";
+import { useFetch } from "../hooks";
 
-import { modifyDate } from "../../utils";
+import { modifyDate } from "../utils";
 
-import { clearProfileDetails } from "../../features/profileSlice";
+import { clearProfileDetails } from "../features/profileSlice";
 
 import { useDispatch, useSelector } from "react-redux";
 

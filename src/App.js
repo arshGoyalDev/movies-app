@@ -9,7 +9,8 @@ import Footer from "./components/Footer";
 import Error from "./components/Error";
 
 import Details from "./components/Details";
-import { ProfileDetails, VideoPlayer } from "./components/more";
+import VideoPlayer from "./components/VideoPlayer";
+import ProfileDetails from "./components/ProfileDetails";
 
 import Home from "./pages/Home";
 import Query from "./pages/Query";
