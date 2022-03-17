@@ -11,9 +11,10 @@
   &--cards {
     margin-top: 20px;
     display: flex;
+    align-items: center;
     flex-direction: column;
     gap: 20px;
-
+    
     @media (min-width: 33em) {
       flex-direction: row;
       flex-wrap: wrap;

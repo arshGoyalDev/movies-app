@@ -8,11 +8,11 @@
   justify-content: flex-end;
   min-width: 160px;
   height: 120px;
-  background: rgba($color: #000, $alpha: 0.4);
+  background: rgba($color: #000, $alpha: 0.5);
   border: 2px solid $text-tertiary;
   border-radius: 10px;
   cursor: pointer;
-  transition: 0.5s;
+  transition: 1s;
   outline: none;
 
   &.active {
@@ -28,12 +28,25 @@
 
   img {
     border-radius: 5px;
+    transition: 1s;
   }
 
   h3 {
     font-size: 1rem;
     padding: 10px;
     transition: 0.3s;
+  }
+
+  @include media-lg {
+    h3 {
+      opacity: 0;
+    }
+
+    &:hover {
+      h3 {
+        opacity: 1;
+      }
+    }
   }
 
   @include media-xl {
