@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 import { updateVideoDetails } from "../../features/videoSlice";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
+import { faPlay } from "@fortawesome/free-solid-svg-icons";
 
 const VideoCard = ({ data, backdrop }) => {
   const dispatch = useDispatch();
@@ -30,7 +30,7 @@ const VideoCard = ({ data, backdrop }) => {
       </div>
       <div className="video-card--play">
         <button className="play-btn">
-          <FontAwesomeIcon icon={faPlayCircle} />
+          <FontAwesomeIcon icon={faPlay} />
         </button>
       </div>
     </div>
