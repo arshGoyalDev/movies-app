@@ -23,65 +23,81 @@
   }
 
   &--menu {
-    position: absolute;
-    z-index: 1000;
-    background: $background;
-    top: 74px;
-    left: 50%;
     width: 100%;
-    padding: 0 30px 30px;
-    box-shadow: 0 80px 100px rgba($color: #000000, $alpha: 0.2);
-    transform: translate(-50%) scaleY(0);
-    transform-origin: top;
-    transition: 0.3s;
+    padding: 30px 25px;
+    max-width: 360px;
+    border-radius: 20px;
+    background: $background;
+    transform: scale(0) translate(0, -80px);
+    transition: transform 0.7s;
+    transform-origin: top right;
 
-    &.active {
-      transform: translate(-50%) scaleY(1);
+    &.menu-active {
+      transform: scale(1) translate(0, 0);
     }
 
-    &--list {
+    ul {
       display: flex;
       flex-direction: column;
-      gap: 15px;
       list-style: none;
 
       button {
-        position: relative;
-        width: 100%;
-        text-align: start;
-        padding: 2px;
+        padding: 5px;
+        font-weight: $fw-semibold;
         cursor: pointer;
+      }
+    }
 
-        &::before {
-          content: "";
-          position: absolute;
-          bottom: 1px;
-          left: 50%;
-          transform: translateX(-50%) scaleX(0);
-          transform-origin: right;
-          width: 85%;
-          height: 2px;
-          background: $text-secondary;
-          transition: transform 0.3s;
-        }
+    &--wrapper {
+      position: fixed;
+      z-index: 1000;
+      inset: 0;
 
-        &:hover::before {
-          transform-origin: left;
-          transform: translateX(-50%) scaleX(1);
-        }
+      display: flex;
+      align-items: flex-end;
+      flex-direction: column;
 
-        &:focus {
-          outline: none;
-        }
+      width: 100%;
+      height: 100%;
+      padding: 0 24px;
+      background: rgba($color: #000000, $alpha: 0.8);
+      transition: 0.5s;
+      opacity: 0;
+      visibility: hidden;
+
+      &.wrapper-active {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &--close-btn {
+      display: grid;
+      place-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: $background;
+      margin-top: 27px;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      transition: 1s;
+
+      &.close-btn-active {
+        transform: rotate(720deg);
       }
     }
 
     &--search {
-      margin-top: 15px;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
 
       &--input {
-        width: 75%;
-        padding: 7px 5px;
+        width: 80%;
+        padding: 5px 5px;
         border: 2px solid $text-secondary;
         border-radius: 5px;
         outline: none;
@@ -98,13 +114,11 @@
       }
 
       &--btn {
-        width: 23%;
         color: $background;
         font-weight: $fw-bold;
-        padding: 8.5px 0;
+        padding: 5px 15px;
         background: $call-to-action;
         border-radius: 5px;
-        margin-left: 5px;
       }
 
       @include media-sm {
@@ -129,14 +143,42 @@
     }
 
     &--menu {
-      position: initial;
-      z-index: 1;
+      max-width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 0;
-      transform: translateX(0) scaleY(1);
-      box-shadow: none;
+      background: transparent;
+      transform: scale(1) translate(0, 0);
+
+      ul {
+        gap: 10px;
+        flex-direction: row;
+
+        li:first-child {
+          display: none;
+        }
+
+        button {
+          padding: 5px 15px;
+        }
+      }
+
+      &--close-btn {
+        display: none;
+      }
+
+      &--wrapper {
+        position: initial;
+        z-index: 1;
+        padding: 0;
+        background: transparent;
+        opacity: 1;
+        visibility: visible;
+      }
+
+      position: initial;
+      z-index: 1;
 
       &.active {
         transform: translateX(0) scaleY(1);
@@ -151,6 +193,8 @@
       }
 
       &--search {
+        flex-direction: row;
+        gap: 10px;
         margin-top: 0;
       }
     }
