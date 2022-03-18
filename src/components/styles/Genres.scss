@@ -14,15 +14,18 @@
 
   &--genre {
     font-weight: $fw-bold;
-    color: $background;
+    color: $text-primary;
     padding: 10px 30px;
-    background: $call-to-action;
+    background: lighten($color: $background, $amount: 5%);
+    box-shadow: 0 0 40px #000;
+    // background: $call-to-action;
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
 
     &.selected {
-      background: lighten($color: $call-to-action, $amount: 25%);
+      background: $text-tertiary;
+      box-shadow: none;
     }
   }
 
