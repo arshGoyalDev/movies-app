@@ -38,7 +38,12 @@ const NavBar = ({ setScroll }) => {
         <FontAwesomeIcon icon={faBars} />{" "}
       </button>
       <div className={`nav--menu--wrapper ${menuVisible && "wrapper-active"}`}>
-        <button className={`nav--menu--close-btn ${menuVisible && "close-btn-active"}`} onClick={() => setMenuVisible(false)}>
+        <button
+          className={`nav--menu--close-btn ${
+            menuVisible && "close-btn-active"
+          }`}
+          onClick={() => setMenuVisible(false)}
+        >
           <FontAwesomeIcon icon={faXmark} />
         </button>
         <div className={`nav--menu ${menuVisible && "menu-active"}`}>

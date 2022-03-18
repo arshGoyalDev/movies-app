@@ -30,12 +30,10 @@ const App = () => {
   const [scroll, setScroll] = useState(true);
 
   useEffect(() => {
-    if (!scroll) {
-      document.body.classList.add("hide-scroll");
-    } else if (scroll) {
-      document.body.classList.remove("hide-scroll");
-    }
-  }, [scroll])
+    !scroll
+      ? document.body.classList.add("hide-scroll")
+      : document.body.classList.remove("hide-scroll");
+  }, [scroll]);
 
   useEffect(() => {
     window.scrollTo({
