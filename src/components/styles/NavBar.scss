@@ -31,6 +31,7 @@
     transform: scale(0) translate(0, -80px);
     transition: transform 0.7s;
     transform-origin: top right;
+    box-shadow: 0 0 50px rgba($color: #000000, $alpha: 0.5);
 
     &.menu-active {
       transform: scale(1) translate(0, 0);
@@ -60,7 +61,7 @@
       width: 100%;
       height: 100%;
       padding: 0 24px;
-      background: rgba($color: #000000, $alpha: 0.8);
+      // background: rgba($color: #000000, $alpha: 0.5);
       transition: 0.5s;
       opacity: 0;
       visibility: hidden;
@@ -76,11 +77,12 @@
       place-items: center;
       width: 40px;
       height: 40px;
-      border-radius: 50%;
+      font-size: 1.2rem;
       background: $background;
       margin-top: 27px;
-      font-size: 1.2rem;
       margin-bottom: 20px;
+      border-radius: 50%;
+      box-shadow: 0 0 47px #000;
       transition: 1s;
 
       &.close-btn-active {
@@ -138,6 +140,7 @@
       align-items: center;
       padding: 0;
       background: transparent;
+      box-shadow: none;
       transform: scale(1) translate(0, 0);
 
       ul {
@@ -165,13 +168,13 @@
 
       &--close-btn {
         display: none;
+        box-shadow: none;
       }
 
       &--wrapper {
         position: initial;
         z-index: 1;
         padding: 0;
-        background: transparent;
         opacity: 1;
         visibility: visible;
       }
