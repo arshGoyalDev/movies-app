@@ -27,6 +27,15 @@ const App = () => {
   const { visible: profileVisible } = useSelector(
     (state) => state.profileDetails.value
   );
+  const [scroll, setScroll] = useState(true);
+
+  useEffect(() => {
+    if (!scroll) {
+      document.body.classList.add("hide-scroll");
+    } else if (scroll) {
+      document.body.classList.remove("hide-scroll");
+    }
+  }, [scroll])
 
   useEffect(() => {
     window.scrollTo({
@@ -37,7 +46,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <NavBar />
+      <NavBar setScroll={setScroll} />
 
       <main>
         <Routes>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import "./styles/NavBar.scss";
 
@@ -7,11 +7,15 @@ import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 
-const NavBar = () => {
+const NavBar = ({ setScroll }) => {
   const navigate = useNavigate();
-
   const [searchTerm, setSearchTerm] = useState("");
   const [menuVisible, setMenuVisible] = useState(false);
+
+  useEffect(() => {
+    menuVisible ? setScroll(false) : setScroll(true);
+    // eslint-disable-next-line
+  }, [menuVisible]);
 
   const search = () => {
     if (searchTerm.replaceAll(" ", "").length !== 0) {
