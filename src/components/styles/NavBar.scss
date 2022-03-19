@@ -155,14 +155,33 @@
 
           &:hover {
             button {
-              background: rgba($color: #fff, $alpha: 0.1);
+              &::after {
+                transform-origin: left;
+                transform: translateX(-50%) scaleX(1);  
+              }
+              // background: rgba($color: #fff, $alpha: 0.1);
             }
           }
 
           button {
+            position: relative;
             border-radius: 5px;
-            padding: 7px 15px;
+            padding: 3px 10px;
             transition: 0.3s;
+
+            &::after {
+              content: '';
+              position: absolute;
+              bottom: -2px;
+              left: 50%;
+              transform: translateX(-50%) scaleX(0);
+              width: 90%;
+              height: 2px;
+              background: $text-primary;
+              border-radius: 10px;
+              transform-origin: right;
+              transition: transform 0.1s;
+            }
           }
         }
       }
