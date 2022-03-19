@@ -62,7 +62,7 @@
       width: 100%;
       height: 100%;
       padding: 0 24px;
-      // background: rgba($color: #000000, $alpha: 0.5);
+      background: rgba($color: #000000, $alpha: 0.3);
       transition: 0.5s;
       opacity: 0;
       visibility: hidden;
@@ -159,7 +159,6 @@
                 transform-origin: left;
                 transform: translateX(-50%) scaleX(1);  
               }
-              // background: rgba($color: #fff, $alpha: 0.1);
             }
           }
 
@@ -195,6 +194,7 @@
         position: initial;
         z-index: 1;
         padding: 0;
+        background: transparent;
         opacity: 1;
         visibility: visible;
       }
