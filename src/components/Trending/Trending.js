@@ -26,13 +26,13 @@ const Trending = ({ queryType }) => {
   }, [trendingData]);
 
   useEffect(() => {
-    // const timeout = setTimeout(() => {
-    //   !loading && index === trendingData.length - 1
-    //     ? setIndex(0)
-    //     : setIndex(index + 1);
-    // }, 5000);
+    const timeout = setTimeout(() => {
+      !loading && index === trendingData.length - 1
+        ? setIndex(0)
+        : setIndex(index + 1);
+    }, 5000);
 
-    // return () => clearTimeout(timeout);
+    return () => clearTimeout(timeout);
     // // eslint-disable-next-line
   }, [index]);
 
