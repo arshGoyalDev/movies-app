@@ -102,14 +102,11 @@
       transition: 0.5s;
 
       &--option {
-        color: $background;
         font-weight: $fw-bold;
-
-        padding: 10px 30px;
-        background: $call-to-action;
-
+        padding: 10px 20px;
+        background: lighten($color: $background, $amount: 5%);
         border-radius: 5px;
-        box-shadow: 0 0 40px rgba($color: #000, $alpha: 0.6);
+        box-shadow: 0 0 20px #000;
         cursor: pointer;
       }
     }

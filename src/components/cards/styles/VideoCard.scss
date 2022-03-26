@@ -32,15 +32,15 @@
     .play-btn {
       display: grid;
       place-items: center;
-      width: 50px;
-      height: 50px;
+      width: 40px;
+      height: 40px;
       background: lighten($color: $background, $amount: 10%);
-      border-radius: 50%;
+      border-radius: 13px;
       cursor: pointer;
 
-      @supports (backdrop-filter: blur(20px)) {
-        background: rgba($color: $background, $alpha: 0.2);
-        backdrop-filter: blur(20px);
+      @supports (backdrop-filter: blur(30px)) {
+        background: rgba($color: $background, $alpha: 0.4);
+        backdrop-filter: blur(30px);
       }
 
       & > * {

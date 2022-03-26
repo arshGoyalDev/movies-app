@@ -85,10 +85,11 @@
     button {
       display: grid;
       place-items: center;
-      width: 35px;
-      height: 35px;
-      background-color: $call-to-action;
-      border-radius: 5px;
+      width: 45px;
+      height: 45px;
+      background: rgba($color: #000000, $alpha: 0.5);
+      backdrop-filter: blur(60px);
+      border-radius: 50%;
       cursor: pointer;
     }
 
@@ -140,10 +141,16 @@
           margin-bottom: 2px;
         }
 
+        .date {
+          font-weight: $fw-bold;
+          margin-bottom: 5px;
+          color: darken($color: $text-secondary, $amount: 20%);
+        }
+
         p {
           display: block;
           max-width: 320px;
-          color: $text-secondary;
+          color: lighten($color: $text-secondary, $amount: 10%);
         }
 
         .rating {
@@ -201,7 +208,7 @@
       align-items: center;
       gap: 15px;
 
-      width: 60%;
+      width: 55%;
       padding: 40px;
       background: rgba($color: #000, $alpha: 0.6);
       border: 2px solid $background;

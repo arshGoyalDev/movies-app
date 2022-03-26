@@ -22,6 +22,7 @@ const Trending = ({ queryType }) => {
   useEffect(() => {
     if (trendingData) {
       setLoading(false);
+      console.log(trendingData);
     }
   }, [trendingData]);
 

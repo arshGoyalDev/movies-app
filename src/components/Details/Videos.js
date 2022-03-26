@@ -12,13 +12,14 @@ const Videos = ({ data, backdrop }) => {
       if (
         name.includes("trailer") ||
         name.includes("teaser") ||
-        name.includes("first")
+        name.includes("first") ||
+        name.includes("featurette")
       ) {
         output = video;
       }
       return output;
     });
-    setVideos(filteredVideos);
+    setVideos(filteredVideos.reverse());
     // eslint-disable-next-line
   }, []);
 
@@ -29,11 +30,7 @@ const Videos = ({ data, backdrop }) => {
           <h3>Videos</h3>
           <div className="videos">
             {videos.map((video) => (
-              <VideoCard
-                key={video.id}
-                data={video}
-                backdrop={backdrop}
-              />
+              <VideoCard key={video.id} data={video} backdrop={backdrop} />
             ))}
           </div>
         </>
