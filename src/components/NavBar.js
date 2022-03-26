@@ -5,7 +5,7 @@ import "./styles/NavBar.scss";
 import { Link, useNavigate } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faSearch, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 const NavBar = ({ setScroll }) => {
   const navigate = useNavigate();
@@ -66,6 +66,9 @@ const NavBar = ({ setScroll }) => {
           </ul>
 
           <div className="nav--menu--search">
+            <button className="nav--menu--search--btn" onClick={search}>
+              <FontAwesomeIcon icon={faSearch} />
+            </button>
             <input
               type="input"
               className="nav--menu--search--input"
@@ -78,9 +81,6 @@ const NavBar = ({ setScroll }) => {
                 e.keyCode === 13 && search();
               }}
             />
-            <button className="nav--menu--search--btn" onClick={search}>
-              Search
-            </button>
           </div>
         </div>
       </div>

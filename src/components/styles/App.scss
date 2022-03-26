@@ -78,8 +78,10 @@ body {
 // focus
 
 *:focus {
-  // border-radius: 5px;
-  border-bottom: 2px solid $text-primary;
+  outline: 2px solid $text-primary;
+  outline-offset: 5px;
+  border-radius: 5px;
+  transition: 0.3s;
 }
 
 // selection
