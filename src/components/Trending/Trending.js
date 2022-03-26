@@ -22,7 +22,6 @@ const Trending = ({ queryType }) => {
   useEffect(() => {
     if (trendingData) {
       setLoading(false);
-      console.log(trendingData);
     }
   }, [trendingData]);
 
@@ -34,7 +33,7 @@ const Trending = ({ queryType }) => {
     }, 5000);
 
     return () => clearTimeout(timeout);
-    // // eslint-disable-next-line
+    // eslint-disable-next-line
   }, [index]);
 
   const prevBtnClick = () => {

@@ -7,7 +7,6 @@ import { Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import Error from "./components/Error";
-
 import Details from "./components/Details";
 import VideoPlayer from "./components/VideoPlayer";
 import ProfileDetails from "./components/ProfileDetails";
@@ -20,7 +19,7 @@ import Results from "./pages/Results";
 import { useSelector } from "react-redux";
 
 const App = () => {
-  const [detailsVisible, setDetailsVisible] = useState(false);
+  const [scrollTop, setScrollTop] = useState(false);
   const { visible: videoVisible } = useSelector(
     (state) => state.videoDetails.value
   );
@@ -40,7 +39,7 @@ const App = () => {
       top: 0,
       behavior: "smooth",
     });
-  }, [detailsVisible]);
+  }, [scrollTop]);
 
   return (
     <div className="App">
@@ -53,23 +52,25 @@ const App = () => {
           <Route path="/movie" element={<Query key="movies" type="movie" />}>
             <Route
               path=":id"
-              element={
-                <Details query="movie" setDetailsVisible={setDetailsVisible} />
-              }
+              element={<Details query="movie" setScrollTop={setScrollTop} />}
             />
           </Route>
 
           <Route path="/tv" element={<Query key="tv-shows" type="tv" />}>
             <Route
               path=":id"
-              element={
-                <Details query="tv" setDetailsVisible={setDetailsVisible} />
-              }
+              element={<Details query="tv" setScrollTop={setScrollTop} />}
             />
           </Route>
 
-          <Route path="genre/:query" element={<Genre />}>
-            <Route path=":genreId" element={<Genre />} />
+          <Route
+            path="genre/:query"
+            element={<Genre setScrollTop={setScrollTop} />}
+          >
+            <Route
+              path=":genreId"
+              element={<Genre setScrollTop={setScrollTop} />}
+            />
           </Route>
 
           <Route path="search/:searchQuery" element={<Results />} />

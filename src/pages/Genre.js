@@ -10,9 +10,9 @@ import { SimpleLoader, InfiniteLoader } from "../components/loaders";
 
 import InfiniteScroll from "react-infinite-scroll-component";
 
-const Genre = () => {
+const Genre = ({ setScrollTop }) => {
   const { query, genreId } = useParams();
-  
+
   const [loading, setLoading] = useState(true);
   const [genreData, setGenreData] = useState("");
   const [page, setPage] = useState(1);
@@ -23,6 +23,10 @@ const Genre = () => {
     22, 23, 24, 25, 26, 27, 28, 29, 30,
   ];
 
+  useEffect(() => {
+    setScrollTop(true);
+    // eslint-disable-next-line
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -71,10 +75,7 @@ const Genre = () => {
           <div className="genre--cards">
             {!loading
               ? genreData.map((item) => (
-                  <PosterCard
-                    key={item.id}
-                    data={item}
-                  />
+                  <PosterCard key={item.id} data={item} />
                 ))
               : loadingArray.map((item) => (
                   <SimpleLoader key={item} className="loading--card--poster" />

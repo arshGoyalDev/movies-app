@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmarkCircle } from "@fortawesome/free-regular-svg-icons";
 import { useNavigate } from "react-router-dom";
 
-const DetailsWrapper = ({query, setDetailsVisible}) => {
+const DetailsWrapper = ({query, setScrollTop}) => {
   const navigate = useNavigate();
 
   return (
@@ -10,7 +10,7 @@ const DetailsWrapper = ({query, setDetailsVisible}) => {
       className="details--wrapper"
       onClick={() => {
         navigate(`/${query}`);
-        setDetailsVisible(false);
+        setScrollTop(false);
       }}
     >
       <div className="close-btn">

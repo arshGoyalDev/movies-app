@@ -14,7 +14,7 @@ import { DetailsLoader } from "../loaders";
 
 const Details = ({
   query,
-  setDetailsVisible,
+  setScrollTop,
 }) => {
   const { id } = useParams();
 
@@ -36,13 +36,13 @@ const Details = ({
   }, [details, castCrew, reviews, videos, recommended]);
 
   useEffect(() => {
-    setDetailsVisible(true);
+    setScrollTop(true);
     // eslint-disable-next-line
   }, []);
 
   return (
     <>
-      <DetailsWrapper query={query} setDetailsVisible={setDetailsVisible} />
+      <DetailsWrapper query={query} setScrollTop={setScrollTop} />
       <div className="details">
         {!loading ? (
           <>

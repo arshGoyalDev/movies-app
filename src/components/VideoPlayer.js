@@ -12,7 +12,6 @@ const VideoPlayer = () => {
   const {key, name} = useSelector((state) => state.videoDetails.value);
 
   const closePlayer = () => {
-    console.log("hello")
     dispatch(clearVideoDetails());
   };
 
