@@ -23,8 +23,6 @@ const BackDropCard = ({ data }) => {
           <Rating rating={data.vote_average} />
           <p className="title">{data.title ? data.title : data.name}</p>
         </div>
-        <div className="divider"></div>
-        <button>More</button>
       </div>
     </div>
   );

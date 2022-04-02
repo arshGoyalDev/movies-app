@@ -8,11 +8,11 @@
   flex-direction: column;
   justify-content: flex-end;
 
-  min-width: 160px;
-  height: 120px;
+  min-width: 140px;
+  height: 100px;
   background: rgba($color: #000, $alpha: 0.5);
   border: 2px solid $text-tertiary;
-  border-radius: 20px;
+  border-radius: 10px;
 
   outline: none;
   transition: 0.5s;
@@ -29,13 +29,12 @@
 
     img {
       filter: grayscale(0) brightness(110%);
-      border-radius: 10px;
     }
   }
 
   img {
     filter: grayscale(40%);
-    border-radius: 15px;
+    border-radius: 5px;
     transition: 0.5s;
   }
 
@@ -55,5 +54,10 @@
   @include media-xl {
     min-width: 170px;
     height: 130px;
+    border-radius: 20px;
+
+    img {
+      border-radius: 15px;
+    }
   }
 }

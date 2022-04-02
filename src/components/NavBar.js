@@ -72,7 +72,7 @@ const NavBar = ({ setScroll }) => {
             <input
               type="input"
               className="nav--menu--search--input"
-              placeholder="search..."
+              placeholder="search a movie or tv show"
               value={searchTerm}
               onChange={(e) => {
                 setSearchTerm(e.target.value);
