@@ -19,7 +19,6 @@ import Results from "./pages/Results";
 import { useSelector } from "react-redux";
 
 const App = () => {
-  const theme = useSelector((state) => state.theme.value);
   const [scrollTop, setScrollTop] = useState(false);
   const { visible: videoVisible } = useSelector(
     (state) => state.videoDetails.value
@@ -41,14 +40,6 @@ const App = () => {
       behavior: "smooth",
     });
   }, [scrollTop]);
-
-  useEffect(() => {
-    if (theme) {
-      document.body.classList.add("dark");
-    } else {
-      document.body.classList.remove("dark");
-    }
-  }, [theme]);
 
   return (
     <div className="App">
