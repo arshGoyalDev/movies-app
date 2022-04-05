@@ -9,7 +9,7 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 const Review = () => {
   const dispatch = useDispatch();
-  const { author, content, createdDate } = useSelector(
+  const { author, content} = useSelector(
     (state) => state.review.value
   );
 

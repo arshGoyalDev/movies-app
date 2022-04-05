@@ -12,7 +12,6 @@ const ReviewCard = ({ data }) => {
         visible: true,
         author: data.author,
         content: data.content,
-        createdDate: data.created_at,
       })
     );
   };
