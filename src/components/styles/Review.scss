@@ -1,0 +1,35 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.review-wrapper {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  background: rgba($color: #000, $alpha: 0.7);
+}
+
+.review {
+  position: fixed;
+  z-index: 120;
+  top: 50%;
+  left: 50%;
+  width: 340px;
+  background: $background;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  overflow: hidden;
+
+  &--header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px 10px 25px;
+    border-bottom: 2px solid $text-tertiary;
+
+    button {
+      padding: 5px 10px;
+      font-size: 1.3rem;
+      cursor: pointer;
+    }
+  }
+}

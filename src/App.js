@@ -10,6 +10,7 @@ import Error from "./components/Error";
 import Details from "./components/Details";
 import VideoPlayer from "./components/VideoPlayer";
 import ProfileDetails from "./components/ProfileDetails";
+import Review from "./components/Review";
 
 import Home from "./pages/Home";
 import Query from "./pages/Query";
@@ -85,7 +86,7 @@ const App = () => {
 
         {profileVisible && <ProfileDetails />}
 
-        {reviewVisible && console.log("visible...")}
+        {reviewVisible && <Review />}
       </main>
 
       <Footer />
