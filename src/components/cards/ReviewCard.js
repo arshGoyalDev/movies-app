@@ -1,18 +1,29 @@
-import './styles/ReviewCard.scss';
+import { useDispatch } from "react-redux";
+import { showReview } from "../../features/reviewSlice";
+import "./styles/ReviewCard.scss";
 
 const ReviewCard = ({ data }) => {
+  const dispatch = useDispatch();
+
+  const handleClick = () => {
+    dispatch(
+      showReview({
+        id: data.id,
+        visible: true,
+        author: data.author,
+        content: data.content,
+        createdDate: data.created_at,
+      })
+    );
+  };
+
   return (
-    <a
-      href={data.url}
-      className="review-card"
-      target="_blank"
-      rel="noreferrer noopener"
-    >
+    <div className="review-card" onClick={handleClick}>
       <div className="review-card--body">{data.content.slice(0, 150)}...</div>
       <div className="review-card--footer">
         <p className="author-name">{data.author}</p>
       </div>
-    </a>
+    </div>
   );
 };
 

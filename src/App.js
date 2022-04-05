@@ -26,6 +26,9 @@ const App = () => {
   const { visible: profileVisible } = useSelector(
     (state) => state.profileDetails.value
   );
+  const { visible: reviewVisible } = useSelector(
+    (state) => state.review.value
+  );
   const [scroll, setScroll] = useState(true);
 
   useEffect(() => {
@@ -81,6 +84,8 @@ const App = () => {
         {videoVisible && <VideoPlayer />}
 
         {profileVisible && <ProfileDetails />}
+
+        {reviewVisible && console.log("visible...")}
       </main>
 
       <Footer />
