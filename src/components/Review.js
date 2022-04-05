@@ -28,10 +28,10 @@ const Review = () => {
           </button>
         </div>
         <div className="review--body">
+          <p className="content">{content}</p>
           <p className="author-name">
             by <span>{author}</span>
           </p>
-          <p>{content}</p>
         </div>
       </div>
     </>

@@ -18,6 +18,7 @@
   transform: translate(-50%, -50%);
   border-radius: 10px;
   overflow: hidden;
+  animation: profile-details 1s ease-in-out;
 
   &--header {
     display: flex;
@@ -43,10 +44,11 @@
       scrollbar-color: $text-tertiary transparent;
     }
 
-    &::-webkit-scrollbar{
+    &::-webkit-scrollbar {
       width: 5px;
 
       &-thumb {
+        border-radius: 20px;
         background: $text-tertiary;
       }
     }
@@ -55,7 +57,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      
+
       img {
         width: 160px;
         border-radius: 10px;
@@ -71,34 +73,33 @@
         border-radius: 10px;
       }
 
-      
       &--details {
         margin-top: 20px;
         text-align: center;
-  
+
         h2 {
           margin-bottom: 5px;
         }
-        
+
         .biography {
           color: $text-secondary;
         }
 
-        p{
+        p {
           display: block;
-          
+
           &:not(:last-child) {
             margin-bottom: 7px;
             font-weight: $fw-medium;
           }
-          
+
           span {
             display: block;
             color: $text-secondary;
             margin-top: 2px;
           }
         }
-  
+
         .biography {
           margin-bottom: 10px !important;
         }
@@ -120,7 +121,14 @@
         }
       }
     }
+  }
+}
 
-
+@keyframes profile-details {
+  0% {
+    transform: translate(-140%, -50%);
+  }
+  100% {
+    transform: translate(-50%, -50%);
   }
 }
