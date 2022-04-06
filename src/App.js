@@ -12,12 +12,13 @@ import VideoPlayer from "./components/VideoPlayer";
 import ProfileDetails from "./components/ProfileDetails";
 import Review from "./components/Review";
 
-import Home from "./pages/Home";
-import Query from "./pages/Query";
-import Genre from "./pages/Genre";
-import Results from "./pages/Results";
+import Home from "./pages/home";
+import Query from "./pages/query";
+import Genre from "./pages/genre";
+import Results from "./pages/results";
 
 import { useSelector } from "react-redux";
+import People from "./pages/people";
 
 const App = () => {
   const [scrollTop, setScrollTop] = useState(false);
@@ -27,9 +28,7 @@ const App = () => {
   const { visible: profileVisible } = useSelector(
     (state) => state.profileDetails.value
   );
-  const { visible: reviewVisible } = useSelector(
-    (state) => state.review.value
-  );
+  const { visible: reviewVisible } = useSelector((state) => state.review.value);
   const [scroll, setScroll] = useState(true);
 
   useEffect(() => {
@@ -80,6 +79,8 @@ const App = () => {
           <Route path="search/:searchQuery" element={<Results />} />
 
           <Route path="*" element={<Error />} />
+
+          <Route path="/people" element={<People />} />
         </Routes>
 
         {videoVisible && <VideoPlayer />}
