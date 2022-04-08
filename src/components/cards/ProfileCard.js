@@ -1,22 +1,15 @@
 import "./styles/ProfileCard.scss";
 
-import { useDispatch } from "react-redux";
-
-import { updateProfileDetails } from "../../features/profileSlice";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 
+import { useNavigate } from "react-router-dom";
+
 const ProfileCard = ({ data }) => {
-  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const showProfileDetails = () => {
-    dispatch(
-      updateProfileDetails({
-        visible: true,
-        id: data.id,
-      })
-    );
+    navigate(`/people/${data.id}`);
   };
 
   return (

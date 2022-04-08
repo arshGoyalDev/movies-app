@@ -6,19 +6,16 @@ import { useFetch } from "../hooks";
 
 import { modifyDate } from "../utils";
 
-import { clearProfileDetails } from "../features/profileSlice";
-
-import { useDispatch, useSelector } from "react-redux";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate, useParams } from "react-router-dom";
 
 const ProfileDetails = () => {
-  const dispatch = useDispatch();
-  const { id } = useSelector((state) => state.profileDetails.value);
-  const data = useFetch(`person/${id}?language=en-US&`, false);
-  const images = useFetch(`person/${id}}/images?`, "profiles");
+  const navigate = useNavigate();
+  const {profileId} = useParams();
+  const data = useFetch(`person/${profileId}?language=en-US&`, false);
+  const images = useFetch(`person/${profileId}}/images?`, "profiles");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -28,7 +25,7 @@ const ProfileDetails = () => {
   }, [data, images]);
 
   const closeProfileDetails = () => {
-    dispatch(clearProfileDetails());
+    navigate(-1);
   };
 
   return (

@@ -24,9 +24,6 @@ const App = () => {
   const { visible: videoVisible } = useSelector(
     (state) => state.videoDetails.value
   );
-  const { visible: profileVisible } = useSelector(
-    (state) => state.profileDetails.value
-  );
   const { visible: reviewVisible } = useSelector((state) => state.review.value);
   const [scroll, setScroll] = useState(true);
 
@@ -77,13 +74,13 @@ const App = () => {
 
           <Route path="search/:searchQuery" element={<Results />} />
 
+          <Route path="people/:profileId" element={<ProfileDetails />} />
+
           <Route path="*" element={<Error />} />
 
         </Routes>
 
         {videoVisible && <VideoPlayer />}
-
-        {profileVisible && <ProfileDetails />}
 
         {reviewVisible && <Review />}
       </main>
