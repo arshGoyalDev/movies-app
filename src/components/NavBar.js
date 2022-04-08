@@ -63,11 +63,6 @@ const NavBar = ({ setScroll }) => {
                 <button onClick={() => setMenuVisible(false)}>Tv Shows</button>
               </Link>
             </li>
-            <li>
-              <Link to="/people">
-                <button onClick={() => setMenuVisible(false)}>People</button>
-              </Link>
-            </li>
           </ul>
 
           <div className="nav--menu--search">

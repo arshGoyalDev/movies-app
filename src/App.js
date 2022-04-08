@@ -18,7 +18,6 @@ import Genre from "./pages/genre";
 import Results from "./pages/results";
 
 import { useSelector } from "react-redux";
-import People from "./pages/people";
 
 const App = () => {
   const [scrollTop, setScrollTop] = useState(false);
@@ -80,7 +79,6 @@ const App = () => {
 
           <Route path="*" element={<Error />} />
 
-          <Route path="/people" element={<People />} />
         </Routes>
 
         {videoVisible && <VideoPlayer />}
