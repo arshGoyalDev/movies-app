@@ -20,7 +20,7 @@ A app to show data about popular, trending, upcoming movies & tv shows and much 
 - [SCSS](https://sass-lang.com) - CSS preprocessor
 - [Vercel](https://vercel.com) - deployment platform
 
-### Links
+<!-- ### Links -->
 
 <!-- - [Live Site](https://movies-app-bay-rho.vercel.app) -->
 
