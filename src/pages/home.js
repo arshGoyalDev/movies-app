@@ -1,8 +1,12 @@
 import React from 'react'
 
+import { BottomNav } from '../components/sections'
+
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+      <BottomNav />
+    </div>
   )
 }
 
