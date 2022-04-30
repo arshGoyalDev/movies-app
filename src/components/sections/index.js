@@ -1,4 +1,5 @@
 // import {BottomNav} from './BottomNav';
-import BottomNav from "./BottomNav"
+import BottomNav from "./BottomNav";
+import NavBar from "./NavBar";
 
-export {BottomNav}
+export { BottomNav, NavBar };
