@@ -8,7 +8,9 @@ const NavBar = () => {
   return (
     <nav className="flex items-center justify-between w-full py-6 px-6 md:px-16">
       <Link to="/">
-        <p className="text-2xl font-medium tracking-widest xl:hidden">Movies.info</p>
+        <p className="text-2xl font-medium tracking-widest xl:hidden">
+          Movies.info
+        </p>
       </Link>
 
       <div className="flex items-center gap-6">
