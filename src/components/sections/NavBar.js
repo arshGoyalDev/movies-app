@@ -27,8 +27,8 @@ const NavBar = () => {
         </ul>
 
         <Link to="/search">
-          <div className="xl:hidden grid place-items-center w-10 h-10 bg-gray-100 rounded-full">
-            <img src={search} alt="search icon by uicons" className="w-4" />
+          <div className="xl:hidden grid place-items-center w-10 h-10 bg-gray-100 dark:bg-neutral-800 rounded-full">
+            <img src={search} alt="search icon by uicons" className="w-4 dark:invert" />
           </div>
         </Link>
 
