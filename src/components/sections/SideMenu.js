@@ -18,7 +18,9 @@ const SideMenu = () => {
       </Link>
 
       <div className="mt-12">
-        <span className="text-xs font-bold text-gray-400 dark:text-neutral-500 px-6">Menu</span>
+        <span className="text-xs font-bold text-gray-400 dark:text-neutral-500 px-6">
+          Menu
+        </span>
         <ul className="flex flex-col gap-4 mt-4">
           <Link to="/">
             <li
@@ -28,7 +30,11 @@ const SideMenu = () => {
                   : "border-transparent"
               } hover:border-primary-light dark:hover:border-primary-dark transition-all`}
             >
-              <img src={home} alt="home icon by uicons" className="w-5 dark:invert" />
+              <img
+                src={home}
+                alt="home icon by uicons"
+                className="w-5 dark:invert"
+              />
               <span className="font-medium">Home</span>
             </li>
           </Link>
@@ -40,7 +46,11 @@ const SideMenu = () => {
                   : "border-transparent"
               } hover:border-primary-light dark:hover:border-primary-dark transition-all`}
             >
-              <img src={movies} alt="movies icon by uicons" className="w-5 dark:invert" />
+              <img
+                src={movies}
+                alt="movies icon by uicons"
+                className="w-5 dark:invert"
+              />
               <span className="font-medium">Movies</span>
             </li>
           </Link>
@@ -52,7 +62,11 @@ const SideMenu = () => {
                   : "border-transparent"
               } hover:border-primary-light dark:hover:border-primary-dark transition-all`}
             >
-              <img src={tvShows} alt="tv icon by uicons" className="w-5 dark:invert" />
+              <img
+                src={tvShows}
+                alt="tv icon by uicons"
+                className="w-5 dark:invert"
+              />
               <span className="font-medium">Tv Shows</span>
             </li>
           </Link>
@@ -64,14 +78,20 @@ const SideMenu = () => {
                   : "border-transparent"
               } hover:border-primary-light dark:hover:border-primary-dark transition-all`}
             >
-              <img src={people} alt="people icon by uicons" className="w-5 dark:invert" />
+              <img
+                src={people}
+                alt="people icon by uicons"
+                className="w-5 dark:invert"
+              />
               <span className="font-medium">People</span>
             </li>
           </Link>
         </ul>
       </div>
       <div className="mt-8">
-        <span className="text-xs font-bold text-gray-400 dark:text-neutral-500 px-6">More</span>
+        <span className="text-xs font-bold text-gray-400 dark:text-neutral-500 px-6">
+          More
+        </span>
         <ul className="flex flex-col gap-4 mt-4">
           <Link to="/upcoming">
             <li
@@ -81,7 +101,11 @@ const SideMenu = () => {
                   : "border-transparent"
               } hover:border-primary-light dark:hover:border-primary-dark transition-all`}
             >
-              <img src={upcoming} alt="home icon by uicons" className="w-5 dark:invert" />
+              <img
+                src={upcoming}
+                alt="home icon by uicons"
+                className="w-5 dark:invert"
+              />
               <span className="font-medium">Upcoming</span>
             </li>
           </Link>
@@ -93,7 +117,11 @@ const SideMenu = () => {
                   : "border-transparent"
               } hover:border-primary-light dark:hover:border-primary-dark transition-all`}
             >
-              <img src={star} alt="movies icon by uicons" className="w-5 dark:invert" />
+              <img
+                src={star}
+                alt="movies icon by uicons"
+                className="w-5 dark:invert"
+              />
               <span className="font-medium">Top Rated</span>
             </li>
           </Link>
@@ -105,7 +133,11 @@ const SideMenu = () => {
                   : "border-transparent"
               } hover:border-primary-light dark:hover:border-primary-dark transition-all`}
             >
-              <img src={genres} alt="tv icon by uicons" className="w-5 dark:invert" />
+              <img
+                src={genres}
+                alt="tv icon by uicons"
+                className="w-5 dark:invert"
+              />
               <span className="font-medium">Genres</span>
             </li>
           </Link>

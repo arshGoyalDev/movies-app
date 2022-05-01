@@ -6,7 +6,7 @@ import SearchBar from "../SearchBar";
 
 const NavBar = () => {
   return (
-    <nav className="flex items-center justify-between w-full py-6 px-6 md:px-16">
+    <nav className="flex items-center justify-between w-full py-6 px-6 md:px-16 xl:px-24">
       <Link to="/">
         <p className="text-2xl font-medium tracking-widest xl:hidden">
           Movies.info
@@ -28,7 +28,11 @@ const NavBar = () => {
 
         <Link to="/search">
           <div className="xl:hidden grid place-items-center w-10 h-10 bg-gray-100 dark:bg-neutral-800 rounded-full">
-            <img src={search} alt="search icon by uicons" className="w-4 dark:invert" />
+            <img
+              src={search}
+              alt="search icon by uicons"
+              className="w-4 dark:invert"
+            />
           </div>
         </Link>
 

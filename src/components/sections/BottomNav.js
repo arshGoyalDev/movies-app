@@ -15,7 +15,9 @@ const BottomNav = () => {
           <img
             src={home}
             alt="home icon by uicons"
-            className={`w-6 dark:invert ${location.pathname !== "/" ? "block" : "hidden"}`}
+            className={`w-6 dark:invert ${
+              location.pathname !== "/" ? "block" : "hidden"
+            }`}
           />
           <div
             className={`flex-col items-center gap-1 ${
