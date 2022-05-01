@@ -10,5 +10,5 @@ body {
 }
 
 #search:focus ~ .placeholder-text {
-  @apply left-4 opacity-0
+  @apply left-2 opacity-0
 }
