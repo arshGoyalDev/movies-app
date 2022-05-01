@@ -6,7 +6,7 @@ import SearchBar from "../SearchBar";
 
 const NavBar = () => {
   return (
-    <nav className="flex items-center justify-between py-6 px-10 md:px-16">
+    <nav className="flex items-center justify-between py-6 px-6 md:px-16">
       <Link to="/">
         <p className="text-2xl font-medium tracking-widest">Movies.info</p>
       </Link>

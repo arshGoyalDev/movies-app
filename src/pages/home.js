@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { BottomNav, NavBar } from '../components/sections'
 
 const Home = () => {
