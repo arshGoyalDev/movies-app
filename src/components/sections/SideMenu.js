@@ -22,7 +22,7 @@ const SideMenu = () => {
       } py-6 border-r-2 border-solid border-gray-300 dark:border-neutral-800 transition-all duration-300`}
     >
       <div
-        className={`flex items-center gap-4 h-10 ${
+        className={`flex items-center gap-4 h-9 ${
           menuOpen ? "gap-4 px-6" : "px-[26px] gap-0"
         } transition-all duration-300`}
       >
@@ -30,9 +30,9 @@ const SideMenu = () => {
           onClick={() => setMenuOpen(!menuOpen)}
           className="w-6 h-4 flex flex-col justify-between"
         >
-          <span className="block w-6 h-0.5 bg-white"></span>
-          <span className="block w-6 h-0.5 bg-white"></span>
-          <span className="block w-6 h-0.5 bg-white"></span>
+          <span className="block w-6 h-0.5 bg-black dark:bg-white"></span>
+          <span className="block w-6 h-0.5 bg-black dark:bg-white"></span>
+          <span className="block w-6 h-0.5 bg-black dark:bg-white"></span>
         </button>
         <Link to="/">
           <p
@@ -53,10 +53,10 @@ const SideMenu = () => {
         >
           Menu
         </span>
-        <ul className="flex flex-col gap-4 mt-4">
+        <ul className="flex flex-col gap-3 mt-4">
           <Link to="/">
             <li
-              className={`flex items-center gap-4 h-10 py-1.5 px-6 border-l-4 border-solid ${
+              className={`flex items-center gap-4 h-9 py-1.5 px-6 border-l-4 border-solid ${
                 location.pathname === "/"
                   ? "border-primary-light dark:border-primary-dark"
                   : "border-transparent"
@@ -78,7 +78,7 @@ const SideMenu = () => {
           </Link>
           <Link to="/movies">
             <li
-              className={`flex items-center gap-4 h-10 py-1.5 px-6 border-l-4 border-solid ${
+              className={`flex items-center gap-4 h-9 py-1.5 px-6 border-l-4 border-solid ${
                 location.pathname === "/movies"
                   ? "border-primary-light dark:border-primary-dark"
                   : "border-transparent"
@@ -100,7 +100,7 @@ const SideMenu = () => {
           </Link>
           <Link to="/tv-shows">
             <li
-              className={`flex items-center gap-4 h-10 py-1.5 px-6 border-l-4 border-solid ${
+              className={`flex items-center gap-4 h-9 py-1.5 px-6 border-l-4 border-solid ${
                 location.pathname === "/tv-shows"
                   ? "border-primary-light dark:border-primary-dark"
                   : "border-transparent"
@@ -122,7 +122,7 @@ const SideMenu = () => {
           </Link>
           <Link to="/people">
             <li
-              className={`flex items-center gap-4 h-10 py-1.5 px-6 border-l-4 border-solid ${
+              className={`flex items-center gap-4 h-9 py-1.5 px-6 border-l-4 border-solid ${
                 location.pathname === "/people"
                   ? "border-primary-light dark:border-primary-dark"
                   : "border-transparent"
@@ -152,10 +152,10 @@ const SideMenu = () => {
         >
           More
         </span>
-        <ul className="flex flex-col gap-4 mt-4">
+        <ul className="flex flex-col gap-3 mt-4">
           <Link to="/upcoming">
             <li
-              className={`flex items-center gap-4 h-10 py-1.5 px-6 border-l-4 border-solid ${
+              className={`flex items-center gap-4 h-9 py-1.5 px-6 border-l-4 border-solid ${
                 location.pathname === "/upcoming"
                   ? "border-primary-light dark:border-primary-dark"
                   : "border-transparent"
@@ -177,7 +177,7 @@ const SideMenu = () => {
           </Link>
           <Link to="/top-rated">
             <li
-              className={`flex items-center gap-4 h-10 py-1.5 px-6 border-l-4 border-solid ${
+              className={`flex items-center gap-4 h-9 py-1.5 px-6 border-l-4 border-solid ${
                 location.pathname === "/top-rated"
                   ? "border-primary-light dark:border-primary-dark"
                   : "border-transparent"
@@ -199,7 +199,7 @@ const SideMenu = () => {
           </Link>
           <Link to="/genres">
             <li
-              className={`flex items-center gap-4 h-10 py-1.5 px-6 border-l-4 border-solid ${
+              className={`flex items-center gap-4 h-9 py-1.5 px-6 border-l-4 border-solid ${
                 location.pathname === "/genres"
                   ? "border-primary-light dark:border-primary-dark"
                   : "border-transparent"
