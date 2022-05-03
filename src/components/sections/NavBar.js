@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { SideMenuContext } from "../../context";
+import { SideMenuContext, ThemeContext } from "../../context";
 
 import { Link } from "react-router-dom";
 
@@ -7,7 +7,12 @@ import search from "../../assets/images/search.svg";
 
 import SearchBar from "../SearchBar";
 
+import sun from "../../assets/images/sun.svg";
+import moon from "../../assets/images/moon.svg";
+
+
 const NavBar = () => {
+  const {theme, setTheme} = useContext(ThemeContext)
   const { menuOpen } = useContext(SideMenuContext);
 
   return (
@@ -18,8 +23,8 @@ const NavBar = () => {
     >
       <Link to="/">
         <p
-          className={`text-2xl font-medium tracking-widest origin-left transition-all duration-300 ${
-            !menuOpen ? "scale-x-100 w-auto" : "hidden"
+          className={`text-2xl font-medium tracking-widest origin-left transition-transform duration-300 ${
+            !menuOpen ? "scale-x-100 w-auto" : "xl:hidden"
           }`}
         >
           Movies.info
@@ -48,6 +53,15 @@ const NavBar = () => {
             />
           </div>
         </Link>
+
+        <button
+        onClick={() =>
+          theme === "dark" ? setTheme("light") : setTheme("dark")
+        }
+        className="xl:hidden grid place-items-center w-10 h-10 bg-gray-100 dark:bg-neutral-800 rounded-full"
+      >
+        <img src={theme !== "dark" ? moon : sun} alt="tv icon by uicons" className="w-5 dark:invert" />
+      </button>
 
         <div className="hidden xl:flex">
           <SearchBar />
