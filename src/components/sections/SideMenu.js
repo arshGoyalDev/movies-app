@@ -234,7 +234,11 @@ const SideMenu = () => {
           menuOpen ? "flex-row gap-4" : "flex-col gap-1"
         } px-6 mt-auto mb-0`}
       >
-        <img src={theme === "dark" ? moon : sun} alt="tv icon by uicons" className="w-5 dark:invert" />
+        <img
+          src={theme === "dark" ? moon : sun}
+          alt="tv icon by uicons"
+          className="w-5 dark:invert"
+        />
         <span
           className={`capitalize font-medium ${
             !menuOpen && "scale-x-0 w-0 h-0"

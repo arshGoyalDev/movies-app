@@ -10,9 +10,8 @@ import SearchBar from "../SearchBar";
 import sun from "../../assets/images/sun.svg";
 import moon from "../../assets/images/moon.svg";
 
-
 const NavBar = () => {
-  const {theme, setTheme} = useContext(ThemeContext)
+  const { theme, setTheme } = useContext(ThemeContext);
   const { menuOpen } = useContext(SideMenuContext);
 
   return (
@@ -31,7 +30,7 @@ const NavBar = () => {
         </p>
       </Link>
 
-      <div className="flex items-center gap-6">
+      <div className="flex items-center gap-4">
         <ul className="hidden xl:hidden sm:flex items-center gap-4">
           <li className="py-2 px-2">
             <Link to="/movies">Movies</Link>
@@ -55,13 +54,17 @@ const NavBar = () => {
         </Link>
 
         <button
-        onClick={() =>
-          theme === "dark" ? setTheme("light") : setTheme("dark")
-        }
-        className="xl:hidden grid place-items-center w-10 h-10 bg-gray-100 dark:bg-neutral-800 rounded-full"
-      >
-        <img src={theme !== "dark" ? moon : sun} alt="tv icon by uicons" className="w-5 dark:invert" />
-      </button>
+          onClick={() =>
+            theme === "dark" ? setTheme("light") : setTheme("dark")
+          }
+          className="xl:hidden grid place-items-center w-10 h-10 bg-gray-100 dark:bg-neutral-800 rounded-full"
+        >
+          <img
+            src={theme !== "dark" ? moon : sun}
+            alt="tv icon by uicons"
+            className="w-5 dark:invert"
+          />
+        </button>
 
         <div className="hidden xl:flex">
           <SearchBar />
