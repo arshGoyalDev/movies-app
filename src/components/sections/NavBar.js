@@ -11,9 +11,17 @@ const NavBar = () => {
   const { menuOpen } = useContext(SideMenuContext);
 
   return (
-    <nav className="flex items-center justify-between w-full py-6 px-6 md:px-16 xl:pr-24 xl:pl-10">
+    <nav
+      className={`flex items-center justify-between w-full py-6 px-6 md:px-16 ${
+        menuOpen ? "xl:px-24" : "xl:pr-24 xl:pl-10"
+      }`}
+    >
       <Link to="/">
-        <p className={`text-2xl font-medium tracking-widest origin-left transition-all duration-300 ${menuOpen ? "scale-x-0 w-0" : "scale-x-100 w-auto"}`}>
+        <p
+          className={`text-2xl font-medium tracking-widest origin-left transition-all duration-300 ${
+            !menuOpen ? "scale-x-100 w-auto" : "hidden"
+          }`}
+        >
           Movies.info
         </p>
       </Link>

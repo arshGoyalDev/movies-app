@@ -22,7 +22,7 @@ const SideMenu = () => {
       } py-6 border-r-2 border-solid border-gray-300 dark:border-neutral-800 transition-all duration-300`}
     >
       <div
-        className={`flex items-center gap-4 h-9 ${
+        className={`flex items-center gap-4 h-10 ${
           menuOpen ? "gap-4 px-6" : "px-[26px] gap-0"
         } transition-all duration-300`}
       >
