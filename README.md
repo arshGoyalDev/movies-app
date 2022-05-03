@@ -17,8 +17,7 @@ A app to show data about popular, trending, upcoming movies & tv shows and much 
 ### Made with 
 
 - [React.js](https://reactjs.org) - JS Library
-- [SCSS](https://sass-lang.com) - CSS preprocessor
-- [Vercel](https://vercel.com) - deployment platform
+- [Tailwind CSS](https://tailwindcss.com) - CSS Framework
 
 <!-- ### Links -->
 
