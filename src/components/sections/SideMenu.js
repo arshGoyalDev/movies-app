@@ -2,7 +2,6 @@ import { useState } from "react";
 
 import { Link, useLocation } from "react-router-dom";
 
-import menuBurger from "../../assets/images/menu-burger.svg";
 import home from "../../assets/images/home.svg";
 import movies from "../../assets/images/movies.svg";
 import tvShows from "../../assets/images/tv-shows.svg";
