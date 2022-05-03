@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import { SideMenuContext } from "../../context";
+
 import { Link } from "react-router-dom";
 
 import search from "../../assets/images/search.svg";
@@ -5,10 +8,12 @@ import search from "../../assets/images/search.svg";
 import SearchBar from "../SearchBar";
 
 const NavBar = () => {
+  const { menuOpen } = useContext(SideMenuContext);
+
   return (
-    <nav className="flex items-center justify-between w-full py-6 px-6 md:px-16 xl:px-24">
+    <nav className="flex items-center justify-between w-full py-6 px-6 md:px-16 xl:pr-24 xl:pl-10">
       <Link to="/">
-        <p className="text-2xl font-medium tracking-widest xl:hidden">
+        <p className={`text-2xl font-medium tracking-widest origin-left transition-all duration-300 ${menuOpen ? "scale-x-0 w-0" : "scale-x-100 w-auto"}`}>
           Movies.info
         </p>
       </Link>

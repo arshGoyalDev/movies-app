@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useContext } from "react";
+import { SideMenuContext } from "../../context";
 
 import { Link, useLocation } from "react-router-dom";
 
@@ -11,8 +12,8 @@ import star from "../../assets/images/star.svg";
 import genres from "../../assets/images/genres.svg";
 
 const SideMenu = () => {
-  const [menuOpen, setMenuOpen] = useState(true);
   const location = useLocation();
+  const { menuOpen, setMenuOpen } = useContext(SideMenuContext);
 
   return (
     <div
@@ -20,7 +21,11 @@ const SideMenu = () => {
         menuOpen ? "w-80" : "w-20"
       } py-6 border-r-2 border-solid border-gray-300 dark:border-neutral-800 transition-all duration-300`}
     >
-      <div className={`flex items-center gap-4 h-10 ${menuOpen ? "gap-4 px-6" : "px-[26px] gap-0"} transition-all duration-300`}>
+      <div
+        className={`flex items-center gap-4 h-10 ${
+          menuOpen ? "gap-4 px-6" : "px-[26px] gap-0"
+        } transition-all duration-300`}
+      >
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="w-6 h-4 flex flex-col justify-between"
