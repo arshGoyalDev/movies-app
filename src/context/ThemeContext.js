@@ -4,7 +4,9 @@ const ThemeContext = createContext(null);
 
 const ThemeProvider = ({ children }) => {
   const getPreferredTheme = () => {
-    if (
+    if (localStorage.getItem("theme") !== undefined) {
+      return localStorage.getItem("theme");
+    } else if (
       window.matchMedia &&
       window.matchMedia("(prefers-color-scheme: dark)").matches
     ) {
@@ -24,8 +26,10 @@ const ThemeProvider = ({ children }) => {
   useEffect(() => {
     if (theme === "light") {
       document.body.classList.remove("dark");
+      localStorage.setItem("theme", "light");
     } else if (theme === "dark") {
       document.body.classList.add("dark");
+      localStorage.setItem("theme", "dark");
     }
   }, [theme]);
 
