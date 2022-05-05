@@ -8,7 +8,6 @@ const OptionsBar = () => {
           Genres
         </p>
       </Link>
-
       <Link to="/upcoming">
         <p className="text-sm min-w-[100px] text-center py-1 px-3 bg-gray-200 dark:bg-neutral-800 rounded-full">
           Upcoming
