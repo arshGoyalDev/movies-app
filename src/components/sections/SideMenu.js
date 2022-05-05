@@ -17,7 +17,6 @@ const SideMenu = () => {
   const location = useLocation();
   const { theme, setTheme } = useContext(ThemeContext);
   const { menuOpen, setMenuOpen } = useContext(SideMenuContext);
-  console.log(menuOpen);
 
   return (
     <div
