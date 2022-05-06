@@ -11,3 +11,29 @@ body {
 #search:focus ~ .placeholder-text {
   @apply left-2 opacity-0;
 }
+
+@media (min-width: 1640px) {
+  .trending {
+    height: 450px !important;
+  }
+
+  .trending h2 {
+    @apply text-5xl;
+    max-width: 600px;
+    line-height: 1.3;
+  }
+
+  .trending .background {
+    @apply p-20;
+  }
+}
+
+@media (min-width: 1280px) {
+  .background {
+    background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.5) 60%,
+      #000 70%
+    );
+  }
+}

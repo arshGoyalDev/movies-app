@@ -8,8 +8,8 @@ const Rating = ({ data }) => {
         <></>
       ) : (
         <div className="flex gap-2 items-center">
-          <img src={star} alt="star icon bg uicons" className="w-3" />
-          <p className="text-[#ffbf00] text-sm pt-[1px]">{data}</p>
+          <img src={star} alt="star icon bg uicons" className="w-3 lg:w-5" />
+          <p className="text-[#ffbf00] text-sm lg:text-lg pt-[1px]">{data}</p>
         </div>
       )}
     </>
