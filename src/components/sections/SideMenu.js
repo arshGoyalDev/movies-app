@@ -52,7 +52,7 @@ const SideMenu = () => {
         <span
           className={`text-xs font-bold text-gray-400 dark:text-neutral-500 ${
             menuOpen ? "px-6" : "px-[22px]"
-          } transition-transform duration-300`}
+          } transition-all duration-300`}
         >
           Menu
         </span>
@@ -151,7 +151,7 @@ const SideMenu = () => {
         <span
           className={`text-xs font-bold text-gray-400 dark:text-neutral-500 ${
             menuOpen ? "px-6" : "px-[22px]"
-          } transition-transform duration-300`}
+          } transition-all duration-300`}
         >
           More
         </span>
