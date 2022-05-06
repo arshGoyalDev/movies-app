@@ -1,6 +1,7 @@
 import { BottomNav, NavBar, SideMenu } from "../components/sections";
 
 import OptionsBar from "../components/OptionsBar";
+import Trending from "../components/Trending";
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
         <BottomNav />
         <NavBar />
         <OptionsBar />
+        <Trending />
       </div>
     </main>
   );
