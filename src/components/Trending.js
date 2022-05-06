@@ -43,9 +43,12 @@ const Trending = () => {
           <div className="background absolute z-[2] flex items-end p-4 md:p-8 lg:p-12 w-full h-full text-white bg-black bg-opacity-50">
             <div className="w-full flex md:flex-col md:gap-4 xl:gap-6 items-end md:items-start justify-between">
               <div>
-                <h2 className="max-w-[160px] md:max-w-[360px] md:font-semibold md:text-2xl lg:text-3xl font-medium mb-1 xl:mb-3">
+                <h2 className="max-w-[160px] md:max-w-[360px] md:font-semibold md:text-2xl lg:text-3xl font-medium">
                   {data[activeNum].title ?? data[activeNum].name}
                 </h2>
+                <p className="hidden xl:block w-[260px] 2xl:w-[360px] text-lg text-gray-200 mt-3 mb-1 xl:mb-3">
+                  {data[activeNum].overview.slice(0, 60)}...
+                </p>
                 <Rating data={data[activeNum].vote_average} />
               </div>
 
