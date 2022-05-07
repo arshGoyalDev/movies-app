@@ -9,7 +9,9 @@ const Rating = ({ data }) => {
       ) : (
         <div className="flex gap-2 items-center">
           <img src={star} alt="star icon bg uicons" className="w-3 lg:w-5" />
-          <p className="text-[#ffbf00] text-sm font-semibold lg:text-lg pt-[1px]">{data}</p>
+          <p className="text-[#ffbf00] text-sm font-semibold lg:text-lg pt-[1px] lg:pt-0.5">
+            {data}
+          </p>
         </div>
       )}
     </>

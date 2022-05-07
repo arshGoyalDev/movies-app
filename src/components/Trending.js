@@ -11,7 +11,6 @@ const Trending = () => {
   useEffect(() => {
     if (data) {
       setLoading(false);
-      console.log(data);
     }
   }, [data]);
 
@@ -22,7 +21,7 @@ const Trending = () => {
       } else {
         setActiveNum(activeNum + 1);
       }
-    }, 4000);
+    }, 5000);
 
     return () => clearTimeout(timeout);
   }, [activeNum]);
@@ -40,13 +39,13 @@ const Trending = () => {
               className="w-full xl:w-[75%]"
             />
           </div>
-          <div className="background absolute z-[2] flex items-end p-4 md:p-8 lg:p-12 w-full h-full text-white bg-black bg-opacity-50">
+          <div className="background absolute z-[2] flex items-end p-4 md:p-8 lg:p-12 w-full h-full text-white bg-black bg-opacity-50 xl:bg-opacity-20">
             <div className="w-full flex md:flex-col md:gap-4 xl:gap-6 items-end md:items-start justify-between">
               <div>
-                <h2 className="max-w-[160px] md:max-w-[360px] md:font-semibold md:text-2xl lg:text-3xl font-medium">
+                <h2 className="max-w-[160px] md:max-w-[360px] md:font-semibold md:text-2xl lg:text-3xl font-medium mb-2 xl:mb-0">
                   {data[activeNum].title ?? data[activeNum].name}
                 </h2>
-                <p className="hidden xl:block w-[260px] 2xl:w-[360px] text-lg text-gray-200 mt-3 mb-1 xl:mb-3">
+                <p className="hidden xl:block w-64 xl:w-80 w- 2xl:w-[360px] text-lg text-gray-200 mt-3 mb-1 xl:mb-3">
                   {data[activeNum].overview.slice(0, 60)}...
                 </p>
                 <Rating data={data[activeNum].vote_average} />
