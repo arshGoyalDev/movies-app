@@ -3,15 +3,11 @@ import { SideMenuContext, ThemeContext } from "../../context";
 
 import { Link, useLocation } from "react-router-dom";
 
-import { ReactComponent as HomeIcon } from "../../assets/images/home.svg";
-import { ReactComponent as MoviesIcon } from "../../assets/images/movies.svg";
-import { ReactComponent as TvIcon } from "../../assets/images/tv-shows.svg";
-import { ReactComponent as PeopleIcon } from "../../assets/images/people.svg";
-import { ReactComponent as UpcomingIcon } from "../../assets/images/upcoming.svg";
-import { ReactComponent as StarIcon } from "../../assets/images/star.svg";
-import { ReactComponent as GenresIcon } from "../../assets/images/genres.svg";
-import { ReactComponent as SunIcon } from "../../assets/images/sun.svg";
-import { ReactComponent as MoonIcon } from "../../assets/images/moon.svg";
+import {
+  HomeIcon, MoviesIcon, TvIcon, PeopleIcon,
+  UpcomingIcon, StarIcon, GenresIcon,
+  SunIcon, MoonIcon,
+} from "../icons";
 
 const SideMenu = () => {
   const location = useLocation();
@@ -59,7 +55,9 @@ const SideMenu = () => {
         <ul className="flex flex-col gap-3 mt-4">
           <Link to="/">
             <li
-              className={`flex items-center gap-4 h-9 py-1.5 ${menuOpen ? "px-6" : "pl-2 justify-center"}  border-l-4 border-solid ${
+              className={`flex items-center gap-4 h-9 py-1.5 ${
+                menuOpen ? "px-6" : "pl-2 justify-center"
+              }  border-l-4 border-solid ${
                 location.pathname === "/"
                   ? "border-primary-light dark:border-primary-dark"
                   : "border-transparent"
@@ -77,7 +75,9 @@ const SideMenu = () => {
           </Link>
           <Link to="/movies">
             <li
-              className={`flex items-center gap-4 h-9 py-1.5 ${menuOpen ? "px-6" : "pl-2 justify-center"}  border-l-4 border-solid ${
+              className={`flex items-center gap-4 h-9 py-1.5 ${
+                menuOpen ? "px-6" : "pl-2 justify-center"
+              }  border-l-4 border-solid ${
                 location.pathname === "/movies"
                   ? "border-primary-light dark:border-primary-dark"
                   : "border-transparent"
@@ -95,7 +95,9 @@ const SideMenu = () => {
           </Link>
           <Link to="/tv-shows">
             <li
-              className={`flex items-center gap-4 h-9 py-1.5 ${menuOpen ? "px-6" : "pl-2 justify-center"}  border-l-4 border-solid ${
+              className={`flex items-center gap-4 h-9 py-1.5 ${
+                menuOpen ? "px-6" : "pl-2 justify-center"
+              }  border-l-4 border-solid ${
                 location.pathname === "/tv-shows"
                   ? "border-primary-light dark:border-primary-dark"
                   : "border-transparent"
@@ -113,7 +115,9 @@ const SideMenu = () => {
           </Link>
           <Link to="/people">
             <li
-              className={`flex items-center gap-4 h-9 py-1.5 ${menuOpen ? "px-6" : "pl-2 justify-center"}  border-l-4 border-solid ${
+              className={`flex items-center gap-4 h-9 py-1.5 ${
+                menuOpen ? "px-6" : "pl-2 justify-center"
+              }  border-l-4 border-solid ${
                 location.pathname === "/people"
                   ? "border-primary-light dark:border-primary-dark"
                   : "border-transparent"
@@ -142,7 +146,9 @@ const SideMenu = () => {
         <ul className="flex flex-col gap-3 mt-4">
           <Link to="/upcoming">
             <li
-              className={`flex items-center gap-4 h-9 py-1.5 ${menuOpen ? "px-6" : "pl-2 justify-center"}  border-l-4 border-solid ${
+              className={`flex items-center gap-4 h-9 py-1.5 ${
+                menuOpen ? "px-6" : "pl-2 justify-center"
+              }  border-l-4 border-solid ${
                 location.pathname === "/upcoming"
                   ? "border-primary-light dark:border-primary-dark"
                   : "border-transparent"
@@ -160,7 +166,9 @@ const SideMenu = () => {
           </Link>
           <Link to="/top-rated">
             <li
-              className={`flex items-center gap-4 h-9 py-1.5 ${menuOpen ? "px-6" : "pl-2 justify-center"}  border-l-4 border-solid ${
+              className={`flex items-center gap-4 h-9 py-1.5 ${
+                menuOpen ? "px-6" : "pl-2 justify-center"
+              }  border-l-4 border-solid ${
                 location.pathname === "/top-rated"
                   ? "border-primary-light dark:border-primary-dark"
                   : "border-transparent"
@@ -178,7 +186,9 @@ const SideMenu = () => {
           </Link>
           <Link to="/genres">
             <li
-              className={`flex items-center gap-4 h-9 py-1.5 ${menuOpen ? "px-6" : "pl-2 justify-center"}  border-l-4 border-solid ${
+              className={`flex items-center gap-4 h-9 py-1.5 ${
+                menuOpen ? "px-6" : "pl-2 justify-center"
+              }  border-l-4 border-solid ${
                 location.pathname === "/genres"
                   ? "border-primary-light dark:border-primary-dark"
                   : "border-transparent"

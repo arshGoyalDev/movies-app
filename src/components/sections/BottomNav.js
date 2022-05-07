@@ -1,9 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 
-import { ReactComponent as HomeIcon } from "../../assets/images/home.svg";
-import { ReactComponent as MoviesIcon } from "../../assets/images/movies.svg";
-import { ReactComponent as TvIcon } from "../../assets/images/tv-shows.svg";
-import { ReactComponent as PeopleIcon } from "../../assets/images/people.svg";
+import { HomeIcon, MoviesIcon, TvIcon, PeopleIcon } from "../icons";
 
 const BottomNav = () => {
   const location = useLocation();
@@ -29,7 +26,7 @@ const BottomNav = () => {
       </Link>
       <Link to="/movies">
         <div className="grid place-items-center w-16 h-10">
-        <MoviesIcon
+          <MoviesIcon
             className={`icon w-6 h-6 ${
               location.pathname !== "/movies" ? "block" : "hidden"
             }`}
@@ -46,7 +43,7 @@ const BottomNav = () => {
       </Link>
       <Link to="/tv-shows">
         <div className="grid place-items-center w-16 h-10">
-        <TvIcon
+          <TvIcon
             className={`icon w-6 h-6 ${
               location.pathname !== "/tv-shows" ? "block" : "hidden"
             }`}
@@ -63,7 +60,7 @@ const BottomNav = () => {
       </Link>
       <Link to="/people">
         <div className="grid place-items-center w-16 h-10">
-        <PeopleIcon
+          <PeopleIcon
             className={`icon w-6 h-6 ${
               location.pathname !== "/people" ? "block" : "hidden"
             }`}
