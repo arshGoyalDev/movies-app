@@ -3,5 +3,5 @@
 }
 
 .rating-icon path {
-  @apply dark:fill-primary-dark;
+  @apply fill-primary-dark;
 }
