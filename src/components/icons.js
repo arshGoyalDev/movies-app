@@ -4,11 +4,13 @@ import { ReactComponent as TvIcon } from "../assets/images/tv-shows.svg";
 import { ReactComponent as PeopleIcon } from "../assets/images/people.svg";
 
 import { ReactComponent as UpcomingIcon } from "../assets/images/upcoming.svg";
-import { ReactComponent as StarIcon } from "../assets/images/star.svg";
 import { ReactComponent as GenresIcon } from "../assets/images/genres.svg";
 
 import { ReactComponent as SunIcon } from "../assets/images/sun.svg";
 import { ReactComponent as MoonIcon } from "../assets/images/moon.svg";
+
+import { ReactComponent as StarIcon } from "../assets/images/star.svg";
+import { ReactComponent as StarSolidIcon } from "../assets/images/star-solid.svg";
 
 export {
   HomeIcon,
@@ -20,4 +22,5 @@ export {
   GenresIcon,
   SunIcon,
   MoonIcon,
+  StarSolidIcon
 };

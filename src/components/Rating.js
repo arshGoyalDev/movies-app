@@ -1,6 +1,4 @@
-// import starYellow from '../assets/images/star-yellow.svg';
-// import star from "../assets/images/rating.svg";
-import { StarIcon } from "./icons";
+import { StarSolidIcon } from "./icons";
 
 const Rating = ({ data }) => {
   return (
@@ -8,12 +6,10 @@ const Rating = ({ data }) => {
       {data === 0 ? (
         <></>
       ) : (
-        <div className="flex gap-2 items-center">
-          {/* <img /> */}
-          <StarIcon className="rating-icon w-3 h-3 lg:w-5 lg:h-5" />
-          {/* <img src={star} alt="star icon bg uicons" className="w-3 lg:w-5" /> */}
-          <p className="text-primary-dark text-sm font-semibold lg:text-lg pt-[1px] lg:pt-0.5">
-            {data}
+        <div className="flex gap-2 lg:gap-3 items-center border-2 border-solid border-primary-dark w-max px-3 py-0.5 rounded-md">
+          <StarSolidIcon className="rating-icon w-3 h-3 lg:w-4 lg:h-4" />
+          <p className="text-primary-dark text-sm font-semibold lg:text-lg lg:pt-0.5">
+            {data.toFixed(1)}
           </p>
         </div>
       )}
