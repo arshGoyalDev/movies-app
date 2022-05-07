@@ -1,9 +1,9 @@
 import { Link, useLocation } from "react-router-dom";
 
-import home from "../../assets/images/home.svg";
-import movies from "../../assets/images/movies.svg";
-import tvShows from "../../assets/images/tv-shows.svg";
-import people from "../../assets/images/people.svg";
+import { ReactComponent as HomeIcon } from "../../assets/images/home.svg";
+import { ReactComponent as MoviesIcon } from "../../assets/images/movies.svg";
+import { ReactComponent as TvIcon } from "../../assets/images/tv-shows.svg";
+import { ReactComponent as PeopleIcon } from "../../assets/images/people.svg";
 
 const BottomNav = () => {
   const location = useLocation();
@@ -12,10 +12,8 @@ const BottomNav = () => {
     <nav className="sm:hidden fixed bottom-0 w-full flex justify-between items-center py-5 px-6 dark:bg-neutral-800 rounded-t-[30px] shadow-[0_-10px_60px_rgba(100,100,100,0.4)] dark:shadow-none">
       <Link to="/">
         <div className="grid place-items-center w-16 h-10">
-          <img
-            src={home}
-            alt="home icon by uicons"
-            className={`w-6 dark:invert ${
+          <HomeIcon
+            className={`icon w-6 h-6 ${
               location.pathname !== "/" ? "block" : "hidden"
             }`}
           />
@@ -31,10 +29,8 @@ const BottomNav = () => {
       </Link>
       <Link to="/movies">
         <div className="grid place-items-center w-16 h-10">
-          <img
-            src={movies}
-            alt="movies icon by uicons"
-            className={`w-6 dark:invert ${
+        <MoviesIcon
+            className={`icon w-6 h-6 ${
               location.pathname !== "/movies" ? "block" : "hidden"
             }`}
           />
@@ -50,10 +46,8 @@ const BottomNav = () => {
       </Link>
       <Link to="/tv-shows">
         <div className="grid place-items-center w-16 h-10">
-          <img
-            src={tvShows}
-            alt="tv icon by uicons"
-            className={`w-6 dark:invert ${
+        <TvIcon
+            className={`icon w-6 h-6 ${
               location.pathname !== "/tv-shows" ? "block" : "hidden"
             }`}
           />
@@ -69,10 +63,8 @@ const BottomNav = () => {
       </Link>
       <Link to="/people">
         <div className="grid place-items-center w-16 h-10">
-          <img
-            src={people}
-            alt="people icon by uicons"
-            className={`w-6 dark:invert ${
+        <PeopleIcon
+            className={`icon w-6 h-6 ${
               location.pathname !== "/people" ? "block" : "hidden"
             }`}
           />

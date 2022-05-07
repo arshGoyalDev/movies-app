@@ -1,12 +1,31 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+/* ----------------- */
+/* tailwind */
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ----------------- */
+
+/* ----------------- */
+/* font */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* ----------------- */
+
+/* ----------------- */
+/* body */
+
 body {
   font-family: "Poppins", sans-serif;
 }
+
+/* ----------------- */
+
+
+/* ----------------- */
+/* components */
 
 #search:focus ~ .placeholder-text {
   @apply left-2 opacity-0;
@@ -37,3 +56,14 @@ body {
     );
   }
 }
+
+/* ----------------- */
+
+/* ----------------- */
+/* extras */
+
+::selection {
+  @apply text-black bg-primary-light dark:bg-primary-dark;
+}
+
+/* ----------------- */

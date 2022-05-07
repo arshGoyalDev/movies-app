@@ -3,15 +3,15 @@ import { SideMenuContext, ThemeContext } from "../../context";
 
 import { Link, useLocation } from "react-router-dom";
 
-import home from "../../assets/images/home.svg";
-import movies from "../../assets/images/movies.svg";
-import tvShows from "../../assets/images/tv-shows.svg";
-import people from "../../assets/images/people.svg";
-import upcoming from "../../assets/images/upcoming.svg";
-import star from "../../assets/images/star.svg";
-import genres from "../../assets/images/genres.svg";
-import sun from "../../assets/images/sun.svg";
-import moon from "../../assets/images/moon.svg";
+import { ReactComponent as HomeIcon } from "../../assets/images/home.svg";
+import { ReactComponent as MoviesIcon } from "../../assets/images/movies.svg";
+import { ReactComponent as TvIcon } from "../../assets/images/tv-shows.svg";
+import { ReactComponent as PeopleIcon } from "../../assets/images/people.svg";
+import { ReactComponent as UpcomingIcon } from "../../assets/images/upcoming.svg";
+import { ReactComponent as StarIcon } from "../../assets/images/star.svg";
+import { ReactComponent as GenresIcon } from "../../assets/images/genres.svg";
+import { ReactComponent as SunIcon } from "../../assets/images/sun.svg";
+import { ReactComponent as MoonIcon } from "../../assets/images/moon.svg";
 
 const SideMenu = () => {
   const location = useLocation();
@@ -31,7 +31,7 @@ const SideMenu = () => {
       >
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="w-6 h-4 flex flex-col justify-between"
+          className="w-8 h-8 flex items-center justify-center flex-col gap-1.5"
         >
           <span className="block w-6 h-0.5 bg-black dark:bg-white"></span>
           <span className="block w-6 h-0.5 bg-black dark:bg-white"></span>
@@ -59,17 +59,13 @@ const SideMenu = () => {
         <ul className="flex flex-col gap-3 mt-4">
           <Link to="/">
             <li
-              className={`flex items-center gap-4 h-9 py-1.5 px-6 border-l-4 border-solid ${
+              className={`flex items-center gap-4 h-9 py-1.5 ${menuOpen ? "px-6" : "pl-2 justify-center"}  border-l-4 border-solid ${
                 location.pathname === "/"
                   ? "border-primary-light dark:border-primary-dark"
                   : "border-transparent"
               } hover:border-primary-light dark:hover:border-primary-dark transition-transform`}
             >
-              <img
-                src={home}
-                alt="home icon by uicons"
-                className="w-5 dark:invert"
-              />
+              <HomeIcon className="icon w-5 h-5" />
               <span
                 className={`font-medium ${
                   !menuOpen && "scale-x-0 w-0"
@@ -81,17 +77,13 @@ const SideMenu = () => {
           </Link>
           <Link to="/movies">
             <li
-              className={`flex items-center gap-4 h-9 py-1.5 px-6 border-l-4 border-solid ${
+              className={`flex items-center gap-4 h-9 py-1.5 ${menuOpen ? "px-6" : "pl-2 justify-center"}  border-l-4 border-solid ${
                 location.pathname === "/movies"
                   ? "border-primary-light dark:border-primary-dark"
                   : "border-transparent"
               } hover:border-primary-light dark:hover:border-primary-dark transition-transform`}
             >
-              <img
-                src={movies}
-                alt="movies icon by uicons"
-                className="w-5 dark:invert"
-              />
+              <MoviesIcon className="icon w-5 h-5" />
               <span
                 className={`font-medium ${
                   !menuOpen && "scale-x-0 w-0"
@@ -103,17 +95,13 @@ const SideMenu = () => {
           </Link>
           <Link to="/tv-shows">
             <li
-              className={`flex items-center gap-4 h-9 py-1.5 px-6 border-l-4 border-solid ${
+              className={`flex items-center gap-4 h-9 py-1.5 ${menuOpen ? "px-6" : "pl-2 justify-center"}  border-l-4 border-solid ${
                 location.pathname === "/tv-shows"
                   ? "border-primary-light dark:border-primary-dark"
                   : "border-transparent"
               } hover:border-primary-light dark:hover:border-primary-dark transition-transform`}
             >
-              <img
-                src={tvShows}
-                alt="tv icon by uicons"
-                className="w-5 dark:invert"
-              />
+              <TvIcon className="icon w-5 h-5" />
               <span
                 className={`font-medium ${
                   !menuOpen && "scale-x-0 w-0"
@@ -125,17 +113,13 @@ const SideMenu = () => {
           </Link>
           <Link to="/people">
             <li
-              className={`flex items-center gap-4 h-9 py-1.5 px-6 border-l-4 border-solid ${
+              className={`flex items-center gap-4 h-9 py-1.5 ${menuOpen ? "px-6" : "pl-2 justify-center"}  border-l-4 border-solid ${
                 location.pathname === "/people"
                   ? "border-primary-light dark:border-primary-dark"
                   : "border-transparent"
               } hover:border-primary-light dark:hover:border-primary-dark transition-transform`}
             >
-              <img
-                src={people}
-                alt="people icon by uicons"
-                className="w-5 dark:invert"
-              />
+              <PeopleIcon className="icon w-5 h-5" />
               <span
                 className={`font-medium ${
                   !menuOpen && "scale-x-0 w-0"
@@ -158,17 +142,13 @@ const SideMenu = () => {
         <ul className="flex flex-col gap-3 mt-4">
           <Link to="/upcoming">
             <li
-              className={`flex items-center gap-4 h-9 py-1.5 px-6 border-l-4 border-solid ${
+              className={`flex items-center gap-4 h-9 py-1.5 ${menuOpen ? "px-6" : "pl-2 justify-center"}  border-l-4 border-solid ${
                 location.pathname === "/upcoming"
                   ? "border-primary-light dark:border-primary-dark"
                   : "border-transparent"
               } hover:border-primary-light dark:hover:border-primary-dark transition-transform`}
             >
-              <img
-                src={upcoming}
-                alt="home icon by uicons"
-                className="w-5 dark:invert"
-              />
+              <UpcomingIcon className="icon w-5 h-5" />
               <span
                 className={`font-medium ${
                   !menuOpen && "scale-x-0 w-0"
@@ -180,17 +160,13 @@ const SideMenu = () => {
           </Link>
           <Link to="/top-rated">
             <li
-              className={`flex items-center gap-4 h-9 py-1.5 px-6 border-l-4 border-solid ${
+              className={`flex items-center gap-4 h-9 py-1.5 ${menuOpen ? "px-6" : "pl-2 justify-center"}  border-l-4 border-solid ${
                 location.pathname === "/top-rated"
                   ? "border-primary-light dark:border-primary-dark"
                   : "border-transparent"
               } hover:border-primary-light dark:hover:border-primary-dark transition-transform`}
             >
-              <img
-                src={star}
-                alt="movies icon by uicons"
-                className="w-5 dark:invert"
-              />
+              <StarIcon className="icon w-5 h-5" />
               <span
                 className={`font-medium ${
                   !menuOpen && "scale-x-0 w-0"
@@ -202,17 +178,13 @@ const SideMenu = () => {
           </Link>
           <Link to="/genres">
             <li
-              className={`flex items-center gap-4 h-9 py-1.5 px-6 border-l-4 border-solid ${
+              className={`flex items-center gap-4 h-9 py-1.5 ${menuOpen ? "px-6" : "pl-2 justify-center"}  border-l-4 border-solid ${
                 location.pathname === "/genres"
                   ? "border-primary-light dark:border-primary-dark"
                   : "border-transparent"
               } hover:border-primary-light dark:hover:border-primary-dark transition-transform`}
             >
-              <img
-                src={genres}
-                alt="tv icon by uicons"
-                className="w-5 dark:invert"
-              />
+              <GenresIcon className="icon w-5 h-5" />
               <span
                 className={`font-medium ${
                   !menuOpen && "scale-x-0 w-0"
@@ -233,11 +205,11 @@ const SideMenu = () => {
           menuOpen ? "flex-row gap-4" : "flex-col gap-1"
         } px-6 mt-auto mb-0`}
       >
-        <img
-          src={theme === "dark" ? moon : sun}
-          alt="tv icon by uicons"
-          className="w-5 dark:invert"
-        />
+        {theme === "dark" ? (
+          <MoonIcon className="icon w-5 h-5" />
+        ) : (
+          <SunIcon className="icon w-5 h-5" />
+        )}
         <span
           className={`capitalize font-medium ${
             !menuOpen && "scale-x-0 w-0 h-0"
