@@ -51,7 +51,7 @@ const Trending = () => {
                 <Rating data={data[activeNum].vote_average} />
               </div>
 
-              <button className="text-sm xl:text-base text-black font-bold py-1 md:py-0.5 lg:py-2 px-3 lg:px-5 bg-primary-light dark:bg-primary-dark rounded">
+              <button className="text-sm xl:text-base text-black font-bold py-1 md:py-0.5 lg:py-2 px-3 lg:px-5 bg-primary-light dark:bg-primary-dark hover:bg-[#FFB640] rounded transition-colors">
                 More
               </button>
             </div>
