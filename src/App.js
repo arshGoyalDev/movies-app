@@ -1,5 +1,5 @@
 import "./App.css";
-import './svg.css';
+import './components.css';
 
 import { Route, Routes } from "react-router-dom";
 

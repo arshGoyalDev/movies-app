@@ -1,7 +1,0 @@
-.icon path {
-  @apply dark:fill-white transition-all;
-}
-
-.rating-icon path {
-  @apply fill-primary-dark;
-}

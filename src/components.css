@@ -1,0 +1,22 @@
+/* ----------------- */
+/* svg icons */
+.icon path {
+  @apply dark:fill-white transition-all;
+}
+
+.rating-icon path {
+  @apply fill-primary-dark;
+}
+
+/* ----------------- */
+
+/* ----------------- */
+/* components */
+
+.active-card {
+  box-shadow: -1px 0 25px rgba(70, 70, 70, 0.3),
+    1px 0 25px rgba(70, 70, 70, 0.3), 0 -1px 20px rgba(70, 70, 70, 0.3),
+    0 1px 20px rgba(70, 70, 70, 0.3);
+}
+
+/* ----------------- */
