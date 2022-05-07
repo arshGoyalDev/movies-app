@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import search from "../assets/images/search.svg";
+import { SearchIcon } from "./icons";
 
 const SearchBar = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -25,7 +25,7 @@ const SearchBar = () => {
         </span>
       </div>
       <button className="w-16 h-10 grid place-items-center">
-        <img src={search} alt="search icon by uicons" className="w-4 dark:invert" />
+        <SearchIcon className="icon w-4 h-4" />
       </button>
     </div>
   );

@@ -12,6 +12,8 @@ import { ReactComponent as MoonIcon } from "../assets/images/moon.svg";
 import { ReactComponent as StarIcon } from "../assets/images/star.svg";
 import { ReactComponent as StarSolidIcon } from "../assets/images/star-solid.svg";
 
+import { ReactComponent as SearchIcon } from "../assets/images/search.svg";
+
 export {
   HomeIcon,
   MoviesIcon,
@@ -22,5 +24,6 @@ export {
   GenresIcon,
   SunIcon,
   MoonIcon,
-  StarSolidIcon
+  StarSolidIcon,
+  SearchIcon
 };

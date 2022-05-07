@@ -3,12 +3,9 @@ import { SideMenuContext, ThemeContext } from "../../context";
 
 import { Link } from "react-router-dom";
 
-import search from "../../assets/images/search.svg";
-
 import SearchBar from "../SearchBar";
 
-import sun from "../../assets/images/sun.svg";
-import moon from "../../assets/images/moon.svg";
+import { SunIcon, MoonIcon, SearchIcon } from "../icons";
 
 const NavBar = () => {
   const { theme, setTheme } = useContext(ThemeContext);
@@ -45,11 +42,7 @@ const NavBar = () => {
 
         <Link to="/search">
           <div className="xl:hidden grid place-items-center w-10 h-10 bg-gray-100 dark:bg-neutral-800 rounded-full">
-            <img
-              src={search}
-              alt="search icon by uicons"
-              className="w-4 dark:invert"
-            />
+            <SearchIcon className="icon w-3.5 h-3.5" />
           </div>
         </Link>
 
@@ -59,11 +52,11 @@ const NavBar = () => {
           }
           className="xl:hidden grid place-items-center w-10 h-10 bg-gray-100 dark:bg-neutral-800 rounded-full"
         >
-          <img
-            src={theme !== "dark" ? moon : sun}
-            alt="tv icon by uicons"
-            className="w-5 dark:invert"
-          />
+          {theme === "dark" ? (
+            <SunIcon className="icon w-4 h-4" />
+          ) : (
+            <MoonIcon className="icon w-4 h-4" />
+          )}
         </button>
 
         <div className="hidden xl:flex">
