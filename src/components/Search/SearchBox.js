@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SearchIcon } from "./icons";
+import { SearchIcon } from "../icons";
 
 import searchIllustration from "../assets/images/search-illustration.svg";
 
@@ -49,7 +49,7 @@ const SearchBox = () => {
         {showResults ? (
           <div></div>
         ) : (
-          <div className="pt-10 grid place-items-center">
+          <div className="pt-10 pb-5  grid place-items-center">
             <img
               src={searchIllustration}
               alt="search illustration by undraw.co"

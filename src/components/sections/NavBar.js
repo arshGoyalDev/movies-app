@@ -3,7 +3,7 @@ import { SideMenuContext, ThemeContext } from "../../context";
 
 import { Link } from "react-router-dom";
 
-import SearchBar from "../SearchBar";
+import {SearchBar} from "../Search";
 
 import { SunIcon, MoonIcon, SearchIcon } from "../icons";
 
