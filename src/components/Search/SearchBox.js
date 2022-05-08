@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { SearchIcon } from "../icons";
 
-import searchIllustration from "../assets/images/search-illustration.svg";
+import searchIllustration from "../../assets/images/search-illustration.svg";
+import SearchResults from "./SearchResults";
 
 const SearchBox = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -47,9 +48,13 @@ const SearchBox = () => {
           </div>
         </div>
         {showResults ? (
-          <div></div>
+          <div className="flex flex-col gap-5 mt-6 max-h-72 overflow-y-auto">
+            <SearchResults searchType="movie" query={searchValue} />
+            <SearchResults searchType="tv" query={searchValue}/>
+            <SearchResults searchType="person" query={searchValue} />
+          </div>
         ) : (
-          <div className="pt-10 pb-5  grid place-items-center">
+          <div className="pt-10 pb-5 grid place-items-center">
             <img
               src={searchIllustration}
               alt="search illustration by undraw.co"

@@ -4,7 +4,7 @@ import Rating from "./Rating";
 import TrendingOrder from "./TrendingOrder";
 
 const Trending = () => {
-  const data = useFetch("trending/all/day", "results");
+  const data = useFetch("trending/all/day?", "results");
   const [loading, setLoading] = useState(true);
   const [activeNum, setActiveNum] = useState(0);
 
