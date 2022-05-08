@@ -2,38 +2,14 @@ import React, { useState } from "react";
 import { SearchIcon } from "./icons";
 
 import searchIllustration from "../assets/images/search-illustration.svg";
-import { useFetch } from "../hooks";
 
 const SearchBox = () => {
   const [searchValue, setSearchValue] = useState("");
-  const [loading, setLoading] = useState(true);
-  const [movieResults, setMovieResults] = useState(null);
-  const [tvResults, setTvResults] = useState(null);
-  const [peopleResults, setPeopleResults] = useState(null);
-
-  const FetchData = async (type) => {
-    const url = `https://api.themoviedb.org/3/search/${type}?api_key=${process.env.REACT_APP_API_KEY}&query=${searchValue}&language=en-US&page=1&include_adult=false`;
-    const res = await fetch(url);
-    const data = await res.json();
-
-    return data.results;
-  };
+  const [showResults, setShowResults] = useState(false);
 
   const getResults = async () => {
     if (searchValue.replaceAll(" ", "") === "") return;
-    setLoading(true);
-
-    await FetchData("movie").then((results) => {
-      setMovieResults(results);
-    });
-    await FetchData("tv").then((results) => {
-      setTvResults(results);
-    });
-    await FetchData("person").then((results) => {
-      setPeopleResults(results);
-    });
-
-    setLoading(false);
+    setShowResults(true);
   };
 
   return (
@@ -70,24 +46,15 @@ const SearchBox = () => {
             </span>
           </div>
         </div>
-        {loading === "not-started" && (
+        {showResults ? (
+          <div></div>
+        ) : (
           <div className="pt-10 grid place-items-center">
             <img
               src={searchIllustration}
               alt="search illustration by undraw.co"
               className="w-60"
             />
-          </div>
-        )}
-
-        {loading && (
-          <div className="pt-5">
-            <div className="w-32 h-5 bg-gray-300 dark:bg-neutral-900 rounded"></div>
-            <div className="w-full h-24 bg-gray-300 dark:bg-neutral-900 rounded mt-2"></div>
-            <div className="w-32 h-5 bg-gray-300 dark:bg-neutral-900 rounded mt-6"></div>
-            <div className="w-full h-24 bg-gray-300 dark:bg-neutral-900 rounded mt-2"></div>
-            <div className="w-32 h-5 bg-gray-300 dark:bg-neutral-900 rounded mt-6"></div>
-            <div className="w-full h-28 bg-gray-300 dark:bg-neutral-900 rounded mt-2"></div>
           </div>
         )}
       </div>
