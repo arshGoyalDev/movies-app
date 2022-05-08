@@ -69,7 +69,7 @@ const SearchBox = () => {
           </div>
         </div>
         {startSearch ? (
-          <div className="flex flex-col gap-5 mt-6 max-h-72 overflow-y-auto">
+          <div className="scrollbar flex flex-col gap-5 mt-6 pb-10 max-h-72 overflow-y-auto">
             <SearchResults heading="Movies" loading={loading} data={movieResults} />
             <SearchResults heading="TV Shows" loading={loading} data={tvResults} />
             <SearchResults heading="People" loading={loading} data={personResults} />

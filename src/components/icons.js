@@ -14,6 +14,9 @@ import { ReactComponent as StarSolidIcon } from "../assets/images/star-solid.svg
 
 import { ReactComponent as SearchIcon } from "../assets/images/search.svg";
 
+import { ReactComponent as ImageIcon } from "../assets/images/image.svg";
+import {ReactComponent as MenuDotsIcon} from '../assets/images/menu-dots.svg'
+
 export {
   HomeIcon,
   MoviesIcon,
@@ -25,5 +28,7 @@ export {
   SunIcon,
   MoonIcon,
   StarSolidIcon,
-  SearchIcon
+  SearchIcon,
+  ImageIcon,
+  MenuDotsIcon
 };

@@ -1,6 +1,6 @@
 /* ----------------- */
 /* svg icons */
-.icon path {
+.icon > * {
   @apply dark:fill-white transition-all;
 }
 
@@ -19,4 +19,15 @@
     0 1px 20px rgba(70, 70, 70, 0.3);
 }
 
+.scrollbar::-webkit-scrollbar {
+ width: 4px;
+ /* max-height: 4px; */
+ height: 4px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-gray-700 dark:bg-neutral-400 rounded-md;
+}
+
 /* ----------------- */
+

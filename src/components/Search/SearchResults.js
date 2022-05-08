@@ -28,7 +28,7 @@ const SearchResults = ({ heading, loading, data }) => {
           {data.length !== 0 && (
             <div>
               <h3 className="text-xl font-medium capitalize">{heading}</h3>
-              <div className="flex gap-3 pr-10 mt-3 overflow-x-auto">{
+              <div className="scrollbar flex gap-3 pr-10 mt-3 overflow-x-auto">{
                 heading === "People" ? ("") : (
                   <>
                   {data.map((itemData) => (
