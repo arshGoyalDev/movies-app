@@ -6,11 +6,32 @@ import SearchResults from "./SearchResults";
 
 const SearchBox = () => {
   const [searchValue, setSearchValue] = useState("");
-  const [showResults, setShowResults] = useState(false);
+  const [startSearch, setStartSearch] = useState(false);
+  const [loading, setLoading] = useState("");
+  const [movieResults, setMovieResults] = useState(null)
+  const [tvResults, setTvResults] = useState(null);
+  const [personResults, setPersonResults] = useState(null)
+
+  const fetchResults = async (type) => {
+    const res = await fetch(`https://api.themoviedb.org/3/search/${type}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&query=${searchValue}&page=1&include_adult=false`);
+    const data = await res.json();
+    
+    return data.results;
+  }
 
   const getResults = async () => {
     if (searchValue.replaceAll(" ", "") === "") return;
-    setShowResults(true);
+    
+    setStartSearch(true);
+    setLoading(true);
+    const movies = await fetchResults("movie");
+    const tvShows = await fetchResults("tv");
+    const people = await fetchResults("person");
+
+    setMovieResults(movies);
+    setTvResults(tvShows);
+    setPersonResults(people);
+    setLoading(false);
   };
 
   return (
@@ -47,11 +68,11 @@ const SearchBox = () => {
             </span>
           </div>
         </div>
-        {showResults ? (
+        {startSearch ? (
           <div className="flex flex-col gap-5 mt-6 max-h-72 overflow-y-auto">
-            <SearchResults searchType="movie" query={searchValue} />
-            <SearchResults searchType="tv" query={searchValue}/>
-            <SearchResults searchType="person" query={searchValue} />
+            <SearchResults heading="Movies" loading={loading} data={movieResults} />
+            <SearchResults heading="TV Shows" loading={loading} data={tvResults} />
+            <SearchResults heading="People" loading={loading} data={personResults} />
           </div>
         ) : (
           <div className="pt-10 pb-5 grid place-items-center">
