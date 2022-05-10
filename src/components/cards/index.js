@@ -1,4 +1,5 @@
 import TrendingCard from "./TrendingCard";
 import SearchBackdropCard from "./SearchBackdropCard";
+import SearchPeopleCard from "./SearchPeopleCard";
 
-export { TrendingCard, SearchBackdropCard };
+export { TrendingCard, SearchBackdropCard, SearchPeopleCard };

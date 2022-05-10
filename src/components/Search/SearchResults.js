@@ -1,6 +1,6 @@
 
 // import { useFetch } from "../../hooks";
-import { SearchBackdropCard } from "../cards";
+import { SearchBackdropCard, SearchPeopleCard } from "../cards";
 
 const SearchResults = ({ heading, loading, data }) => {
   return (
@@ -29,7 +29,11 @@ const SearchResults = ({ heading, loading, data }) => {
             <div>
               <h3 className="text-xl font-medium capitalize">{heading}</h3>
               <div className="scrollbar flex gap-3 pr-10 mt-3 overflow-x-auto">{
-                heading === "People" ? ("") : (
+                heading === "People" ? (
+                  data.map((itemData) => (
+                    <SearchPeopleCard key={itemData.id} data={itemData} />
+                  ))
+                ) : (
                   <>
                   {data.map((itemData) => (
                     <SearchBackdropCard key={itemData.id} data={itemData} />
