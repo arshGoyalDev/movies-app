@@ -2,7 +2,6 @@ import { BottomNav, NavBar, SideMenu } from "../components/sections";
 
 import OptionsBar from "../components/OptionsBar";
 import Trending from "../components/Trending";
-// import { SearchBox } from "../components/Search";
 
 const Home = () => {
   return (
