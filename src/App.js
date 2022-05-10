@@ -4,6 +4,7 @@ import './components.css';
 import { Route, Routes } from "react-router-dom";
 
 import { Home } from "./pages";
+import { SearchBox } from "./components/Search";
 
 const App = () => {
   return (
@@ -11,6 +12,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
+
+      <SearchBox />
     </div>
   );
 };

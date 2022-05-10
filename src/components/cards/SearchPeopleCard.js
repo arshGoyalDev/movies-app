@@ -1,9 +1,8 @@
 import { UserIcon } from "../icons";
 
 const SearchPeopleCard = ({ data }) => {
-  console.log(data);
   return (
-    <div className="relative min-w-[130px] h-44 bg-gray-300 dark:bg-neutral-700 rounded-lg overflow-hidden">
+    <div className="relative min-w-[130px] h-44 bg-gray-100 dark:bg-neutral-700 rounded-lg overflow-hidden">
       <div className="absolute z-[1] grid place-items-center w-full h-full">
         {data.profile_path ? (
           <img
