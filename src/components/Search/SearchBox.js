@@ -57,7 +57,7 @@ const SearchBox = () => {
               onKeyDown={(e) => {
                 if (e.keyCode === 13) getResults();
               }}
-              className="w-full py-3 px-4 text-sm bg-transparent focus:outline-none"
+              className="w-full py-3 px-2 text-sm bg-transparent focus:outline-none"
             />
             <span
               className={`placeholder-text absolute left-0 top-1/2 -translate-y-1/2 w-full pointer-events-none text-sm text-gray-500 dark:text-neutral-500 ${
