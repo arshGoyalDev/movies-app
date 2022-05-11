@@ -6,8 +6,7 @@ const TrendingMobile = ({ data, activeNum, setActiveNum }) => {
   return (
     <div className="relative sm:hidden h-80 mt-10 overflow-hidden">
       <div
-        onClick={() => setActiveNum(        data[activeNum - 1]
-          ? activeNum - 1 : 0)}
+        onClick={() => setActiveNum(data[activeNum - 1] ? activeNum - 1 : 19)}
         className="absolute min-w-[180px] h-max rounded-xl -translate-x-[70%] -rotate-6 translate-y-16 overflow-hidden shadow-2xl dark:shadow-none shadow-gray-500"
       >
         <div className="w-full h-60 opacity-80 dark:opacity-70">
@@ -36,8 +35,7 @@ const TrendingMobile = ({ data, activeNum, setActiveNum }) => {
       </div>
 
       <div
-        onClick={() => setActiveNum(        data[activeNum + 1]
-          ? activeNum + 1 : 0)}
+        onClick={() => setActiveNum(data[activeNum + 1] ? activeNum + 1 : 0)}
         className={`absolute min-w-[180px] h-max rounded-xl right-0 translate-x-[70%] rotate-6 translate-y-16 overflow-hidden shadow-2xl dark:shadow-none shadow-gray-500`}
       >
         <div className="w-full h-60 opacity-80 dark:opacity-70">
