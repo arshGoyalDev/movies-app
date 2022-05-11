@@ -31,10 +31,10 @@ const Trending = () => {
   return (
     <>
       {loading ? (
-        <div className="trending h-40 sm:h-60 lg:h-80 xl:h-96  bg-neutral-800 rounded-lg"></div>
+        <div className="trending h-40 sm:h-60 lg:h-80 xl:h-96 mx-5 md:mx-16 xl:mr-24 xl:ml-10 bg-neutral-800 rounded-lg"></div>
       ) : (
         <>
-          <div className="trending relative h-40 sm:h-60 lg:h-80 xl:h-96 bg-neutral-800 rounded-lg lg:rounded-2xl overflow-hidden">
+          <div className="trending hidden sm:block relative h-40 sm:h-60 lg:h-80 xl:h-96 mx-5 md:mx-16 xl:mr-24 xl:ml-10 bg-neutral-800 rounded-lg lg:rounded-2xl overflow-hidden">
             <div className="absolute z-[1] w-full h-full">
               <img
                 src={`https://image.tmdb.org/t/p/w500${data[activeNum].backdrop_path}`}
@@ -65,7 +65,7 @@ const Trending = () => {
               />
             </div>
           </div>
-          <TrendingMobile />
+          <TrendingMobile data={data} activeNum={activeNum} setActiveNum={setActiveNum} />
         </>
       )}
     </>
