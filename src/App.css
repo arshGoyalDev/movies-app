@@ -63,7 +63,7 @@ body {
 /* extras */
 
 ::selection {
-  @apply text-black bg-primary-light dark:bg-primary-dark;
+  @apply text-black dark:text-white bg-gray-200 dark:bg-neutral-700;
 }
 
 /* ----------------- */
