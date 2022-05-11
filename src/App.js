@@ -1,20 +1,28 @@
 import "./App.css";
-import './components.css';
+import "./components.css";
 
 import { Route, Routes } from "react-router-dom";
 
 import { Home } from "./pages";
 import { SearchBox } from "./components/Search";
+import { BottomNav, NavBar, SideMenu } from "./components/sections";
 
 const App = () => {
   return (
-    <div className="App dark:bg-neutral-900 dark:text-white">
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
+    <main className="flex min-h-screen dark:bg-neutral-900 dark:text-white">
+      <SideMenu />
+
+      <section className="w-full">
+        <NavBar />
+        <BottomNav />
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </section>
 
       <SearchBox />
-    </div>
+    </main>
   );
 };
 
