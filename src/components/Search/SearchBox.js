@@ -46,7 +46,8 @@ const SearchBox = () => {
 
   return (
     <>
-      <div onClick={() => setSearch(false)} className={`fixed z-40 top-0 left-0 w-full h-full bg-black bg-opacity-50 ${search ? "visible opacity-100" : "hidden opacity-0"} transition-all duration-700`}></div>
+      <div onClick={() => setSearch(false)} className={`fixed z-40 top-0 left-0 w-full h-full bg-black bg-opacity-50 transition-opacity duration-300 ${search ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}></div>
+
       <div className={`fixed z-50 inset-1/2 -translate-x-1/2 -translate-y-1/2 py-6 px-6 w-[90%] md:w-[500px] h-max bg-gray-100 dark:bg-neutral-800 rounded-xl ${search ? "scale-100" : "scale-0"} transition-all duration-300`}>
         <h3 className="text-2xl font-semibold">Search</h3>
 
