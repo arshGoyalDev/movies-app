@@ -9,7 +9,7 @@ import {
   SunIcon, MoonIcon,
 } from "../icons";
 
-const SideMenu = () => {
+const SideBar = () => {
   const location = useLocation();
   const { theme, setTheme } = useContext(ThemeContext);
   const { menuOpen, setMenuOpen } = useContext(SideMenuContext);
@@ -239,4 +239,4 @@ const SideMenu = () => {
   );
 };
 
-export default SideMenu;
+export default SideBar;

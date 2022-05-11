@@ -1,5 +1,5 @@
 import BottomNav from "./BottomNav";
 import NavBar from "./NavBar";
-import SideMenu from "./SideMenu";
+import SideBar from "./SideBar";
 
-export { BottomNav, NavBar, SideMenu };
+export { BottomNav, NavBar, SideBar };
