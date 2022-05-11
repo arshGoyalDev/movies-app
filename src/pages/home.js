@@ -1,4 +1,4 @@
-import OptionsBar from '../components/OptionsBar'
+import OptionsBar from "../components/OptionsBar";
 import Trending from "../components/Trending";
 
 const Home = () => {

@@ -1,4 +1,4 @@
-import { TrendingCard } from "./cards";
+import { TrendingCard } from "../cards";
 
 const TrendingOrder = ({ data, activeNum, setActiveNum }) => {
   return (
