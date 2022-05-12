@@ -1,7 +1,7 @@
 import Trending from "./Trending";
 
-import TrendingOrder from "./TrendingOrder";
 import TrendingMobile from "./TrendingMobile";
+import TrendingLarge from "./TrendingLarge";
 
 export default Trending;
-export { TrendingOrder, TrendingMobile };
+export { TrendingMobile, TrendingLarge };
