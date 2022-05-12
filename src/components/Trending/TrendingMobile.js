@@ -1,5 +1,3 @@
-import React from "react";
-
 const TrendingMobile = ({ loading, data, activeNum, setActiveNum }) => {
   return (
     <div className="relative sm:hidden h-[430px] mt-10 overflow-hidden">
