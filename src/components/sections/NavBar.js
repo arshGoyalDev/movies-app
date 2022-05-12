@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { SideMenuContext, ThemeContext } from "../../context";
+import { SearchContext, SideMenuContext, ThemeContext } from "../../context";
 
 import { Link } from "react-router-dom";
 
@@ -10,6 +10,7 @@ import { SunIcon, MoonIcon, SearchIcon } from "../icons";
 const NavBar = () => {
   const { theme, setTheme } = useContext(ThemeContext);
   const { menuOpen } = useContext(SideMenuContext);
+  const {setSearch} = useContext(SearchContext);
 
   return (
     <nav
@@ -40,11 +41,9 @@ const NavBar = () => {
           </li>
         </ul>
 
-        <Link to="/search">
-          <div className="xl:hidden grid place-items-center w-10 h-10 bg-gray-100 dark:bg-neutral-800 rounded-full">
+          <button onClick={() => setSearch(true)} className="xl:hidden grid place-items-center w-10 h-10 bg-gray-100 dark:bg-neutral-800 rounded-full">
             <SearchIcon className="icon w-3.5 h-3.5" />
-          </div>
-        </Link>
+          </button>
 
         <button
           onClick={() =>
