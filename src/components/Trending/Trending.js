@@ -1,20 +1,24 @@
 import { useState, useEffect } from "react";
 import { useFetch } from "../../hooks";
 
-import Rating from "../Rating";
-
 import { TrendingOrder, TrendingMobile } from "./";
 
 const Trending = () => {
   const data = useFetch("trending/all/day?", "results");
+  const movieGenresList = useFetch(
+    "genre/movie/list?language=en-US&",
+    "genres"
+  );
+  const tvGenresList = useFetch("genre/tv/list?language=en-US&", "genres");
   const [loading, setLoading] = useState(true);
   const [activeNum, setActiveNum] = useState(0);
 
   useEffect(() => {
-    if (data) {
+    if (data && movieGenresList && tvGenresList) {
       setLoading(false);
+      console.log(data[activeNum]);
     }
-  }, [data]);
+  }, [data, movieGenresList, tvGenresList, activeNum]);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -27,6 +31,15 @@ const Trending = () => {
 
     return () => clearTimeout(timeout);
   }, [activeNum]);
+
+  const getGenres = (genresList, id) => {
+    return genresList.map((genreId) => {
+      if (genreId.id === id) {
+        return <p className="font-medium text-lg text-gray-200">{genreId.name}{data[activeNum].genre_ids.indexOf(id) === data[activeNum].genre_ids.length - 1 ? "" : ","}</p>
+      }
+    });
+
+  }
 
   return (
     <>
@@ -46,14 +59,24 @@ const Trending = () => {
               <div className="w-full flex md:flex-col md:gap-4 xl:gap-6 items-end md:items-start justify-between">
                 <div>
                   <h2 className="max-w-[160px] md:max-w-[360px] md:font-semibold md:text-2xl lg:text-3xl font-medium mb-2 xl:mb-0">
-                    {data[activeNum].title ?? data[activeNum].name}
+                    {(data[activeNum].title ?? data[activeNum].name).length > 25
+                      ? (data[activeNum].title ?? data[activeNum].name).slice(
+                          0,
+                          25
+                        ) + "..."
+                      : data[activeNum].title ?? data[activeNum].name}
                   </h2>
-                  <p className="hidden xl:block w-64 xl:w-80 w- 2xl:w-[360px] text-lg text-gray-200 mt-3 mb-1 xl:mb-3">
-                    {data[activeNum].overview.slice(0, 60)}...
-                  </p>
-                  <Rating data={data[activeNum].vote_average} />
-                </div>
 
+                  <div className="flex items-center gap-2">
+                    {data[activeNum].genre_ids.map((id) => {
+                      if (data[activeNum].title) {
+                        return getGenres(movieGenresList, id)
+                      } else if (data[activeNum].name) {
+                        return getGenres(tvGenresList, id)
+                      }
+                    })}
+                  </div>
+                </div>
                 <button className="text-sm xl:text-base text-black font-bold py-1 md:py-0.5 lg:py-2 px-3 lg:px-5 bg-primary-light dark:bg-primary-dark hover:bg-[#FFB640] rounded transition-colors">
                   More
                 </button>
@@ -65,7 +88,11 @@ const Trending = () => {
               />
             </div>
           </div>
-          <TrendingMobile data={data} activeNum={activeNum} setActiveNum={setActiveNum} />
+          <TrendingMobile
+            data={data}
+            activeNum={activeNum}
+            setActiveNum={setActiveNum}
+          />
         </>
       )}
     </>

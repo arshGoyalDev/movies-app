@@ -7,9 +7,9 @@ const TrendingMobile = ({ data, activeNum, setActiveNum }) => {
     <div className="relative sm:hidden h-[430px] mt-10 overflow-hidden">
       <div
         onClick={() => setActiveNum(data[activeNum - 1] ? activeNum - 1 : 19)}
-        className="absolute -translate-x-[75%] translate-y-16 min-w-[220px] h-max -rotate-6 rounded-2xl overflow-hidden"
+        className="absolute -translate-x-[75%] translate-y-16 min-w-[200px] h-max -rotate-6 rounded-2xl overflow-hidden"
       >
-        <div className="w-full h-80 opacity-80 dark:opacity-70">
+        <div className="w-full h-[300px] opacity-80 dark:opacity-70">
           <img
             src={`https://image.tmdb.org/t/p/w500${
               data[activeNum - 1]
@@ -38,9 +38,9 @@ const TrendingMobile = ({ data, activeNum, setActiveNum }) => {
 
       <div
         onClick={() => setActiveNum(data[activeNum + 1] ? activeNum + 1 : 0)}
-        className="absolute right-0 translate-x-[75%] translate-y-16 min-w-[220px] h-max rotate-6 rounded-2xl overflow-hidden"
+        className="absolute right-0 translate-x-[75%] translate-y-16 min-w-[200px] h-max rotate-6 rounded-2xl overflow-hidden"
       >
-        <div className="w-full h-80 opacity-80 dark:opacity-70">
+        <div className="w-full h-[300px] opacity-80 dark:opacity-70">
           <img
             src={`https://image.tmdb.org/t/p/w500${
               data[activeNum + 1]
