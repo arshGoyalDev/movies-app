@@ -9,7 +9,7 @@ import { BottomNav, NavBar, SideBar } from "./components/sections";
 
 const App = () => {
   return (
-    <main className="flex min-h-screen dark:bg-neutral-900 dark:text-white">
+    <main className="flex min-h-screen dark:bg-neutral-900 dark:text-white transition-colors">
       <SideBar />
 
       <section className="w-full">
