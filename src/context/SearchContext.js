@@ -6,8 +6,6 @@ const SearchProvider = ({ children }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [search, setSearch] = useState(false);
 
-  console.log(search);
-
   return (
     <SearchContext.Provider value={{ search, setSearch, searchQuery, setSearchQuery }}>
       {children}
