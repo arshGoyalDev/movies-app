@@ -61,7 +61,7 @@ const SideBar = () => {
           <Link to="/">
             <li
               className={`flex items-center gap-4 h-11 mx-3 rounded-md ${
-                menuOpen ? "px-4" : "pl-4 justify-center"
+                menuOpen ? "px-4" : "pl-4"
               } ${
                 location.pathname === "/" &&
                 "bg-gray-200 bg-opacity-70 dark:bg-neutral-800"
@@ -85,7 +85,7 @@ const SideBar = () => {
           <Link to="/movies">
           <li
               className={`flex items-center gap-4 h-11 mx-3 rounded-md ${
-                menuOpen ? "px-4" : "pl-4 justify-center"
+                menuOpen ? "px-4" : "pl-4 "
               } ${
                 location.pathname === "/movies" &&
                 "bg-gray-200 bg-opacity-70 dark:bg-neutral-800"
@@ -109,7 +109,7 @@ const SideBar = () => {
           <Link to="/tv-shows">
           <li
               className={`flex items-center gap-4 h-11 mx-3 rounded-md ${
-                menuOpen ? "px-4" : "pl-4 justify-center"
+                menuOpen ? "px-4" : "pl-4 "
               } ${
                 location.pathname === "/tv-shows" &&
                 "bg-gray-200 bg-opacity-70 dark:bg-neutral-800"
@@ -134,7 +134,7 @@ const SideBar = () => {
           <Link to="/people">
           <li
               className={`flex items-center gap-4 h-11 mx-3 rounded-md ${
-                menuOpen ? "px-4" : "pl-4 justify-center"
+                menuOpen ? "px-4" : "pl-4 "
               } ${
                 location.pathname === "/people" &&
                 "bg-gray-200 bg-opacity-70 dark:bg-neutral-800"
@@ -169,7 +169,7 @@ const SideBar = () => {
           <Link to="/upcoming">
           <li
               className={`flex items-center gap-4 h-11 mx-3 rounded-md ${
-                menuOpen ? "px-4" : "pl-4 justify-center"
+                menuOpen ? "px-4" : "pl-4 "
               } ${
                 location.pathname === "/upcoming" &&
                 "bg-gray-200 bg-opacity-70 dark:bg-neutral-800"
@@ -193,7 +193,7 @@ const SideBar = () => {
           <Link to="/top-rated">
           <li
               className={`flex items-center gap-4 h-11 mx-3 rounded-md ${
-                menuOpen ? "px-4" : "pl-4 justify-center"
+                menuOpen ? "px-4" : "pl-4 "
               } ${
                 location.pathname === "/top-rated" &&
                 "bg-gray-200 bg-opacity-70 dark:bg-neutral-800"
@@ -217,7 +217,7 @@ const SideBar = () => {
           <Link to="/genres">
           <li
               className={`flex items-center gap-4 h-11 mx-3 rounded-md ${
-                menuOpen ? "px-4" : "pl-4 justify-center"
+                menuOpen ? "px-4" : "pl-4 "
               } ${
                 location.pathname === "/genres" &&
                 "bg-gray-200 bg-opacity-70 dark:bg-neutral-800"
