@@ -4,8 +4,13 @@ import { SideMenuContext, ThemeContext } from "../../context";
 import { Link, useLocation } from "react-router-dom";
 
 import {
-  HomeIcon, MoviesIcon, TvIcon, PeopleIcon,
-  UpcomingIcon, StarIcon, GenresIcon,
+  HomeIcon, HomeSolidIcon,
+  MoviesIcon, MoviesSolidIcon,
+  TvIcon, TvSolidIcon,
+  PeopleIcon, PeopleSolidIcon,
+  UpcomingIcon, UpcomingSolidIcon,
+  StarIcon, StarSolidIcon, 
+  GenresIcon, GenresSolidIcon,
   SunIcon, MoonIcon,
 } from "../icons";
 
@@ -52,21 +57,25 @@ const SideBar = () => {
         >
           Menu
         </span>
-        <ul className="flex flex-col gap-3 mt-4">
+        <ul className="flex flex-col gap-1 mt-4">
           <Link to="/">
             <li
-              className={`flex items-center gap-4 h-9 py-1.5 ${
-                menuOpen ? "px-6" : "pl-2 justify-center"
-              }  border-l-4 border-solid ${
-                location.pathname === "/"
-                  ? "border-primary-light dark:border-primary-dark"
-                  : "border-transparent"
+              className={`flex items-center gap-4 h-11 mx-3 rounded-md ${
+                menuOpen ? "px-4" : "pl-4 justify-center"
+              } ${
+                location.pathname === "/" &&
+                "bg-gray-200 bg-opacity-70 dark:bg-neutral-800"
               } hover:border-primary-light dark:hover:border-primary-dark transition-transform`}
             >
-              <HomeIcon className="icon w-5 h-5" />
+              {location.pathname === "/" ? (
+                <HomeSolidIcon className="active-icon w-5 h-5" />
+              ) : (
+                <HomeIcon className="inactive-icon w-5 h-5" />
+              )}
               <span
-                className={`font-medium ${
-                  !menuOpen && "scale-x-0 w-0"
+                className={`font-medium pt-1 ${!menuOpen && "scale-x-0 w-0"} ${
+                  location.pathname !== "/" &&
+                  "text-gray-500 dark:text-neutral-700"
                 } origin-left transition-transform duration-300`}
               >
                 Home
@@ -74,19 +83,23 @@ const SideBar = () => {
             </li>
           </Link>
           <Link to="/movies">
-            <li
-              className={`flex items-center gap-4 h-9 py-1.5 ${
-                menuOpen ? "px-6" : "pl-2 justify-center"
-              }  border-l-4 border-solid ${
-                location.pathname === "/movies"
-                  ? "border-primary-light dark:border-primary-dark"
-                  : "border-transparent"
+          <li
+              className={`flex items-center gap-4 h-11 mx-3 rounded-md ${
+                menuOpen ? "px-4" : "pl-4 justify-center"
+              } ${
+                location.pathname === "/movies" &&
+                "bg-gray-200 bg-opacity-70 dark:bg-neutral-800"
               } hover:border-primary-light dark:hover:border-primary-dark transition-transform`}
             >
-              <MoviesIcon className="icon w-5 h-5" />
+              {location.pathname === "/movies" ? (
+                <MoviesSolidIcon className="active-icon w-5 h-5" />
+              ) : (
+                <MoviesIcon className="inactive-icon w-5 h-5" />
+              )}
               <span
-                className={`font-medium ${
-                  !menuOpen && "scale-x-0 w-0"
+                className={`font-medium pt-1 ${!menuOpen && "scale-x-0 w-0"} ${
+                  location.pathname !== "/movies" &&
+                  "text-gray-500 dark:text-neutral-700"
                 } origin-left transition-transform duration-300`}
               >
                 Movies
@@ -94,19 +107,24 @@ const SideBar = () => {
             </li>
           </Link>
           <Link to="/tv-shows">
-            <li
-              className={`flex items-center gap-4 h-9 py-1.5 ${
-                menuOpen ? "px-6" : "pl-2 justify-center"
-              }  border-l-4 border-solid ${
-                location.pathname === "/tv-shows"
-                  ? "border-primary-light dark:border-primary-dark"
-                  : "border-transparent"
+          <li
+              className={`flex items-center gap-4 h-11 mx-3 rounded-md ${
+                menuOpen ? "px-4" : "pl-4 justify-center"
+              } ${
+                location.pathname === "/tv-shows" &&
+                "bg-gray-200 bg-opacity-70 dark:bg-neutral-800"
               } hover:border-primary-light dark:hover:border-primary-dark transition-transform`}
             >
-              <TvIcon className="icon w-5 h-5" />
+              {location.pathname === "/tv-shows" ? (
+                <TvSolidIcon className="active-icon w-5 h-5" />
+              ) : (
+                <TvIcon className="inactive-icon w-5 h-5" />
+              )}
+
               <span
-                className={`font-medium ${
-                  !menuOpen && "scale-x-0 w-0"
+                className={`font-medium pt-1 ${!menuOpen && "scale-x-0 w-0"} ${
+                  location.pathname !== "/tv-shows" &&
+                  "text-gray-500 dark:text-neutral-700"
                 } origin-left transition-transform duration-300`}
               >
                 Tv Shows
@@ -114,19 +132,23 @@ const SideBar = () => {
             </li>
           </Link>
           <Link to="/people">
-            <li
-              className={`flex items-center gap-4 h-9 py-1.5 ${
-                menuOpen ? "px-6" : "pl-2 justify-center"
-              }  border-l-4 border-solid ${
-                location.pathname === "/people"
-                  ? "border-primary-light dark:border-primary-dark"
-                  : "border-transparent"
+          <li
+              className={`flex items-center gap-4 h-11 mx-3 rounded-md ${
+                menuOpen ? "px-4" : "pl-4 justify-center"
+              } ${
+                location.pathname === "/people" &&
+                "bg-gray-200 bg-opacity-70 dark:bg-neutral-800"
               } hover:border-primary-light dark:hover:border-primary-dark transition-transform`}
             >
-              <PeopleIcon className="icon w-5 h-5" />
+              {location.pathname === "/people" ? (
+                <PeopleSolidIcon className="active-icon w-5 h-5" />
+              ) : (
+                <PeopleIcon className="inactive-icon w-5 h-5" />
+              )}
               <span
-                className={`font-medium ${
-                  !menuOpen && "scale-x-0 w-0"
+                className={`font-medium pt-1 ${!menuOpen && "scale-x-0 w-0"} ${
+                  location.pathname !== "/people" &&
+                  "text-gray-500 dark:text-neutral-700"
                 } origin-left transition-transform duration-300`}
               >
                 People
@@ -143,21 +165,25 @@ const SideBar = () => {
         >
           More
         </span>
-        <ul className="flex flex-col gap-3 mt-4">
+        <ul className="flex flex-col gap-1 mt-4">
           <Link to="/upcoming">
-            <li
-              className={`flex items-center gap-4 h-9 py-1.5 ${
-                menuOpen ? "px-6" : "pl-2 justify-center"
-              }  border-l-4 border-solid ${
-                location.pathname === "/upcoming"
-                  ? "border-primary-light dark:border-primary-dark"
-                  : "border-transparent"
+          <li
+              className={`flex items-center gap-4 h-11 mx-3 rounded-md ${
+                menuOpen ? "px-4" : "pl-4 justify-center"
+              } ${
+                location.pathname === "/upcoming" &&
+                "bg-gray-200 bg-opacity-70 dark:bg-neutral-800"
               } hover:border-primary-light dark:hover:border-primary-dark transition-transform`}
             >
-              <UpcomingIcon className="icon w-5 h-5" />
+              {location.pathname === "/upcoming" ? (
+                <UpcomingSolidIcon className="active-icon w-5 h-5" />
+              ) : (
+                <UpcomingIcon className="inactive-icon w-5 h-5" />
+              )}
               <span
-                className={`font-medium ${
-                  !menuOpen && "scale-x-0 w-0"
+                className={`font-medium pt-1 ${!menuOpen && "scale-x-0 w-0"} ${
+                  location.pathname !== "/upcoming" &&
+                  "text-gray-500 dark:text-neutral-700"
                 } origin-left transition-transform duration-300`}
               >
                 Upcoming
@@ -165,19 +191,23 @@ const SideBar = () => {
             </li>
           </Link>
           <Link to="/top-rated">
-            <li
-              className={`flex items-center gap-4 h-9 py-1.5 ${
-                menuOpen ? "px-6" : "pl-2 justify-center"
-              }  border-l-4 border-solid ${
-                location.pathname === "/top-rated"
-                  ? "border-primary-light dark:border-primary-dark"
-                  : "border-transparent"
+          <li
+              className={`flex items-center gap-4 h-11 mx-3 rounded-md ${
+                menuOpen ? "px-4" : "pl-4 justify-center"
+              } ${
+                location.pathname === "/top-rated" &&
+                "bg-gray-200 bg-opacity-70 dark:bg-neutral-800"
               } hover:border-primary-light dark:hover:border-primary-dark transition-transform`}
             >
-              <StarIcon className="icon w-5 h-5" />
+              {location.pathname === "/top-rated" ? (
+                <StarSolidIcon className="active-icon w-5 h-5" />
+              ) : (
+                <StarIcon className="inactive-icon w-5 h-5" />
+              )}
               <span
-                className={`font-medium ${
-                  !menuOpen && "scale-x-0 w-0"
+                className={`font-medium pt-1 ${!menuOpen && "scale-x-0 w-0"} ${
+                  location.pathname !== "/top-rated" &&
+                  "text-gray-500 dark:text-neutral-700"
                 } origin-left transition-transform duration-300`}
               >
                 Top Rated
@@ -185,19 +215,23 @@ const SideBar = () => {
             </li>
           </Link>
           <Link to="/genres">
-            <li
-              className={`flex items-center gap-4 h-9 py-1.5 ${
-                menuOpen ? "px-6" : "pl-2 justify-center"
-              }  border-l-4 border-solid ${
-                location.pathname === "/genres"
-                  ? "border-primary-light dark:border-primary-dark"
-                  : "border-transparent"
+          <li
+              className={`flex items-center gap-4 h-11 mx-3 rounded-md ${
+                menuOpen ? "px-4" : "pl-4 justify-center"
+              } ${
+                location.pathname === "/genres" &&
+                "bg-gray-200 bg-opacity-70 dark:bg-neutral-800"
               } hover:border-primary-light dark:hover:border-primary-dark transition-transform`}
             >
-              <GenresIcon className="icon w-5 h-5" />
+              {location.pathname === "/genres" ? (
+                <GenresSolidIcon className="active-icon w-5 h-5" />
+              ) : (
+                <GenresIcon className="inactive-icon w-5 h-5" />
+              )}
               <span
-                className={`font-medium ${
-                  !menuOpen && "scale-x-0 w-0"
+                className={`font-medium pt-1 ${!menuOpen && "scale-x-0 w-0"} ${
+                  location.pathname !== "/genres" &&
+                  "text-gray-500 dark:text-neutral-700"
                 } origin-left transition-transform duration-300`}
               >
                 Genres

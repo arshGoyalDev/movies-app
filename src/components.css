@@ -4,6 +4,15 @@
   @apply dark:fill-white transition-all;
 }
 
+.active-icon > * {
+  @apply fill-primary-light dark:fill-primary-dark
+}
+
+.inactive-icon > * {
+  @apply fill-gray-500 dark:fill-neutral-700
+}
+
+
 .rating-icon path {
   @apply fill-primary-dark;
 }
