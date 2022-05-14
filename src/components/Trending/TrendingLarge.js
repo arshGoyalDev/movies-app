@@ -1,3 +1,4 @@
+import Genre from "../Genre";
 import TrendingOrder from "./TrendingOrder";
 
 const TrendingLarge = ({
@@ -5,7 +6,6 @@ const TrendingLarge = ({
   data,
   activeNum,
   setActiveNum,
-  getGenres,
   movieGenresList,
   tvGenresList,
 }) => {
@@ -35,13 +35,21 @@ const TrendingLarge = ({
                 </h2>
 
                 <div className="max-w-lg flex flex-wrap items-center gap-2 mt-4">
-                  {data[activeNum].genre_ids.map((id) => {
-                    if (data[activeNum].title) {
-                      return getGenres(movieGenresList, id);
-                    } else if (data[activeNum].name) {
-                      return getGenres(tvGenresList, id);
-                    }
-                  })}
+                  {data[activeNum].genre_ids.map((id) =>
+                    data[activeNum].title ? (
+                      <Genre
+                        key={id}
+                        genreId={id}
+                        list={movieGenresList}
+                      />
+                    ) : (
+                      <Genre
+                        key={id}
+                        genreId={id}
+                        list={tvGenresList}
+                      />
+                    )
+                  )}
                 </div>
               </div>
               <button className="text-sm xl:text-base text-black font-bold py-2 px-5 bg-primary-light dark:bg-primary-dark hover:bg-[#FFB640] rounded transition-colors">

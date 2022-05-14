@@ -17,7 +17,7 @@ const Trending = () => {
     if (data && movieGenresList && tvGenresList) {
       setLoading(false);
     }
-  }, [data, movieGenresList, tvGenresList, activeNum]);
+  }, [data, movieGenresList, tvGenresList]);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -31,21 +31,6 @@ const Trending = () => {
     return () => clearTimeout(timeout);
   }, [activeNum]);
 
-  const getGenres = (genresList, id) => {
-    return genresList.map((genreId) => {
-      if (genreId.id === id) {
-        return (
-          <p key={id} className="font-medium text-gray-200">
-            {genreId.name}
-            {data[activeNum].genre_ids.indexOf(id) ===
-            data[activeNum].genre_ids.length - 1
-              ? ""
-              : ","}
-          </p>
-        );
-      }
-    });
-  };
 
   return (
     <>
@@ -54,7 +39,6 @@ const Trending = () => {
         data={data}
         activeNum={activeNum}
         setActiveNum={setActiveNum}
-        getGenres={getGenres}
         movieGenresList={movieGenresList}
         tvGenresList={tvGenresList}
       />
