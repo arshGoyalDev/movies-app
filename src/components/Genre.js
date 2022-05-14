@@ -4,16 +4,20 @@ const Genre = ({ genreId, list }) => {
   const [output, setOutput] = useState("");
 
   useEffect(() => {
-    list.forEach((id) => {
-      if (genreId === id.id) {
-        setOutput(id.name);
+    list.forEach((item) => {
+      if (genreId === item.id) {
+        setOutput(item.name);
       }
     });
 
-    // eslint-disable-next-line no-unused-expressions
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return <div className="py-1 px-2 bg-neutral-800 rounded bg-opacity-70">{output}</div>;
+  return (
+    <div className="text-black dark:text-white text-sm py-1 px-2 bg-gray-200 dark:bg-neutral-800 bg-opacity-60 dark:bg-opacity-70 rounded">
+      {output}
+    </div>
+  );
 };
 
 export default Genre;
