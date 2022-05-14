@@ -29,13 +29,17 @@
 }
 
 /* scrollbar */
+
 .scrollbar::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
+  @apply w-1 h-1;
 }
 
 .scrollbar::-webkit-scrollbar-thumb {
-  @apply bg-gray-400 dark:bg-neutral-600 rounded-md;
+  @apply bg-gray-400 dark:bg-neutral-600 rounded-md invisible transition-all;
+}
+
+.scrollbar:hover::-webkit-scrollbar-thumb {
+  @apply visible
 }
 
 /* search */
