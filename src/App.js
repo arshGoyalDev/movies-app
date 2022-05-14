@@ -12,7 +12,7 @@ const App = () => {
     <main className="flex min-h-screen dark:bg-neutral-900 dark:text-white transition-colors">
       <SideBar />
 
-      <section className="w-full">
+      <section className=" w-full overflow-hidden">
         <NavBar />
         <BottomNav />
 

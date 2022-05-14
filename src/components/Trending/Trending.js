@@ -31,9 +31,8 @@ const Trending = () => {
     return () => clearTimeout(timeout);
   }, [activeNum]);
 
-
   return (
-    <>
+    <div className="mb-10">
       <TrendingLarge
         loading={loading}
         data={data}
@@ -49,7 +48,7 @@ const Trending = () => {
         activeNum={activeNum}
         setActiveNum={setActiveNum}
       />
-    </>
+    </div>
   );
 };
 

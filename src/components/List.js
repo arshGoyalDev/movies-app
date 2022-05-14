@@ -1,44 +1,52 @@
-import { getByTitle } from '@testing-library/react';
-import { useEffect, useState } from 'react'
-import { useFetch } from '../hooks'
+import { getByTitle } from "@testing-library/react";
+import { useEffect, useState } from "react";
+import { useFetch } from "../hooks";
+import PersonCard from "./cards/PersonCard";
 
-const List = ({type, query, pages}) => {
-  const data = useFetch(`${type}/${query}?language=en-US&`);
+const List = ({ type, query, pages }) => {
+  const data = useFetch(`${type}/${query}?language=en-US&`, "results");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (data) {
-      console.log(data);
       setLoading(false);
     }
-  }, [data])
-
+  }, [data]);
 
   const getTitle = () => {
     if (type === "person") {
-      return "people"
+      return "people";
     } else if (type === "movie") {
-      return "movies"
+      return "movies";
     } else if (type === "tv") {
-      return "tv shows"
+      return "tv shows";
     }
-  }
+  };
 
   return (
-    <div className='scrollbar flex gap-4 overflow-x-auto'>
-      <h3>
-        {query.replaceAll("_", " ")}{" "}
-        {getTitle()}
+    <div className="mb-20">
+      <h3 className="text-2xl capitalize font-medium mx-5 md:mx-16 xl:mr-24 xl:ml-10">
+        {query.replaceAll("_", " ")} {getTitle()}
       </h3>
-      {loading ? (
-        ""
-      ) : (
-        <>
-        {type === "person"}
-        </>
-      )}
+      <div className="scrollbar w-full flex gap-4 px-5 md:px-16 xl:pr-24 xl:pl-10 mt-5 overflow-auto">
+        {loading ? (
+          ""
+        ) : (
+          <>
+            {type === "person" ? (
+              <>
+                {data.map((item) => (
+                  <PersonCard key={item.id} data={item} />
+                ))}
+              </>
+            ) : (
+              ""
+            )}
+          </>
+        )}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default List
+export default List;
