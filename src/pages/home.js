@@ -8,13 +8,15 @@ const Home = () => {
       <OptionsBar />
       <Trending />
 
-      <List type="person" query="popular" />
+      <div className="flex flex-col gap-8">
+        <List type="person" query="popular" />
 
-      <List type="movie" query="now_playing" />
-      <List type="tv" query="on_the_air" />
+        <List type="movie" query="now_playing" />
+        <List type="tv" query="on_the_air" />
 
-      <List type="movie" query="popular" />
-      <List type="tv" query="popular" />
+        <List type="movie" query="popular" />
+        <List type="tv" query="popular" />
+      </div>
     </div>
   );
 };

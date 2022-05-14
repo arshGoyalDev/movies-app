@@ -39,7 +39,7 @@
 }
 
 .scrollbar:hover::-webkit-scrollbar-thumb {
-  @apply visible
+  @apply visible;
 }
 
 /* search */

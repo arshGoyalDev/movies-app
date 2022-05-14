@@ -32,7 +32,7 @@ const Trending = () => {
   }, [activeNum]);
 
   return (
-    <div className="mb-10">
+    <div className="mb-6 md:mb-10">
       <TrendingLarge
         loading={loading}
         data={data}

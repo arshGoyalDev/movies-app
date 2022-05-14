@@ -24,11 +24,11 @@ const List = ({ type, query, pages }) => {
   };
 
   return (
-    <div className="mb-20">
-      <h3 className="text-2xl capitalize font-medium mx-5 md:mx-16 xl:mr-24 xl:ml-10">
+    <div className="px-1">
+      <h3 className="text-2xl capitalize font-medium mx-6 md:mx-16 xl:mr-24 xl:ml-10">
         {query.replaceAll("_", " ")} {getTitle()}
       </h3>
-      <div className="scrollbar w-full flex gap-4 px-5 md:px-16 xl:pr-24 xl:pl-10 mt-5 overflow-auto">
+      <div className="scrollbar w-full flex gap-4 px-6 md:px-16 xl:pr-24 xl:pl-10 mt-5 overflow-auto">
         {loading ? (
           ""
         ) : (
