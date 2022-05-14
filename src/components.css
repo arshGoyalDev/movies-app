@@ -21,12 +21,14 @@
 /* ----------------- */
 /* components */
 
+/* card */
 .active-card {
   box-shadow: -1px 0 25px rgba(70, 70, 70, 0.3),
     1px 0 25px rgba(70, 70, 70, 0.3), 0 -1px 20px rgba(70, 70, 70, 0.3),
     0 1px 20px rgba(70, 70, 70, 0.3);
 }
 
+/* scrollbar */
 .scrollbar::-webkit-scrollbar {
   width: 4px;
   height: 4px;
@@ -36,10 +38,12 @@
   @apply bg-gray-400 dark:bg-neutral-600 rounded-md;
 }
 
+/* search */
 #search:focus ~ .placeholder-text {
   @apply left-2 opacity-0;
 }
 
+/* trending */
 @media (min-width: 1640px) {
   .trending {
     height: 480px !important;
@@ -59,6 +63,7 @@
   line-height: 3rem;
 }
 
+/* background */
 @media (min-width: 1024px) {
   .background {
     background-image: linear-gradient(
