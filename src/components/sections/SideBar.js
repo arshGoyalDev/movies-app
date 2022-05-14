@@ -3,16 +3,17 @@ import { SideMenuContext, ThemeContext } from "../../context";
 
 import { Link, useLocation } from "react-router-dom";
 
-import {
+import { 
   HomeIcon, HomeSolidIcon,
   MoviesIcon, MoviesSolidIcon,
   TvIcon, TvSolidIcon,
   PeopleIcon, PeopleSolidIcon,
   UpcomingIcon, UpcomingSolidIcon,
-  StarIcon, StarSolidIcon, 
+  StarIcon, StarSolidIcon,
   GenresIcon, GenresSolidIcon,
   SunIcon, MoonIcon,
 } from "../icons";
+
 
 const SideBar = () => {
   const location = useLocation();
