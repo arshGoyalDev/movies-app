@@ -32,7 +32,7 @@ const SideBar = () => {
       >
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="w-8 h-8 flex items-center justify-center flex-col gap-1.5"
+          className={`w-8 h-8 flex items-center justify-center flex-col gap-1.5 ${!menuOpen && "px-2"}`}
         >
           <span className="block w-6 h-0.5 bg-black dark:bg-white"></span>
           <span className="block w-6 h-0.5 bg-black dark:bg-white"></span>
@@ -246,7 +246,7 @@ const SideBar = () => {
           theme === "dark" ? setTheme("light") : setTheme("dark")
         }
         className={`flex items-center ${
-          menuOpen ? "flex-row gap-4" : "flex-col gap-1"
+          menuOpen ? "flex-row gap-4" : "flex-col gap-1 mx-3 py-2"
         } px-6 mt-auto mb-0`}
       >
         {theme === "dark" ? (
