@@ -16,12 +16,10 @@ const ThemeProvider = ({ children }) => {
       window.matchMedia("(prefers-color-scheme: light)").matches
     ) {
       return "light";
-    } else {
-      return "dark";
     }
   };
 
-  const [theme, setTheme] = useState(getPreferredTheme());
+  const [theme, setTheme] = useState(getPreferredTheme() ?? "dark");
 
   useEffect(() => {
     if (theme === "light") {
