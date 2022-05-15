@@ -4,7 +4,7 @@ import Trending from "../components/Trending";
 
 const Home = () => {
   return (
-    <div className="mt-0 pb-10">
+    <div className="mt-0">
       <OptionsBar />
       <Trending />
 

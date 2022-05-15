@@ -6,6 +6,7 @@ const BackdropCard = ({ data }) => {
       <div className="absolute z-[1] grid place-items-center bg-gray-200 dark:bg-neutral-800 w-full h-full rounded-lg overflow-hidden">
         {data.backdrop_path ? (
           <img
+          loading="lazy"
             src={`https://image.tmdb.org/t/p/w500${data.backdrop_path}`}
             alt={data.name}
             className="w-full h-full"
@@ -27,33 +28,19 @@ const BackdropCard = ({ data }) => {
             </span>
           </div>
         )}
-        <div className="w-full py-3 px-5 bg-opacity-20 bg-black backdrop-blur-xl rounded-t-2xl">
+        <div className="w-full py-3 px-5 backdrop-blur-xl rounded-t-2xl">
           {data.title ? (
-            <>
-              <h4 className="xl:hidden font-medium text-white">
-                {data.title.length > 20
-                  ? `${data.title.slice(0, 20)}...`
-                  : data.title}
-              </h4>
-              <h4 className="hidden xl:block font-medium text-white">
-                {data.title.length > 25
-                  ? `${data.title.slice(0, 25)}...`
-                  : data.title}
-              </h4>
-            </>
+            <h4 className="font-medium text-white">
+              {data.title.length > 20
+                ? `${data.title.slice(0, 20)}...`
+                : data.title}
+            </h4>
           ) : (
-            <>
-              <h4 className="xl:hidden font-medium text-white">
-                {data.name.length > 20
-                  ? `${data.name.slice(0, 20)}...`
-                  : data.name}
-              </h4>
-              <h4 className="hidden xl:block font-medium text-white">
-                {data.name.length > 25
-                  ? `${data.name.slice(0, 25)}...`
-                  : data.name}
-              </h4>
-            </>
+            <h4 className="font-medium text-white">
+              {data.name.length > 20
+                ? `${data.name.slice(0, 20)}...`
+                : data.name}
+            </h4>
           )}
         </div>
       </div>

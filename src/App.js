@@ -12,7 +12,7 @@ const App = () => {
     <main className="flex min-h-screen dark:bg-neutral-900 h-screen dark:text-white transition-colors">
       <SideBar />
 
-      <section className="w-full overflow-x-hidden overflow-y-auto scrollbar">
+      <section className="w-full pb-32 sm:pb-16 overflow-x-hidden overflow-y-auto scrollbar">
         <NavBar />
         <BottomNav />
 

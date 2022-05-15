@@ -8,6 +8,7 @@ const PersonCard = ({ data }) => {
       <div className="absolute z-[1] grid place-items-center w-full h-full">
         {data.profile_path ? (
           <img
+          loading="lazy"
             src={`https://image.tmdb.org/t/p/w500${data.profile_path}`}
             alt={data.name}
             className="w-full"
