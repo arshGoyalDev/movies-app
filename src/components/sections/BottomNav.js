@@ -6,7 +6,7 @@ const BottomNav = () => {
   const location = useLocation();
 
   return (
-    <nav className="sm:hidden fixed z-[10000] -bottom-1 w-full flex justify-between items-center py-5 px-6 dark:bg-neutral-800 rounded-t-[30px] shadow-[0_-10px_60px_rgba(100,100,100,0.4)] dark:shadow-none">
+    <nav className="sm:hidden fixed z-[10000] -bottom-1 w-full flex justify-between items-center py-5 px-6 bg-white dark:bg-neutral-800 rounded-t-[30px] shadow-[0_-10px_60px_rgba(100,100,100,0.4)] dark:shadow-none">
       <Link to="/">
         <div className="grid place-items-center w-20 h-10">
           <HomeIcon

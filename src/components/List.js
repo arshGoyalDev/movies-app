@@ -1,7 +1,6 @@
-import { getByTitle } from "@testing-library/react";
 import { useEffect, useState } from "react";
 import { useFetch } from "../hooks";
-import PersonCard from "./cards/PersonCard";
+import { PersonCard, BackdropCard } from "./cards";
 
 const List = ({ type, query, pages }) => {
   const data = useFetch(`${type}/${query}?language=en-US&`, "results");
@@ -33,15 +32,13 @@ const List = ({ type, query, pages }) => {
           ""
         ) : (
           <>
-            {type === "person" ? (
-              <>
-                {data.map((item) => (
-                  <PersonCard key={item.id} data={item} />
-                ))}
-              </>
-            ) : (
-              ""
-            )}
+            {data.map((item) => (
+              type === "person" ? (
+                <PersonCard key={item.id} data={item} />
+              ) : (
+                <BackdropCard key={item.id} data={item} />
+              )
+            ))}
           </>
         )}
       </div>

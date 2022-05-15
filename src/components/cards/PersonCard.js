@@ -17,11 +17,11 @@ const PersonCard = ({ data }) => {
         )}
       </div>
       <div className="absolute z-[2] w-full h-full grid place-items-center p-2 bg-black bg-opacity-50">
-        <div className="h-full w-full flex items-end p-2 border-2 border-solid border-gray-300 rounded-lg">
-          <h4 className="xl:hidden text font-medium text-white">
+        <div className="h-full w-full flex items-end p-2 border-2 border-solid border-white border-opacity-50 rounded-lg">
+          <h4 className="xl:hidden font-medium text-white">
             {data.name.length > 10 ? `${data.name.slice(0, 10)}...` : data.name}
           </h4>
-          <h4 className="hidden xl:block text font-medium text-white">
+          <h4 className="hidden xl:block font-medium text-white">
             {data.name.length > 20 ? `${data.name.slice(0, 20)}...` : data.name}
           </h4>
         </div>
