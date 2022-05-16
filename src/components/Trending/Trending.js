@@ -3,8 +3,8 @@ import { useFetch } from "../../hooks";
 
 import { TrendingMobile, TrendingLarge } from "./";
 
-const Trending = () => {
-  const data = useFetch("trending/all/day?", "results");
+const Trending = ({type}) => {
+  const data = useFetch(`trending/${type}/day?`, "results");
   const movieGenresList = useFetch(
     "genre/movie/list?language=en-US&",
     "genres"

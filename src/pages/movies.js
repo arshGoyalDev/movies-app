@@ -4,30 +4,24 @@ import Trending from "../components/Trending";
 
 import { motion } from "framer-motion";
 
-const Home = () => {
+const Movies = () => {
   return (
     <motion.div
       className="mt-0"
-      
-      transition={{duration: 0.5}}
+      transition={{ duration: 0.5 }}
       intial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
       <OptionsBar />
-      <Trending type="all" />
+      <Trending type="movie" />
 
       <div className="flex flex-col gap-8">
-        <List type="person" query="popular" />
-
         <List type="movie" query="now_playing" />
-        <List type="tv" query="on_the_air" />
-
         <List type="movie" query="popular" />
-        <List type="tv" query="popular" />
       </div>
     </motion.div>
   );
 };
 
-export default Home;
+export default Movies;
