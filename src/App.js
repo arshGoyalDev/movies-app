@@ -1,4 +1,3 @@
-import { useLocation } from "react-router-dom";
 import "./App.css";
 import "./components.css";
 
@@ -8,11 +7,6 @@ import { BottomNav, NavBar, SideBar } from "./components/sections";
 import Routes from "./Routes";
 
 const App = () => {
-
-  const location = useLocation();
-
-  console.log(location);
-
   return (
     <main className="flex min-h-screen dark:bg-neutral-900 h-screen dark:text-white transition-colors">
       <SideBar />

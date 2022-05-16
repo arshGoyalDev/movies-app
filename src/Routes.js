@@ -11,7 +11,9 @@ const Routes = () => {
     <AnimatePresence>
       <RoutesWrapper location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
-        <Route path="movies" element={<Movies />}></Route>
+
+        <Route path="/movies" element={<Movies />}></Route>
+
         <Route path="*" element={<div>Nothing to see here</div>} />
       </RoutesWrapper>
     </AnimatePresence>

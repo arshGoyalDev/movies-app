@@ -2,18 +2,9 @@ import List from "../components/List";
 import OptionsBar from "../components/OptionsBar";
 import Trending from "../components/Trending";
 
-import { motion } from "framer-motion";
-
 const Home = () => {
   return (
-    <motion.div
-      className="mt-0"
-      
-      transition={{duration: 0.5}}
-      intial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-    >
+    <div className="mt-0">
       <OptionsBar />
       <Trending type="all" />
 
@@ -26,7 +17,7 @@ const Home = () => {
         <List type="movie" query="popular" />
         <List type="tv" query="popular" />
       </div>
-    </motion.div>
+    </div>
   );
 };
 
