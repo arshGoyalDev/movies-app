@@ -3,14 +3,19 @@ import { useFetch } from "../hooks";
 import { PersonCard, BackdropCard } from "./cards";
 
 const List = ({ type, query, pages }) => {
-  const data = useFetch(`${type}/${query}?language=en-US&`, "results");
+  const dataList = useFetch(`${type}/${query}?language=en-US&`, "results");
+  const dataListSecond = useFetch(
+    `${type}/${query}?language=en-US&page=2&`,
+    "results"
+  );
+
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (data) {
+    if (dataList && dataListSecond) {
       setLoading(false);
     }
-  }, [data]);
+  }, [dataList, dataListSecond]);
 
   const getTitle = () => {
     if (type === "person") {
@@ -23,27 +28,50 @@ const List = ({ type, query, pages }) => {
   };
 
   return (
-    <div className="px-1">
-      <h3 className="text-2xl capitalize font-medium mx-6 md:mx-16 xl:mr-24 xl:ml-10">
-        {query.replaceAll("_", " ")} {getTitle()}
-      </h3>
-      <div className="scrollbar w-full flex gap-4 px-6 md:px-16 xl:pr-24 xl:pl-10 mt-5 overflow-auto">
-        {loading ? (
-          ""
-        ) : (
-          <>
-            {data.map((item) => (
+    <>
+      {!loading ? (
+        <div className="px-6 md:px-16 xl:pr-24 xl:pl-10">
+          <div className="w-60 h-6 bg-gray-200 dark:bg-neutral-800 rounded"></div>
+          <div className="flex gap-4 scrollbar mt-5">
+            <div className="min-w-[300px] h-44 bg-gray-200 dark:bg-neutral-800 rounded-2xl"></div>
+            <div className="min-w-[300px] h-44 bg-gray-200 dark:bg-neutral-800 rounded-2xl"></div>
+            <div className="min-w-[300px] h-44 bg-gray-200 dark:bg-neutral-800 rounded-2xl"></div>
+          </div>
+        </div>
+      ) : (
+        <div className="px-1">
+          <h3 className="text-2xl capitalize font-medium mx-6 md:mx-16 xl:mr-24 xl:ml-10">
+            {query.replaceAll("_", " ")} {getTitle()}
+          </h3>
+          <div className="scrollbar w-full flex gap-4 px-6 md:px-16 xl:pr-24 xl:pl-10 mt-5 overflow-auto">
+            {dataList.map((item) =>
               type === "person" ? (
                 <PersonCard key={item.id} data={item} />
               ) : (
                 <BackdropCard key={item.id} data={item} />
               )
-            ))}
-          </>
-        )}
-      </div>
-    </div>
+            )}
+          </div>
+
+          {pages === 2 && (
+            <div className="scrollbar w-full flex gap-4 px-6 md:px-16 xl:pr-24 xl:pl-10 mt-5 overflow-auto">
+              {dataListSecond.map((item) =>
+                type === "person" ? (
+                  <PersonCard key={item.id} data={item} />
+                ) : (
+                  <BackdropCard key={item.id} data={item} />
+                )
+              )}
+            </div>
+          )}
+        </div>
+      )}
+    </>
   );
+};
+
+List.defaultProps = {
+  pages: 2,
 };
 
 export default List;

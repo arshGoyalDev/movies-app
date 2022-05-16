@@ -18,7 +18,7 @@ const TrendingMobile = ({ loading, data, activeNum, setActiveNum }) => {
           >
             <div className="w-full h-[300px] opacity-80 dark:opacity-70">
               <img
-              loading="lazy"
+                loading="lazy"
                 src={`https://image.tmdb.org/t/p/w500${
                   data[activeNum - 1]
                     ? data[activeNum - 1].poster_path
@@ -33,7 +33,7 @@ const TrendingMobile = ({ loading, data, activeNum, setActiveNum }) => {
           <div className="absolute left-1/2 -translate-x-1/2 min-w-[220px] h-max">
             <div className="w-full h-80 rounded-2xl shadow-2xl shadow-gray-700 dark:shadow-neutral-700 overflow-hidden">
               <img
-              loading="lazy"
+                loading="lazy"
                 src={`https://image.tmdb.org/t/p/w500${data[activeNum].poster_path}`}
                 alt="backdrop"
                 className="w-full h-full"
@@ -60,7 +60,7 @@ const TrendingMobile = ({ loading, data, activeNum, setActiveNum }) => {
           >
             <div className="w-full h-[300px] opacity-80 dark:opacity-70">
               <img
-              loading="lazy"
+                loading="lazy"
                 src={`https://image.tmdb.org/t/p/w500${
                   data[activeNum + 1]
                     ? data[activeNum + 1].poster_path

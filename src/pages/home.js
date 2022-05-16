@@ -9,13 +9,13 @@ const Home = () => {
       <Trending type="all" />
 
       <div className="flex flex-col gap-8">
-        <List type="person" query="popular" />
+        <List type="person" query="popular" pages={1} />
 
-        <List type="movie" query="now_playing" />
-        <List type="tv" query="on_the_air" />
+        <List type="movie" query="now_playing" pages={1} />
+        <List type="tv" query="on_the_air" pages={1} />
 
-        <List type="movie" query="popular" />
-        <List type="tv" query="popular" />
+        <List type="movie" query="popular" pages={1} />
+        <List type="tv" query="popular" pages={1} />
       </div>
     </div>
   );
