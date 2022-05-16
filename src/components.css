@@ -78,4 +78,50 @@
   }
 }
 
+/* loading */
+
+.animate-skeleton {
+  animation: 0.5s skeleton linear infinite;
+  background: linear-gradient(
+    110deg,
+    rgb(229, 231, 235) 15%,
+    #ffffff 20%,
+    rgb(229, 231, 235) 33%
+  );
+}
+
+.dark .animate-skeleton {
+  background: linear-gradient(
+    110deg,
+    rgb(38, 38, 38) 15%,
+    rgb(42, 42, 42) 20%,
+    rgb(38, 38, 38) 33%
+  );
+}
+
+.animate-skeleton-search {
+  animation: 0.5s skeleton linear infinite;
+  background: linear-gradient(
+    110deg,
+    rgb(209, 213, 219) 15%,
+    #e7e7e7 20%,
+    rgb(209, 213, 219) 33%
+  );
+}
+
+.dark .animate-skeleton-search {
+  background: linear-gradient(
+    110deg,
+    rgb(64, 64, 64) 15%,
+    rgb(70, 70, 70) 20%,
+    rgb(64, 64, 64) 33%
+  );
+}
+
+@keyframes skeleton {
+  100% {
+    background-position: 300px 0;
+  }
+}
+
 /* ----------------- */

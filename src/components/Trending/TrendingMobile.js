@@ -3,10 +3,10 @@ const TrendingMobile = ({ loading, data, activeNum, setActiveNum }) => {
     <div className="relative sm:hidden h-[430px] mt-10 overflow-hidden">
       {loading ? (
         <>
-          <div className="absolute -translate-x-[75%] translate-y-16 min-w-[200px] h-[300px] bg-gray-200 dark:bg-neutral-800 -rotate-6 rounded-2xl"></div>
-          <div className="absolute left-1/2 -translate-x-1/2 min-w-[220px] h-80 bg-gray-200 dark:bg-neutral-800 rounded-2xl"></div>
-          <div className="absolute top-[336px] left-1/2 -translate-x-1/2 min-w-[200px] h-6 bg-gray-200 dark:bg-neutral-800 rounded-md"></div>
-          <div className="absolute right-0 translate-x-[75%] translate-y-16 min-w-[200px] h-[300px] bg-gray-200 dark:bg-neutral-800 rotate-6 rounded-2xl"></div>
+          <div className="animate-skeleton absolute -translate-x-[75%] translate-y-16 min-w-[200px] h-[300px] -rotate-6 rounded-2xl"></div>
+          <div className="animate-skeleton absolute left-1/2 -translate-x-1/2 min-w-[220px] h-80 rounded-2xl"></div>
+          <div className="animate-skeleton absolute top-[336px] left-1/2 -translate-x-1/2 min-w-[200px] h-6 rounded-md"></div>
+          <div className="animate-skeleton absolute right-0 translate-x-[75%] translate-y-16 min-w-[200px] h-[300px] rotate-6 rounded-2xl"></div>
         </>
       ) : (
         <>

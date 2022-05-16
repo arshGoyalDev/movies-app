@@ -29,13 +29,13 @@ const List = ({ type, query, pages }) => {
 
   return (
     <>
-      {!loading ? (
+      {loading ? (
         <div className="px-6 md:px-16 xl:pr-24 xl:pl-10">
-          <div className="w-60 h-6 bg-gray-200 dark:bg-neutral-800 rounded"></div>
+          <div className="animate-skeleton w-60 h-6 rounded"></div>
           <div className="flex gap-4 scrollbar mt-5">
-            <div className="min-w-[300px] h-44 bg-gray-200 dark:bg-neutral-800 rounded-2xl"></div>
-            <div className="min-w-[300px] h-44 bg-gray-200 dark:bg-neutral-800 rounded-2xl"></div>
-            <div className="min-w-[300px] h-44 bg-gray-200 dark:bg-neutral-800 rounded-2xl"></div>
+            <div className="animate-skeleton min-w-[300px] h-44 rounded-2xl"></div>
+            <div className="animate-skeleton min-w-[300px] h-44 rounded-2xl"></div>
+            <div className="animate-skeleton min-w-[300px] h-44 rounded-2xl"></div>
           </div>
         </div>
       ) : (

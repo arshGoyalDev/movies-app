@@ -7,18 +7,18 @@ const SearchResults = ({ heading, loading, data }) => {
     <>
       {loading ? (
         <div>
-          <div className="w-40 h-5 bg-gray-300 dark:bg-neutral-700 rounded-md"></div>
+          <div className="animate-skeleton-search w-40 h-5 rounded-md"></div>
           <div className="flex gap-4 mt-3 overflow-hidden">
             {heading === "People" ? (
               <>
-                <div className="min-w-[130px] h-40 bg-gray-300 dark:bg-neutral-700 rounded-md"></div>
-                <div className="min-w-[130px] h-40 bg-gray-300 dark:bg-neutral-700 rounded-md"></div>
-                <div className="min-w-[130px] h-40 bg-gray-300 dark:bg-neutral-700 rounded-md"></div>
+                <div className="animate-skeleton-search min-w-[130px] h-40 rounded-md"></div>
+                <div className="animate-skeleton-search min-w-[130px] h-40 rounded-md"></div>
+                <div className="animate-skeleton-search min-w-[130px] h-40 rounded-md"></div>
               </>
             ) : (
               <>
-                <div className="min-w-[200px] h-28 bg-gray-300 dark:bg-neutral-700 rounded-md"></div>
-                <div className="min-w-[200px] h-28 bg-gray-300 dark:bg-neutral-700 rounded-md"></div>
+                <div className="animate-skeleton-search min-w-[200px] h-28 rounded-md"></div>
+                <div className="animate-skeleton-search min-w-[200px] h-28 rounded-md"></div>
               </>
             )}
           </div>

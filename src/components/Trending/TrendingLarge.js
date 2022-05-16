@@ -12,7 +12,7 @@ const TrendingLarge = ({
   return (
     <>
       {loading ? (
-        <div className="trending hidden sm:block h-40 sm:h-72 lg:h-[420px] xl:h-96mx-5 md:mx-16 xl:mr-24 xl:ml-10 bg-gray-200 dark:bg-neutral-800 rounded-3xl"></div>
+        <div className="animate-skeleton trending hidden sm:block h-40 sm:h-72 lg:h-[420px] xl:h-96mx-5 md:mx-16 xl:mr-24 xl:ml-10 rounded-3xl"></div>
       ) : (
         <div className="trending hidden sm:block relative h-40 sm:h-72 lg:h-[420px] xl:h-96 mx-5 md:mx-16 xl:mr-24 xl:ml-10 bg-neutral-800 rounded-2xl lg:rounded-3xl overflow-hidden">
           <div className="absolute z-[1] w-full h-full">
