@@ -35,7 +35,7 @@
 }
 
 .scrollbar::-webkit-scrollbar-thumb {
-  @apply bg-gray-400 dark:bg-neutral-600 rounded-md invisible transition-all;
+  @apply bg-gray-300 dark:bg-[#313131] rounded-md invisible transition-all;
 }
 
 .scrollbar:hover::-webkit-scrollbar-thumb {
@@ -50,7 +50,7 @@
 /* trending */
 @media (min-width: 1640px) {
   .trending {
-    height: 480px !important;
+    height: 500px !important;
   }
 
   .trending h2 {
