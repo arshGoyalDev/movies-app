@@ -28,7 +28,7 @@ const BackdropCard = ({ data }) => {
             </span>
           </div>
         )}
-        <div className="w-full py-3 px-5 backdrop-blur-xl rounded-t-2xl">
+        <div className="w-full py-3 px-5 backdrop-blur-xl bg-black bg-opacity-20 rounded-t-2xl">
           {data.title ? (
             <h4 className="font-medium text-white">
               {data.title.length > 20
