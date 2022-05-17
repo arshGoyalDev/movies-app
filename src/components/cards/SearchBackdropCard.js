@@ -1,8 +1,25 @@
+import { useContext } from "react";
+
+import { SearchContext } from "../../context";
+
+import { useNavigate } from "react-router-dom";
+
 import { ImageIcon } from "../icons";
 
 const SearchBackdropCard = ({ data }) => {
+  const navigate = useNavigate();
+  const { setSearch } = useContext(SearchContext);
+
   return (
-    <div className="relative min-w-[240px] h-32 bg-gray-100 dark:bg-neutral-700 rounded-lg overflow-hidden">
+    <div
+      onClick={() => {
+        data.title
+          ? navigate(`/movies/${data.id}`)
+          : navigate(`/tv-shows/${data.id}`);
+        setSearch(false);
+      }}
+      className="relative min-w-[240px] h-32 bg-gray-100 dark:bg-neutral-700 rounded-lg cursor-pointer overflow-hidden"
+    >
       <div className="absolute z-[1] w-full h-full grid place-items-center">
         {data.backdrop_path ? (
           <img

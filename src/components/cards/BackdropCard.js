@@ -1,12 +1,22 @@
+import { useNavigate } from "react-router-dom";
+
 import { ImageIcon, StarSolidIcon } from "../icons";
 
 const BackdropCard = ({ data }) => {
+  const navigate = useNavigate();
   return (
-    <div className="relative min-w-[300px] h-44 rounded-2xl overflow-hidden">
+    <div
+      onClick={() =>
+        data.title
+          ? navigate(`/movies/${data.id}`)
+          : navigate(`/tv-shows/${data.id}`)
+      }
+      className="relative min-w-[300px] h-44 rounded-2xl cursor-pointer overflow-hidden"
+    >
       <div className="absolute z-[1] grid place-items-center bg-gray-200 dark:bg-neutral-800 w-full h-full rounded-lg overflow-hidden">
         {data.backdrop_path ? (
           <img
-          loading="lazy"
+            loading="lazy"
             src={`https://image.tmdb.org/t/p/w500${data.backdrop_path}`}
             alt={data.name}
             className="w-full h-full"

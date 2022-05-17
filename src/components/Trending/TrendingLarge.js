@@ -1,6 +1,8 @@
 import Genre from "../Genre";
 import TrendingOrder from "./TrendingOrder";
 
+import { Link, useNavigate } from "react-router-dom";
+
 const TrendingLarge = ({
   loading,
   data,
@@ -9,6 +11,8 @@ const TrendingLarge = ({
   movieGenresList,
   tvGenresList,
 }) => {
+  const navigate = useNavigate();
+
   return (
     <>
       {loading ? (
@@ -17,7 +21,7 @@ const TrendingLarge = ({
         <div className="trending hidden sm:block relative h-40 sm:h-72 lg:h-[420px] xl:h-96 mx-5 md:mx-16 xl:mr-24 xl:ml-10 bg-neutral-800 rounded-2xl lg:rounded-3xl overflow-hidden">
           <div className="absolute z-[1] w-full h-full">
             <img
-            loading="lazy"
+              loading="lazy"
               src={`https://image.tmdb.org/t/p/w500${data[activeNum].backdrop_path}`}
               alt="backdrop"
               className="w-full h-full lg:w-[75%]"
@@ -45,7 +49,14 @@ const TrendingLarge = ({
                   )}
                 </div>
               </div>
-              <button className="text-sm xl:text-base text-black font-bold py-2 px-5 bg-primary-light dark:bg-primary-dark hover:bg-[#FFB640] rounded transition-colors">
+              <button
+                onClick={() =>
+                  data[activeNum].title
+                    ? navigate(`/movies/${data[activeNum].id}`)
+                    : navigate(`/tv-shows/${data[activeNum].id}`)
+                }
+                className="text-sm xl:text-base text-black font-bold py-2 px-5 bg-primary-light dark:bg-primary-dark hover:bg-[#FFB640] rounded transition-colors"
+              >
                 More
               </button>
             </div>
