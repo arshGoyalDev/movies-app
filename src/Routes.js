@@ -1,13 +1,15 @@
 import { Routes as RoutesWrapper, Route } from "react-router-dom";
 
-import { Home, Movies, TvShows } from "./pages";
+import { Home, Movies, TvShows, Details } from "./pages";
 
 const Routes = () => {
   return (
     <RoutesWrapper>
       <Route path="/" element={<Home />} />
 
-      <Route path="/movies" element={<Movies />}></Route>
+      <Route path="/movies" element={<Movies />}>
+        <Route path=":id" element={<Details />} />
+      </Route>
 
       <Route path="/tv-shows" element={<TvShows />}></Route>
 
