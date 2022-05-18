@@ -4,7 +4,7 @@ import { useFetch } from "../hooks";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { StarSolidIcon, ArrowLeftIcon } from "../components/icons";
-import { CreditsList } from "../components/details";
+import { CreditsList, Reviews } from "../components/details";
 import { convertMinsToHrsMins, modifyDate } from "../utils/time";
 
 const Details = ({ type }) => {
@@ -13,33 +13,37 @@ const Details = ({ type }) => {
 
   const data = useFetch(`${type}/${id}?language=en-US&`);
   const credits = useFetch(`${type}/${id}/credits?language=en-US&`);
+  const reviews = useFetch(
+    `${type}/${id}/reviews?language=en-US&page=1&`,
+    "results"
+  );
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (data && credits) {
+    if (data && credits && reviews) {
       setLoading(false);
       console.log(data);
     }
-  }, [data, credits]);
+  }, [data, credits, reviews]);
 
   return (
     <>
       {loading ? (
         ""
       ) : (
-        <main className="pt-6 pb-16 lg:pt-0">
-          <div className="relative hidden lg:block h-[300px] overflow-hidden rounded-bl-[50px]">
+        <main className="scrollbar pt-6 pb-16 lg:pt-0 h-screen overflow-auto">
+          <div className="relative hidden lg:block h-[300px] xl:h-[400px] overflow-hidden rounded-bl-[50px]">
             <div className="absolute z-[1] w-full h-full">
               <img
                 loading="lazy"
                 src={`https://image.tmdb.org/t/p/w500${data.backdrop_path}`}
                 alt={data.name}
-                className="w-full h-[600px] mt-[-150px]"
+                className="w-full h-[600px] lg:mt-[-150px] xl:mt-[-50px]"
               />
             </div>
             <div className="absolute z-[2] w-full h-full bg-black bg-opacity-30"></div>
           </div>
-          <div className="flex flex-col lg:flex-row gap-10 md:gap-20 lg:gap-6 items-center lg:items-start lg:px-36 mt-10 ">
+          <div className="flex flex-col lg:flex-row gap-10 md:gap-20 lg:gap-6 items-center lg:items-start lg:px-20 2xl:px-48 mt-10">
             <div className="relative z-20 w-[60%] lg:min-w-[200px] max-w-[340px] lg:max-w-[200px] rounded-2xl">
               <div className="absolute z-[-1] rounded-2xl bg-gray-300 dark:bg-neutral-700 w-[95%] h-[103%] top-0 left-1/2 -translate-x-1/2"></div>
               <div className="absolute z-[-2] rounded-2xl bg-gray-200 dark:bg-neutral-800 w-[90%] h-[106%] top-0 left-1/2 -translate-x-1/2"></div>
@@ -74,28 +78,35 @@ const Details = ({ type }) => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col lg:flex-row gap-6 w-full mt-5 md:mt-8 lg:mt-16 lg:px-36">
-            <div className="flex flex-col gap-4 lg:min-w-[200px] px:10 md:px-28 lg:px-2">
+          <div className="flex flex-col lg:flex-row gap-6 w-full mt-5 md:mt-8 lg:mt-16 lg:px-20 2xl:px-48">
+            <div className="flex flex-col gap-4 lg:min-w-[200px] px-10 md:px-28 lg:px-2">
               <div className="flex flex-row lg:flex-col gap-2 items-center lg:items-start">
-              <h4 className="font-medium">Runtime:</h4>
-              <p className="text-neutral-500 mt-1">{convertMinsToHrsMins(data.runtime)}</p>
+                <h4 className="font-medium">Runtime:</h4>
+                <p className="text-neutral-500 mt-1">
+                  {convertMinsToHrsMins(data.runtime)}
+                </p>
               </div>
               <div className="flex flex-row lg:flex-col gap-2 items-center lg:items-start">
-              <h4 className="font-medium">Release Date:</h4>
-              <p className="text-neutral-500 mt-1">{modifyDate(data.release_date)}</p>
+                <h4 className="font-medium">Release Date:</h4>
+                <p className="text-neutral-500 mt-1">
+                  {modifyDate(data.release_date)}
+                </p>
               </div>
-
             </div>
             <div className="overflow-hidden">
               <div className="px-10 md:px-28 lg:px-0">
                 <h4 className="font-medium">Synopsis</h4>
-                <p className="text-neutral-500 mt-2 md:mt-5">{data.overview}</p>
+                <p className="max-w-[400px] text-neutral-500 mt-2 md:mt-5">{data.overview}</p>
               </div>
 
               <div className="flex flex-col gap-3 md:gap-5 mt-4 md:mt-8">
                 <CreditsList data={credits.cast} heading="cast" />
                 <CreditsList data={credits.crew} heading="crew" />
               </div>
+            </div>
+            <div className="lg:w-[300px] xl:w-[340px]">
+            <Reviews data={reviews} />{" "}
+
             </div>
           </div>
         </main>

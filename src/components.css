@@ -30,15 +30,15 @@
 
 /* scrollbar */
 
-.scrollbar::-webkit-scrollbar {
+*::-webkit-scrollbar {
   @apply w-1 h-1;
 }
 
-.scrollbar::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
   @apply bg-gray-300 dark:bg-[#313131] rounded-md invisible transition-all;
 }
 
-.scrollbar:hover::-webkit-scrollbar-thumb {
+*:hover::-webkit-scrollbar-thumb {
   @apply visible;
 }
 
