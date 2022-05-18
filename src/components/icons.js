@@ -27,6 +27,8 @@ import { ReactComponent as SearchIcon } from "../assets/images/search.svg";
 import { ReactComponent as ImageIcon } from "../assets/images/image.svg";
 import { ReactComponent as UserIcon } from "../assets/images/user.svg";
 
+import { ReactComponent as ArrowLeftIcon } from "../assets/images/arrow-left.svg";
+
 export {
   HomeIcon, HomeSolidIcon,
   MoviesIcon, MoviesSolidIcon,
@@ -40,4 +42,5 @@ export {
   SearchIcon,
   ImageIcon,
   UserIcon,
+  ArrowLeftIcon
 };
