@@ -1,4 +1,3 @@
-import CastList from "./CastList";
-import CrewList from "./CrewList";
+import CreditsList from "./CreditsList";
 
-export { CastList, CrewList };
+export { CreditsList };

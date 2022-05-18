@@ -4,7 +4,7 @@ import { useFetch } from "../hooks";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { StarSolidIcon, ArrowLeftIcon } from "../components/icons";
-import { CastList } from "../components/details";
+import { CreditsList } from "../components/details";
 
 const Details = ({ type }) => {
   const { id } = useParams();
@@ -15,9 +15,9 @@ const Details = ({ type }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!data && !credits) return;
-
-    setLoading(false);
+    if (data && credits) {
+      setLoading(false);
+    }
   }, [data, credits]);
 
   return (
@@ -25,14 +25,14 @@ const Details = ({ type }) => {
       {loading ? (
         ""
       ) : (
-        <main className="pt-6">
-          <button
+        <main className="pt-6 pb-16">
+          {/* <button
             onClick={() => navigate(-1)}
             className="grid place-items-center w-8 h-8 mx-5 rounded-full"
           >
             <ArrowLeftIcon className="icon w-4 h-4" />
           </button>
-
+ */}
           <div className="flex flex-col gap-10 items-center mt-10">
             <div className="relative z-20 w-[60%] rounded-2xl">
               <div className="absolute z-[-1] rounded-2xl bg-gray-300 dark:bg-neutral-700 w-[95%] h-[103%] top-0 left-1/2 -translate-x-1/2"></div>
@@ -44,15 +44,16 @@ const Details = ({ type }) => {
                 className="w-full rounded-2xl"
               />
             </div>
+
             <div className="w-full px-10">
               <h1 className="text-xl font-medium">{data.title ?? data.name}</h1>
               <div className="flex gap-1 items-center mt-1.5">
                 <StarSolidIcon className="w-3 h-3 rating-icon" />
-
                 <span className="text-sm pt-[1px]">
                   {data.vote_average.toFixed(1)}
                 </span>
               </div>
+              
               <div className="flex flex-wrap gap-2 mt-2">
                 {data.genres.map((genre) => (
                   <div className="text-sm py-1 px-3 bg-gray-200 dark:bg-neutral-800 rounded-3xl">
@@ -70,11 +71,10 @@ const Details = ({ type }) => {
               </div>
 
               <div className="flex flex-col gap-3 mt-4">
-                <CastList data={credits.cast} />
-                <CastList data={credits.crew} />
+                <CreditsList data={credits.cast} heading="cast" />
+                <CreditsList data={credits.crew} heading="crew" />
               </div>
             </div>
-            {/* <div>hdks</div> */}
           </div>
         </main>
       )}
