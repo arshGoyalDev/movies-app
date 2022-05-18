@@ -4,6 +4,7 @@ import { useFetch } from "../hooks";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { StarSolidIcon, ArrowLeftIcon } from "../components/icons";
+import { CastList } from "../components/details";
 
 const Details = ({ type }) => {
   const { id } = useParams();
@@ -17,7 +18,7 @@ const Details = ({ type }) => {
     if (!data && !credits) return;
 
     setLoading(false);
-  }, [data]);
+  }, [data, credits]);
 
   return (
     <>
@@ -61,16 +62,19 @@ const Details = ({ type }) => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col w-full px-10 mt-5">
+          <div className="flex flex-col w-full mt-5">
             <div>
-              <div>
+              <div className="px-10">
                 <h4 className="font-medium">Synopsis</h4>
                 <p className="text-neutral-500 mt-2">{data.overview}</p>
               </div>
 
-              <div></div>
+              <div className="flex flex-col gap-3 mt-4">
+                <CastList data={credits.cast} />
+                <CastList data={credits.crew} />
+              </div>
             </div>
-            <div>hdks</div>
+            {/* <div>hdks</div> */}
           </div>
         </main>
       )}
