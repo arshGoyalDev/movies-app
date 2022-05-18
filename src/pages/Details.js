@@ -10,13 +10,13 @@ const Details = ({ type }) => {
   const navigate = useNavigate();
 
   const data = useFetch(`${type}/${id}?language=en-US&`);
+  const credits = useFetch(`${type}/${id}/credits?language=en-US&`);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!data) return;
+    if (!data && !credits) return;
 
     setLoading(false);
-    console.log(data);
   }, [data]);
 
   return (
@@ -45,10 +45,12 @@ const Details = ({ type }) => {
             </div>
             <div className="w-full px-10">
               <h1 className="text-xl font-medium">{data.title ?? data.name}</h1>
-              <div className="flex gap-1 items-center mt-1">
+              <div className="flex gap-1 items-center mt-1.5">
                 <StarSolidIcon className="w-3 h-3 rating-icon" />
 
-                <span className="text-sm pt-[1px]">{data.vote_average}</span>
+                <span className="text-sm pt-[1px]">
+                  {data.vote_average.toFixed(1)}
+                </span>
               </div>
               <div className="flex flex-wrap gap-2 mt-2">
                 {data.genres.map((genre) => (
@@ -57,15 +59,18 @@ const Details = ({ type }) => {
                   </div>
                 ))}
               </div>
-
-              <div className="mt-5">
-                <h4 className="font-medium">Synopsis</h4>
-                <p className="mt-2">{data.overview}</p>
-              </div>
             </div>
           </div>
-          <div className="w-full">
-            
+          <div className="flex flex-col w-full px-10 mt-5">
+            <div>
+              <div>
+                <h4 className="font-medium">Synopsis</h4>
+                <p className="text-neutral-500 mt-2">{data.overview}</p>
+              </div>
+
+              <div></div>
+            </div>
+            <div>hdks</div>
           </div>
         </main>
       )}
