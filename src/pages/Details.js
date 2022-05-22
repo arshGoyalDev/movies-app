@@ -3,7 +3,7 @@ import { useFetch } from "../hooks";
 
 import { useNavigate, useParams } from "react-router-dom";
 
-import { StarSolidIcon } from "../components/icons";
+import { ArrowLeftIcon, StarSolidIcon } from "../components/icons";
 import { CreditsList, Recommended, Reviews } from "../components/details";
 import { convertMinsToHrsMins, modifyDate } from "../utils/time";
 
@@ -35,8 +35,11 @@ const Details = ({ type }) => {
       {loading ? (
         ""
       ) : (
-        <main className="flex flex-col items-center scrollbar 2xl:px-48 pt-6 pb-16 lg:pt-0 h-screen overflow-auto">
-          <div className="flex flex-col lg:flex-row gap-10 md:gap-20 lg:gap-6 items-center lg:items-start lg:px-20 2xl:px-0 w-full mt-10">
+        <main className="relative flex flex-col items-center scrollbar h-screen pt-20 lg:pt-40 pb-16 lg:px-20 2xl:px-48 overflow-auto">
+          <button onClick={() => navigate(-1)} className="absolute top-10 left-10 md:left-28 lg:left-20 2xl:left-48 flex items-center w-10 h-10 pl-2.5 bg-gray-300 dark:bg-neutral-800 rounded-full">
+            <ArrowLeftIcon className="w-4 h-4 icon" />
+          </button>
+          <div className="flex flex-col lg:flex-row gap-10 md:gap-20 lg:gap-6 items-center lg:items-start w-full lg:px-0 mt-10">
             <div className="relative z-20 w-[60%] lg:min-w-[200px] max-w-[340px] lg:max-w-[200px] rounded-2xl">
               <div className="absolute z-[-1] rounded-2xl bg-gray-300 dark:bg-neutral-700 w-[95%] h-[103%] top-0 left-1/2 -translate-x-1/2"></div>
               <div className="absolute z-[-2] rounded-2xl bg-gray-200 dark:bg-neutral-800 w-[90%] h-[106%] top-0 left-1/2 -translate-x-1/2"></div>
@@ -71,7 +74,7 @@ const Details = ({ type }) => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col lg:flex-row gap-6 w-full mt-5 md:mt-8 lg:mt-16 lg:px-20 2xl:px-0">
+          <div className="flex flex-col lg:flex-row gap-10 w-full mt-5 md:mt-8 lg:mt-16 lg:px-0">
             {/* <div className="flex flex-col gap-4 lg:min-w-[200px] px-10 md:px-28 lg:px-2">
               <div className="flex flex-row lg:flex-col gap-2 items-center lg:items-start">
                 <h4 className="font-medium">Runtime:</h4>
