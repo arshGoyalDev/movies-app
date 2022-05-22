@@ -11,7 +11,9 @@ const Routes = () => {
         <Route path=":id" element={<Details type="movie" />} />
       </Route>
 
-      <Route path="/tv-shows" element={<TvShows />}></Route>
+      <Route path="/tv-shows" element={<TvShows />}>
+        <Route path=":id" element={<Details type="tv" />} />
+      </Route>
 
       <Route path="*" element={<div>Nothing to see here</div>} />
     </RoutesWrapper>

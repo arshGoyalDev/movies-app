@@ -4,7 +4,12 @@ import { useFetch } from "../hooks";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { ArrowLeftIcon, StarSolidIcon } from "../components/icons";
-import { CreditsList, Recommended, Reviews, Videos } from "../components/details";
+import {
+  CreditsList,
+  Recommended,
+  Reviews,
+  Videos,
+} from "../components/details";
 import { convertMinsToHrsMins, modifyDate } from "../utils/time";
 
 const Details = ({ type }) => {
@@ -25,6 +30,7 @@ const Details = ({ type }) => {
   useEffect(() => {
     if (data && credits && reviews && recommended && videos) {
       setLoading(false);
+      console.log("fetched");
     }
   }, [data, credits, reviews, recommended, videos]);
 
@@ -65,10 +71,30 @@ const Details = ({ type }) => {
                   {data.vote_average.toFixed(1)}
                 </span>
               </div>
+              <div className="mt-2 md:mt-4">
+              {type !== "tv" && (
+                <div className="flex flex-row gap-2 items-center lg:items-start">
+                  <h4 className="font-medium">Runtime:</h4>
+                  <p className="text-neutral-500 mt-1">
+                    {convertMinsToHrsMins(data.runtime)}
+                  </p>
+                </div>
+              )}
+              <div className="flex flex-row gap-2 items-center lg:items-start">
+                <h4 className="font-medium">Release Date:</h4>
+                <p className="text-neutral-500 mt-1">
+                  {modifyDate(type === "movie" ? data.release_date : data.first_air_date)}
+                </p>
+              </div>
+
+              </div>
 
               <div className="flex flex-wrap gap-2 mt-2 md:mt-4">
                 {data.genres.map((genre) => (
-                  <div key={genre.id} className="text-sm py-1 px-3 bg-gray-200 dark:bg-neutral-800 rounded-3xl">
+                  <div
+                    key={genre.id}
+                    className="text-sm py-1 px-3 bg-gray-200 dark:bg-neutral-800 rounded-3xl"
+                  >
                     {genre.name}
                   </div>
                 ))}
@@ -76,24 +102,10 @@ const Details = ({ type }) => {
             </div>
           </div>
           <div className="flex flex-col lg:flex-row gap-10 w-full mt-5 md:mt-8 lg:mt-16 lg:px-0">
-            {/* <div className="flex flex-col gap-4 lg:min-w-[200px] px-10 md:px-28 lg:px-2">
-              <div className="flex flex-row lg:flex-col gap-2 items-center lg:items-start">
-                <h4 className="font-medium">Runtime:</h4>
-                <p className="text-neutral-500 mt-1">
-                  {convertMinsToHrsMins(data.runtime)}
-                </p>
-              </div>
-              <div className="flex flex-row lg:flex-col gap-2 items-center lg:items-start">
-                <h4 className="font-medium">Release Date:</h4>
-                <p className="text-neutral-500 mt-1">
-                  {modifyDate(data.release_date)}
-                </p>
-              </div>
-            </div> */}
             <div className="overflow-hidden">
               <div className="px-10 md:px-28 lg:px-0">
                 <h4 className="font-medium">Synopsis</h4>
-                <p className="max-w-[400px] text-neutral-500 mt-2 md:mt-5">
+                <p className="max-w-sm xl:max-w-md text-neutral-500 mt-2 md:mt-5">
                   {data.overview}
                 </p>
               </div>
@@ -103,7 +115,7 @@ const Details = ({ type }) => {
                 <CreditsList data={credits.crew} heading="crew" />
               </div>
             </div>
-            <div className="flex flex-col gap-6 lg:min-w-[400px] xl:min-w-[500px]">
+            <div className="flex flex-col gap-6 lg:min-w-[400px] xl:min-w-[500px] max-w-[500px]">
               {reviews.length !== 0 && <Reviews data={reviews} />}
               {recommended.length !== 0 && <Recommended data={recommended} />}
               {<Videos data={videos} backdrop={data.backdrop_path} />}
