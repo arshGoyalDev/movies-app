@@ -61,7 +61,6 @@ const Videos = ({ data, backdrop }) => {
                       <PlaySolidIcon className="rating-icon w-4 h-4" />
                     </button>
                   </div>
-                  
                 ))}
             </div>
           </div>

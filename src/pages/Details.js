@@ -72,21 +72,22 @@ const Details = ({ type }) => {
                 </span>
               </div>
               <div className="mt-2 md:mt-4">
-              {type !== "tv" && (
+                {type !== "tv" && (
+                  <div className="flex flex-row gap-2 items-center lg:items-start">
+                    <h4 className="font-medium">Runtime:</h4>
+                    <p className="text-neutral-500 mt-1">
+                      {convertMinsToHrsMins(data.runtime)}
+                    </p>
+                  </div>
+                )}
                 <div className="flex flex-row gap-2 items-center lg:items-start">
-                  <h4 className="font-medium">Runtime:</h4>
+                  <h4 className="font-medium">Release Date:</h4>
                   <p className="text-neutral-500 mt-1">
-                    {convertMinsToHrsMins(data.runtime)}
+                    {modifyDate(
+                      type === "movie" ? data.release_date : data.first_air_date
+                    )}
                   </p>
                 </div>
-              )}
-              <div className="flex flex-row gap-2 items-center lg:items-start">
-                <h4 className="font-medium">Release Date:</h4>
-                <p className="text-neutral-500 mt-1">
-                  {modifyDate(type === "movie" ? data.release_date : data.first_air_date)}
-                </p>
-              </div>
-
               </div>
 
               <div className="flex flex-wrap gap-2 mt-2 md:mt-4">
