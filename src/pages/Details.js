@@ -13,22 +13,21 @@ const Details = ({ type }) => {
 
   const data = useFetch(`${type}/${id}?language=en-US&`);
   const credits = useFetch(`${type}/${id}/credits?language=en-US&`);
-  const reviews = useFetch(
-    `${type}/${id}/reviews?language=en-US&page=1&`,
-    "results"
-  );
+  const reviews = useFetch(`${type}/${id}/reviews?language=en-US&`, "results");
   const recommended = useFetch(
-    `${type}/${id}/recommendations?language=en-US&page=1&`,
+    `${type}/${id}/recommendations?language=en-US&`,
     "results"
   );
+  const videos = useFetch(`${type}/${id}/videos?language=en-US&`, "results");
+
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (data && credits && reviews && recommended) {
+    if (data && credits && reviews && recommended && videos) {
       setLoading(false);
-      console.log(data);
+      console.log(videos);
     }
-  }, [data, credits, reviews, recommended]);
+  }, [data, credits, reviews, recommended, videos]);
 
   return (
     <>
@@ -36,7 +35,10 @@ const Details = ({ type }) => {
         ""
       ) : (
         <main className="relative flex flex-col items-center scrollbar h-screen pt-20 lg:pt-40 pb-16 lg:px-20 2xl:px-48 overflow-auto">
-          <button onClick={() => navigate(-1)} className="absolute top-10 left-10 md:left-28 lg:left-20 2xl:left-48 flex items-center w-10 h-10 pl-2.5 bg-gray-300 dark:bg-neutral-800 rounded-full">
+          <button
+            onClick={() => navigate(-1)}
+            className="absolute top-10 lg:top-16 left-10 md:left-28 lg:left-20 2xl:left-48 flex items-center w-10 h-10 pl-2.5 bg-gray-300 dark:bg-neutral-800 rounded-full"
+          >
             <ArrowLeftIcon className="w-4 h-4 icon" />
           </button>
           <div className="flex flex-col lg:flex-row gap-10 md:gap-20 lg:gap-6 items-center lg:items-start w-full lg:px-0 mt-10">
@@ -67,7 +69,7 @@ const Details = ({ type }) => {
 
               <div className="flex flex-wrap gap-2 mt-2 md:mt-4">
                 {data.genres.map((genre) => (
-                  <div className="text-sm py-1 px-3 bg-gray-200 dark:bg-neutral-800 rounded-3xl">
+                  <div key={genre.id} className="text-sm py-1 px-3 bg-gray-200 dark:bg-neutral-800 rounded-3xl">
                     {genre.name}
                   </div>
                 ))}
