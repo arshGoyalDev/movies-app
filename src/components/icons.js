@@ -29,6 +29,8 @@ import { ReactComponent as UserIcon } from "../assets/images/user.svg";
 
 import { ReactComponent as ArrowLeftIcon } from "../assets/images/arrow-left.svg";
 
+import { ReactComponent as PlaySolidIcon } from "../assets/images/play-solid.svg";
+
 export {
   HomeIcon, HomeSolidIcon,
   MoviesIcon, MoviesSolidIcon,
@@ -42,5 +44,6 @@ export {
   SearchIcon,
   ImageIcon,
   UserIcon,
-  ArrowLeftIcon
+  ArrowLeftIcon,
+  PlaySolidIcon,
 };

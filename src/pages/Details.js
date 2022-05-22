@@ -4,7 +4,7 @@ import { useFetch } from "../hooks";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { ArrowLeftIcon, StarSolidIcon } from "../components/icons";
-import { CreditsList, Recommended, Reviews } from "../components/details";
+import { CreditsList, Recommended, Reviews, Videos } from "../components/details";
 import { convertMinsToHrsMins, modifyDate } from "../utils/time";
 
 const Details = ({ type }) => {
@@ -25,7 +25,6 @@ const Details = ({ type }) => {
   useEffect(() => {
     if (data && credits && reviews && recommended && videos) {
       setLoading(false);
-      console.log(videos);
     }
   }, [data, credits, reviews, recommended, videos]);
 
@@ -107,6 +106,7 @@ const Details = ({ type }) => {
             <div className="flex flex-col gap-6 lg:min-w-[400px] xl:min-w-[500px]">
               {reviews.length !== 0 && <Reviews data={reviews} />}
               {recommended.length !== 0 && <Recommended data={recommended} />}
+              {<Videos data={videos} backdrop={data.backdrop_path} />}
             </div>
           </div>
         </main>
