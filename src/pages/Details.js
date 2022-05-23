@@ -30,7 +30,6 @@ const Details = ({ type }) => {
   useEffect(() => {
     if (data && credits && reviews && recommended && videos) {
       setLoading(false);
-      console.log("fetched");
     }
   }, [data, credits, reviews, recommended, videos]);
 
@@ -112,7 +111,7 @@ const Details = ({ type }) => {
             <div className="overflow-hidden">
               <div className="px-10 md:px-28 lg:px-0">
                 <h4 className="font-medium">Synopsis</h4>
-                <p className="max-w-sm xl:max-w-md text-neutral-500 mt-2 md:mt-5">
+                <p className="max-w-lg xl:max-w-md text-neutral-500 mt-2 md:mt-5">
                   {data.overview}
                 </p>
               </div>
@@ -122,7 +121,7 @@ const Details = ({ type }) => {
                 <CreditsList data={credits.crew} heading="crew" />
               </div>
             </div>
-            <div className="flex flex-col gap-6 lg:min-w-[400px] xl:min-w-[500px] max-w-[500px]">
+            <div className="flex flex-col gap-6 w-full lg:min-w-[400px] xl:min-w-[500px] xl:max-w-[500px]">
               {reviews.length !== 0 && <Reviews data={reviews} />}
               {<Videos data={videos} backdrop={data.backdrop_path} />}
               {recommended.length !== 0 && <Recommended data={recommended} />}
