@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useFetch } from "../hooks";
 
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 
 import { ArrowLeftIcon, StarSolidIcon } from "../components/icons";
 import {
@@ -34,15 +34,21 @@ const Details = ({ type }) => {
     }
   }, [data, credits, reviews, recommended, videos]);
 
+  useEffect(() => {
+    setLoading(true);
+  }, [id]);
+
   return (
     <>
       {loading ? (
-        ""
+        <div className="h-screen grid place-items-center">
+          <div className="w-64 h-64 border-t-2 border-solid border-neutral-600 rounded-full animate-spin"></div>
+        </div>
       ) : (
         <main className="relative flex flex-col items-center scrollbar h-screen pt-20 lg:pt-40 pb-16 lg:px-20 2xl:px-48 overflow-auto">
           <button
             onClick={() => navigate(-1)}
-            className="absolute top-10 lg:top-16 left-10 md:left-28 lg:left-20 2xl:left-48 flex items-center w-10 h-10 pl-2.5 bg-gray-300 dark:bg-neutral-800 rounded-full"
+            className="absolute top-10 lg:top-16 left-10 md:left-28 lg:left-20 2xl:left-48 flex items-center w-10 h-10 pl-2.5 bg-gray-200 dark:bg-neutral-800 rounded-full"
           >
             <ArrowLeftIcon className="w-4 h-4 icon" />
           </button>
