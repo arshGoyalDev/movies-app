@@ -45,8 +45,8 @@ const Videos = ({ data, backdrop }) => {
                 >
                   <div className="w-full py-2 px-4 backdrop-blur-xl bg-black bg-opacity-20 rounded-t-2xl">
                     <h4 className="font-medium text-white">
-                      {video.name.length > 30
-                        ? `${video.name.slice(0, 30)}...`
+                      {video.name.length > 25
+                        ? `${video.name.slice(0, 25)}...`
                         : video.name}
                     </h4>
                   </div>

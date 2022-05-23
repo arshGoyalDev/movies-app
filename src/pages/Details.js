@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { useFetch } from "../hooks";
 
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+
+import { convertMinsToHrsMins, modifyDate } from "../utils/time";
 
 import { ArrowLeftIcon, StarSolidIcon } from "../components/icons";
 import {
@@ -10,7 +12,6 @@ import {
   Reviews,
   Videos,
 } from "../components/details";
-import { convertMinsToHrsMins, modifyDate } from "../utils/time";
 
 const Details = ({ type }) => {
   const { id } = useParams();
