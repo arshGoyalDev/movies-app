@@ -118,8 +118,8 @@ const Details = ({ type }) => {
             </div>
             <div className="flex flex-col gap-6 lg:min-w-[400px] xl:min-w-[500px] max-w-[500px]">
               {reviews.length !== 0 && <Reviews data={reviews} />}
-              {recommended.length !== 0 && <Recommended data={recommended} />}
               {<Videos data={videos} backdrop={data.backdrop_path} />}
+              {recommended.length !== 0 && <Recommended data={recommended} />}
             </div>
           </div>
         </main>
