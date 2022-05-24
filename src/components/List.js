@@ -13,9 +13,9 @@ const List = ({ type, query, pages }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (dataList && dataListSecond) {
-      setLoading(false);
-    }
+    if (!(dataList && dataListSecond)) return;
+
+    setLoading(false);
   }, [dataList, dataListSecond]);
 
   const getTitle = () => {

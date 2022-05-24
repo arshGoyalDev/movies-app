@@ -29,9 +29,9 @@ const Details = ({ type }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (data && credits && reviews && recommended && videos) {
-      setLoading(false);
-    }
+    if (!(data && credits && reviews && recommended && videos)) return;
+
+    setLoading(false);
   }, [data, credits, reviews, recommended, videos]);
 
   useEffect(() => {

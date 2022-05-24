@@ -14,9 +14,9 @@ const Trending = ({ type }) => {
   const [activeNum, setActiveNum] = useState(0);
 
   useEffect(() => {
-    if (data && movieGenresList && tvGenresList) {
-      setLoading(false);
-    }
+    if (!(data && movieGenresList && tvGenresList)) return;
+
+    setLoading(false);
   }, [data, movieGenresList, tvGenresList]);
 
   useEffect(() => {
