@@ -1,4 +1,4 @@
-const TrendingMobile = ({ loading, data, activeNum, setActiveNum }) => {
+const TrendingMobile = ({ loading, data, activeNum, setActiveNum, type }) => {
   return (
     <div className="relative sm:hidden h-[430px] mt-10 overflow-hidden">
       {loading ? (
@@ -11,31 +11,41 @@ const TrendingMobile = ({ loading, data, activeNum, setActiveNum }) => {
       ) : (
         <>
           <div
-            onClick={() =>
-              setActiveNum(data[activeNum - 1] ? activeNum - 1 : 19)
-            }
+            onClick={() => setActiveNum(activeNum !== 0 ? activeNum - 1 : 19)}
             className="absolute -translate-x-[75%] translate-y-16 min-w-[200px] h-max -rotate-6 rounded-2xl overflow-hidden"
           >
-            <div className="w-full h-[300px] opacity-80 dark:opacity-70">
+            <div className="w-full h-[300px] opacity-80 dark:opacity-70 bg-gray-200 dark:bg-neutral-800">
               <img
                 loading="lazy"
-                src={`https://image.tmdb.org/t/p/w500${
-                  data[activeNum - 1]
-                    ? data[activeNum - 1].poster_path
-                    : data[19].poster_path
-                }`}
-                alt="backdrop"
+                src={
+                  type !== "people"
+                    ? `https://image.tmdb.org/t/p/w500${
+                        activeNum !== 0
+                          ? data[activeNum - 1].poster_path
+                          : data[19].poster_path
+                      }`
+                    : `https://image.tmdb.org/t/p/w500${
+                        activeNum !== 0
+                          ? data[activeNum - 1].profile_path
+                          : data[19].profile_path
+                      }`
+                }
+                alt={type !== "people" ? "backdrop" : "picture"}
                 className="w-full h-full"
               />
             </div>
           </div>
 
           <div className="absolute left-1/2 -translate-x-1/2 min-w-[220px] h-max">
-            <div className="w-full h-80 rounded-2xl shadow-2xl shadow-gray-700 dark:shadow-neutral-700 overflow-hidden">
+            <div className="w-full h-80 bg-neutral-200 dark:bg-neutral-800 rounded-2xl shadow-2xl shadow-gray-700 dark:shadow-neutral-700 overflow-hidden">
               <img
                 loading="lazy"
-                src={`https://image.tmdb.org/t/p/w500${data[activeNum].poster_path}`}
-                alt="backdrop"
+                src={`https://image.tmdb.org/t/p/w500${
+                  type !== "people"
+                    ? data[activeNum].poster_path
+                    : data[activeNum].profile_path
+                }`}
+                alt={data[activeNum].title ?? data[activeNum].name}
                 className="w-full h-full"
               />
             </div>
@@ -58,15 +68,27 @@ const TrendingMobile = ({ loading, data, activeNum, setActiveNum }) => {
             }
             className="absolute right-0 translate-x-[75%] translate-y-16 min-w-[200px] h-max rotate-6 rounded-2xl overflow-hidden"
           >
-            <div className="w-full h-[300px] opacity-80 dark:opacity-70">
+            <div className="w-full h-[300px] opacity-80 dark:opacity-70 bg-gray-200 dark:bg-neutral-800">
               <img
                 loading="lazy"
-                src={`https://image.tmdb.org/t/p/w500${
-                  data[activeNum + 1]
-                    ? data[activeNum + 1].poster_path
-                    : data[0].poster_path
-                }`}
-                alt="backdrop"
+                src={
+                  type !== "people"
+                    ? `https://image.tmdb.org/t/p/w500${
+                        activeNum !== 19
+                          ? data[activeNum + 1].poster_path
+                          : data[0].poster_path
+                      }`
+                    : `https://image.tmdb.org/t/p/w500${
+                        activeNum !== 19
+                          ? data[activeNum + 1].profile_path
+                          : data[0].profile_path
+                      }`
+                }
+                alt={
+                  activeNum !== 0
+                    ? data[activeNum + 1].title ?? data[activeNum + 1].name
+                    : data[activeNum].title ?? data[activeNum].name
+                }
                 className="w-full h-full"
               />
             </div>
