@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useFetch } from "../hooks";
+
 import { PersonCard, BackdropCard } from "./cards";
 
 const List = ({ type, query, pages }) => {
