@@ -1,7 +1,7 @@
 import TrendingCard from "./TrendingCard";
 
 import SearchBackdropCard from "./SearchBackdropCard";
-import SearchPeopleCard from "./SearchPeopleCard";
+import SearchPersonCard from "./SearchPersonCard";
 
 import PersonCard from "./PersonCard";
 import BackdropCard from "./BackdropCard";
@@ -9,7 +9,7 @@ import BackdropCard from "./BackdropCard";
 export {
   TrendingCard,
   SearchBackdropCard,
-  SearchPeopleCard,
+  SearchPersonCard,
   PersonCard,
   BackdropCard,
 };

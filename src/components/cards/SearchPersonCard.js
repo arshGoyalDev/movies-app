@@ -1,6 +1,6 @@
 import { UserIcon } from "../icons";
 
-const SearchPeopleCard = ({ data }) => {
+const SearchPersonCard = ({ data }) => {
   return (
     <div className="relative min-w-[130px] h-44 bg-gray-100 dark:bg-neutral-700 rounded-lg overflow-hidden">
       <div className="absolute z-[1] grid place-items-center w-full h-full">
@@ -11,10 +11,10 @@ const SearchPeopleCard = ({ data }) => {
             className="w-full"
           />
         ) : (
-          <UserIcon className="w-10 h-10 icon" />
+          <UserIcon className="w-8 h-8 icon" />
         )}
       </div>
-      <div className="absolute z-[2] w-full h-full flex flex-col gap-2 justify-end p-2 bg-black bg-opacity-50">
+      <div className={`absolute z-[2] w-full h-full flex flex-col gap-2 justify-end p-2 bg-black ${data.profile_path ? "bg-opacity-40" : "bg-opacity-60"}`}>
         <div className="flex items-end py-2 px-3 bg-black bg-opacity-30 backdrop-blur-2xl rounded-lg">
           <h4 className="font-medium text-white break-words">
             {data.name.length > 15 ? `${data.name.slice(0, 15)}...` : data.name}
@@ -25,4 +25,4 @@ const SearchPeopleCard = ({ data }) => {
   );
 };
 
-export default SearchPeopleCard;
+export default SearchPersonCard;

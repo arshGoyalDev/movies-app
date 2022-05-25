@@ -28,13 +28,13 @@ const SearchBackdropCard = ({ data }) => {
             className="w-full"
           />
         ) : (
-          <ImageIcon className="icon w-10 h-10" />
+          <ImageIcon className="icon w-8 h-8" />
         )}
       </div>
       <div
         className={`absolute z-[2] flex flex-col ${
           data.vote_average !== 0 ? "justify-between" : "justify-end"
-        } w-full h-full ${data.backdrop_path ? "bg-black bg-opacity-40" : ""}`}
+        } w-full h-full bg-black ${data.backdrop_path ? "bg-opacity-40" : "bg-opacity-60"}`}
       >
         {data.vote_average !== 0 && (
           <div className="flex items-center gap-2 w-max py-1 px-2 bg-black mt-2 mx-3 rounded-xl">
