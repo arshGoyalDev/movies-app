@@ -124,4 +124,14 @@
   }
 }
 
+.trending-people-info {
+  width: calc(100% - 192px);
+}
+
+@media (min-width: 1280px) {
+  .trending-people-info {
+    width: calc(100% - 280px);
+  }
+}
+
 /* ----------------- */

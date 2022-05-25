@@ -20,16 +20,15 @@ const Trending = ({ type }) => {
   }, [data, movieGenresList, tvGenresList]);
 
   useEffect(() => {
-    console.log(activeNum);
-    // const timeout = setTimeout(() => {
-    //   if (activeNum === 19) {
-    //     setActiveNum(0);
-    //   } else {
-    //     setActiveNum(activeNum + 1);
-    //   }
-    // }, 5000);
+    const timeout = setTimeout(() => {
+      if (activeNum === 18) {
+        setActiveNum(0);
+      } else {
+        setActiveNum(activeNum + 1);
+      }
+    }, 3000);
 
-    // return () => clearTimeout(timeout);
+    return () => clearTimeout(timeout);
   }, [activeNum]);
 
   return (

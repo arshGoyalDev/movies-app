@@ -19,7 +19,7 @@ const BackdropCard = ({ data }) => {
             loading="lazy"
             src={`https://image.tmdb.org/t/p/w500${data.backdrop_path}`}
             alt={data.name}
-            className="w-full h-full"
+            className="w-full h-full rounded-lg"
           />
         ) : (
           <ImageIcon className="w-10 h-10 icon" />

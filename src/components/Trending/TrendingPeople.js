@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useFetch } from "../../hooks";
 
-import { TrendingMobile } from "./";
+import { TrendingMobile, TrendingPeopleLarge } from "./";
 
 const TrendingPeople = () => {
   const data = useFetch(`trending/person/day?`, "results");
@@ -12,12 +12,11 @@ const TrendingPeople = () => {
     if (!data) return;
 
     setLoading(false);
-    console.log(data);
   }, [data]);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      if (activeNum === 19) {
+      if (activeNum === 18) {
         setActiveNum(0);
       } else {
         setActiveNum(activeNum + 1);
@@ -29,6 +28,12 @@ const TrendingPeople = () => {
 
   return (
     <div className="mb-6 md:mb-10">
+      <TrendingPeopleLarge
+        loading={loading}
+        data={data}
+        activeNum={activeNum}
+        setActiveNum={setActiveNum}
+      />
       <TrendingMobile
         loading={loading}
         data={data}
