@@ -39,11 +39,11 @@ const Videos = ({ data, backdrop }) => {
                   />
                 </div>
                 <div
-                  className={`absolute z-[2] w-full h-full flex items-end ${
+                  className={`absolute z-[2] w-full h-full flex items-end p-2 ${
                     backdrop ? "bg-black bg-opacity-40" : ""
                   }`}
                 >
-                  <div className="w-full py-2 px-4 backdrop-blur-xl bg-black bg-opacity-20 rounded-t-2xl">
+                  <div className="w-full py-2 px-4 backdrop-blur-xl bg-black bg-opacity-20 rounded-xl overflow-hidden">
                     <h4 className="font-medium text-white">
                       {video.name.length > 25
                         ? `${video.name.slice(0, 25)}...`
