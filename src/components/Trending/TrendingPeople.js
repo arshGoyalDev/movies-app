@@ -16,7 +16,7 @@ const TrendingPeople = () => {
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      if (activeNum === 18) {
+      if (activeNum === 15) {
         setActiveNum(0);
       } else {
         setActiveNum(activeNum + 1);

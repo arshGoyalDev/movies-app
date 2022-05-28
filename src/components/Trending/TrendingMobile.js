@@ -11,7 +11,7 @@ const TrendingMobile = ({ loading, data, activeNum, setActiveNum, type }) => {
       ) : (
         <>
           <div
-            onClick={() => setActiveNum(activeNum !== 0 ? activeNum - 1 : 19)}
+            onClick={() => setActiveNum(activeNum !== 0 ? activeNum - 1 : 15)}
             className="absolute -translate-x-[75%] translate-y-16 min-w-[200px] h-max -rotate-6 rounded-2xl overflow-hidden"
           >
             <div className="w-full h-[300px] opacity-80 dark:opacity-70 bg-gray-200 dark:bg-neutral-800">
@@ -22,12 +22,12 @@ const TrendingMobile = ({ loading, data, activeNum, setActiveNum, type }) => {
                     ? `https://image.tmdb.org/t/p/w500${
                         activeNum !== 0
                           ? data[activeNum - 1]?.poster_path
-                          : data[19]?.poster_path
+                          : data[15]?.poster_path
                       }`
                     : `https://image.tmdb.org/t/p/w500${
                         activeNum !== 0
                           ? data[activeNum - 1]?.profile_path
-                          : data[19]?.profile_path
+                          : data[15]?.profile_path
                       }`
                 }
                 alt={type !== "people" ? "backdrop" : "picture"}
@@ -63,7 +63,7 @@ const TrendingMobile = ({ loading, data, activeNum, setActiveNum, type }) => {
           </div>
 
           <div
-            onClick={() => setActiveNum(activeNum !== 19 ? activeNum + 1 : 0)}
+            onClick={() => setActiveNum(activeNum !== 15 ? activeNum + 1 : 0)}
             className="absolute right-0 translate-x-[75%] translate-y-16 min-w-[200px] h-max rotate-6 rounded-2xl overflow-hidden"
           >
             <div className="w-full h-[300px] opacity-80 dark:opacity-70 bg-gray-200 dark:bg-neutral-800">
@@ -72,20 +72,20 @@ const TrendingMobile = ({ loading, data, activeNum, setActiveNum, type }) => {
                 src={
                   type !== "people"
                     ? `https://image.tmdb.org/t/p/w500${
-                        activeNum !== 19
+                        activeNum !== 15
                           ? data[activeNum + 1]?.poster_path
                           : data[0]?.poster_path
                       }`
                     : `https://image.tmdb.org/t/p/w500${
-                        activeNum !== 19
+                        activeNum !== 15
                           ? data[activeNum + 1]?.profile_path
                           : data[0]?.profile_path
                       }`
                 }
                 alt={
-                  activeNum !== 0
-                    ? data[activeNum + 1].title ?? data[activeNum + 1].name
-                    : data[activeNum].title ?? data[activeNum].name
+                  activeNum !== 15
+                    ? data[activeNum + 1]?.title ?? data[activeNum + 1]?.name
+                    : data[0]?.title ?? data[0]?.name
                 }
                 className="w-full h-full"
               />

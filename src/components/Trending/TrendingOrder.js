@@ -4,9 +4,9 @@ const TrendingOrder = ({ data, activeNum, setActiveNum }) => {
   return (
     <div className="hidden lg:flex gap-4 items-center">
       <TrendingCard
-        data={data[activeNum === 0 ? 19 : activeNum - 1]}
+        data={data[activeNum === 0 ? 15 : activeNum - 1]}
         setActiveNum={setActiveNum}
-        dataNum={activeNum === 0 ? 19 : activeNum - 1}
+        dataNum={activeNum === 0 ? 15 : activeNum - 1}
       />
       <TrendingCard
         data={data[activeNum]}
@@ -15,9 +15,9 @@ const TrendingOrder = ({ data, activeNum, setActiveNum }) => {
         dataNum={activeNum}
       />
       <TrendingCard
-        data={data[activeNum === 19 ? 0 : activeNum + 1]}
+        data={data[activeNum === 15 ? 0 : activeNum + 1]}
         setActiveNum={setActiveNum}
-        dataNum={activeNum === 19 ? 0 : activeNum + 1}
+        dataNum={activeNum === 15 ? 0 : activeNum + 1}
       />
     </div>
   );
