@@ -1,8 +1,7 @@
 import React from "react";
 import { UserIcon } from "../icons";
 
-const PersonCard = ({ data, type }) => {
-  console.log(data);
+const PersonCard = ({ data }) => {
   return (
     <div className="relative min-w-[120px] xl:min-w-[150px] h-40 xl:h-48 bg-gray-300 dark:bg-neutral-800 rounded-lg overflow-hidden">
       <div className="absolute z-[1] grid place-items-center w-full h-full">

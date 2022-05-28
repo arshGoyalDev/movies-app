@@ -21,13 +21,13 @@ const TrendingMobile = ({ loading, data, activeNum, setActiveNum, type }) => {
                   type !== "people"
                     ? `https://image.tmdb.org/t/p/w500${
                         activeNum !== 0
-                          ? data[activeNum - 1].poster_path
-                          : data[19].poster_path
+                          ? data[activeNum - 1]?.poster_path
+                          : data[19]?.poster_path
                       }`
                     : `https://image.tmdb.org/t/p/w500${
                         activeNum !== 0
-                          ? data[activeNum - 1].profile_path
-                          : data[19].profile_path
+                          ? data[activeNum - 1]?.profile_path
+                          : data[19]?.profile_path
                       }`
                 }
                 alt={type !== "people" ? "backdrop" : "picture"}
@@ -42,8 +42,8 @@ const TrendingMobile = ({ loading, data, activeNum, setActiveNum, type }) => {
                 loading="lazy"
                 src={`https://image.tmdb.org/t/p/w500${
                   type !== "people"
-                    ? data[activeNum].poster_path
-                    : data[activeNum].profile_path
+                    ? data[activeNum]?.poster_path
+                    : data[activeNum]?.profile_path
                 }`}
                 alt={data[activeNum].title ?? data[activeNum].name}
                 className="w-full h-full"
@@ -73,13 +73,13 @@ const TrendingMobile = ({ loading, data, activeNum, setActiveNum, type }) => {
                   type !== "people"
                     ? `https://image.tmdb.org/t/p/w500${
                         activeNum !== 19
-                          ? data[activeNum + 1].poster_path
-                          : data[0].poster_path
+                          ? data[activeNum + 1]?.poster_path
+                          : data[0]?.poster_path
                       }`
                     : `https://image.tmdb.org/t/p/w500${
                         activeNum !== 19
-                          ? data[activeNum + 1].profile_path
-                          : data[0].profile_path
+                          ? data[activeNum + 1]?.profile_path
+                          : data[0]?.profile_path
                       }`
                 }
                 alt={
