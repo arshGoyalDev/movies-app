@@ -1,6 +1,6 @@
 import { Routes as RoutesWrapper, Route } from "react-router-dom";
 
-import { Home, Movies, TvShows, Details, People } from "./pages";
+import { Home, Movies, TvShows, People, Details, PersonDetails } from "./pages";
 
 const Routes = () => {
   return (
@@ -16,7 +16,7 @@ const Routes = () => {
       </Route>
 
       <Route path="/people" element={<People />}>
-        
+        <Route path=":personId" element={<PersonDetails />} />
       </Route>
 
       <Route path="*" element={<div>Nothing to see here</div>} />

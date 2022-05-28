@@ -10,7 +10,7 @@ const People = () => {
 
   return (
     <>
-      {location.pathname.includes("/movies/") ? (
+      {location.pathname.includes("/people/") ? (
         <Outlet />
       ) : (
         <main className="flex h-screen w-full">

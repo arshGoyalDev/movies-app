@@ -31,7 +31,7 @@ const PersonCard = ({ data }) => {
           <h4 className="xl:hidden font-medium text-white break-words">
             {data.name.length > 15 ? `${data.name.slice(0, 15)}...` : data.name}
           </h4>
-          <h4 className="hidden xl:block font-medium">
+          <h4 className="hidden xl:block font-medium text-white">
             {data.name.length > 25 ? `${data.name.slice(0, 25)}...` : data.name}
           </h4>
         </div>

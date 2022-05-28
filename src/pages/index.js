@@ -1,9 +1,10 @@
-import Home from "./home";
+import Home from "./Home";
 
-import Movies from "./movies";
-import TvShows from './tvShows';
-import People from "./people";
+import Movies from "./Movies";
+import TvShows from './TvShows';
+import People from "./People";
 
-import Details from "./details";
+import Details from "./Details";
+import PersonDetails from "./PersonDetails";
 
-export { Home, Movies, TvShows, Details, People };
+export { Home, Movies, TvShows, People, Details, PersonDetails };
