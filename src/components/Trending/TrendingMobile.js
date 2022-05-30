@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 const TrendingMobile = ({ loading, data, activeNum, setActiveNum, type }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="relative sm:hidden h-[430px] mt-10 overflow-hidden">
       {loading ? (
@@ -36,8 +40,17 @@ const TrendingMobile = ({ loading, data, activeNum, setActiveNum, type }) => {
             </div>
           </div>
 
-          <div className="absolute left-1/2 -translate-x-1/2 min-w-[220px] h-max">
-            <div className="w-full h-80 bg-neutral-200 dark:bg-neutral-800 rounded-2xl shadow-2xl shadow-gray-400 dark:shadow-neutral-00 overflow-hidden">
+          <div
+            onClick={() => {
+              type === "people"
+                ? navigate(`/people/${data[activeNum].id}`)
+                : data[activeNum].title
+                ? navigate(`/movies/${data[activeNum].id}`)
+                : navigate(`/tv-shows/${data[activeNum].id}`);
+            }}
+            className="absolute left-1/2 -translate-x-1/2 min-w-[220px] h-max"
+          >
+            <div className="w-full h-80 bg-neutral-200 dark:bg-neutral-800 rounded-2xl shadow-2xl shadow-gray-400 dark:shadow-neutral-800 overflow-hidden">
               <img
                 loading="lazy"
                 src={`https://image.tmdb.org/t/p/w500${

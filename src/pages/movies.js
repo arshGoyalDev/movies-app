@@ -1,10 +1,10 @@
 import { Outlet, useLocation } from "react-router-dom";
 
-import List from "../components/List";
-import OptionsBar from "../components/OptionsBar";
-import Trending from "../components/Trending";
-
 import { SideBar, NavBar, BottomNav } from "../components/sections";
+
+import Trending from "../components/Trending";
+import OptionsBar from "../components/OptionsBar";
+import List from "../components/List";
 
 const Movies = () => {
   const location = useLocation();

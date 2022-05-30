@@ -1,4 +1,3 @@
-import React from "react";
 import { BackdropCard } from "../cards";
 
 const Recommended = ({ data }) => {

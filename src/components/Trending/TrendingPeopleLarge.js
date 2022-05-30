@@ -1,8 +1,12 @@
-import React from "react";
+import { useNavigate } from "react-router-dom";
+
 import { SearchBackdropCard } from "../cards";
+
 import { UserIcon } from "../icons";
 
 const TrendingPeopleLarge = ({ loading, data, activeNum }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="hidden sm:block">
       {loading ? (
@@ -54,6 +58,13 @@ const TrendingPeopleLarge = ({ loading, data, activeNum }) => {
                   ))}
                 </div>
               </div>
+
+              <button
+                onClick={() => navigate(`/people/${data[activeNum].id}`)}
+                className="text-sm xl:text-base text-black font-bold py-2 px-5 bg-primary-light dark:bg-primary-dark hover:bg-[#FFB640] rounded mt-4 transition-colors"
+              >
+                More
+              </button>
             </div>
           </div>
         </>

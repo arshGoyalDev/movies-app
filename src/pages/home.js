@@ -1,8 +1,8 @@
-import List from "../components/List";
-import OptionsBar from "../components/OptionsBar";
-import Trending from "../components/Trending";
-
 import { SideBar, NavBar, BottomNav } from "../components/sections";
+
+import OptionsBar from "../components/OptionsBar";
+import List from "../components/List";
+import Trending from "../components/Trending";
 
 const Home = () => {
   return (

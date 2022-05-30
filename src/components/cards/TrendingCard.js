@@ -8,7 +8,7 @@ const TrendingCard = ({ data, active, setActiveNum, dataNum }) => {
     >
       <div className="absolute z-[5] w-full h-full rounded-lg overflow-hidden">
         <img
-        loading="lazy"
+          loading="lazy"
           src={`https://image.tmdb.org/t/p/w500${data.backdrop_path}`}
           alt="backdrop"
           className="w-full h-full"

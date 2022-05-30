@@ -1,5 +1,7 @@
 import { useContext } from "react";
+
 import { useNavigate } from "react-router-dom";
+
 import { SearchContext } from "../../context";
 
 import { UserIcon } from "../icons";

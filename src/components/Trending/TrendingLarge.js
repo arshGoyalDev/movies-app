@@ -1,7 +1,7 @@
 import Genre from "../Genre";
 import TrendingOrder from "./TrendingOrder";
 
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const TrendingLarge = ({
   loading,

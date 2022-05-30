@@ -120,8 +120,7 @@ const Details = ({ type }) => {
               <div className="flex flex-col gap-3 md:gap-5 mt-4 md:mt-8">
                 <CreditsList data={credits.cast} heading="cast" />
                 {credits.crew.length !== 0 && (
-
-                <CreditsList data={credits.crew} heading="crew" />
+                  <CreditsList data={credits.crew} heading="crew" />
                 )}
               </div>
             </div>

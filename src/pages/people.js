@@ -1,9 +1,10 @@
 import { useLocation, Outlet } from "react-router-dom";
 
 import { NavBar, BottomNav, SideBar } from "../components/sections";
+
 import OptionsBar from "../components/OptionsBar";
-import List from "../components/List";
 import { TrendingPeople } from "../components/Trending";
+import List from "../components/List";
 
 const People = () => {
   const location = useLocation();

@@ -34,7 +34,9 @@ const SearchBackdropCard = ({ data }) => {
       <div
         className={`absolute z-[2] flex flex-col ${
           data.vote_average !== 0 ? "justify-between" : "justify-end"
-        } w-full h-full bg-black ${data.backdrop_path ? "bg-opacity-40" : "bg-opacity-60"}`}
+        } w-full h-full bg-black ${
+          data.backdrop_path ? "bg-opacity-40" : "bg-opacity-60"
+        }`}
       >
         {data.vote_average !== 0 && (
           <div className="flex items-center gap-2 w-max py-1 px-2 bg-black mt-2 mx-3 rounded-xl">

@@ -1,4 +1,5 @@
 import { SideBar, NavBar, BottomNav } from "../components/sections";
+
 import OptionsBar from "../components/OptionsBar";
 
 const Upcoming = () => {
