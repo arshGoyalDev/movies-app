@@ -9,10 +9,10 @@ const Upcoming = () => {
       <section className="w-full pb-32 sm:pb-16 overflow-x-hidden overflow-y-auto scrollbar">
         <NavBar />
 
-        <div className="mt-0">
+        <div>
           <OptionsBar />
 
-          <p>Upcoming`</p>
+          <p>Upcoming</p>
         </div>
 
         <BottomNav />
