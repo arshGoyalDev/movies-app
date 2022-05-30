@@ -1,6 +1,6 @@
 import { Routes as RoutesWrapper, Route } from "react-router-dom";
 
-import { Home, Movies, TvShows, People, Details, PersonDetails } from "./pages";
+import { Home, Movies, TvShows, People, Details, PersonDetails, Upcoming } from "./pages";
 
 const Routes = () => {
   return (
@@ -18,6 +18,8 @@ const Routes = () => {
       <Route path="/people" element={<People />}>
         <Route path=":personId" element={<PersonDetails />} />
       </Route>
+
+      <Route path="/upcoming" element={<Upcoming />} />
 
       <Route path="*" element={<div>Nothing to see here</div>} />
     </RoutesWrapper>
