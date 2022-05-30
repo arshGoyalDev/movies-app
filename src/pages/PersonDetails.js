@@ -98,13 +98,21 @@ const PersonDetails = () => {
             </div>
             <div className="flex flex-col gap-6 w-full lg:min-w-[400px] xl:min-w-[500px] xl:max-w-[500px] 2xl:min-w-[600px] 2xl:max-w-[600px]">
               <PersonCredits
-                castCredits={movieCredits.cast.length !== 0 ? movieCredits.cast : null}
-                crewCredits={movieCredits.crew.length !== 0 ? movieCredits.crew : null}
+                castCredits={
+                  movieCredits.cast.length !== 0 ? movieCredits.cast : null
+                }
+                crewCredits={
+                  movieCredits.crew.length !== 0 ? movieCredits.crew : null
+                }
                 title="Movies"
               />
               <PersonCredits
-                castCredits={tvCredits.cast.length !== 0 ? tvCredits.cast : null}
-                crewCredits={tvCredits.crew.length !== 0 ? tvCredits.crew: null}
+                castCredits={
+                  tvCredits.cast.length !== 0 ? tvCredits.cast : null
+                }
+                crewCredits={
+                  tvCredits.crew.length !== 0 ? tvCredits.crew : null
+                }
                 title="Tv Shows"
               />
             </div>
