@@ -6,7 +6,7 @@ const ImagesList = ({ imagesList }) => {
         {imagesList.map((image) => (
           <div
             key={image.file_path}
-            className="min-w-[140px] max-w-[140px]z rounded-lg overflow-hidden"
+            className="min-w-[140px] max-w-[140px] rounded-lg overflow-hidden"
           >
             <img
               src={`https://image.tmdb.org/t/p/w500${image.file_path}`}
