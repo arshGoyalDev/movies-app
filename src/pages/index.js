@@ -8,5 +8,15 @@ import Details from "./Details";
 import PersonDetails from "./PersonDetails";
 
 import Upcoming from "./Upcoming";
+import TopRated from "./TopRated";
 
-export { Home, Movies, TvShows, People, Details, PersonDetails, Upcoming };
+export {
+  Home,
+  Movies,
+  TvShows,
+  People,
+  Details,
+  PersonDetails,
+  Upcoming,
+  TopRated,
+};
