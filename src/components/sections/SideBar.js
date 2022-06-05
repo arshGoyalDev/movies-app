@@ -270,8 +270,8 @@ const SideBar = () => {
           theme === "dark" ? setTheme("light") : setTheme("dark")
         }
         className={`flex items-center w-max ${
-          menuOpen ? "flex-row gap-4" : "flex-col gap-1"
-        } py-3 px-2.5 mt-auto mx-3 rounded-md`}
+          menuOpen ? "flex-row gap-4 px-3" : "flex-col gap-1 px-2.5"
+        } py-3 mt-auto mx-3 rounded-md`}
       >
         {theme === "dark" ? (
           <MoonIcon className="icon w-5 h-5" />
