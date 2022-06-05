@@ -12,6 +12,7 @@ const Genres = () => {
   const tvGenres = useFetch(`genre/tv/list?language=en-US&`, "genres");
 
   const [loading, setLoading] = useState(true);
+  const [activeGenre, setActiveGenre] = useState("");
 
   useEffect(() => {
     if (!(movieGenres && tvGenres)) return;
@@ -30,8 +31,20 @@ const Genres = () => {
           <OptionsBar />
 
           <div className="flex flex-col gap-8">
-            <GenresList type="movie" list={movieGenres} loading={loading} />
-            <GenresList type="tv" list={tvGenres} loading={loading} />
+            <GenresList
+              type="movie"
+              list={movieGenres}
+              loading={loading}
+              activeGenre={activeGenre}
+              setActiveGenre={setActiveGenre}
+            />
+            <GenresList
+              type="tv"
+              list={tvGenres}
+              loading={loading}
+              activeGenre={activeGenre}
+              setActiveGenre={setActiveGenre}
+            />
           </div>
 
           <Outlet />

@@ -1,7 +1,10 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const GenresList = ({ type, list, loading }) => {
+const GenresList = ({ type, list, loading, activeGenre, setActiveGenre }) => {
+  const navigate = useNavigate();
+
+  console.log(list);
+
   return (
     <>
       {loading ? (
@@ -25,11 +28,21 @@ const GenresList = ({ type, list, loading }) => {
 
           <div className="flex flex-wrap gap-3 mt-5">
             {list.map((item) => (
-              <Link key={item.id} to={`/genres/${type}/${item.id}`}>
-                <button className="font-medium py-2 px-4 bg-neutral-100 dark:bg-neutral-800 rounded-md">
-                  {item.name}
-                </button>
-              </Link>
+              <button
+                key={item.id}
+                onClick={() => {
+                  setActiveGenre(item.id + type);
+                  navigate(`/genres/${type}/${item.id}`);
+                }}
+                className={`font-medium py-2 px-4  ${
+                  activeGenre === item.id + type
+                    ? "text-white dark:text-black bg-neutral-700 dark:bg-neutral-300"
+                    : "bg-neutral-200 dark:bg-neutral-800"
+                } rounded-md`}
+              >
+                {item.name}
+              </button>
+              // </Link>
             ))}
           </div>
         </div>
