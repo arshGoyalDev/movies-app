@@ -1,7 +1,7 @@
 import "./App.css";
 import "./components.css";
 
-import { SearchBox } from "./components/Search";
+import { SearchBox } from "./components/search";
 
 import Routes from "./Routes";
 

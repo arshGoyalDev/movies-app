@@ -1,6 +1,18 @@
 import { Routes as RoutesWrapper, Route } from "react-router-dom";
 
-import { Home, Movies, TvShows, People, Details, PersonDetails, Upcoming, TopRated } from "./pages";
+import {
+  Home,
+  Movies,
+  TvShows,
+  People,
+  Details,
+  PersonDetails,
+  Upcoming,
+  TopRated,
+  Genres,
+} from "./pages";
+
+import { GenreResults } from "./components/genres";
 
 const Routes = () => {
   return (
@@ -21,6 +33,10 @@ const Routes = () => {
 
       <Route path="/upcoming" element={<Upcoming />} />
       <Route path="/top-rated" element={<TopRated />} />
+
+      <Route path="/genres" element={<Genres />}>
+        <Route path=":type/:genreId" element={<GenreResults />} />
+      </Route>
 
       <Route path="*" element={<div>Nothing to see here</div>} />
     </RoutesWrapper>

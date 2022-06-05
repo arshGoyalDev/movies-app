@@ -14,7 +14,7 @@ const Genre = ({ genreId, list }) => {
   }, []);
 
   return (
-    <div className="text-white font-medium text-sm py-1 px-2 bg-neutral-800 border border-solid border-neutral-700 rounded">
+    <div className="text-white text-sm py-1 px-3 bg-neutral-800 rounded-3xl">
       {output}
     </div>
   );

@@ -10,6 +10,8 @@ import PersonDetails from "./PersonDetails";
 import Upcoming from "./Upcoming";
 import TopRated from "./TopRated";
 
+import Genres from "./Genres";
+
 export {
   Home,
   Movies,
@@ -19,4 +21,5 @@ export {
   PersonDetails,
   Upcoming,
   TopRated,
+  Genres
 };
