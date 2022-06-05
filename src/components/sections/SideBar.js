@@ -3,17 +3,24 @@ import { SideMenuContext, ThemeContext } from "../../context";
 
 import { Link, useLocation } from "react-router-dom";
 
-import { 
-  HomeIcon, HomeSolidIcon,
-  MoviesIcon, MoviesSolidIcon,
-  TvIcon, TvSolidIcon,
-  PeopleIcon, PeopleSolidIcon,
-  UpcomingIcon, UpcomingSolidIcon,
-  StarIcon, StarSolidIcon,
-  GenresIcon, GenresSolidIcon,
-  SunIcon, MoonIcon,
+import {
+  HomeIcon,
+  HomeSolidIcon,
+  MoviesIcon,
+  MoviesSolidIcon,
+  TvIcon,
+  TvSolidIcon,
+  PeopleIcon,
+  PeopleSolidIcon,
+  UpcomingIcon,
+  UpcomingSolidIcon,
+  StarIcon,
+  StarSolidIcon,
+  GenresIcon,
+  GenresSolidIcon,
+  SunIcon,
+  MoonIcon,
 } from "../icons";
-
 
 const SideBar = () => {
   const location = useLocation();
@@ -33,7 +40,9 @@ const SideBar = () => {
       >
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className={`w-8 h-8 flex items-center justify-center flex-col gap-1.5 rounded-sm ${!menuOpen && "px-2"}`}
+          className={`w-8 h-8 flex items-center justify-center flex-col gap-1.5 rounded-sm ${
+            !menuOpen && "px-2"
+          }`}
         >
           <span className="block w-6 h-0.5 bg-black dark:bg-white"></span>
           <span className="block w-6 h-0.5 bg-black dark:bg-white"></span>
@@ -74,7 +83,9 @@ const SideBar = () => {
                 <HomeIcon className="inactive-icon w-5 h-5" />
               )}
               <span
-                className={`whitespace-nowrap font-medium pt-1 ${!menuOpen && "scale-x-0 w-0"} ${
+                className={`whitespace-nowrap font-medium pt-1 ${
+                  !menuOpen && "scale-x-0 w-0"
+                } ${
                   location.pathname !== "/" &&
                   "text-gray-500 dark:text-neutral-700"
                 } origin-left transition-transform duration-300`}
@@ -84,7 +95,7 @@ const SideBar = () => {
             </li>
           </Link>
           <Link to="/movies" className="mx-3 rounded-md">
-          <li
+            <li
               className={`flex items-center gap-4 h-11 rounded-md ${
                 menuOpen ? "px-4" : "pl-4 "
               } ${
@@ -98,7 +109,9 @@ const SideBar = () => {
                 <MoviesIcon className="inactive-icon w-5 h-5" />
               )}
               <span
-                className={`whitespace-nowrap font-medium pt-1 ${!menuOpen && "scale-x-0 w-0"} ${
+                className={`whitespace-nowrap font-medium pt-1 ${
+                  !menuOpen && "scale-x-0 w-0"
+                } ${
                   location.pathname !== "/movies" &&
                   "text-gray-500 dark:text-neutral-700"
                 } origin-left transition-transform duration-300`}
@@ -108,7 +121,7 @@ const SideBar = () => {
             </li>
           </Link>
           <Link to="/tv-shows" className="mx-3 rounded-md">
-          <li
+            <li
               className={`flex items-center gap-4 h-11 rounded-md ${
                 menuOpen ? "px-4" : "pl-4 "
               } ${
@@ -123,7 +136,9 @@ const SideBar = () => {
               )}
 
               <span
-                className={`whitespace-nowrap font-medium pt-1 ${!menuOpen && "scale-x-0 w-0"} ${
+                className={`whitespace-nowrap font-medium pt-1 ${
+                  !menuOpen && "scale-x-0 w-0"
+                } ${
                   location.pathname !== "/tv-shows" &&
                   "text-gray-500 dark:text-neutral-700"
                 } origin-left transition-transform duration-300`}
@@ -133,7 +148,7 @@ const SideBar = () => {
             </li>
           </Link>
           <Link to="/people" className="mx-3 rounded-md">
-          <li
+            <li
               className={`flex items-center gap-4 h-11 rounded-md ${
                 menuOpen ? "px-4" : "pl-4 "
               } ${
@@ -147,7 +162,9 @@ const SideBar = () => {
                 <PeopleIcon className="inactive-icon w-5 h-5" />
               )}
               <span
-                className={`whitespace-nowrap font-medium pt-1 ${!menuOpen && "scale-x-0 w-0"} ${
+                className={`whitespace-nowrap font-medium pt-1 ${
+                  !menuOpen && "scale-x-0 w-0"
+                } ${
                   location.pathname !== "/people" &&
                   "text-gray-500 dark:text-neutral-700"
                 } origin-left transition-transform duration-300`}
@@ -168,7 +185,7 @@ const SideBar = () => {
         </span>
         <ul className="flex flex-col gap-1 mt-4">
           <Link to="/upcoming" className="mx-3 rounded-md">
-          <li
+            <li
               className={`flex items-center gap-4 h-11 rounded-md ${
                 menuOpen ? "px-4" : "pl-4 "
               } ${
@@ -182,7 +199,9 @@ const SideBar = () => {
                 <UpcomingIcon className="inactive-icon w-5 h-5" />
               )}
               <span
-                className={`whitespace-nowrap font-medium pt-1 ${!menuOpen && "scale-x-0 w-0"} ${
+                className={`whitespace-nowrap font-medium pt-1 ${
+                  !menuOpen && "scale-x-0 w-0"
+                } ${
                   location.pathname !== "/upcoming" &&
                   "text-gray-500 dark:text-neutral-700"
                 } origin-left transition-transform duration-300`}
@@ -192,7 +211,7 @@ const SideBar = () => {
             </li>
           </Link>
           <Link to="/top-rated" className="mx-3 rounded-md">
-          <li
+            <li
               className={`flex items-center gap-4 h-11 rounded-md ${
                 menuOpen ? "px-4" : "pl-4 "
               } ${
@@ -206,7 +225,9 @@ const SideBar = () => {
                 <StarIcon className="inactive-icon w-5 h-5" />
               )}
               <span
-                className={`whitespace-nowrap font-medium pt-1 ${!menuOpen && "scale-x-0 w-0"} ${
+                className={`whitespace-nowrap font-medium pt-1 ${
+                  !menuOpen && "scale-x-0 w-0"
+                } ${
                   location.pathname !== "/top-rated" &&
                   "text-gray-500 dark:text-neutral-700"
                 } origin-left transition-transform duration-300`}
@@ -216,7 +237,7 @@ const SideBar = () => {
             </li>
           </Link>
           <Link to="/genres" className="mx-3 rounded-md">
-          <li
+            <li
               className={`flex items-center gap-4 h-11 rounded-md ${
                 menuOpen ? "px-4" : "pl-4 "
               } ${
@@ -230,7 +251,9 @@ const SideBar = () => {
                 <GenresIcon className="inactive-icon w-5 h-5" />
               )}
               <span
-                className={`whitespace-nowrap font-medium pt-1 ${!menuOpen && "scale-x-0 w-0"} ${
+                className={`whitespace-nowrap font-medium pt-1 ${
+                  !menuOpen && "scale-x-0 w-0"
+                } ${
                   location.pathname !== "/genres" &&
                   "text-gray-500 dark:text-neutral-700"
                 } origin-left transition-transform duration-300`}
@@ -248,7 +271,7 @@ const SideBar = () => {
         }
         className={`flex items-center w-max ${
           menuOpen ? "flex-row gap-4" : "flex-col gap-1"
-        } py-3 px-4 mt-auto mb-0 mx-3 rounded-md`}
+        } py-3 px-2.5 mt-auto mx-3 rounded-md`}
       >
         {theme === "dark" ? (
           <MoonIcon className="icon w-5 h-5" />
