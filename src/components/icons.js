@@ -31,6 +31,8 @@ import { ReactComponent as ArrowLeftIcon } from "../assets/images/arrow-left.svg
 
 import { ReactComponent as PlaySolidIcon } from "../assets/images/play-solid.svg";
 
+import { ReactComponent as CloseIcon } from "../assets/images/close.svg";
+
 export {
   HomeIcon,
   HomeSolidIcon,
@@ -53,4 +55,5 @@ export {
   UserIcon,
   ArrowLeftIcon,
   PlaySolidIcon,
+  CloseIcon,
 };

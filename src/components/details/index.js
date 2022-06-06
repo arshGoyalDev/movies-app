@@ -4,5 +4,14 @@ import Recommended from "./Recommended";
 import Videos from "./Videos";
 import ImagesList from "./ImagesList";
 import PersonCredits from "./PersonCredits";
+import Video from "./Video";
 
-export { CreditsList, Reviews, Recommended, Videos, ImagesList, PersonCredits };
+export {
+  CreditsList,
+  Reviews,
+  Recommended,
+  Videos,
+  ImagesList,
+  PersonCredits,
+  Video,
+};

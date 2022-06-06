@@ -1,6 +1,10 @@
+import { useNavigate } from "react-router-dom";
+
 import { PlaySolidIcon } from "../icons";
 
 const Videos = ({ data, backdrop }) => {
+  const navigate = useNavigate();
+
   const filterVideos = () => {
     const filteredVideos = data.reverse().filter((video) => {
       let outputVideo;
@@ -27,6 +31,7 @@ const Videos = ({ data, backdrop }) => {
           <div className="flex gap-3 px-10 md:px-28 lg:px-0 mt-3 overflow-auto">
             {filterVideos().map((video) => (
               <div
+                onClick={() => navigate(`video/${video.key}`)}
                 key={video.id}
                 className="relative min-w-[280px] h-[160px] bg-gray-200 dark:bg-neutral-800 rounded-2xl overflow-hidden"
               >

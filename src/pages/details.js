@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useFetch } from "../hooks";
 
-import { useNavigate, useParams } from "react-router-dom";
+import { Outlet, useNavigate, useParams } from "react-router-dom";
 
 import { convertMinsToHrsMins, modifyDate } from "../utils/time";
 
@@ -130,6 +130,7 @@ const Details = ({ type }) => {
               {recommended.length !== 0 && <Recommended data={recommended} />}
             </div>
           </div>
+          <Outlet />
         </main>
       )}
     </>

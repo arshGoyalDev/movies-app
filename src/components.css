@@ -2,7 +2,7 @@
 /* svg icons */
 
 .icon > * {
-  @apply dark:fill-white transition-all;
+  @apply fill-black dark:fill-white transition-all;
 }
 
 .active-icon > * {
