@@ -1,14 +1,14 @@
-import Home from "./Home";
-import Movies from "./Movies";
-import TvShows from "./TvShows";
-import People from "./People";
+import Home from "./home";
+import Movies from "./movies";
+import TvShows from "./tv-shows";
+import People from "./people";
 
-import Upcoming from "./Upcoming";
-import TopRated from "./TopRated";
-import Genres from "./Genres";
+import Upcoming from "./upcoming";
+import TopRated from "./topRated";
+import Genres from "./genres";
 
-import Details from "./Details";
-import PersonDetails from "./PersonDetails";
+import Details from "./details";
+import PersonDetails from "./person-details";
 
 export {
   Home,
