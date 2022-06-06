@@ -25,16 +25,9 @@ A app to show data about popular, trending, upcoming movies & tv shows and much 
 
 ### Run Locally
 
-- Install all packages
 ```
-$ yarn install
+$ yarn install && yarn start
 ```
-
-- Start Local Server
-```
-$ yarn start
-```
-
 
 <br>
 
