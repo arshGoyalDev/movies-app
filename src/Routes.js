@@ -10,7 +10,7 @@ import {
   Upcoming,
   TopRated,
   Genres,
-} from "./Pages";
+} from "./pages";
 
 import { GenreResults } from "./components/genres";
 
