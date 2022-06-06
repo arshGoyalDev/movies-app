@@ -3,11 +3,11 @@ import Movies from "./movies";
 import TvShows from "./tv-shows";
 import People from "./people";
 
-import Upcoming from "./upcomg";
+import Upcoming from "./upcoming";
 import TopRated from "./top-rated";
-import Genres from "./gees";
+import Genres from "./genres";
 
-import Details from "./tails";
+import Details from "./details";
 import PersonDetails from "./person-details";
 
 export {
