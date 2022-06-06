@@ -23,6 +23,17 @@ A app to show data about popular, trending, upcoming movies & tv shows and much 
 
 <!-- - [Live Site](https://movies-app-bay-rho.vercel.app) -->
 
+### Run Locally
+
+- Install all packages
+```
+$ yarn install
+```
+
+- Start Local Server
+```
+$ yarn start
+```
 
 
 <br>
