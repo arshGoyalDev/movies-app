@@ -10,7 +10,7 @@ const PersonCredits = ({ castCredits, crewCredits, title }) => {
           As a cast member
         </h4>
         {castCredits ? (
-          <div className="scrollbar flex gap-3 px-10 md:px-28 lg:px-0 mt-3 overflow-auto">
+          <div className="flex gap-3 px-10 md:px-28 lg:px-0 mt-3 overflow-auto">
             {castCredits.reverse().map((item) => (
               <BackdropCard key={item.credit_id} data={item} />
             ))}
@@ -25,7 +25,7 @@ const PersonCredits = ({ castCredits, crewCredits, title }) => {
           As a crew member
         </h4>
         {crewCredits ? (
-          <div className="scrollbar flex gap-3 px-10 md:px-28 lg:px-0 mt-3 overflow-auto">
+          <div className="flex gap-3 px-10 md:px-28 lg:px-0 mt-3 overflow-auto">
             {crewCredits.reverse().map((item) => (
               <BackdropCard key={item.credit_id} data={item} />
             ))}

@@ -2,7 +2,7 @@ const ImagesList = ({ imagesList }) => {
   return (
     <div className="px-1">
       <h3 className="capitalize font-medium px-10 md:px-28 lg:px-0">Images</h3>
-      <div className="scrollbar w-full flex gap-4 mt-5 overflow-auto px-10 md:px-28 lg:px-0">
+      <div className="w-full flex gap-4 mt-5 overflow-auto px-10 md:px-28 lg:px-0">
         {imagesList.map((image) => (
           <div
             key={image.file_path}

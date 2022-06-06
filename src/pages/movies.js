@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import { SideMenuContext } from "../context";
+
 import { Outlet, useLocation } from "react-router-dom";
 
 import { SideBar, NavBar, BottomNav } from "../components/sections";
@@ -8,16 +11,21 @@ import List from "../components/List";
 
 const Movies = () => {
   const location = useLocation();
+  const { menuOpen } = useContext(SideMenuContext);
 
   return (
     <>
       {location.pathname.includes("/movies/") ? (
         <Outlet />
       ) : (
-        <main className="flex h-screen w-full">
+        <main className="flex min-h-screen w-full">
           <SideBar />
 
-          <section className="w-full pb-32 sm:pb-16 overflow-x-hidden overflow-y-auto scrollbar">
+          <section
+            className={`w-full pb-32 sm:pb-16 ${
+              menuOpen ? "xl:pl-72" : "xl:pl-20"
+            } transition-[padding] duration-300`}
+          >
             <NavBar />
 
             <div>

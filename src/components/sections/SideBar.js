@@ -29,8 +29,8 @@ const SideBar = () => {
 
   return (
     <div
-      className={`hidden xl:flex flex-col ${
-        menuOpen ? "w-80" : "w-20"
+      className={`fixed hidden xl:flex h-screen flex-col ${
+        menuOpen ? "w-72" : "w-20"
       } py-6 border-r-2 border-solid border-gray-300 dark:border-neutral-800 transition-[width] duration-300`}
     >
       <div

@@ -33,7 +33,7 @@ const List = ({ type, query, pages }) => {
       {loading ? (
         <div className="px-6 md:px-16 xl:pr-24 xl:pl-10">
           <div className="animate-skeleton w-60 h-6 rounded"></div>
-          <div className="flex gap-4 scrollbar mt-5">
+          <div className="flex gap-4 mt-5">
             <div className="animate-skeleton min-w-[300px] h-44 rounded-2xl"></div>
             <div className="animate-skeleton min-w-[300px] h-44 rounded-2xl"></div>
             <div className="animate-skeleton min-w-[300px] h-44 rounded-2xl"></div>
@@ -44,7 +44,7 @@ const List = ({ type, query, pages }) => {
           <h3 className="text-2xl capitalize font-medium mx-6 md:mx-16 xl:mr-24 xl:ml-10">
             {query.replaceAll("_", " ")} {getTitle()}
           </h3>
-          <div className="scrollbar w-full flex gap-4 px-6 md:px-16 xl:pr-24 xl:pl-10 mt-5 overflow-auto">
+          <div className="w-full flex gap-4 px-6 md:px-16 xl:pr-24 xl:pl-10 mt-5 overflow-auto">
             {dataList.map((item) =>
               type === "person" ? (
                 <PersonCard key={item.id} data={item} />
@@ -55,7 +55,7 @@ const List = ({ type, query, pages }) => {
           </div>
 
           {pages === 2 && (
-            <div className="scrollbar w-full flex gap-4 px-6 md:px-16 xl:pr-24 xl:pl-10 mt-5 overflow-auto">
+            <div className="w-full flex gap-4 px-6 md:px-16 xl:pr-24 xl:pl-10 mt-5 overflow-auto">
               {dataListSecond.map((item) =>
                 type === "person" ? (
                   <PersonCard key={item.id} data={item} />

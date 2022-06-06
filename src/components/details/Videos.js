@@ -24,7 +24,7 @@ const Videos = ({ data, backdrop }) => {
       {filterVideos().length !== 0 && (
         <div>
           <h4 className="font-medium px-10 md:px-28 lg:px-0">Videos</h4>
-          <div className="scrollbar flex gap-3 px-10 md:px-28 lg:px-0 mt-3 overflow-auto">
+          <div className="flex gap-3 px-10 md:px-28 lg:px-0 mt-3 overflow-auto">
             {filterVideos().map((video) => (
               <div
                 key={video.id}

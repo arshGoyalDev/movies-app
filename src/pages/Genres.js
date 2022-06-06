@@ -1,13 +1,18 @@
 // import React from 'react'
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useFetch } from "../hooks";
+
+import { SideMenuContext } from "../context";
+
+import { Outlet } from "react-router-dom";
 
 import { SideBar, NavBar, BottomNav } from "../components/sections";
 import OptionsBar from "../components/OptionsBar";
 import { GenresList } from "../components/genres";
-import { Outlet } from "react-router-dom";
 
 const Genres = () => {
+  const { menuOpen } = useContext(SideMenuContext);
+
   const movieGenres = useFetch(`genre/movie/list?language=en-US&`, "genres");
   const tvGenres = useFetch(`genre/tv/list?language=en-US&`, "genres");
 
@@ -21,10 +26,14 @@ const Genres = () => {
   }, [movieGenres, tvGenres]);
 
   return (
-    <main className="flex h-screen w-full">
+    <main className="flex min-h-screen w-full">
       <SideBar />
 
-      <section className="w-full pb-32 sm:pb-16 overflow-x-hidden overflow-y-auto scrollbar">
+      <section
+        className={`w-full pb-32 sm:pb-16 ${
+          menuOpen ? "xl:pl-72" : "xl:pl-20"
+        } transition-[padding] duration-300`}
+      >
         <NavBar />
 
         <div>

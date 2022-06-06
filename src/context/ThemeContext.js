@@ -23,10 +23,10 @@ const ThemeProvider = ({ children }) => {
 
   useEffect(() => {
     if (theme === "light") {
-      document.body.classList.remove("dark");
+      document.documentElement.classList.remove("dark");
       localStorage.setItem("theme", "light");
     } else if (theme === "dark") {
-      document.body.classList.add("dark");
+      document.documentElement.classList.add("dark");
       localStorage.setItem("theme", "dark");
     }
   }, [theme]);

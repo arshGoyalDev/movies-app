@@ -52,7 +52,7 @@ const TrendingPeopleLarge = ({ loading, data, activeNum }) => {
                   Some works
                 </h3>
 
-                <div className="flex gap-3 w-full pr-10 mt-2 scrollbar overflow-auto">
+                <div className="flex gap-3 w-full pr-10 mt-2 overflow-auto">
                   {data[activeNum].known_for.map((item) => (
                     <SearchBackdropCard key={item.id} data={item} />
                   ))}
