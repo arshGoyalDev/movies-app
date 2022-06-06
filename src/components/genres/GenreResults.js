@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 
-import InfiniteScroll from "react-infinite-scroller";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 import { useParams } from "react-router-dom";
 
 import { PosterCard } from "../cards";
+import Loader from "../Loader";
 
 import { loadingArray } from "../../utils";
 
@@ -47,11 +48,6 @@ const GenreResults = () => {
     // eslint-disable-next-line
   }, [genreId]);
 
-  // useEffect(() => {
-  //   fetchFirstData();
-  //   // eslint-disable-next-line
-  // }, []);
-
   return (
     <>
       {loading ? (
@@ -73,17 +69,10 @@ const GenreResults = () => {
           </h2>
 
           <InfiniteScroll
-            pageStart={1}
-            loadMore={fetchData}
+            dataLength={data.length}
+            next={fetchData}
             hasMore={data.length !== totalResults}
-            loader={
-              <div className="font-semibold text-center text-lg my-10" key={0}>
-                Loading ...
-              </div>
-            }
-            useWindow={true}
-            // getScrollParent={() => this.scrollParentRef}
-
+            loader={<Loader />}
           >
             <div className="flex flex-wrap gap-5 mt-5">
               {data.map((item) => (

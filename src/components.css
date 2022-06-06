@@ -1,5 +1,6 @@
 /* ----------------- */
 /* svg icons */
+
 .icon > * {
   @apply dark:fill-white transition-all;
 }
@@ -22,6 +23,7 @@
 /* components */
 
 /* card */
+
 .active-card {
   box-shadow: -1px 0 25px rgba(70, 70, 70, 0.3),
     1px 0 25px rgba(70, 70, 70, 0.3), 0 -1px 20px rgba(70, 70, 70, 0.3),
@@ -43,11 +45,13 @@
 }
 
 /* search */
+
 #search:focus ~ .placeholder-text {
   @apply left-2 opacity-0;
 }
 
 /* trending */
+
 @media (min-width: 1640px) {
   .trending {
     height: 500px !important;
@@ -68,6 +72,7 @@
 }
 
 /* background */
+
 @media (min-width: 1024px) {
   .background {
     background-image: linear-gradient(
@@ -78,38 +83,7 @@
   }
 }
 
-/* loading */
-
-.animate-skeleton {
-  animation: 1s skeleton linear infinite;
-  @apply bg-gray-300 dark:bg-neutral-800;
-}
-
-.animate-skeleton-search {
-  animation: 1s skeleton linear infinite;
-  background: linear-gradient(
-    110deg,
-    rgb(209, 213, 219) 15%,
-    #e7e7e7 20%,
-    rgb(209, 213, 219) 33%
-  );
-}
-
-.dark .animate-skeleton-search {
-  background: linear-gradient(
-    110deg,
-    rgb(64, 64, 64) 15%,
-    rgb(70, 70, 70) 20%,
-    rgb(64, 64, 64) 33%
-  );
-}
-
-@keyframes skeleton {
-  100% {
-    opacity: 0.2;
-    /* background-position: 300px 0; */
-  }
-}
+/* trending people */
 
 .trending-people-info {
   width: calc(100% - 192px);
@@ -118,6 +92,58 @@
 @media (min-width: 1280px) {
   .trending-people-info {
     width: calc(100% - 280px);
+  }
+}
+
+/* ----------------- */
+/* loading */
+
+/* skeleton */
+
+.animate-skeleton {
+  animation: 1s skeleton linear infinite;
+  @apply bg-gray-200 dark:bg-neutral-800;
+}
+
+.animate-skeleton-search {
+  animation: 1s skeleton linear infinite;
+  @apply bg-gray-300 dark:bg-neutral-700;
+}
+
+@keyframes skeleton {
+  100% {
+    opacity: 0.2;
+  }
+}
+
+/* infinite */
+
+.animate-infinite {
+  animation: loading-infinite 0.6s cubic-bezier(0, 0, 0.03, 0.9) infinite;
+}
+
+.second-line {
+  animation-delay: 0.2s;
+}
+
+@keyframes loading-infinite {
+  0%,
+  88%,
+  100% {
+    opacity: 0;
+  }
+
+  0% {
+    transform: translateY(-6vmin);
+  }
+
+  33% {
+    opacity: 1;
+  }
+
+  33%,
+  88% {
+    transform: translateY(3vmin);
   }
 }
 
