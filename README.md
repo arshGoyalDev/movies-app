@@ -31,4 +31,6 @@ $ yarn install && yarn start
 
 <br>
 
+
+View [demo](https://movies-info-xi.vercel.app) <br>
 Made with ❤️ by Arsh
