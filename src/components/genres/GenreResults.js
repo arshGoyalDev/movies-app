@@ -1,27 +1,20 @@
 import { useState, useEffect } from "react";
-// import InfiniteScroll from "react-infinite-scroll-component";
-// import ReactInfiniteScroller from "react-infinite-scroller";
 
 import InfiniteScroll from "react-infinite-scroller";
 
 import { useParams } from "react-router-dom";
-import { useFetch } from "../../hooks";
+
 import { PosterCard } from "../cards";
+
+import { loadingArray } from "../../utils";
 
 const GenreResults = () => {
   const { type, genreId } = useParams();
-  // const data = useFetch(
-  //   `discover/${type}?language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${genreId}&with_watch_monetization_ty\pes=flatrate&`,
-  //   "results"
-  // );
+
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
   const [totalResults, setTotalResults] = useState(0);
-
-  const loadingArray = [
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-  ];
 
   const fetchFirstData = async () => {
     const res = await fetch(
@@ -35,7 +28,6 @@ const GenreResults = () => {
   };
 
   const fetchData = async () => {
-    console.log("hello");
     const res = await fetch(
       `https://api.themoviedb.org/3/discover/${type}?api_key=${
         process.env.REACT_APP_API_KEY
@@ -45,7 +37,6 @@ const GenreResults = () => {
     );
     const fetchedData = await res.json();
 
-    // console.log([...data, ...fetchedData.results]);
     setData([...data, ...fetchedData.results]);
     setPage(page + 1);
   };
@@ -56,10 +47,10 @@ const GenreResults = () => {
     // eslint-disable-next-line
   }, [genreId]);
 
-  useEffect(() => {
-    fetchFirstData();
-    // eslint-disable-next-line
-  }, []);
+  // useEffect(() => {
+  //   fetchFirstData();
+  //   // eslint-disable-next-line
+  // }, []);
 
   return (
     <>

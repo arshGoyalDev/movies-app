@@ -15,7 +15,7 @@ const NavBar = () => {
   return (
     <nav
       className={`flex items-center justify-between w-full py-6 px-6 md:px-16 ${
-        menuOpen ? "xl:px-24" : "xl:pr-24 xl:pl-10"
+        menuOpen ? "xl:px-16" : "xl:pr-16 xl:pl-10"
       }`}
     >
       <Link to="/">

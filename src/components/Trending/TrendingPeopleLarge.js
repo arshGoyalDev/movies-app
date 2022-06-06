@@ -10,10 +10,10 @@ const TrendingPeopleLarge = ({ loading, data, activeNum }) => {
   return (
     <div className="hidden sm:block">
       {loading ? (
-        <div className="animate-skeleton trending hidden sm:block h-40 sm:h-72 lg:h-[420px] mx-5 md:mx-16 xl:mr-24 xl:ml-10 rounded-3xl"></div>
+        <div className="animate-skeleton trending hidden sm:block h-40 sm:h-72 lg:h-[420px] mx-5 md:mx-16 xl:mr-16 xl:ml-10 rounded-3xl"></div>
       ) : (
         <>
-          <div className="hidden sm:flex items-center h-40 sm:h-72 lg:h-[420px] mx-5 md:mx-16 xl:mr-24 xl:ml-10 bg-gray-100 dark:bg-neutral-800 rounded-2xl lg:rounded-3xl overflow-hidden">
+          <div className="hidden sm:flex items-center h-40 sm:h-72 lg:h-[420px] mx-5 md:mx-16 xl:mr-16 xl:ml-10 bg-gray-100 dark:bg-neutral-800 rounded-2xl lg:rounded-3xl overflow-hidden">
             <div className="grid place-items-center h-full min-w-[192px] max-w-[192px] lg:min-w-[280px] lg:max-w-[280px] bg-gray-200 dark:bg-neutral-700">
               {data[activeNum].profile_path ? (
                 <img

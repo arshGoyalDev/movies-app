@@ -11,7 +11,7 @@ const PosterCard = ({ data }) => {
           ? navigate(`/movies/${data.id}`)
           : navigate(`/tv-shows/${data.id}`)
       }
-      className="relative min-w-[150px] sm:min-w-[170px] h-56 sm:h-60 rounded-xl cursor-pointer overflow-hidden"
+      className="relative min-w-[150px] sm:min-w-[160px] h-56 sm:h-60 rounded-xl cursor-pointer overflow-hidden"
     >
       <div className="absolute z-[1] grid place-items-center bg-gray-200 dark:bg-neutral-800 w-full h-full rounded-lg overflow-hidden">
         {data.poster_path ? (
