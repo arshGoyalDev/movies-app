@@ -1,4 +1,5 @@
 import { useNavigate, useParams } from "react-router-dom";
+
 import { CloseIcon } from "../icons";
 
 const Video = () => {
@@ -6,7 +7,7 @@ const Video = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="fixed inset-0 z-20 grid place-items-center">
+    <div className="fixed inset-0 z-20 grid place-items-center animate-fade-in">
       <div
         onClick={() => navigate(-1)}
         className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-screen h-screen bg-black bg-opacity-50"
