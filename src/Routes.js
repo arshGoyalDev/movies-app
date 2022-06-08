@@ -13,7 +13,7 @@ import {
 } from "./pages";
 
 import { GenreResults } from "./components/genres";
-import { Video } from "./components/details";
+import { FullReview, Video } from "./components/details";
 
 const Routes = () => {
   return (
@@ -23,12 +23,14 @@ const Routes = () => {
       <Route path="/movies" element={<Movies />}>
         <Route path=":id" element={<Details type="movie" />}>
           <Route path="video/:videoId" element={<Video />} />
+          <Route path="review/:reviewId" element={<FullReview />} />
         </Route>
       </Route>
 
       <Route path="/tv-shows" element={<TvShows />}>
         <Route path=":id" element={<Details type="tv" />}>
           <Route path="video/:videoId" element={<Video />} />
+          <Route path="review/:reviewId" element={<FullReview />} />
         </Route>
       </Route>
 

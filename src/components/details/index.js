@@ -1,10 +1,14 @@
 import CreditsList from "./CreditsList";
-import Reviews from "./Reviews";
 import Recommended from "./Recommended";
+
+import Reviews from "./Reviews";
 import Videos from "./Videos";
+
 import ImagesList from "./ImagesList";
 import PersonCredits from "./PersonCredits";
+
 import Video from "./Video";
+import FullReview from "./FullReview";
 
 export {
   CreditsList,
@@ -14,4 +18,5 @@ export {
   ImagesList,
   PersonCredits,
   Video,
+  FullReview,
 };
