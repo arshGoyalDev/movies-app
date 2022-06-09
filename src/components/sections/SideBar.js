@@ -68,7 +68,7 @@ const SideBar = () => {
           Menu
         </span>
         <ul className="flex flex-col gap-1 mt-4">
-          <Link to="/" className="mx-3 rounded-md">
+          <Link to="/" className="mx-3 rounded-md focus:outline-none">
             <li
               className={`flex items-center gap-4 h-11 rounded-md ${
                 menuOpen ? "px-4" : "pl-4"
@@ -94,7 +94,7 @@ const SideBar = () => {
               </span>
             </li>
           </Link>
-          <Link to="/movies" className="mx-3 rounded-md">
+          <Link to="/movies" className="mx-3 rounded-md focus:outline-none">
             <li
               className={`flex items-center gap-4 h-11 rounded-md ${
                 menuOpen ? "px-4" : "pl-4 "
@@ -120,7 +120,7 @@ const SideBar = () => {
               </span>
             </li>
           </Link>
-          <Link to="/tv-shows" className="mx-3 rounded-md">
+          <Link to="/tv-shows" className="mx-3 rounded-md focus:outline-none">
             <li
               className={`flex items-center gap-4 h-11 rounded-md ${
                 menuOpen ? "px-4" : "pl-4 "
@@ -147,7 +147,7 @@ const SideBar = () => {
               </span>
             </li>
           </Link>
-          <Link to="/people" className="mx-3 rounded-md">
+          <Link to="/people" className="mx-3 rounded-md focus:outline-none">
             <li
               className={`flex items-center gap-4 h-11 rounded-md ${
                 menuOpen ? "px-4" : "pl-4 "
@@ -184,7 +184,7 @@ const SideBar = () => {
           More
         </span>
         <ul className="flex flex-col gap-1 mt-4">
-          <Link to="/upcoming" className="mx-3 rounded-md">
+          <Link to="/upcoming" className="mx-3 rounded-md focus:outline-none">
             <li
               className={`flex items-center gap-4 h-11 rounded-md ${
                 menuOpen ? "px-4" : "pl-4 "
@@ -210,7 +210,7 @@ const SideBar = () => {
               </span>
             </li>
           </Link>
-          <Link to="/top-rated" className="mx-3 rounded-md">
+          <Link to="/top-rated" className="mx-3 rounded-md focus:outline-none">
             <li
               className={`flex items-center gap-4 h-11 rounded-md ${
                 menuOpen ? "px-4" : "pl-4 "
@@ -236,16 +236,16 @@ const SideBar = () => {
               </span>
             </li>
           </Link>
-          <Link to="/genres" className="mx-3 rounded-md">
+          <Link to="/genres" className="mx-3 rounded-md focus:outline-none">
             <li
               className={`flex items-center gap-4 h-11 rounded-md ${
                 menuOpen ? "px-4" : "pl-4 "
               } ${
-                location.pathname === "/genres" &&
+                location.pathname.includes("/genres") &&
                 "bg-gray-200 bg-opacity-70 dark:bg-neutral-800"
               } hover:border-primary-light dark:hover:border-primary-dark transition-transform`}
             >
-              {location.pathname === "/genres" ? (
+              {location.pathname.includes("/genres") ? (
                 <GenresSolidIcon className="active-icon w-5 h-5" />
               ) : (
                 <GenresIcon className="inactive-icon w-5 h-5" />
@@ -254,7 +254,7 @@ const SideBar = () => {
                 className={`whitespace-nowrap font-medium pt-1 ${
                   !menuOpen && "scale-x-0 w-0"
                 } ${
-                  location.pathname !== "/genres" &&
+                  !location.pathname.includes("/genres") &&
                   "text-gray-500 dark:text-neutral-700"
                 } origin-left transition-transform duration-300`}
               >

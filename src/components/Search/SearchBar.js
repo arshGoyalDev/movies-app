@@ -12,9 +12,9 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="relative flex items-center bg-gray-100 dark:bg-neutral-800 rounded-md">
+    <div className="relative flex items-center pl-2 bg-gray-100 dark:bg-neutral-800 rounded-md">
       <button
-        className="ml-2 w-10 h-10 grid place-items-center"
+        className="w-10 h-10 grid place-items-center rounded"
         onClick={showSearchBox}
       >
         <SearchIcon className="icon w-4 h-4" />
