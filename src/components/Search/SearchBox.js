@@ -1,13 +1,13 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { SearchContext } from "../../context";
 
-import { SearchIcon } from "../icons";
+import { SearchIcon, VoiceIcon } from "../icons";
 import searchIllustration from "../../assets/images/search-illustration.svg";
 
 import SearchResults from "./SearchResults";
 
 const SearchBox = () => {
-  const { search, setSearch, searchQuery, setSearchQuery } =
+  const { search, setSearch, searchQuery, setSearchQuery, setVoiceSearch } =
     useContext(SearchContext);
 
   const [startSearch, setStartSearch] = useState(false);
@@ -46,18 +46,18 @@ const SearchBox = () => {
   }, [search]);
 
   return (
-    <>
+    <div
+      className={`fixed z-[10000] inset-0 grid place-items-center ${
+        search ? "opacity-100 visible" : "opacity-0 invisible"
+      } transition-all duration-300`}
+    >
       <div
         onClick={() => setSearch(false)}
-        className={`fixed z-40 top-0 left-0 w-full h-full bg-black bg-opacity-40 dark:bg-opacity-60 transition-opacity duration-300 ${
-          search
-            ? "opacity-100 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
-        }`}
+        className="fixed z-[10020] top-0 left-0 w-full h-full bg-black bg-opacity-40 dark:bg-opacity-60 transition-opacity duration-300"
       ></div>
 
       <div
-        className={`fixed z-50 inset-1/2 -translate-x-1/2 -translate-y-1/2 pt-6 px-6 w-[90%] md:w-[500px] h-max bg-gray-100 dark:bg-neutral-800 rounded-xl ${
+        className={`fixed z-[100000] inset-1/2 -translate-x-1/2 -translate-y-1/2 pt-6 px-6 w-[90%] md:w-[500px] h-max bg-gray-100 dark:bg-neutral-800 rounded-xl ${
           search ? "scale-100" : "scale-0"
         } transition-all duration-300`}
       >
@@ -90,6 +90,15 @@ const SearchBox = () => {
               Search for movies, tv-s...
             </span>
           </div>
+          <button
+            onClick={() => {
+              setSearch(false);
+              setVoiceSearch(true);
+            }}
+            className="w-10 h-10 grid place-items-center rounded mr-2"
+          >
+            <VoiceIcon className="w-4 h-4 icon" />
+          </button>
         </div>
         {startSearch ? (
           <div className="flex flex-col gap-5 mt-6 pb-10 max-h-[360px] overflow-y-auto">
@@ -119,7 +128,7 @@ const SearchBox = () => {
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 };
 

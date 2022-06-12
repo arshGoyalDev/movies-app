@@ -33,6 +33,8 @@ import { ReactComponent as PlaySolidIcon } from "../assets/images/play-solid.svg
 
 import { ReactComponent as CloseIcon } from "../assets/images/close.svg";
 
+import { ReactComponent as VoiceIcon } from "../assets/images/voice.svg";
+
 export {
   HomeIcon,
   HomeSolidIcon,
@@ -56,4 +58,5 @@ export {
   ArrowLeftIcon,
   PlaySolidIcon,
   CloseIcon,
+  VoiceIcon,
 };

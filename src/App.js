@@ -3,17 +3,21 @@ import { useContext, useEffect, useState } from "react";
 import "./App.css";
 import "./components.css";
 
+import { SearchContext, SideMenuContext } from "./context";
+
 import { useLocation } from "react-router-dom";
 
 import Routes from "./Routes";
 
 import { SideBar, NavBar, BottomNav } from "./components/sections";
-import { SideMenuContext } from "./context";
-import { SearchBox } from "./components/Search";
+import { SearchBox, VoiceSearch } from "./components/Search";
 
 const App = () => {
   const { menuOpen } = useContext(SideMenuContext);
+  const { voiceSearch } = useContext(SearchContext);
+
   const location = useLocation();
+
   const [hidden, setHidden] = useState(true);
 
   useEffect(() => {
@@ -52,6 +56,7 @@ const App = () => {
           </section>
 
           <SearchBox />
+          {voiceSearch && <VoiceSearch />}
         </main>
       ) : (
         <main>

@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import { SearchContext } from "../../context";
 
-import { SearchIcon } from "../icons";
+import { SearchIcon, VoiceIcon } from "../icons";
 
 const SearchBar = () => {
-  const { setSearch, searchQuery, setSearchQuery } = useContext(SearchContext);
+  const { setSearch, searchQuery, setSearchQuery, setVoiceSearch } =
+    useContext(SearchContext);
 
   const showSearchBox = () => {
     if (searchQuery.replaceAll(" ", "").length === 0) return;
@@ -39,6 +40,12 @@ const SearchBar = () => {
           Search for movies, tv-shows or people
         </span>
       </div>
+      <button
+        onClick={() => setVoiceSearch(true)}
+        className="w-10 h-10 grid place-items-center rounded mr-2"
+      >
+        <VoiceIcon className="w-4 h-4 icon" />
+      </button>
     </div>
   );
 };
