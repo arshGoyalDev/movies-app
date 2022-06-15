@@ -11,7 +11,7 @@ const BackdropCard = ({ data }) => {
           ? navigate(`/movies/${data.id}`)
           : navigate(`/tv-shows/${data.id}`)
       }
-      className="relative min-w-[300px] h-44 rounded-2xl cursor-pointer overflow-hidden"
+      className="relative min-w-[252px] h-36  lg:min-w-[300px] lg:h-44 rounded-2xl cursor-pointer overflow-hidden"
     >
       <div className="absolute z-[1] grid place-items-center bg-gray-200 dark:bg-neutral-800 w-full h-full rounded-lg overflow-hidden">
         {data.backdrop_path ? (

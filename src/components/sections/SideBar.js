@@ -31,7 +31,7 @@ const SideBar = () => {
     <div
       className={`fixed hidden xl:flex h-screen flex-col ${
         menuOpen ? "w-72" : "w-20"
-      } py-6 border-r-2 border-solid border-gray-300 dark:border-neutral-800 transition-[width] duration-300`}
+      } py-6 border-r-2 border-solid border-gray-100 dark:border-neutral-800 transition-[width] duration-300`}
     >
       <div
         className={`flex items-center gap-4 h-10 ${

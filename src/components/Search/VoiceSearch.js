@@ -59,7 +59,7 @@ const VoiceSearch = () => {
 
       <div className="fixed z-[100000] inset-1/2 -translate-x-1/2 -translate-y-1/2 py-10 px-6 w-[90%] md:w-[500px] h-max bg-gray-100 dark:bg-neutral-900 rounded-xl transition-all duration-300">
         <div className="flex items-center justify-center">
-          <div className="grid place-items-center py-8 px-8 bg-neutral-800 animate-pulse rounded-full">
+          <div className="grid place-items-center py-8 px-8 bg-neutral-300 dark:bg-neutral-800 animate-pulse rounded-full">
             <VoiceIcon className="w-20 h-20 icon" />
           </div>
         </div>
