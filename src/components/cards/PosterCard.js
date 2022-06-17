@@ -1,17 +1,12 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { ImageIcon, StarSolidIcon } from "../icons";
 
 const PosterCard = ({ data }) => {
-  const navigate = useNavigate();
   return (
-    <div
-      onClick={() =>
-        data.title
-          ? navigate(`/movies/${data.id}`)
-          : navigate(`/tv-shows/${data.id}`)
-      }
-      className="relative min-w-[150px] sm:min-w-[160px] h-56 sm:h-60 rounded-xl cursor-pointer overflow-hidden"
+    <Link
+      to={data.title ? `/movies/${data.id}` : `/tv-shows/${data.id}`}
+      className="relative min-w-[150px] sm:min-w-[160px] h-56 sm:h-60 rounded-xl cursor-pointer overflow-hidden focus:outline-none"
     >
       <div className="absolute z-[1] grid place-items-center bg-gray-200 dark:bg-neutral-800 w-full h-full rounded-lg overflow-hidden">
         {data.poster_path ? (
@@ -56,7 +51,7 @@ const PosterCard = ({ data }) => {
           )}
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

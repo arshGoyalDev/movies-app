@@ -1,14 +1,12 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { UserIcon } from "../icons";
 
 const PersonCard = ({ data }) => {
-  const navigate = useNavigate();
-
   return (
-    <div
-      onClick={() => navigate(`/people/${data.id}`)}
-      className="relative min-w-[120px] lg:min-w-[150px] h-40 lg:h-48 bg-gray-300 dark:bg-neutral-800 rounded-lg overflow-hidden cursor-pointer"
+    <Link
+      to={`/people/${data.id}`}
+      className="relative min-w-[120px] lg:min-w-[150px] h-40 lg:h-48 bg-gray-300 dark:bg-neutral-800 rounded-lg overflow-hidden cursor-pointer focus:outline-none"
     >
       <div className="absolute z-[1] grid place-items-center w-full h-full">
         {data.profile_path ? (
@@ -36,7 +34,7 @@ const PersonCard = ({ data }) => {
           </h4>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

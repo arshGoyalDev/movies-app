@@ -3,8 +3,6 @@ import { useNavigate } from "react-router-dom";
 const GenresList = ({ type, list, loading, activeGenre }) => {
   const navigate = useNavigate();
 
-  console.log(activeGenre);
-
   return (
     <>
       {loading ? (
