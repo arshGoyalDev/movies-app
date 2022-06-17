@@ -42,9 +42,19 @@ const TrendingLarge = ({
                 <div className="max-w-lg flex flex-wrap items-center gap-2 mt-4">
                   {data[activeNum].genre_ids.map((id) =>
                     data[activeNum].title ? (
-                      <Genre key={id} genreId={id} list={movieGenresList} />
+                      <Genre
+                        key={id}
+                        genreId={id}
+                        list={movieGenresList}
+                        type="movie"
+                      />
                     ) : (
-                      <Genre key={id} genreId={id} list={tvGenresList} />
+                      <Genre
+                        key={id}
+                        genreId={id}
+                        list={tvGenresList}
+                        type="tv"
+                      />
                     )
                   )}
                 </div>

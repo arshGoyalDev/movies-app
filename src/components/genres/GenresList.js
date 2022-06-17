@@ -1,7 +1,9 @@
 import { useNavigate } from "react-router-dom";
 
-const GenresList = ({ type, list, loading, activeGenre, setActiveGenre }) => {
+const GenresList = ({ type, list, loading, activeGenre }) => {
   const navigate = useNavigate();
+
+  console.log(activeGenre);
 
   return (
     <>
@@ -29,11 +31,10 @@ const GenresList = ({ type, list, loading, activeGenre, setActiveGenre }) => {
               <button
                 key={item.id}
                 onClick={() => {
-                  setActiveGenre(item.id + type);
                   navigate(`/genres/${type}/${item.id}`);
                 }}
                 className={`font-medium py-2 px-4  ${
-                  activeGenre === item.id + type
+                  activeGenre === `/${type}/${item.id}`
                     ? "text-white dark:text-black bg-neutral-700 dark:bg-neutral-300"
                     : "bg-neutral-200 dark:bg-neutral-800"
                 } rounded-md`}

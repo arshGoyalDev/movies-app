@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 
-const Genre = ({ genreId, list }) => {
+import { Link } from "react-router-dom";
+
+const Genre = ({ genreId, list, type }) => {
   const [output, setOutput] = useState("");
 
   useEffect(() => {
@@ -14,9 +16,11 @@ const Genre = ({ genreId, list }) => {
   }, []);
 
   return (
-    <div className="text-white text-sm py-1 px-3 bg-neutral-800 rounded-3xl">
-      {output}
-    </div>
+    <Link to={`/genres/${type}/${genreId}`}>
+      <div className="text-white text-sm py-1 px-3 bg-neutral-800 rounded-3xl">
+        {output}
+      </div>
+    </Link>
   );
 };
 
