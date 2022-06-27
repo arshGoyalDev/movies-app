@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useFetch } from "../hooks";
 
-import { Outlet, useNavigate, useParams } from "react-router-dom";
+import { Link, Outlet, useNavigate, useParams } from "react-router-dom";
 
 import { convertMinsToHrsMins, modifyDate } from "../utils/time";
 
@@ -47,7 +47,9 @@ const Details = ({ type }) => {
       ) : (
         <main className="relative flex flex-col items-center h-screen pt-20 lg:pt-40 pb-40 lg:pb-72 lg:px-20 2xl:px-48 overflow-auto">
           <button
-            onClick={() => navigate(-1)}
+            onClick={() => {
+              navigate(-1);
+            }}
             className="absolute top-10 lg:top-16 left-10 md:left-28 lg:left-20 2xl:left-48 flex items-center w-10 h-10 pl-2.5 bg-gray-200 dark:bg-neutral-800 rounded-full"
           >
             <ArrowLeftIcon className="w-4 h-4 icon" />
@@ -98,12 +100,13 @@ const Details = ({ type }) => {
 
               <div className="flex flex-wrap gap-2 mt-2 md:mt-4">
                 {data.genres.map((genre) => (
-                  <div
+                  <Link
+                    to={`/genres/${type}/${genre.id}`}
                     key={genre.id}
                     className="text-sm py-1 px-3 bg-gray-200 dark:bg-neutral-800 rounded-3xl"
                   >
                     {genre.name}
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>
