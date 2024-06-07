@@ -23,9 +23,6 @@ A app to show data about popular, trending, upcoming movies & tv shows and much 
 - [React.js](https://reactjs.org) - JS Library
 - [Tailwind CSS](https://tailwindcss.com) - CSS Framework
 
-<!-- ### Links -->
-
-<!-- - [Live Site](https://movies-app-bay-rho.vercel.app) -->
 
 ### Run Locally
 
