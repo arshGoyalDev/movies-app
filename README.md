@@ -1,3 +1,7 @@
+# App Not Working
+
+TMDB API not working in INDIA!
+
 # Movies App
 
 A app to show data about popular, trending, upcoming movies & tv shows and much more.
@@ -14,7 +18,7 @@ A app to show data about popular, trending, upcoming movies & tv shows and much 
 - details about movies & tv-shows like cast, crew, videos, overview and more
 - view cast or crew details
 
-### Made with 
+### Made with
 
 - [React.js](https://reactjs.org) - JS Library
 - [Tailwind CSS](https://tailwindcss.com) - CSS Framework
@@ -30,7 +34,6 @@ $ yarn install && yarn start
 ```
 
 <br>
-
 
 View [demo](https://movies-info-xi.vercel.app) <br>
 Made with ❤️ by Arsh
