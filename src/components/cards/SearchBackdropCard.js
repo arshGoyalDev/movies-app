@@ -18,7 +18,7 @@ const SearchBackdropCard = ({ data }) => {
           : navigate(`/tv-shows/${data.id}`);
         setSearch(false);
       }}
-      className="relative min-w-[240px] h-32 bg-gray-100 dark:bg-neutral-700 rounded-xl cursor-pointer overflow-hidden"
+      className="relative min-w-[240px] xl:min-w-[280px] h-32 xl:h-40 bg-gray-100 dark:bg-neutral-800 rounded-xl cursor-pointer overflow-hidden"
     >
       <div className="absolute z-[1] w-full h-full grid place-items-center">
         {data.backdrop_path ? (

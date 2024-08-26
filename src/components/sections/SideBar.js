@@ -40,13 +40,11 @@ const SideBar = () => {
       >
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className={`w-8 h-8 flex items-center justify-center flex-col gap-1.5 rounded-sm ${
-            !menuOpen && "px-2"
-          }`}
+          className="w-10 flex justify-center flex-col gap-[6px] rounded-sm"
         >
-          <span className="block w-6 h-0.5 bg-black dark:bg-white"></span>
-          <span className="block w-6 h-0.5 bg-black dark:bg-white"></span>
-          <span className="block w-6 h-0.5 bg-black dark:bg-white"></span>
+          <span className="block w-10 h-1 bg-black dark:bg-white"></span>
+          <span className="block w-8 h-1 bg-black dark:bg-white"></span>
+          <span className="block w-6 h-1 bg-black dark:bg-white"></span>
         </button>
         <Link to="/">
           <p
