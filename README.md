@@ -1,7 +1,3 @@
-# App Not Working
-
-TMDB API not working in INDIA!
-
 # Movies App
 
 A app to show data about popular, trending, upcoming movies & tv shows and much more.
