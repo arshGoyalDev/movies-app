@@ -7,8 +7,8 @@ const SearchResults = ({ heading, loading, data }) => {
     <>
       {loading ? (
         <div>
-          <div className="animate-skeleton-search ml-6 xl:ml-8 w-40 h-5 rounded-md"></div>
-          <div className="flex gap-4 mt-3 overflow-auto px-6 xl:px-8">
+          <div className="animate-skeleton-search ml-6 xl:ml-9 w-40 h-5 rounded-md"></div>
+          <div className="flex gap-4 mt-3 overflow-auto px-6 xl:px-9">
             {loadingArray.map((item) =>
               heading === "People" ? (
                 <div
@@ -28,8 +28,8 @@ const SearchResults = ({ heading, loading, data }) => {
         <>
           {data.length !== 0 && (
             <div>
-              <h3 className="text-xl font-medium px-6 capitalize">{heading}</h3>
-              <div className="flex gap-3 pr-10 mt-3 overflow-x-auto px-6 xl:px-8">
+              <h3 className="text-xl font-medium px-6 xl:px-9 capitalize">{heading}</h3>
+              <div className="flex gap-3 pr-10 mt-3 overflow-x-auto px-6 xl:px-9">
                 {heading === "People" ? (
                   data.map((itemData) => (
                     <SearchPersonCard key={itemData.id} data={itemData} />

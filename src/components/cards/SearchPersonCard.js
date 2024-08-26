@@ -16,7 +16,7 @@ const SearchPersonCard = ({ data }) => {
         navigate(`/people/${data.id}`);
         setSearch(false);
       }}
-      className="relative min-w-[130px] h-44 bg-gray-100 dark:bg-neutral-800 rounded-xl overflow-hidden cursor-pointer"
+      className="relative min-w-[130px] xl:min-w-[150px] h-44 xl:h-48 bg-gray-100 dark:bg-neutral-800 rounded-xl overflow-hidden cursor-pointer"
     >
       <div className="absolute z-[1] grid place-items-center w-full h-full">
         {data.profile_path ? (
