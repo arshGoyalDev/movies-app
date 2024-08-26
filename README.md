@@ -2,10 +2,6 @@
 
 A app to show data about popular, trending, upcoming movies & tv shows and much more.
 
-<!-- <a href="https://movies-app-eta-ten.vercel.app/movie">
-  <img src="screenshot.png" alt="screenshot" />
-</a> -->
-
 ### Features
 
 - upcoming, trending, popular and top-rated movies & tv-shows
