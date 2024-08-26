@@ -35,16 +35,16 @@ const SideBar = () => {
     >
       <div
         className={`flex items-center gap-4 h-10 ${
-          menuOpen ? "gap-4 px-6" : "px-[26px] gap-0"
+          menuOpen ? "gap-4 px-6" : "px-[19px] gap-0"
         } transition-transform duration-300`}
       >
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="w-10 flex justify-center flex-col gap-[6px] rounded-sm"
+          className="w-9 flex justify-center flex-col gap-[6px] rounded-sm"
         >
-          <span className="block w-10 h-1 bg-black dark:bg-white"></span>
-          <span className="block w-8 h-1 bg-black dark:bg-white"></span>
-          <span className="block w-6 h-1 bg-black dark:bg-white"></span>
+          <span className="block w-9 h-[4px] bg-black dark:bg-white"></span>
+          <span className="block w-9 h-[4px] bg-black dark:bg-white"></span>
+          <span className="block w-5 h-[4px] bg-black dark:bg-white"></span>
         </button>
         <Link to="/">
           <p

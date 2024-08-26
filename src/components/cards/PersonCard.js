@@ -6,7 +6,7 @@ const PersonCard = ({ data }) => {
   return (
     <Link
       to={`/people/${data.id}`}
-      className="relative min-w-[120px] lg:min-w-[150px] h-40 lg:h-48 bg-gray-300 dark:bg-neutral-800 rounded-lg overflow-hidden cursor-pointer focus:outline-none"
+      className="relative min-w-[120px] lg:min-w-[150px] h-40 lg:h-48 2xl:min-w-[170px] 2xl:h-60 bg-gray-300 dark:bg-neutral-800 rounded-lg xl:rounded-xl overflow-hidden cursor-pointer focus:outline-none"
     >
       <div className="absolute z-[1] grid place-items-center w-full h-full">
         {data.profile_path ? (
@@ -23,7 +23,11 @@ const PersonCard = ({ data }) => {
       <div
         className={`absolute z-[2] flex flex-col justify-end w-full h-full p-2 ${
           data.profile_path ? "bg-black" : ""
-        } ${data.profile_path ? "bg-opacity-10" : "bg-opacity-60"}`}
+        } ${
+          data.profile_path
+            ? "bg-opacity-10 dark:bg-opacity-25"
+            : "bg-opacity-60"
+        }`}
       >
         <div className="flex items-end py-2 px-3 bg-black bg-opacity-30 backdrop-blur-2xl rounded-lg">
           <h4 className="lg:hidden font-medium text-white break-words">

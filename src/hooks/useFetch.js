@@ -8,7 +8,9 @@ function useFetch(restPart, value) {
       const res = await fetch(
         `https://api.themoviedb.org/3/${restPart}api_key=${process.env.REACT_APP_API_KEY}`
       );
+
       const fetchData = await res.json();
+      console.log(fetchData);
       setData(value ? fetchData[value] : fetchData);
     };
 

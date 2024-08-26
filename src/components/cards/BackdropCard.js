@@ -24,7 +24,7 @@ const BackdropCard = ({ data }) => {
         className={`absolute z-[2] flex flex-col ${
           data.vote_average !== 0 ? "justify-between" : "justify-end"
         } w-full h-full ${data.backdrop_path ? "bg-black" : ""} ${
-          data.backdrop_path ? "bg-opacity-30" : "bg-opacity-60"
+          data.backdrop_path ? "bg-opacity-5 dark:bg-opacity-20" : "bg-opacity-20 dark:bg-opacity-40"
         }`}
       >
         {data.vote_average !== 0 && (
@@ -35,7 +35,7 @@ const BackdropCard = ({ data }) => {
             </span>
           </div>
         )}
-        <div className="py-3 px-4 bg-black bg-opacity-30 backdrop-blur-2xl mb-2 mx-2 rounded-xl">
+        <div className="py-3 px-4 bg-black bg-opacity-20 dark:bg-opacity-30 backdrop-blur-2xl mb-2 mx-2 rounded-xl">
           {data.title ? (
             <h4 className="font-medium text-white">
               {data.title.length > 20

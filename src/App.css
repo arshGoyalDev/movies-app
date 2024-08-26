@@ -28,15 +28,9 @@ body {
 /* extras */
 
 /* selection */
+
 ::selection {
   @apply text-black dark:text-white bg-gray-200 dark:bg-neutral-700;
 }
-
-/* focus */
-
-*:focus {
-  @apply outline outline-2 outline-neutral-700 dark:outline-gray-300;
-}
-
 
 /* ----------------- */

@@ -53,11 +53,11 @@ const GenreResults = () => {
       {loading ? (
         <div className="mt-10 px-6 md:px-16 xl:pr-24 xl:pl-10">
           <div className="w-52 h-6 rounded-md animate-skeleton"></div>
-          <div className="flex flex-wrap gap-3 mt-5">
+          <div className="flex flex-wrap gap-5 mt-5">
             {loadingArray.map((item) => (
               <div
                 key={item}
-                className="relative min-w-[150px] sm:min-w-[170px] h-56 sm:h-60 rounded-xl animate-skeleton"
+                className="relative min-w-[150px] sm:min-w-[170px] 2xl:min-w-[190px] h-56 sm:h-60 2xl:h-72 rounded-xl animate-skeleton"
               ></div>
             ))}
           </div>

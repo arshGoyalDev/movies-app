@@ -61,7 +61,7 @@ const TrendingPeopleLarge = ({ loading, data, activeNum }) => {
 
               <button
                 onClick={() => navigate(`/people/${data[activeNum].id}`)}
-                className="text-sm xl:text-base text-black font-bold py-2 px-5 bg-primary-light dark:bg-primary-dark hover:bg-[#FFB640] rounded mt-4 transition-colors"
+                className="text-sm xl:text-base font-bold py-2 px-4 bg-black bg-opacity-5 dark:bg-opacity-20 backdrop-blur-md rounded mt-4 transition-colors"
               >
                 More
               </button>

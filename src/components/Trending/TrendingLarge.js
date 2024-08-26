@@ -27,7 +27,7 @@ const TrendingLarge = ({
               className="w-full h-full lg:w-[75%]"
             />
           </div>
-          <div className="background absolute z-[2] flex items-end p-4 md:p-8 lg:p-12 w-full h-full text-white bg-black bg-opacity-50 xl:bg-opacity-20">
+          <div className="background absolute z-[2] flex items-end p-4 md:p-8 lg:p-12 w-full h-full text-white bg-black xl:bg-opacity-0 dark:bg-opacity-20">
             <div className="w-full flex md:flex-col md:gap-4 xl:gap-6 items-end md:items-start justify-between">
               <div>
                 <h2 className="max-w-[160px] md:max-w-[500px] md:font-semibold md:text-3xl lg:text-[2.5rem] font-medium">
@@ -65,7 +65,7 @@ const TrendingLarge = ({
                     ? navigate(`/movies/${data[activeNum].id}`)
                     : navigate(`/tv-shows/${data[activeNum].id}`)
                 }
-                className="text-sm xl:text-base text-black font-bold py-2 px-5 bg-primary-light dark:bg-primary-dark hover:bg-[#FFB640] rounded transition-colors"
+                className="text-sm xl:text-base text-white font-bold py-2 px-5 bg-black bg-opacity-10 backdrop-blur-lg rounded transition-colors"
               >
                 More
               </button>

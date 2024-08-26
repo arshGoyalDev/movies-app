@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
+import { UserIcon } from "../icons";
+
 const TrendingMobile = ({ loading, data, activeNum, setActiveNum, type }) => {
   const navigate = useNavigate();
 
@@ -50,17 +52,28 @@ const TrendingMobile = ({ loading, data, activeNum, setActiveNum, type }) => {
             }}
             className="absolute left-1/2 -translate-x-1/2 min-w-[220px] h-max"
           >
-            <div className="w-full h-80 bg-neutral-200 dark:bg-neutral-800 rounded-2xl shadow-2xl shadow-gray-400 dark:shadow-neutral-800 overflow-hidden">
-              <img
-                loading="lazy"
-                src={`https://image.tmdb.org/t/p/w500${
-                  type !== "people"
-                    ? data[activeNum]?.poster_path
-                    : data[activeNum]?.profile_path
-                }`}
-                alt={data[activeNum].title ?? data[activeNum].name}
-                className="w-full h-full"
-              />
+            <div className="w-full grid place-content-center h-80 bg-neutral-200 dark:bg-neutral-800 rounded-2xl shadow-2xl shadow-gray-400 dark:shadow-neutral-800 overflow-hidden">
+              {type !== "people" ? (
+                <img
+                  loading="lazy"
+                  src={`https://image.tmdb.org/t/p/w500${data[activeNum]?.poster_path}`}
+                  alt={data[activeNum].title ?? data[activeNum].name}
+                  className="w-full h-full"
+                />
+              ) : (
+                <>
+                  {data[activeNum].profile_path ? (
+                    <img
+                      loading="lazy"
+                      src={`https://image.tmdb.org/t/p/w500${data[activeNum].profile_path}`}
+                      alt="backdrop"
+                      className="w-full h-full"
+                    />
+                  ) : (
+                    <UserIcon className="w-28 h-28 icon" />
+                  )}
+                </>
+              )}
             </div>
 
             <div className="mt-4">
