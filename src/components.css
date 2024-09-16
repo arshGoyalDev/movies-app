@@ -53,35 +53,33 @@
 /* trending */
 
 @media (min-width: 1640px) {
-  .trending {
-    height: 600px;
-  }
+  /* .trending {
+    /* height: 600px; */
+  /* } */
 
   .trending h2 {
     @apply text-5xl;
     max-width: 600px;
   }
 
-  .trending .background {
+  /* .trending .background {
     @apply p-20;
-  }
+  } */
 }
 
 .trending h2 {
-  line-height: 3rem;
+  @apply lg:leading-snug;
 }
 
 /* background */
 
-@media (min-width: 1024px) {
-  .background {
-    background-image: linear-gradient(
-      to right,
-      #000 8%,
-      rgba(0, 0, 0, 0) 60%,
-      #000 100%
-    );
-  }
+.background {
+  background-image: linear-gradient(
+    to right,
+    #000 8%,
+    rgba(0, 0, 0, 0) 60%,
+    #000 100%
+  );
 }
 
 /* trending people */
