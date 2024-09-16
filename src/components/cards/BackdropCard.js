@@ -6,7 +6,7 @@ const BackdropCard = ({ data }) => {
   return (
     <Link
       to={data.title ? `/movies/${data.id}` : `/tv-shows/${data.id}`}
-      className="relative min-w-[252px] h-36  lg:min-w-[300px] lg:h-44 rounded-2xl cursor-pointer overflow-hidden focus:outline-none"
+      className="relative min-w-[252px] h-36 lg:min-w-[340px] lg:h-48 rounded-2xl cursor-pointer overflow-hidden focus:outline-none"
     >
       <div className="absolute z-[1] grid place-items-center bg-gray-200 dark:bg-neutral-800 w-full h-full rounded-lg overflow-hidden">
         {data.backdrop_path ? (

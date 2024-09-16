@@ -10,15 +10,15 @@ const TrendingPeopleLarge = ({ loading, data, activeNum }) => {
   return (
     <div className="hidden sm:block">
       {loading ? (
-        <div className="animate-skeleton trending hidden sm:block h-40 sm:h-72 lg:h-[420px] mx-5 md:mx-16 xl:mr-16 xl:ml-10 rounded-3xl"></div>
+        <div className="animate-skeleton trending hidden sm:block h-40 sm:h-72 lg:h-96 2xl:h-[600px] mx-5 md:mx-16 xl:mr-16 xl:ml-10 rounded-3xl"></div>
       ) : (
         <>
-          <div className="hidden sm:flex items-center h-40 sm:h-72 lg:h-[420px] mx-5 md:mx-16 xl:mr-16 xl:ml-10 bg-gray-100 dark:bg-neutral-800 rounded-2xl lg:rounded-3xl overflow-hidden">
-            <div className="grid place-items-center h-full min-w-[192px] max-w-[192px] lg:min-w-[280px] lg:max-w-[280px] bg-gray-200 dark:bg-neutral-700">
+          <div className="hidden sm:flex items-center h-40 sm:h-72 lg:h-96 2xl:h-[600px] mx-5 md:mx-16 xl:mr-16 xl:ml-10 bg-gray-100 dark:bg-neutral-800 rounded-2xl lg:rounded-3xl overflow-hidden">
+            <div className="grid place-items-center h-full min-w-[192px] max-w-[192px] lg:min-w-[280px] lg:max-w-[280px] 2xl:w-[400px] 2xl:max-w-[400px] bg-gray-200 dark:bg-neutral-700">
               {data[activeNum].profile_path ? (
                 <img
                   loading="lazy"
-                  src={`https://image.tmdb.org/t/p/w500${data[activeNum].profile_path}`}
+                  src={`https://image.tmdb.org/t/p/original${data[activeNum].profile_path}`}
                   alt="backdrop"
                   className="h-full"
                 />
@@ -27,8 +27,10 @@ const TrendingPeopleLarge = ({ loading, data, activeNum }) => {
               )}
             </div>
             <div className="trending-people-info px-8 lg:px-14">
-              <h1 className="text-3xl font-bold">{data[activeNum].name}</h1>
-              <div className="flex flex-col gap-4 mt-3">
+              <h1 className="lg:text-3xl 2xl:text-5xl font-bold">
+                {data[activeNum].name}
+              </h1>
+              <div className="flex flex-col gap-4 mt-5">
                 <div className="flex gap-3 items-center">
                   <h3 className="font-bold text-gray-400 dark:text-neutral-600">
                     Known For
@@ -37,22 +39,10 @@ const TrendingPeopleLarge = ({ loading, data, activeNum }) => {
                     {data[activeNum].known_for_department}
                   </span>
                 </div>
-                <div className="flex gap-3 items-center">
-                  <h3 className="font-bold text-gray-400 dark:text-neutral-600">
-                    Popularity
-                  </h3>
-                  <span className="font-medium">
-                    {data[activeNum].popularity.toFixed(1)}
-                  </span>
-                </div>
               </div>
 
               <div className="hidden lg:block mt-5">
-                <h3 className="font-bold text-gray-400 dark:text-neutral-600">
-                  Some works
-                </h3>
-
-                <div className="flex gap-3 w-full pr-10 mt-2 overflow-auto">
+                <div className="flex gap-3 w-full pr-10 mt-3 overflow-auto">
                   {data[activeNum].known_for.map((item) => (
                     <SearchBackdropCard key={item.id} data={item} />
                   ))}
