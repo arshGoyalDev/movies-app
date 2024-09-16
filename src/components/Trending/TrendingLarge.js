@@ -1,4 +1,3 @@
-import { Genre } from "../genres";
 import TrendingOrder from "./TrendingOrder";
 
 import { useNavigate } from "react-router-dom";

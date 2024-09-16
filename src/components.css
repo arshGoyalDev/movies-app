@@ -53,18 +53,10 @@
 /* trending */
 
 @media (min-width: 1640px) {
-  /* .trending {
-    /* height: 600px; */
-  /* } */
-
   .trending h2 {
     @apply text-5xl;
     max-width: 600px;
   }
-
-  /* .trending .background {
-    @apply p-20;
-  } */
 }
 
 .trending h2 {
