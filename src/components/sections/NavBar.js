@@ -14,7 +14,7 @@ const NavBar = () => {
 
   return (
     <nav
-      className={`flex items-center justify-between w-full py-6 px-6 md:px-16 ${
+      className={`flex items-center justify-between w-full pt-6 pb-10 px-6 md:px-16 ${
         menuOpen ? "xl:px-16" : "xl:pr-16 xl:pl-10"
       }`}
     >
