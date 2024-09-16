@@ -35,16 +35,16 @@ const SideBar = () => {
     >
       <div
         className={`flex items-center gap-4 h-10 ${
-          menuOpen ? "gap-4 px-6" : "px-[19px] gap-0"
+          menuOpen ? "gap-4 px-6" : "px-[24px] gap-0"
         } transition-transform duration-300`}
       >
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="w-9 flex justify-center flex-col gap-[6px] rounded-sm"
+          className="w-7 flex justify-center flex-col gap-[6px] rounded-sm"
         >
-          <span className="block w-9 h-[4px] bg-black dark:bg-white"></span>
-          <span className="block w-9 h-[4px] bg-black dark:bg-white"></span>
-          <span className="block w-5 h-[4px] bg-black dark:bg-white"></span>
+          <span className="block w-7 h-[2px] bg-black dark:bg-white rounded-full"></span>
+          <span className="block w-5 h-[2px] bg-black dark:bg-white rounded-full"></span>
+          <span className="block w-7 h-[2px] bg-black dark:bg-white rounded-full"></span>
         </button>
         <Link to="/">
           <p
@@ -52,7 +52,7 @@ const SideBar = () => {
               !menuOpen && "scale-x-0 w-0"
             } origin-left transition-transform duration-300`}
           >
-            Movies.info
+            movies.info
           </p>
         </Link>
       </div>
