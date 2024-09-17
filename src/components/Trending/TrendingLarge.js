@@ -9,10 +9,10 @@ const TrendingLarge = ({ loading, data, activeNum, setActiveNum }) => {
     <div className="relative hidden sm:block h-[90vw] md:h-[74vw] xl:h-[55vw] mt-10 overflow-hidden">
       {loading ? (
         <>
-          <div className="animate-skeleton absolute -translate-x-[75%] translate-y-16 min-w-[200px] h-[300px] -rotate-6 rounded-2xl"></div>
-          <div className="animate-skeleton absolute left-1/2 -translate-x-1/2 min-w-[220px] h-80 rounded-2xl"></div>
-          <div className="animate-skeleton absolute top-[336px] left-1/2 -translate-x-1/2 min-w-[200px] h-6 rounded-md"></div>
-          <div className="animate-skeleton absolute right-0 translate-x-[75%] translate-y-16 min-w-[200px] h-[300px] rotate-6 rounded-2xl"></div>
+          <div className="animate-skeleton absolute -translate-x-[75%] translate-y-[10vw] min-w-[300px] h-[440px] -rotate-6 rounded-2xl"></div>
+          <div className="animate-skeleton absolute left-1/2 -translate-x-1/2 w-[80%] h-[39vw] rounded-2xl"></div>
+          <div className="animate-skeleton absolute top-[41vw] left-1/2 -translate-x-1/2 min-w-[360px] h-12 rounded-md"></div>
+          <div className="animate-skeleton absolute right-0 translate-x-[75%] translate-y-[10vw] min-w-[300px] h-[440px] rotate-6 rounded-2xl"></div>
         </>
       ) : (
         <>
