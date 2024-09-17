@@ -9,7 +9,7 @@ const ImagesList = ({ imagesList }) => {
             className="min-w-[140px] max-w-[140px] rounded-lg overflow-hidden"
           >
             <img
-              src={`https://image.tmdb.org/t/p/w500${image.file_path}`}
+              src={`https://image.tmdb.org/t/p/original${image.file_path}`}
               alt={image.file_path}
             />
           </div>

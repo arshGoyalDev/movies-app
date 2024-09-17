@@ -12,7 +12,7 @@ const BackdropCard = ({ data }) => {
         {data.backdrop_path ? (
           <img
             loading="lazy"
-            src={`https://image.tmdb.org/t/p/w500${data.backdrop_path}`}
+            src={`https://image.tmdb.org/t/p/original${data.backdrop_path}`}
             alt={data.name}
             className="w-full h-full rounded-lg"
           />

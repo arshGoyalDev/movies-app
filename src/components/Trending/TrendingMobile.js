@@ -25,12 +25,12 @@ const TrendingMobile = ({ loading, data, activeNum, setActiveNum, type }) => {
                 loading="lazy"
                 src={
                   type !== "people"
-                    ? `https://image.tmdb.org/t/p/w500${
+                    ? `https://image.tmdb.org/t/p/original${
                         activeNum !== 0
                           ? data[activeNum - 1]?.poster_path
                           : data[15]?.poster_path
                       }`
-                    : `https://image.tmdb.org/t/p/w500${
+                    : `https://image.tmdb.org/t/p/original${
                         activeNum !== 0
                           ? data[activeNum - 1]?.profile_path
                           : data[15]?.profile_path
@@ -56,7 +56,7 @@ const TrendingMobile = ({ loading, data, activeNum, setActiveNum, type }) => {
               {type !== "people" ? (
                 <img
                   loading="lazy"
-                  src={`https://image.tmdb.org/t/p/w500${data[activeNum]?.poster_path}`}
+                  src={`https://image.tmdb.org/t/p/original${data[activeNum]?.poster_path}`}
                   alt={data[activeNum].title ?? data[activeNum].name}
                   className="w-full h-full"
                 />
@@ -65,7 +65,7 @@ const TrendingMobile = ({ loading, data, activeNum, setActiveNum, type }) => {
                   {data[activeNum].profile_path ? (
                     <img
                       loading="lazy"
-                      src={`https://image.tmdb.org/t/p/w500${data[activeNum].profile_path}`}
+                      src={`https://image.tmdb.org/t/p/original${data[activeNum].profile_path}`}
                       alt="backdrop"
                       className="w-full h-full"
                     />
@@ -97,12 +97,12 @@ const TrendingMobile = ({ loading, data, activeNum, setActiveNum, type }) => {
                 loading="lazy"
                 src={
                   type !== "people"
-                    ? `https://image.tmdb.org/t/p/w500${
+                    ? `https://image.tmdb.org/t/p/original${
                         activeNum !== 15
                           ? data[activeNum + 1]?.poster_path
                           : data[0]?.poster_path
                       }`
-                    : `https://image.tmdb.org/t/p/w500${
+                    : `https://image.tmdb.org/t/p/original${
                         activeNum !== 15
                           ? data[activeNum + 1]?.profile_path
                           : data[0]?.profile_path

@@ -10,7 +10,6 @@ function useFetch(restPart, value) {
       );
 
       const fetchData = await res.json();
-      console.log(fetchData);
       setData(value ? fetchData[value] : fetchData);
     };
 

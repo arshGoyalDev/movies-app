@@ -33,13 +33,20 @@ const Trending = ({ type }) => {
 
   return (
     <div className="mb-6 md:mb-10">
-      <TrendingLarge
+      {/* <TrendingLarge
         loading={loading}
         data={data}
         activeNum={activeNum}
         setActiveNum={setActiveNum}
         movieGenresList={movieGenresList}
         tvGenresList={tvGenresList}
+      /> */}
+
+      <TrendingLarge
+        loading={loading}
+        data={data}
+        activeNum={activeNum}
+        setActiveNum={setActiveNum}
       />
 
       <TrendingMobile

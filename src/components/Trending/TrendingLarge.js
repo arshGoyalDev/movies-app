@@ -1,73 +1,107 @@
-import TrendingOrder from "./TrendingOrder";
-
 import { useNavigate } from "react-router-dom";
 
-const TrendingLarge = ({
-  loading,
-  data,
-  activeNum,
-  setActiveNum,
-  movieGenresList,
-  tvGenresList,
-}) => {
+import { ImageIcon } from "../icons";
+
+const TrendingLarge = ({ loading, data, activeNum, setActiveNum }) => {
   const navigate = useNavigate();
 
   return (
-    <>
+    <div className="relative hidden sm:block h-[90vw] md:h-[74vw] xl:h-[55vw] mt-10 overflow-hidden">
       {loading ? (
-        <div className="animate-skeleton trending hidden sm:block h-40 sm:h-72 lg:h-96 2xl:h-[600px] mx-5 md:mx-16 xl:mr-16 xl:ml-10 rounded-3xl"></div>
+        <>
+          <div className="animate-skeleton absolute -translate-x-[75%] translate-y-16 min-w-[200px] h-[300px] -rotate-6 rounded-2xl"></div>
+          <div className="animate-skeleton absolute left-1/2 -translate-x-1/2 min-w-[220px] h-80 rounded-2xl"></div>
+          <div className="animate-skeleton absolute top-[336px] left-1/2 -translate-x-1/2 min-w-[200px] h-6 rounded-md"></div>
+          <div className="animate-skeleton absolute right-0 translate-x-[75%] translate-y-16 min-w-[200px] h-[300px] rotate-6 rounded-2xl"></div>
+        </>
       ) : (
-        <div className="trending hidden sm:block relative h-40 sm:h-72 lg:h-96 2xl:h-[600px] mx-5 md:mx-16 xl:mr-16 xl:ml-10 bg-neutral-800 rounded-2xl lg:rounded-3xl overflow-hidden">
-          <div className="absolute z-[1] w-full h-full">
-            <img
-              loading="lazy"
-              src={`https://image.tmdb.org/t/p/original${data[activeNum].backdrop_path}`}
-              alt="backdrop"
-              className="w-full h-full"
-            />
-          </div>
-          <div className="background absolute z-[2] flex items-end p-10 md:p-8 lg:p-12 2xl:p-20 w-full h-full text-white bg-black xl:bg-opacity-0 dark:bg-opacity-20">
-            <div className="w-full flex md:flex-col md:gap-4 xl:gap-4 items-end md:items-start justify-between">
-              <div>
-                <h2 className="max-w-[300px] md:max-w-[500px] md:font-semibold text-3xl lg:text-[2.5rem] font-medium">
-                  {(data[activeNum].title ?? data[activeNum].name).length > 25
-                    ? (data[activeNum].title ?? data[activeNum].name).slice(
-                        0,
-                        30
-                      ) + "..."
-                    : data[activeNum].title ?? data[activeNum].name}
-                </h2>
-
-                <div className="max-w-[420px] lg:max-w-[330px] 2xl:max-w-[540px] overflow-hidden flex flex-wrap items-center gap-2 mt-4 lg:mt-6">
-                  <p className="text-neutral-100 lg:hidden">{data[activeNum].overview.slice(0, 80) + "..."}</p>
-                  <p className="text-neutral-100 hidden lg:block 2xl:hidden">{data[activeNum].overview.slice(0, 120) + "..."}</p>
-                  <p className="text-neutral-100 hidden 2xl:block">{data[activeNum].overview.slice(0, 180) + "..."}</p>
-                  {/* <p className="text-neutral-100">{data[activeNum].overview.slice(0, 150) + "..."}</p>
-                  <p className="text-neutral-100">{data[activeNum].overview.slice(0, 150) + "..."}</p> */}
-                  {/* <p className="text-neutral-100">{data[activeNum].overview.slice(0, 150) + "..."}</p> */}
-
-                </div>
-              </div>
-              <button
-                onClick={() =>
-                  data[activeNum].title
-                    ? navigate(`/movies/${data[activeNum].id}`)
-                    : navigate(`/tv-shows/${data[activeNum].id}`)
+        <>
+          <div
+            onClick={() => setActiveNum(activeNum !== 0 ? activeNum - 1 : 15)}
+            className="absolute -translate-x-[80%] translate-y-[10vw] min-w-[300px] h-max -rotate-6 rounded-2xl overflow-hidden"
+          > 
+            <div className="w-full h-[440px] opacity-80 dark:opacity-70 bg-gray-200 dark:bg-neutral-800">
+              <img
+                loading="lazy"
+                src={
+                  true
+                    ? `https://image.tmdb.org/t/p/original${
+                        activeNum !== 0
+                          ? data[activeNum - 1]?.poster_path
+                          : data[15]?.poster_path
+                      }`
+                    : `https://image.tmdb.org/t/p/original${
+                        activeNum !== 0
+                          ? data[activeNum - 1]?.profile_path
+                          : data[15]?.profile_path
+                      }`
                 }
-                className="text-sm xl:text-base text-white font-bold py-2 px-2 bg-black bg-opacity-60 backdrop-blur-lg rounded-lg transition-colors"
-              >
-                More
-              </button>
+                alt={true ? "backdrop" : "picture"}
+                className="w-full h-full"
+              />
             </div>
-            <TrendingOrder
-              data={data}
-              activeNum={activeNum}
-              setActiveNum={setActiveNum}
-            />
           </div>
-        </div>
+
+          <div
+            onClick={() => {
+              data[activeNum].title
+                ? navigate(`/movies/${data[activeNum].id}`)
+                : navigate(`/tv-shows/${data[activeNum].id}`);
+            }}
+            className="w-[80%] absolute left-1/2 -translate-x-1/2 h-max"
+          >
+            <div className="w-full grid place-content-center bg-neutral-200 dark:bg-neutral-800 rounded-3xl overflow-hidden">
+              {data[activeNum].backdrop_path ? (
+                <img
+                  loading="lazy"
+                  src={`https://image.tmdb.org/t/p/original${data[activeNum]?.backdrop_path}`}
+                  alt={data[activeNum].title ?? data[activeNum].name}
+                  className="w-full h-full"
+                />
+
+              ) : (
+                <div className="h-[39vw] grid place-content-center">
+                   <ImageIcon className="icon w-20 h-20" />
+                </div>
+              )}
+            </div>
+
+            <div className="mt-16 flex flex-col items-center justify-center">
+              <h2 className="text-5xl text-center font-semibold mx-auto">
+                {data[activeNum].title ?? data[activeNum].name}
+              </h2>
+              <p className="text-center w-[50vw] mt-4">
+                {data[activeNum].overview}
+              </p>
+            </div>
+          </div>
+
+          <div
+            onClick={() => setActiveNum(activeNum !== 15 ? activeNum + 1 : 0)}
+            className="absolute right-0 translate-x-[80%] translate-y-[10vw] min-w-[300px] h-max rotate-6 rounded-2xl overflow-hidden"
+          >
+            <div className="w-full h-[440px] opacity-80 dark:opacity-70 bg-gray-200 dark:bg-neutral-800">
+              <img
+                loading="lazy"
+                src={
+                    `https://image.tmdb.org/t/p/original${
+                        activeNum !== 15
+                          ? data[activeNum + 1]?.poster_path
+                          : data[0]?.poster_path
+                      }`
+                }
+                alt={
+                  activeNum !== 15
+                    ? data[activeNum + 1]?.title ?? data[activeNum + 1]?.name
+                    : data[0]?.title ?? data[0]?.name
+                }
+                className="w-full h-full"
+              />
+            </div>
+          </div>
+        </>
       )}
-    </>
+    </div>
   );
 };
 

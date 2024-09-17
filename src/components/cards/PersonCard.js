@@ -12,7 +12,7 @@ const PersonCard = ({ data }) => {
         {data.profile_path ? (
           <img
             loading="lazy"
-            src={`https://image.tmdb.org/t/p/w500${data.profile_path}`}
+            src={`https://image.tmdb.org/t/p/original${data.profile_path}`}
             alt={data.name}
             className="w-full"
           />

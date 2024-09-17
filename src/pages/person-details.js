@@ -48,7 +48,7 @@ const PersonDetails = () => {
               <div className="absolute z-[-2] rounded-2xl bg-gray-200 dark:bg-neutral-800 w-[90%] h-[106%] top-0 left-1/2 -translate-x-1/2"></div>
               <img
                 loading="lazy"
-                src={`https://image.tmdb.org/t/p/w500${data.profile_path}`}
+                src={`https://image.tmdb.org/t/p/original${data.profile_path}`}
                 alt="backdrop"
                 className="w-full rounded-2xl"
               />

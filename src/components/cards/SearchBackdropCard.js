@@ -23,7 +23,7 @@ const SearchBackdropCard = ({ data }) => {
       <div className="absolute z-[1] w-full h-full grid place-items-center">
         {data.backdrop_path ? (
           <img
-            src={`https://image.tmdb.org/t/p/w500${data.backdrop_path}`}
+            src={`https://image.tmdb.org/t/p/original${data.backdrop_path}`}
             alt="backdrop"
             className="w-full h-full"
           />

@@ -6,10 +6,10 @@ const TrendingCard = ({ data, active, setActiveNum, dataNum }) => {
         active ? "w-40 h-24 active-card" : "w-32 h-20"
       } rounded-lg cursor-pointer`}
     >
-      <div className="absolute z-[5] w-full h-full rounded-lg overflow-hidden">
+      <div className="absolute z-[5] w-full h-full border-2 border-neutral-800 rounded-lg overflow-hidden">
         <img
           loading="lazy"
-          src={`https://image.tmdb.org/t/p/w500${data.backdrop_path}`}
+          src={`https://image.tmdb.org/t/p/original${data.backdrop_path}`}
           alt="backdrop"
           className="w-full h-full"
         />

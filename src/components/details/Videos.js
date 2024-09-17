@@ -36,7 +36,7 @@ const Videos = ({ data, backdrop }) => {
                 <div className="absolute z-[1] w-full h-full">
                   <img
                     loading="lazy"
-                    src={`https://image.tmdb.org/t/p/w500${backdrop}`}
+                    src={`https://image.tmdb.org/t/p/original${backdrop}`}
                     alt="backdrop"
                     className="w-full h-full"
                   />

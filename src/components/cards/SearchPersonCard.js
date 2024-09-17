@@ -21,7 +21,7 @@ const SearchPersonCard = ({ data }) => {
       <div className="absolute z-[1] grid place-items-center w-full h-full">
         {data.profile_path ? (
           <img
-            src={`https://image.tmdb.org/t/p/w500${data.profile_path}`}
+            src={`https://image.tmdb.org/t/p/original${data.profile_path}`}
             alt={data.name}
             className="w-full"
           />
