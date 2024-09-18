@@ -69,7 +69,7 @@ const TrendingLarge = ({ loading, data, activeNum, setActiveNum }) => {
               <h2 className="text-5xl text-center font-semibold mx-auto">
                 {data[activeNum].title ?? data[activeNum].name}
               </h2>
-              <p className="text-center w-[50vw] max-w-[720px] mt-4">
+              <p className="text-center dark:text-neutral-300 w-[50vw] max-w-[720px] mt-4">
                 {data[activeNum].overview}
               </p>
             </div>
