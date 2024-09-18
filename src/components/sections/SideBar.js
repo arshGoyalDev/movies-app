@@ -264,32 +264,18 @@ const SideBar = () => {
       </div>
 
       <button
-        onClick={() =>
-          theme === "dark" ? setTheme("light") : setTheme("dark")
-        }
-        className={`flex items-center w-max ${
-          menuOpen ? "flex-row gap-4 px-3" : "flex-col gap-1 px-2.5"
-        } py-3 mt-auto mx-3 rounded-md`}
+        className={`relative w-16 h-8 rounded-full border-2 border-gray-200 dark:border-zinc-800 mt-auto ${
+          menuOpen ? "mx-6" : "mx-1.5"
+        } transition-all`}
+        onClick={() => {
+          theme === "dark" ? setTheme("light") : setTheme("dark");
+        }}
       >
-        {theme === "dark" ? (
-          <MoonIcon className="icon w-5 h-5" />
-        ) : (
-          <SunIcon className="icon w-5 h-5" />
-        )}
-        <span
-          className={`whitespace-nowrap capitalize font-medium ${
-            !menuOpen && "scale-x-0 w-0 h-0"
-          } origin-left transition-transform duration-300`}
-        >
-          {theme}
-        </span>
-        <span
-          className={`capitalize text-sm origin-top ${
-            !menuOpen ? "block" : "hidden"
-          }`}
-        >
-          {theme}
-        </span>
+        <div
+          className={`slider absolute top-1 left-1 h-5 w-5 rounded-full bg-zinc-600 ${
+            theme === "dark" ? "dark" : ""
+          } transition-all duration-300`}
+        ></div>
       </button>
     </div>
   );

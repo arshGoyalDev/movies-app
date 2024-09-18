@@ -139,3 +139,8 @@
 }
 
 /* ----------------- */
+
+.slider.dark {
+  @apply translate-x-8 bg-transparent;
+  box-shadow: inset 8px -4px 0px 0px rgb(229, 231, 235);
+}
