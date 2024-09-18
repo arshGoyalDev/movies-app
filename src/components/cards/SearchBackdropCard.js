@@ -32,33 +32,33 @@ const SearchBackdropCard = ({ data }) => {
         )}
       </div>
       <div
-        className={`absolute z-[2] flex flex-col ${
-          data.vote_average !== 0 ? "justify-between" : "justify-end"
-        } w-full h-full ${data.backdrop_path ? "bg-black" : ""} ${
-          data.backdrop_path ? "bg-opacity-5 dark:bg-opacity-20" : "bg-opacity-20 dark:bg-opacity-40"
+        className={`absolute z-[2] bottom-2 w-full ${data.backdrop_path ? "bg-black" : ""} ${
+          data.backdrop_path
+            ? "bg-opacity-5 dark:bg-opacity-20"
+            : "bg-opacity-20 dark:bg-opacity-40"
         }`}
       >
-        {data.vote_average !== 0 && (
-          <div className="flex items-center gap-2 w-max py-1 px-2 bg-black mt-2 mx-3 rounded-xl">
-            <StarSolidIcon className="w-3 h-3 rating-icon" />
-            <span className="text-white text-xs font-medium pt-0.5">
-              {data.vote_average.toFixed(1)}
-            </span>
-          </div>
-        )}
-        <div className="py-2 px-3 bg-black bg-opacity-20 dark:bg-opacity-30 backdrop-blur-2xl mb-2 mx-2 rounded-xl">
+        <div className="flex flex-row justify-between py-2 px-3 bg-black bg-opacity-20 dark:bg-opacity-30 backdrop-blur-2xl mx-2 rounded-xl">
           {data.title ? (
             <h4 className="font-medium text-white">
-              {data.title.length > 20
-                ? `${data.title.slice(0, 20)}...`
+              {data.title.length > 15
+                ? `${data.title.slice(0, 15)}...`
                 : data.title}
             </h4>
           ) : (
             <h4 className="font-medium text-white">
-              {data.name.length > 20
-                ? `${data.name.slice(0, 20)}...`
+              {data.name.length > 15
+                ? `${data.name.slice(0, 15)}...`
                 : data.name}
             </h4>
+          )}
+          {data.vote_average !== 0 && (
+            <div className="flex items-center gap-2">
+              <StarSolidIcon className="w-3 h-3 rating-icon" />
+              <span className="text-white text-xs font-medium pt-0.5">
+                {data.vote_average.toFixed(1)}
+              </span>
+            </div>
           )}
         </div>
       </div>
