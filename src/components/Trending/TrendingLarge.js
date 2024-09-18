@@ -18,27 +18,27 @@ const TrendingLarge = ({ loading, data, activeNum, setActiveNum }) => {
         <>
           <div
             onClick={() => setActiveNum(activeNum !== 0 ? activeNum - 1 : 15)}
-            className="absolute -translate-x-[80%] translate-y-[10vw] min-w-[300px] h-max -rotate-6 rounded-2xl overflow-hidden"
-          > 
-            <div className="w-full h-[440px] opacity-80 dark:opacity-70 bg-gray-200 dark:bg-neutral-800">
-              <img
-                loading="lazy"
-                src={
-                  true
-                    ? `https://image.tmdb.org/t/p/original${
-                        activeNum !== 0
-                          ? data[activeNum - 1]?.poster_path
-                          : data[15]?.poster_path
-                      }`
-                    : `https://image.tmdb.org/t/p/original${
-                        activeNum !== 0
-                          ? data[activeNum - 1]?.profile_path
-                          : data[15]?.profile_path
-                      }`
-                }
-                alt={true ? "backdrop" : "picture"}
-                className="w-full h-full"
-              />
+            className="absolute -translate-x-[80%] translate-y-[10vw] min-w-[240px] 2xl:min-w-[300px] h-max -rotate-6 rounded-2xl overflow-hidden"
+          >
+            <div className="w-full h-[320px]  2xl:h-[440px] opacity-80 dark:opacity-70 bg-gray-100 dark:bg-neutral-900">
+              {(activeNum !== 0
+                ? data[activeNum - 1]?.poster_path
+                : data[15]?.poster_path) && (
+                <img
+                  loading="lazy"
+                  src={`https://image.tmdb.org/t/p/original${
+                    activeNum !== 0
+                      ? data[activeNum - 1]?.poster_path
+                      : data[15]?.poster_path
+                  }`}
+                  alt={
+                    activeNum !== 0
+                      ? data[activeNum - 1]?.title ?? data[activeNum - 1]?.name
+                      : data[15]?.title ?? data[15]?.name
+                  }
+                  className="w-full h-full"
+                />
+              )}
             </div>
           </div>
 
@@ -50,7 +50,7 @@ const TrendingLarge = ({ loading, data, activeNum, setActiveNum }) => {
             }}
             className="w-[80%] absolute left-1/2 -translate-x-1/2 h-max"
           >
-            <div className="w-full grid place-content-center bg-neutral-200 dark:bg-neutral-800 rounded-3xl overflow-hidden">
+            <div className="w-full grid place-content-center bg-gray-50 dark:bg-neutral-900 rounded-3xl overflow-hidden">
               {data[activeNum].backdrop_path ? (
                 <img
                   loading="lazy"
@@ -58,10 +58,9 @@ const TrendingLarge = ({ loading, data, activeNum, setActiveNum }) => {
                   alt={data[activeNum].title ?? data[activeNum].name}
                   className="w-full h-full"
                 />
-
               ) : (
                 <div className="h-[39vw] grid place-content-center">
-                   <ImageIcon className="icon w-20 h-20" />
+                  <ImageIcon className="icon w-20 h-20" />
                 </div>
               )}
             </div>
@@ -70,7 +69,7 @@ const TrendingLarge = ({ loading, data, activeNum, setActiveNum }) => {
               <h2 className="text-5xl text-center font-semibold mx-auto">
                 {data[activeNum].title ?? data[activeNum].name}
               </h2>
-              <p className="text-center w-[50vw] mt-4">
+              <p className="text-center w-[50vw] max-w-[720px] mt-4">
                 {data[activeNum].overview}
               </p>
             </div>
@@ -78,25 +77,27 @@ const TrendingLarge = ({ loading, data, activeNum, setActiveNum }) => {
 
           <div
             onClick={() => setActiveNum(activeNum !== 15 ? activeNum + 1 : 0)}
-            className="absolute right-0 translate-x-[80%] translate-y-[10vw] min-w-[300px] h-max rotate-6 rounded-2xl overflow-hidden"
+            className="absolute right-0 translate-x-[80%] translate-y-[10vw] min-w-[240px] 2xl:min-w-[300px] h-max rotate-6 rounded-2xl overflow-hidden"
           >
-            <div className="w-full h-[440px] opacity-80 dark:opacity-70 bg-gray-200 dark:bg-neutral-800">
-              <img
-                loading="lazy"
-                src={
-                    `https://image.tmdb.org/t/p/original${
-                        activeNum !== 15
-                          ? data[activeNum + 1]?.poster_path
-                          : data[0]?.poster_path
-                      }`
-                }
-                alt={
-                  activeNum !== 15
-                    ? data[activeNum + 1]?.title ?? data[activeNum + 1]?.name
-                    : data[0]?.title ?? data[0]?.name
-                }
-                className="w-full h-full"
-              />
+            <div className="w-full h-[320px] 2xl:h-[440px] opacity-80 dark:opacity-70 bg-gray-100 dark:bg-neutral-900">
+              {(activeNum !== 15
+                ? data[activeNum + 1]?.poster_path
+                : data[0]?.poster_path) && (
+                <img
+                  loading="lazy"
+                  src={`https://image.tmdb.org/t/p/original${
+                    activeNum !== 15
+                      ? data[activeNum + 1]?.poster_path
+                      : data[0]?.poster_path
+                  }`}
+                  alt={
+                    activeNum !== 15
+                      ? data[activeNum + 1]?.title ?? data[activeNum + 1]?.name
+                      : data[0]?.title ?? data[0]?.name
+                  }
+                  className="w-full h-full"
+                />
+              )}
             </div>
           </div>
         </>
