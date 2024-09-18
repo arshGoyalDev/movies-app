@@ -8,7 +8,7 @@ const Reviews = ({ data }) => {
         {data.map((review) => (
           <Link to={`review/${review.id}`}
             key={review.id}
-            className="min-w-[320px] max-w-xs flex flex-col justify-center p-4 bg-gray-200 dark:bg-neutral-800 rounded-xl cursor-pointer focus:outline-none"
+            className="min-w-[320px] max-w-xs flex flex-col justify-center p-4 bg-gray-100 dark:bg-neutral-900 rounded-xl cursor-pointer focus:outline-none"
           >
             <p className="break-words">
               {review.content.length > 120

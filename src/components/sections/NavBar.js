@@ -41,7 +41,7 @@ const NavBar = () => {
           </li>
         </ul>
 
-          <button onClick={() => setSearch(true)} className="xl:hidden grid place-items-center w-10 h-10 bg-gray-100 dark:bg-neutral-800 rounded-full">
+          <button onClick={() => setSearch(true)} className="xl:hidden grid place-items-center w-10 h-10 bg-gray-50 dark:bg-neutral-900 rounded-full">
             <SearchIcon className="icon w-3.5 h-3.5" />
           </button>
 
@@ -49,7 +49,7 @@ const NavBar = () => {
           onClick={() =>
             theme === "dark" ? setTheme("light") : setTheme("dark")
           }
-          className="xl:hidden grid place-items-center w-10 h-10 bg-gray-100 dark:bg-neutral-800 rounded-full"
+          className="xl:hidden grid place-items-center w-10 h-10 bg-gray-50 dark:bg-neutral-900 rounded-full"
         >
           {theme === "dark" ? (
             <SunIcon className="icon w-4 h-4" />

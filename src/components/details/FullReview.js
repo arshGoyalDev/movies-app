@@ -23,8 +23,8 @@ const FullReview = () => {
         className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-screen h-screen bg-black bg-opacity-50"
       ></div>
 
-      <div className="w-[90%] sm:w-80 lg:w-[500px] z-50 rounded-xl overflow-hidden bg-white dark:bg-neutral-900">
-        <div className="flex items-center justify-between px-5 py-3 border-b-2 border-neutral-300 dark:border-neutral-800">
+      <div className="w-[90%] sm:w-80 lg:w-[500px] z-50 rounded-xl overflow-hidden bg-white dark:bg-neutral-950">
+        <div className="flex items-center justify-between px-5 py-3 border-b-2 border-neutral-300 dark:border-neutral-900">
           <h2 className="text-lg font-medium">Review</h2>
           <button onClick={() => navigate(-1)} className="p-1 rounded-full">
             <CloseIcon className="w-6 h-6 icon" />
@@ -38,7 +38,7 @@ const FullReview = () => {
             </>
           ) : (
             <>
-              <h3 className="text-neutral-600 dark:text-neutral-500">
+              <h3 className="text-neutral-700 dark:text-neutral-500">
                 by
                 <span className="font-semibold text-black dark:text-white ml-2">
                   {reviewData.author}

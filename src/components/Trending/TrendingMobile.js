@@ -20,7 +20,7 @@ const TrendingMobile = ({ loading, data, activeNum, setActiveNum, type }) => {
             onClick={() => setActiveNum(activeNum !== 0 ? activeNum - 1 : 15)}
             className="absolute -translate-x-[75%] translate-y-16 min-w-[200px] h-max -rotate-6 rounded-2xl overflow-hidden"
           >
-            <div className="w-full h-[300px] opacity-80 dark:opacity-70 bg-gray-200 dark:bg-neutral-800">
+            <div className="w-full h-[300px] opacity-80 dark:opacity-70 bg-gray-100 dark:bg-neutral-900">
               <img
                 loading="lazy"
                 src={
@@ -52,7 +52,7 @@ const TrendingMobile = ({ loading, data, activeNum, setActiveNum, type }) => {
             }}
             className="absolute left-1/2 -translate-x-1/2 min-w-[220px] h-max"
           >
-            <div className="w-full grid place-content-center h-80 bg-neutral-200 dark:bg-neutral-800 rounded-2xl shadow-2xl shadow-gray-400 dark:shadow-neutral-800 overflow-hidden">
+            <div className="w-full grid place-content-center h-80 bg-neutral-200 dark:bg-neutral-900 rounded-2xl shadow-2xl shadow-gray-300 dark:shadow-neutral-900 overflow-hidden">
               {type !== "people" ? (
                 <img
                   loading="lazy"
@@ -92,7 +92,7 @@ const TrendingMobile = ({ loading, data, activeNum, setActiveNum, type }) => {
             onClick={() => setActiveNum(activeNum !== 15 ? activeNum + 1 : 0)}
             className="absolute right-0 translate-x-[75%] translate-y-16 min-w-[200px] h-max rotate-6 rounded-2xl overflow-hidden"
           >
-            <div className="w-full h-[300px] opacity-80 dark:opacity-70 bg-gray-200 dark:bg-neutral-800">
+            <div className="w-full h-[300px] opacity-80 dark:opacity-70 bg-gray-100 dark:bg-neutral-900">
               <img
                 loading="lazy"
                 src={

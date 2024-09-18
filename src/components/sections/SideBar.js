@@ -31,7 +31,7 @@ const SideBar = () => {
     <div
       className={`fixed hidden xl:flex h-screen flex-col ${
         menuOpen ? "w-72" : "w-20"
-      } py-6 border-r-2 border-solid border-gray-100 dark:border-neutral-800 transition-[width] duration-300`}
+      } py-6 border-r-2 border-solid border-gray-50 dark:border-neutral-900 transition-[width] duration-300`}
     >
       <div
         className={`flex items-center gap-4 h-10 ${
@@ -59,7 +59,7 @@ const SideBar = () => {
 
       <div className="mt-12">
         <span
-          className={`text-xs font-bold text-gray-400 dark:text-neutral-500 ${
+          className={`text-xs font-bold text-gray-300 dark:text-neutral-500 ${
             menuOpen ? "px-6" : "px-[22px]"
           } transition-all duration-300`}
         >
@@ -72,7 +72,7 @@ const SideBar = () => {
                 menuOpen ? "px-4" : "pl-4"
               } ${
                 location.pathname === "/" &&
-                "bg-gray-200 bg-opacity-70 dark:bg-neutral-800"
+                "bg-gray-100 bg-opacity-70 dark:bg-neutral-900"
               } hover:border-primary-light dark:hover:border-primary-dark transition-transform`}
             >
               {location.pathname === "/" ? (
@@ -85,7 +85,7 @@ const SideBar = () => {
                   !menuOpen && "scale-x-0 w-0"
                 } ${
                   location.pathname !== "/" &&
-                  "text-gray-500 dark:text-neutral-700"
+                  "text-gray-400 dark:text-neutral-800"
                 } origin-left transition-transform duration-300`}
               >
                 Home
@@ -98,7 +98,7 @@ const SideBar = () => {
                 menuOpen ? "px-4" : "pl-4 "
               } ${
                 location.pathname === "/movies" &&
-                "bg-gray-200 bg-opacity-70 dark:bg-neutral-800"
+                "bg-gray-100 bg-opacity-70 dark:bg-neutral-900"
               } hover:border-primary-light dark:hover:border-primary-dark transition-transform`}
             >
               {location.pathname === "/movies" ? (
@@ -111,7 +111,7 @@ const SideBar = () => {
                   !menuOpen && "scale-x-0 w-0"
                 } ${
                   location.pathname !== "/movies" &&
-                  "text-gray-500 dark:text-neutral-700"
+                  "text-gray-400 dark:text-neutral-800"
                 } origin-left transition-transform duration-300`}
               >
                 Movies
@@ -124,7 +124,7 @@ const SideBar = () => {
                 menuOpen ? "px-4" : "pl-4 "
               } ${
                 location.pathname === "/tv-shows" &&
-                "bg-gray-200 bg-opacity-70 dark:bg-neutral-800"
+                "bg-gray-100 bg-opacity-70 dark:bg-neutral-900"
               } hover:border-primary-light dark:hover:border-primary-dark transition-transform`}
             >
               {location.pathname === "/tv-shows" ? (
@@ -138,7 +138,7 @@ const SideBar = () => {
                   !menuOpen && "scale-x-0 w-0"
                 } ${
                   location.pathname !== "/tv-shows" &&
-                  "text-gray-500 dark:text-neutral-700"
+                  "text-gray-400 dark:text-neutral-800"
                 } origin-left transition-transform duration-300`}
               >
                 Tv Shows
@@ -151,7 +151,7 @@ const SideBar = () => {
                 menuOpen ? "px-4" : "pl-4 "
               } ${
                 location.pathname === "/people" &&
-                "bg-gray-200 bg-opacity-70 dark:bg-neutral-800"
+                "bg-gray-100 bg-opacity-70 dark:bg-neutral-900"
               } hover:border-primary-light dark:hover:border-primary-dark transition-transform`}
             >
               {location.pathname === "/people" ? (
@@ -164,7 +164,7 @@ const SideBar = () => {
                   !menuOpen && "scale-x-0 w-0"
                 } ${
                   location.pathname !== "/people" &&
-                  "text-gray-500 dark:text-neutral-700"
+                  "text-gray-400 dark:text-neutral-800"
                 } origin-left transition-transform duration-300`}
               >
                 People
@@ -175,7 +175,7 @@ const SideBar = () => {
       </div>
       <div className="mt-8">
         <span
-          className={`text-xs font-bold text-gray-400 dark:text-neutral-500 ${
+          className={`text-xs font-bold text-gray-300 dark:text-neutral-500 ${
             menuOpen ? "px-6" : "px-[22px]"
           } transition-all duration-300`}
         >
@@ -188,7 +188,7 @@ const SideBar = () => {
                 menuOpen ? "px-4" : "pl-4 "
               } ${
                 location.pathname === "/upcoming" &&
-                "bg-gray-200 bg-opacity-70 dark:bg-neutral-800"
+                "bg-gray-100 bg-opacity-70 dark:bg-neutral-900"
               } hover:border-primary-light dark:hover:border-primary-dark transition-transform`}
             >
               {location.pathname === "/upcoming" ? (
@@ -201,7 +201,7 @@ const SideBar = () => {
                   !menuOpen && "scale-x-0 w-0"
                 } ${
                   location.pathname !== "/upcoming" &&
-                  "text-gray-500 dark:text-neutral-700"
+                  "text-gray-400 dark:text-neutral-800"
                 } origin-left transition-transform duration-300`}
               >
                 Upcoming
@@ -214,7 +214,7 @@ const SideBar = () => {
                 menuOpen ? "px-4" : "pl-4 "
               } ${
                 location.pathname === "/top-rated" &&
-                "bg-gray-200 bg-opacity-70 dark:bg-neutral-800"
+                "bg-gray-100 bg-opacity-70 dark:bg-neutral-900"
               } hover:border-primary-light dark:hover:border-primary-dark transition-transform`}
             >
               {location.pathname === "/top-rated" ? (
@@ -227,7 +227,7 @@ const SideBar = () => {
                   !menuOpen && "scale-x-0 w-0"
                 } ${
                   location.pathname !== "/top-rated" &&
-                  "text-gray-500 dark:text-neutral-700"
+                  "text-gray-400 dark:text-neutral-800"
                 } origin-left transition-transform duration-300`}
               >
                 Top Rated
@@ -240,7 +240,7 @@ const SideBar = () => {
                 menuOpen ? "px-4" : "pl-4 "
               } ${
                 location.pathname.includes("/genres") &&
-                "bg-gray-200 bg-opacity-70 dark:bg-neutral-800"
+                "bg-gray-100 bg-opacity-70 dark:bg-neutral-900"
               } hover:border-primary-light dark:hover:border-primary-dark transition-transform`}
             >
               {location.pathname.includes("/genres") ? (
@@ -253,7 +253,7 @@ const SideBar = () => {
                   !menuOpen && "scale-x-0 w-0"
                 } ${
                   !location.pathname.includes("/genres") &&
-                  "text-gray-500 dark:text-neutral-700"
+                  "text-gray-400 dark:text-neutral-800"
                 } origin-left transition-transform duration-300`}
               >
                 Genres

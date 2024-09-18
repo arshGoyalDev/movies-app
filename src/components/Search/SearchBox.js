@@ -57,12 +57,12 @@ const SearchBox = () => {
       ></div>
 
       <div
-        className={`fixed z-[100000] inset-1/2 -translate-x-1/2 -translate-y-1/2 pt-6 xl:pt-7 w-[90%] md:w-[540px] xl:w-[900px] h-max bg-gray-100 dark:bg-neutral-900 rounded-xl xl:rounded-2xl ${
+        className={`fixed z-[100000] inset-1/2 -translate-x-1/2 -translate-y-1/2 pt-6 xl:pt-7 w-[90%] md:w-[540px] xl:w-[900px] h-max bg-gray-50 dark:bg-neutral-950 rounded-xl xl:rounded-2xl ${
           search ? "scale-100" : "scale-0"
         } transition-all duration-300`}
       >
         <div className="px-6 xl:px-8">
-          <div className="w-[100%] flex items-center border-2 border-solid border-gray-500 dark:border-neutral-700 rounded-md mt-4">
+          <div className="w-[100%] flex items-center border-2 border-solid border-gray-400 dark:border-neutral-800 rounded-md mt-4">
             <button
               onClick={getResults}
               className="ml-2 w-10 h-10 grid place-items-center"
@@ -82,7 +82,7 @@ const SearchBox = () => {
                 className="w-full py-3 xl:py-4 xl:px-3 px-2 text-sm bg-transparent focus:outline-none"
               />
               <span
-                className={`placeholder-text absolute left-0 top-1/2 -translate-y-1/2 w-full pointer-events-none text-sm text-gray-500 dark:text-neutral-500 ${
+                className={`placeholder-text absolute left-0 top-1/2 -translate-y-1/2 w-full pointer-events-none text-sm text-gray-400 dark:text-neutral-500 ${
                   searchQuery !== "" && "opacity-0 left-4"
                 } px-2 transition-all duration-300`}
               >

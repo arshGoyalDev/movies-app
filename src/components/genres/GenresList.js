@@ -33,8 +33,8 @@ const GenresList = ({ type, list, loading, activeGenre }) => {
                 }}
                 className={`font-medium py-2 px-4  ${
                   activeGenre === `/${type}/${item.id}`
-                    ? "text-white dark:text-black bg-neutral-700 dark:bg-neutral-300"
-                    : "bg-neutral-200 dark:bg-neutral-800"
+                    ? "text-white dark:text-black bg-neutral-800 dark:bg-neutral-300"
+                    : "bg-neutral-200 dark:bg-neutral-900"
                 } rounded-md`}
               >
                 {item.name}

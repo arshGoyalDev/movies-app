@@ -34,6 +34,7 @@ const TrendingPeople = () => {
         activeNum={activeNum}
         setActiveNum={setActiveNum}
       />
+      
       <TrendingMobile
         loading={loading}
         data={data}

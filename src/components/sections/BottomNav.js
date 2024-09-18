@@ -6,7 +6,7 @@ const BottomNav = () => {
   const location = useLocation();
 
   return (
-    <nav className="sm:hidden fixed z-[10000] -bottom-1 w-full flex justify-between items-center py-5 px-6 bg-white dark:bg-neutral-800 rounded-t-[30px] shadow-[0_-10px_60px_rgba(100,100,100,0.4)] dark:shadow-none">
+    <nav className="sm:hidden fixed z-[10000] -bottom-1 w-full flex justify-between items-center py-5 px-6 bg-white dark:bg-neutral-900 rounded-t-[30px] shadow-[0_-10px_60px_rgba(100,100,100,0.4)] dark:shadow-none">
       <Link to="/">
         <div className="grid place-items-center w-20 h-10">
           <HomeIcon
@@ -20,7 +20,7 @@ const BottomNav = () => {
             }`}
           >
             <span className="font-medium">Home</span>
-            <span className="block w-5 h-1 bg-neutral-700 dark:bg-gray-400 rounded-md"></span>
+            <span className="block w-5 h-1 bg-neutral-800 dark:bg-gray-300 rounded-md"></span>
           </div>
         </div>
       </Link>
@@ -37,7 +37,7 @@ const BottomNav = () => {
             }`}
           >
             <span className="font-medium">Movies</span>
-            <span className="block w-5 h-1 bg-neutral-700 dark:bg-gray-400 rounded-md"></span>
+            <span className="block w-5 h-1 bg-neutral-800 dark:bg-gray-300 rounded-md"></span>
           </div>
         </div>
       </Link>
@@ -54,7 +54,7 @@ const BottomNav = () => {
             }`}
           >
             <span className="font-medium">TV Shows</span>
-            <span className="block w-5 h-1 bg-neutral-700 dark:bg-gray-400 rounded-md"></span>
+            <span className="block w-5 h-1 bg-neutral-800 dark:bg-gray-300 rounded-md"></span>
           </div>
         </div>
       </Link>
@@ -71,7 +71,7 @@ const BottomNav = () => {
             }`}
           >
             <span className="font-medium">People</span>
-            <span className="block w-5 h-1 bg-neutral-700 dark:bg-gray-400 rounded-md"></span>
+            <span className="block w-5 h-1 bg-neutral-800 dark:bg-gray-300 rounded-md"></span>
           </div>
         </div>
       </Link>

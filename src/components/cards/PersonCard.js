@@ -6,7 +6,7 @@ const PersonCard = ({ data }) => {
   return (
     <Link
       to={`/people/${data.id}`}
-      className="relative min-w-[120px] lg:min-w-[150px] h-40 lg:h-48 2xl:min-w-[170px] 2xl:h-60 bg-gray-300 dark:bg-neutral-800 rounded-lg xl:rounded-xl overflow-hidden cursor-pointer focus:outline-none"
+      className="relative min-w-[120px] lg:min-w-[150px] h-40 lg:h-48 2xl:min-w-[170px] 2xl:h-60 bg-gray-200 dark:bg-neutral-900 rounded-lg xl:rounded-xl overflow-hidden cursor-pointer focus:outline-none"
     >
       <div className="absolute z-[1] grid place-items-center w-full h-full">
         {data.profile_path ? (

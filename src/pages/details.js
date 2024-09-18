@@ -42,7 +42,7 @@ const Details = ({ type }) => {
     <>
       {loading ? (
         <div className="h-screen grid place-items-center">
-          <div className="w-64 h-64 border-t-2 border-solid border-neutral-600 rounded-full animate-spin"></div>
+          <div className="w-64 h-64 border-t-2 border-solid border-neutral-700 rounded-full animate-spin"></div>
         </div>
       ) : (
         <main className="relative flex flex-col items-center h-screen pt-20 lg:pt-40 pb-40 lg:pb-72 lg:px-20 2xl:px-48 overflow-auto">
@@ -50,14 +50,14 @@ const Details = ({ type }) => {
             onClick={() => {
               navigate(-1);
             }}
-            className="absolute top-10 lg:top-16 left-10 md:left-28 lg:left-20 2xl:left-48 flex items-center w-10 h-10 pl-2.5 bg-gray-200 dark:bg-neutral-800 rounded-full"
+            className="absolute top-10 lg:top-16 left-10 md:left-28 lg:left-20 2xl:left-48 flex items-center w-10 h-10 pl-2.5 bg-gray-100 dark:bg-neutral-900 rounded-full"
           >
             <ArrowLeftIcon className="w-4 h-4 icon" />
           </button>
           <div className="flex flex-col lg:flex-row gap-10 md:gap-20 lg:gap-6 items-center lg:items-start w-full lg:px-0 mt-10">
             <div className="relative z-20 w-[60%] lg:min-w-[200px] max-w-[340px] lg:max-w-[200px] rounded-2xl">
-              <div className="absolute z-[-1] rounded-2xl bg-gray-300 dark:bg-neutral-700 w-[95%] h-[103%] top-0 left-1/2 -translate-x-1/2"></div>
-              <div className="absolute z-[-2] rounded-2xl bg-gray-200 dark:bg-neutral-800 w-[90%] h-[106%] top-0 left-1/2 -translate-x-1/2"></div>
+              <div className="absolute z-[-1] rounded-2xl bg-gray-200 dark:bg-neutral-800 w-[95%] h-[103%] top-0 left-1/2 -translate-x-1/2"></div>
+              <div className="absolute z-[-2] rounded-2xl bg-gray-100 dark:bg-neutral-900 w-[90%] h-[106%] top-0 left-1/2 -translate-x-1/2"></div>
               <img
                 loading="lazy"
                 src={`https://image.tmdb.org/t/p/original${data.poster_path}`}
@@ -70,7 +70,7 @@ const Details = ({ type }) => {
               <h1 className="text-xl md:text-3xl font-medium">
                 {data.title ?? data.name}
               </h1>
-              <h3 className="text-neutral-700 dark:text-neutral-400 mt-1">
+              <h3 className="text-neutral-800 dark:text-neutral-400 mt-1">
                 {data.tagline}
               </h3>
               <div className="flex gap-1 items-center mt-1.5 md:mt-3">
@@ -103,7 +103,7 @@ const Details = ({ type }) => {
                   <Link
                     to={`/genres/${type}/${genre.id}`}
                     key={genre.id}
-                    className="text-sm py-1 px-3 bg-gray-200 dark:bg-neutral-800 rounded-3xl"
+                    className="text-sm py-1 px-3 bg-gray-100 dark:bg-neutral-900 rounded-3xl"
                   >
                     {genre.name}
                   </Link>
@@ -111,7 +111,7 @@ const Details = ({ type }) => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col lg:flex-row gap-10 w-full mt-5 md:mt-8 lg:mt-16 lg:px-0">
+          <div className="flex flex-col lg:flex-row lg:justify-between gap-10 w-full mt-5 md:mt-8 lg:mt-16 lg:px-0">
             <div className="overflow-hidden">
               <div className="px-10 md:px-28 lg:px-0">
                 <h4 className="font-medium">Synopsis</h4>

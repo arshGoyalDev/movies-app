@@ -17,7 +17,7 @@ const BackdropCard = ({ data }) => {
       // to={data.title ? `/movies/${data.id}` : `/tv-shows/${data.id}`}
       className="relative min-w-[252px] h-36 lg:min-w-[340px] lg:h-48 rounded-2xl cursor-pointer overflow-hidden focus:outline-none"
     >
-      <div className="absolute grid place-items-center bg-gray-200 dark:bg-neutral-800 w-full h-full rounded-lg overflow-hidden">
+      <div className="absolute grid place-items-center bg-gray-100 dark:bg-neutral-900 w-full h-full rounded-lg overflow-hidden">
         {data.backdrop_path ? (
           <img
             loading="lazy"

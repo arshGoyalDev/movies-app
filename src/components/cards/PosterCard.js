@@ -8,7 +8,7 @@ const PosterCard = ({ data }) => {
       to={data.title ? `/movies/${data.id}` : `/tv-shows/${data.id}`}
       className="relative min-w-[150px] sm:min-w-[160px] 2xl:min-w-[190px] h-56 sm:h-60 2xl:h-72 rounded-xl cursor-pointer overflow-hidden focus:outline-none"
     >
-      <div className="absolute z-[1] grid place-items-center bg-gray-200 dark:bg-neutral-800 w-full h-full rounded-lg overflow-hidden">
+      <div className="absolute z-[1] grid place-items-center bg-gray-100 dark:bg-neutral-900 w-full h-full rounded-lg overflow-hidden">
         {data.poster_path ? (
           <img
             loading="lazy"

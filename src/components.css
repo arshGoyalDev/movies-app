@@ -10,7 +10,7 @@
 }
 
 .inactive-icon > * {
-  @apply fill-gray-500 dark:fill-neutral-700;
+  @apply fill-gray-400 dark:fill-neutral-800;
 }
 
 .rating-icon path {
@@ -37,7 +37,7 @@
 }
 
 *::-webkit-scrollbar-thumb {
-  @apply bg-gray-300 dark:bg-[#313131] rounded-md invisible transition-all;
+  @apply bg-gray-200 dark:bg-[#313131] rounded-md invisible transition-all;
 }
 
 *:hover::-webkit-scrollbar-thumb {
@@ -93,12 +93,12 @@
 
 .animate-skeleton {
   animation: 1s skeleton linear infinite;
-  @apply bg-gray-200 dark:bg-neutral-800;
+  @apply bg-gray-100 dark:bg-neutral-900;
 }
 
 .animate-skeleton-search {
   animation: 1s skeleton linear infinite;
-  @apply bg-gray-300 dark:bg-neutral-700;
+  @apply bg-gray-200 dark:bg-neutral-800;
 }
 
 @keyframes skeleton {

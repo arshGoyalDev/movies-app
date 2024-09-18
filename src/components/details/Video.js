@@ -16,7 +16,7 @@ const Video = () => {
       <div className="flex flex-col items-end justify-center gap-5 w-[90%] sm:w-[500px] lg:w-[700px]">
         <button
           onClick={() => navigate(-1)}
-          className="z-50 bg-gray-300 dark:bg-neutral-800 p-3 rounded-full mr-2"
+          className="z-50 bg-gray-200 dark:bg-neutral-900 p-3 rounded-full mr-2"
         >
           <CloseIcon className="icon w-6 h-6" />
         </button>

@@ -31,7 +31,7 @@ const Videos = ({ data, backdrop }) => {
               <Link
                 to={`video/${video.key}`}
                 key={video.id}
-                className="relative min-w-[280px] h-[160px] bg-gray-200 dark:bg-neutral-800 rounded-2xl overflow-hidden focus:outline-none"
+                className="relative min-w-[280px] h-[160px] bg-gray-100 dark:bg-neutral-900 rounded-2xl overflow-hidden focus:outline-none"
               >
                 <div className="absolute z-[1] w-full h-full">
                   <img
@@ -54,7 +54,7 @@ const Videos = ({ data, backdrop }) => {
                     </h4>
                   </div>
                 </div>
-                <button className="absolute z-[3] top-1/2 -translate-y-2/3 left-1/2 -translate-x-1/2 p-3 bg-neutral-700 rounded-full">
+                <button className="absolute z-[3] top-1/2 -translate-y-2/3 left-1/2 -translate-x-1/2 p-3 bg-neutral-800 rounded-full">
                   <PlaySolidIcon className="rating-icon w-4 h-4" />
                 </button>
               </Link>
