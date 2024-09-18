@@ -18,7 +18,7 @@ const TrendingLarge = ({ loading, data, activeNum, setActiveNum }) => {
         <>
           <div
             onClick={() => setActiveNum(activeNum !== 0 ? activeNum - 1 : 15)}
-            className="absolute -translate-x-[80%] translate-y-[10vw] min-w-[240px] 2xl:min-w-[300px] h-max -rotate-6 rounded-2xl overflow-hidden"
+            className="absolute -translate-x-[80%] translate-y-[10vw] min-w-[240px] 2xl:min-w-[300px] h-max -rotate-6 rounded-2xl overflow-hidden cursor-pointer"
           >
             <div className="w-full h-[320px]  2xl:h-[440px] opacity-80 dark:opacity-70 bg-gray-100 dark:bg-neutral-900">
               {(activeNum !== 0
@@ -48,7 +48,7 @@ const TrendingLarge = ({ loading, data, activeNum, setActiveNum }) => {
                 ? navigate(`/movies/${data[activeNum].id}`)
                 : navigate(`/tv-shows/${data[activeNum].id}`);
             }}
-            className="w-[80%] absolute left-1/2 -translate-x-1/2 h-max"
+            className="w-[80%] absolute left-1/2 -translate-x-1/2 h-max cursor-pointer"
           >
             <div className="w-full grid place-content-center bg-gray-50 dark:bg-neutral-900 rounded-3xl overflow-hidden">
               {data[activeNum].backdrop_path ? (
@@ -77,7 +77,7 @@ const TrendingLarge = ({ loading, data, activeNum, setActiveNum }) => {
 
           <div
             onClick={() => setActiveNum(activeNum !== 15 ? activeNum + 1 : 0)}
-            className="absolute right-0 translate-x-[80%] translate-y-[10vw] min-w-[240px] 2xl:min-w-[300px] h-max rotate-6 rounded-2xl overflow-hidden"
+            className="absolute right-0 translate-x-[80%] translate-y-[10vw] min-w-[240px] 2xl:min-w-[300px] h-max rotate-6 rounded-2xl overflow-hidden cursor-pointer"
           >
             <div className="w-full h-[320px] 2xl:h-[440px] opacity-80 dark:opacity-70 bg-gray-100 dark:bg-neutral-900">
               {(activeNum !== 15
