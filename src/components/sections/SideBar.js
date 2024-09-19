@@ -263,20 +263,25 @@ const SideBar = () => {
         </ul>
       </div>
 
-      <button
-        className={`relative w-16 h-8 rounded-full border-2 border-gray-200 dark:border-zinc-800 mt-auto ${
-          menuOpen ? "mx-6" : "mx-1.5"
-        } transition-all`}
-        onClick={() => {
-          theme === "dark" ? setTheme("light") : setTheme("dark");
-        }}
-      >
-        <div
-          className={`slider absolute top-1 left-1 h-5 w-5 rounded-full bg-zinc-600 ${
-            theme === "dark" ? "dark" : ""
-          } transition-all duration-300`}
-        ></div>
-      </button>
+      <div className="flex gap-3 items-center mt-auto px-5">
+        <button
+          onClick={() =>
+            theme === "dark" ? setTheme("light") : setTheme("dark")
+          }
+          className="grid place-items-center w-10 h-10 bg-gray-50 dark:bg-neutral-900 border-2 border-gray-200 dark:border-neutral-800 rounded-full"
+        >
+          {theme === "dark" ? (
+            <SunIcon className="icon w-4 h-4" />
+          ) : (
+            <MoonIcon className="icon w-4 h-4" />
+          )}
+        </button>
+
+        {menuOpen && (
+          <p>{theme === "dark" ? "Dark" : "Light"}</p>
+
+        )}
+      </div>
     </div>
   );
 };

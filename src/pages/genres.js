@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useFetch } from "../hooks";
 
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 
 import OptionsBar from "../components/OptionsBar";
 import { GenresList } from "../components/genres";
