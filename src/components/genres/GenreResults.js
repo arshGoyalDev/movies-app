@@ -46,7 +46,7 @@ const GenreResults = () => {
     setLoading(true);
     fetchFirstData();
     // eslint-disable-next-line
-  }, [genreId]);
+  }, [genreId, type]);
 
   return (
     <>
