@@ -1,8 +1,7 @@
-
 // format release date Args: date
 const modifyDate = (date) => {
   let releaseDate = new Date(date);
-  let month = releaseDate.toLocaleString("default", { month: "long" });
+  let month = releaseDate.toLocaleString("default", {month: "long"});
   date = addThToDate(releaseDate.getDate());
   let year = releaseDate.getFullYear();
 

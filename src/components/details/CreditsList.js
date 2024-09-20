@@ -1,6 +1,6 @@
-import { PersonCard } from "../cards";
+import {PersonCard} from "../cards";
 
-const CreditsList = ({ data, heading }) => {
+const CreditsList = ({data, heading}) => {
   return (
     <div>
       <h4 className="capitalize font-medium px-10 md:px-28 lg:px-0">

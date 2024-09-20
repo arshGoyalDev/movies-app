@@ -1,14 +1,15 @@
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 
-import { ImageIcon, StarSolidIcon } from "../icons";
+import {ImageIcon, StarSolidIcon} from "../icons";
 
-const PosterCard = ({ data }) => {
+const PosterCard = ({data}) => {
   return (
     <Link
       to={data.title ? `/movies/${data.id}` : `/tv-shows/${data.id}`}
       className="relative min-w-[150px] sm:min-w-[160px] 2xl:min-w-[190px] h-56 sm:h-60 2xl:h-72 rounded-xl cursor-pointer overflow-hidden focus:outline-none"
     >
-      <div className="absolute z-[1] grid place-items-center bg-gray-100 dark:bg-neutral-900 w-full h-full rounded-lg overflow-hidden">
+      <div
+        className="absolute z-[1] grid place-items-center bg-gray-100 dark:bg-neutral-900 w-full h-full rounded-lg overflow-hidden">
         {data.poster_path ? (
           <img
             loading="lazy"
@@ -17,7 +18,7 @@ const PosterCard = ({ data }) => {
             className="w-full h-full rounded-lg"
           />
         ) : (
-          <ImageIcon className="icon w-10 h-10" />
+          <ImageIcon className="icon w-10 h-10"/>
         )}
       </div>
       <div
@@ -29,7 +30,7 @@ const PosterCard = ({ data }) => {
       >
         {data.vote_average !== 0 && (
           <div className="flex items-center gap-2 w-max py-1 px-2 bg-black mt-3 mx-3 rounded-xl">
-            <StarSolidIcon className="w-3 h-3 rating-icon" />
+            <StarSolidIcon className="w-3 h-3 rating-icon"/>
             <span className="text-white text-xs font-medium pt-0.5">
               {data.vote_average.toFixed(1)}
             </span>

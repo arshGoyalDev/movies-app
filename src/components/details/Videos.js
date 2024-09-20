@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 
-import { PlaySolidIcon } from "../icons";
+import {PlaySolidIcon} from "../icons";
 
-const Videos = ({ data, backdrop }) => {
+const Videos = ({data, backdrop}) => {
   const filterVideos = () => {
     const filteredVideos = data.reverse().filter((video) => {
       let outputVideo;
@@ -54,8 +54,9 @@ const Videos = ({ data, backdrop }) => {
                     </h4>
                   </div>
                 </div>
-                <button className="absolute z-[3] top-1/2 -translate-y-2/3 left-1/2 -translate-x-1/2 p-3 bg-neutral-800 rounded-full">
-                  <PlaySolidIcon className="rating-icon w-4 h-4" />
+                <button
+                  className="absolute z-[3] top-1/2 -translate-y-2/3 left-1/2 -translate-x-1/2 p-3 bg-neutral-800 rounded-full">
+                  <PlaySolidIcon className="rating-icon w-4 h-4"/>
                 </button>
               </Link>
             ))}

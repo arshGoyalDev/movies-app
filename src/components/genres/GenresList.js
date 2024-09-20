@@ -1,6 +1,6 @@
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
-const GenresList = ({ type, list, loading, activeGenre }) => {
+const GenresList = ({type, list, loading, activeGenre}) => {
   const navigate = useNavigate();
 
   return (

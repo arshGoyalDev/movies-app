@@ -1,8 +1,8 @@
-import { useState, createContext } from "react";
+import {useState, createContext} from "react";
 
 const SearchContext = createContext(null);
 
-const SearchProvider = ({ children }) => {
+const SearchProvider = ({children}) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [search, setSearch] = useState(false);
   const [voiceSearch, setVoiceSearch] = useState(false);
@@ -23,6 +23,6 @@ const SearchProvider = ({ children }) => {
   );
 };
 
-export { SearchContext };
+export {SearchContext};
 
 export default SearchProvider;

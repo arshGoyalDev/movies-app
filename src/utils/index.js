@@ -1,2 +1,3 @@
-export { modifyDate, convertMinsToHrsMins } from "./time";
-export { loadingArray } from "./loadingArray";
+export {modifyDate, convertMinsToHrsMins} from "./time";
+
+export {loadingArray} from "./loadingArray";

@@ -1,8 +1,8 @@
 // import { useFetch } from "../../hooks";
-import { loadingArray } from "../../utils";
-import { SearchBackdropCard, SearchPersonCard } from "../cards";
+import {loadingArray} from "../../utils";
+import {SearchBackdropCard, SearchPersonCard} from "../cards";
 
-const SearchResults = ({ heading, loading, data }) => {
+const SearchResults = ({heading, loading, data}) => {
   return (
     <>
       {loading ? (
@@ -32,12 +32,12 @@ const SearchResults = ({ heading, loading, data }) => {
               <div className="flex gap-3 pr-10 mt-3 overflow-x-auto px-6 xl:px-9">
                 {heading === "People" ? (
                   data.map((itemData) => (
-                    <SearchPersonCard key={itemData.id} data={itemData} />
+                    <SearchPersonCard key={itemData.id} data={itemData}/>
                   ))
                 ) : (
                   <>
                     {data.map((itemData) => (
-                      <SearchBackdropCard key={itemData.id} data={itemData} />
+                      <SearchBackdropCard key={itemData.id} data={itemData}/>
                     ))}
                   </>
                 )}

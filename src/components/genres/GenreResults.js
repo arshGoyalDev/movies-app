@@ -1,16 +1,16 @@
-import { useState, useEffect } from "react";
+import {useState, useEffect} from "react";
 
 import InfiniteScroll from "react-infinite-scroll-component";
 
-import { useParams } from "react-router-dom";
+import {useParams} from "react-router-dom";
 
-import { PosterCard } from "../cards";
+import {loadingArray} from "../../utils";
+
+import {PosterCard} from "../cards";
 import Loader from "../Loader";
 
-import { loadingArray } from "../../utils";
-
 const GenreResults = () => {
-  const { type, genreId } = useParams();
+  const {type, genreId} = useParams();
 
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
@@ -72,11 +72,11 @@ const GenreResults = () => {
             dataLength={data.length}
             next={fetchData}
             hasMore={data.length !== totalResults}
-            loader={<Loader />}
+            loader={<Loader/>}
           >
             <div className="flex flex-wrap gap-5 mt-5">
               {data.map((item) => (
-                <PosterCard key={item.id} data={item} />
+                <PosterCard key={item.id} data={item}/>
               ))}
             </div>
           </InfiniteScroll>

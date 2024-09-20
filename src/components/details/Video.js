@@ -1,9 +1,9 @@
-import { useNavigate, useParams } from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 
-import { CloseIcon } from "../icons";
+import {CloseIcon} from "../icons";
 
 const Video = () => {
-  const { videoId } = useParams();
+  const {videoId} = useParams();
   const navigate = useNavigate();
 
   return (
@@ -18,7 +18,7 @@ const Video = () => {
           onClick={() => navigate(-1)}
           className="z-50 bg-gray-200 dark:bg-neutral-900 p-3 rounded-full mr-2"
         >
-          <CloseIcon className="icon w-6 h-6" />
+          <CloseIcon className="icon w-6 h-6"/>
         </button>
 
         <div className="w-full h-[250px] sm:h-[350px] lg:h-[450px] z-50 rounded-2xl overflow-hidden">

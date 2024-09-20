@@ -1,8 +1,8 @@
-import { createRoot } from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
+import {createRoot} from "react-dom/client";
+import {BrowserRouter} from "react-router-dom";
 
 import App from "./App";
-import { ThemeProvider, SideMenuProvider, SearchProvider } from "./context";
+import {ThemeProvider, SideMenuProvider, SearchProvider} from "./context";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
@@ -11,7 +11,7 @@ root.render(
     <ThemeProvider>
       <SideMenuProvider>
         <SearchProvider>
-          <App />
+          <App/>
         </SearchProvider>
       </SideMenuProvider>
     </ThemeProvider>

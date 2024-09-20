@@ -5,17 +5,17 @@ import Trending from "../components/Trending";
 const Home = () => {
   return (
     <div>
-      <OptionsBar />
-      <Trending type="all" />
+      <OptionsBar/>
+      <Trending type="all"/>
 
       <div className="flex flex-col gap-8">
-        <List type="person" query="popular" pages={1} />
+        <List type="person" query="popular" pages={1}/>
 
-        <List type="movie" query="now_playing" pages={1} />
-        <List type="tv" query="on_the_air" pages={1} />
+        <List type="movie" query="now_playing" pages={1}/>
+        <List type="tv" query="on_the_air" pages={1}/>
 
-        <List type="movie" query="popular" pages={1} />
-        <List type="tv" query="popular" pages={1} />
+        <List type="movie" query="popular" pages={1}/>
+        <List type="tv" query="popular" pages={1}/>
       </div>
     </div>
   );

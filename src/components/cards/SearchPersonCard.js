@@ -1,14 +1,15 @@
-import { useContext } from "react";
+import {useContext} from "react";
 
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
-import { SearchContext } from "../../context";
+import {SearchContext} from "../../context";
 
-import { UserIcon } from "../icons";
+import {UserIcon} from "../icons";
 
-const SearchPersonCard = ({ data }) => {
+const SearchPersonCard = ({data}) => {
   const navigate = useNavigate();
-  const { setSearch } = useContext(SearchContext);
+
+  const {setSearch} = useContext(SearchContext);
 
   return (
     <div
@@ -26,7 +27,7 @@ const SearchPersonCard = ({ data }) => {
             className="w-full"
           />
         ) : (
-          <UserIcon className="w-8 h-8 icon" />
+          <UserIcon className="w-8 h-8 icon"/>
         )}
       </div>
       <div

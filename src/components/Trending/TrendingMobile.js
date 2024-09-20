@@ -1,18 +1,21 @@
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
-import { ImageIcon } from "../icons";
+import {ImageIcon} from "../icons";
 
-const TrendingMobile = ({ loading, data, activeNum, setActiveNum, type }) => {
+const TrendingMobile = ({loading, data, activeNum, setActiveNum, type}) => {
   const navigate = useNavigate();
 
   return (
     <div className="relative sm:hidden h-[430px] mt-10 overflow-hidden">
       {loading ? (
         <>
-          <div className="animate-skeleton absolute -translate-x-[75%] translate-y-16 min-w-[200px] h-[300px] -rotate-6 rounded-2xl"></div>
+          <div
+            className="animate-skeleton absolute -translate-x-[75%] translate-y-16 min-w-[200px] h-[300px] -rotate-6 rounded-2xl"></div>
           <div className="animate-skeleton absolute left-1/2 -translate-x-1/2 min-w-[220px] h-80 rounded-2xl"></div>
-          <div className="animate-skeleton absolute top-[336px] left-1/2 -translate-x-1/2 min-w-[200px] h-6 rounded-md"></div>
-          <div className="animate-skeleton absolute right-0 translate-x-[75%] translate-y-16 min-w-[200px] h-[300px] rotate-6 rounded-2xl"></div>
+          <div
+            className="animate-skeleton absolute top-[336px] left-1/2 -translate-x-1/2 min-w-[200px] h-6 rounded-md"></div>
+          <div
+            className="animate-skeleton absolute right-0 translate-x-[75%] translate-y-16 min-w-[200px] h-[300px] rotate-6 rounded-2xl"></div>
         </>
       ) : (
         <>
@@ -50,7 +53,8 @@ const TrendingMobile = ({ loading, data, activeNum, setActiveNum, type }) => {
             }}
             className="absolute left-1/2 -translate-x-1/2 min-w-[220px] h-max"
           >
-            <div className="w-full grid place-content-center h-80 bg-neutral-200 dark:bg-neutral-900 rounded-2xl shadow-2xl shadow-gray-300 dark:shadow-neutral-900 overflow-hidden">
+            <div
+              className="w-full grid place-content-center h-80 bg-neutral-200 dark:bg-neutral-900 rounded-2xl shadow-2xl shadow-gray-300 dark:shadow-neutral-900 overflow-hidden">
               {data[activeNum].backdrop_path ? (
                 <img
                   loading="lazy"
@@ -60,7 +64,7 @@ const TrendingMobile = ({ loading, data, activeNum, setActiveNum, type }) => {
                 />
               ) : (
                 <div className="h-[39vw] grid place-content-center">
-                  <ImageIcon className="icon w-20 h-20" />
+                  <ImageIcon className="icon w-20 h-20"/>
                 </div>
               )}
             </div>
@@ -69,9 +73,9 @@ const TrendingMobile = ({ loading, data, activeNum, setActiveNum, type }) => {
               <h3 className="max-w-[200px] text-lg text-center font-semibold mx-auto">
                 {(data[activeNum].title ?? data[activeNum].name).length > 30
                   ? (data[activeNum].title ?? data[activeNum].name).slice(
-                      0,
-                      30
-                    ) + "..."
+                  0,
+                  30
+                ) + "..."
                   : data[activeNum].title ?? data[activeNum].name}
               </h3>
             </div>

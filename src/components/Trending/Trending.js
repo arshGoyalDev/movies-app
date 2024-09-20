@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
-import { useFetch } from "../../hooks";
+import {useState, useEffect} from "react";
+import {useFetch} from "../../hooks";
 
-import { TrendingMobile, TrendingLarge } from "./";
+import {TrendingMobile, TrendingLarge} from "./";
 
-const Trending = ({ type }) => {
+const Trending = ({type}) => {
   const data = useFetch(`trending/${type}/day?`, "results");
   const movieGenresList = useFetch(
     "genre/movie/list?language=en-US&",

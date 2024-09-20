@@ -1,8 +1,8 @@
-import { useState, createContext, useEffect } from "react";
+import {useState, createContext, useEffect} from "react";
 
 const ThemeContext = createContext(null);
 
-const ThemeProvider = ({ children }) => {
+const ThemeProvider = ({children}) => {
   const getPreferredTheme = () => {
     if (localStorage.getItem("theme") !== undefined) {
       return localStorage.getItem("theme");
@@ -32,12 +32,12 @@ const ThemeProvider = ({ children }) => {
   }, [theme]);
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
+    <ThemeContext.Provider value={{theme, setTheme}}>
       {children}
     </ThemeContext.Provider>
   );
 };
 
-export { ThemeContext };
+export {ThemeContext};
 
 export default ThemeProvider;

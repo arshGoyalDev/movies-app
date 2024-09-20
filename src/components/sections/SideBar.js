@@ -1,7 +1,7 @@
-import { useContext } from "react";
-import { SideMenuContext, ThemeContext } from "../../context";
+import {useContext} from "react";
+import {SideMenuContext, ThemeContext} from "../../context";
 
-import { Link, useLocation } from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 
 import {
   HomeIcon,
@@ -24,8 +24,8 @@ import {
 
 const SideBar = () => {
   const location = useLocation();
-  const { theme, setTheme } = useContext(ThemeContext);
-  const { menuOpen, setMenuOpen } = useContext(SideMenuContext);
+  const {theme, setTheme} = useContext(ThemeContext);
+  const {menuOpen, setMenuOpen} = useContext(SideMenuContext);
 
   return (
     <div
@@ -76,9 +76,9 @@ const SideBar = () => {
               } hover:border-primary-light dark:hover:border-primary-dark transition-transform`}
             >
               {location.pathname === "/" ? (
-                <HomeSolidIcon className="active-icon w-5 h-5" />
+                <HomeSolidIcon className="active-icon w-5 h-5"/>
               ) : (
-                <HomeIcon className="inactive-icon w-5 h-5" />
+                <HomeIcon className="inactive-icon w-5 h-5"/>
               )}
               <span
                 className={`whitespace-nowrap font-medium pt-1 ${
@@ -102,9 +102,9 @@ const SideBar = () => {
               } hover:border-primary-light dark:hover:border-primary-dark transition-transform`}
             >
               {location.pathname === "/movies" ? (
-                <MoviesSolidIcon className="active-icon w-5 h-5" />
+                <MoviesSolidIcon className="active-icon w-5 h-5"/>
               ) : (
-                <MoviesIcon className="inactive-icon w-5 h-5" />
+                <MoviesIcon className="inactive-icon w-5 h-5"/>
               )}
               <span
                 className={`whitespace-nowrap font-medium pt-1 ${
@@ -128,9 +128,9 @@ const SideBar = () => {
               } hover:border-primary-light dark:hover:border-primary-dark transition-transform`}
             >
               {location.pathname === "/tv-shows" ? (
-                <TvSolidIcon className="active-icon w-5 h-5" />
+                <TvSolidIcon className="active-icon w-5 h-5"/>
               ) : (
-                <TvIcon className="inactive-icon w-5 h-5" />
+                <TvIcon className="inactive-icon w-5 h-5"/>
               )}
 
               <span
@@ -155,9 +155,9 @@ const SideBar = () => {
               } hover:border-primary-light dark:hover:border-primary-dark transition-transform`}
             >
               {location.pathname === "/people" ? (
-                <PeopleSolidIcon className="active-icon w-5 h-5" />
+                <PeopleSolidIcon className="active-icon w-5 h-5"/>
               ) : (
-                <PeopleIcon className="inactive-icon w-5 h-5" />
+                <PeopleIcon className="inactive-icon w-5 h-5"/>
               )}
               <span
                 className={`whitespace-nowrap font-medium pt-1 ${
@@ -192,9 +192,9 @@ const SideBar = () => {
               } hover:border-primary-light dark:hover:border-primary-dark transition-transform`}
             >
               {location.pathname === "/upcoming" ? (
-                <UpcomingSolidIcon className="active-icon w-5 h-5" />
+                <UpcomingSolidIcon className="active-icon w-5 h-5"/>
               ) : (
-                <UpcomingIcon className="inactive-icon w-5 h-5" />
+                <UpcomingIcon className="inactive-icon w-5 h-5"/>
               )}
               <span
                 className={`whitespace-nowrap font-medium pt-1 ${
@@ -218,9 +218,9 @@ const SideBar = () => {
               } hover:border-primary-light dark:hover:border-primary-dark transition-transform`}
             >
               {location.pathname === "/top-rated" ? (
-                <StarSolidIcon className="active-icon w-5 h-5" />
+                <StarSolidIcon className="active-icon w-5 h-5"/>
               ) : (
-                <StarIcon className="inactive-icon w-5 h-5" />
+                <StarIcon className="inactive-icon w-5 h-5"/>
               )}
               <span
                 className={`whitespace-nowrap font-medium pt-1 ${
@@ -244,9 +244,9 @@ const SideBar = () => {
               } hover:border-primary-light dark:hover:border-primary-dark transition-transform`}
             >
               {location.pathname.includes("/genres") ? (
-                <GenresSolidIcon className="active-icon w-5 h-5" />
+                <GenresSolidIcon className="active-icon w-5 h-5"/>
               ) : (
-                <GenresIcon className="inactive-icon w-5 h-5" />
+                <GenresIcon className="inactive-icon w-5 h-5"/>
               )}
               <span
                 className={`whitespace-nowrap font-medium pt-1 ${
@@ -271,9 +271,9 @@ const SideBar = () => {
           className="grid place-items-center w-10 h-10 bg-gray-50 dark:bg-neutral-900 border-2 border-gray-200 dark:border-neutral-800 rounded-full"
         >
           {theme === "dark" ? (
-            <SunIcon className="icon w-4 h-4" />
+            <SunIcon className="icon w-4 h-4"/>
           ) : (
-            <MoonIcon className="icon w-4 h-4" />
+            <MoonIcon className="icon w-4 h-4"/>
           )}
         </button>
 

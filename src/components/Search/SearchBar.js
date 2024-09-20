@@ -1,10 +1,10 @@
-import { useContext } from "react";
-import { SearchContext } from "../../context";
+import {useContext} from "react";
+import {SearchContext} from "../../context";
 
-import { SearchIcon, VoiceIcon } from "../icons";
+import {SearchIcon, VoiceIcon} from "../icons";
 
 const SearchBar = () => {
-  const { setSearch, searchQuery, setSearchQuery, setVoiceSearch } =
+  const {setSearch, searchQuery, setSearchQuery, setVoiceSearch} =
     useContext(SearchContext);
 
   const showSearchBox = () => {
@@ -18,7 +18,7 @@ const SearchBar = () => {
         className="w-10 h-10 grid place-items-center rounded"
         onClick={showSearchBox}
       >
-        <SearchIcon className="icon w-4 h-4" />
+        <SearchIcon className="icon w-4 h-4"/>
       </button>
       <div className="relative">
         <input
@@ -44,7 +44,7 @@ const SearchBar = () => {
         onClick={() => setVoiceSearch(true)}
         className="w-10 h-10 grid place-items-center rounded mr-2"
       >
-        <VoiceIcon className="w-4 h-4 icon" />
+        <VoiceIcon className="w-4 h-4 icon"/>
       </button>
     </div>
   );

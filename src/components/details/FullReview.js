@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
-import { useFetch } from "../../hooks";
+import {useEffect, useState} from "react";
+import {useFetch} from "../../hooks";
 
-import { useNavigate, useParams } from "react-router-dom";
-import { CloseIcon } from "../icons";
+import {useNavigate, useParams} from "react-router-dom";
+import {CloseIcon} from "../icons";
 
 const FullReview = () => {
-  const { reviewId } = useParams();
+  const {reviewId} = useParams();
   const navigate = useNavigate();
 
   const reviewData = useFetch(`review/${reviewId}?`);
@@ -24,10 +24,11 @@ const FullReview = () => {
       ></div>
 
       <div className="w-[90%] sm:w-80 lg:w-[500px] z-50 rounded-xl overflow-hidden bg-white dark:bg-neutral-950">
-        <div className="flex items-center justify-between px-5 py-3 border-b-2 border-neutral-300 dark:border-neutral-900">
+        <div
+          className="flex items-center justify-between px-5 py-3 border-b-2 border-neutral-300 dark:border-neutral-900">
           <h2 className="text-lg font-medium">Review</h2>
           <button onClick={() => navigate(-1)} className="p-1 rounded-full">
-            <CloseIcon className="w-6 h-6 icon" />
+            <CloseIcon className="w-6 h-6 icon"/>
           </button>
         </div>
         <div className="py-5 px-5 max-h-[300px] md:max-h-[400px] overflow-auto">

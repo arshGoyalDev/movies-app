@@ -1,4 +1,4 @@
-import { Outlet, useLocation } from "react-router-dom";
+import {Outlet, useLocation} from "react-router-dom";
 
 import Trending from "../components/Trending";
 import OptionsBar from "../components/OptionsBar";
@@ -10,15 +10,15 @@ const Movies = () => {
   return (
     <>
       {location.pathname.includes("/movies/") ? (
-        <Outlet />
+        <Outlet/>
       ) : (
         <div>
-          <OptionsBar />
-          <Trending type="movie" />
+          <OptionsBar/>
+          <Trending type="movie"/>
 
           <div className="flex flex-col gap-8">
-            <List type="movie" query="now_playing" />
-            <List type="movie" query="popular" />
+            <List type="movie" query="now_playing"/>
+            <List type="movie" query="popular"/>
           </div>
         </div>
       )}

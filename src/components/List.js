@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
-import { useFetch } from "../hooks";
+import {useEffect, useState} from "react";
+import {useFetch} from "../hooks";
 
-import { loadingArray } from "../utils";
+import {loadingArray} from "../utils";
 
-import { PersonCard, BackdropCard } from "./cards";
+import {PersonCard, BackdropCard} from "./cards";
 
-const List = ({ type, query, pages }) => {
+const List = ({type, query, pages}) => {
   const dataList = useFetch(`${type}/${query}?language=en-US&`, "results");
   const dataListSecond = useFetch(
     `${type}/${query}?language=en-US&page=2&`,
@@ -76,9 +76,9 @@ const List = ({ type, query, pages }) => {
           <div className="w-full flex gap-4 px-6 md:px-16 xl:pr-16 xl:pl-10 mt-5 overflow-auto">
             {dataList.map((item) =>
               type === "person" ? (
-                <PersonCard key={item.id} data={item} />
+                <PersonCard key={item.id} data={item}/>
               ) : (
-                <BackdropCard key={item.id} data={item} />
+                <BackdropCard key={item.id} data={item}/>
               )
             )}
           </div>
@@ -87,9 +87,9 @@ const List = ({ type, query, pages }) => {
             <div className="w-full flex gap-4 px-6 md:px-16 xl:pr-16 xl:pl-10 mt-5 overflow-auto">
               {dataListSecond.map((item) =>
                 type === "person" ? (
-                  <PersonCard key={item.id} data={item} />
+                  <PersonCard key={item.id} data={item}/>
                 ) : (
-                  <BackdropCard key={item.id} data={item} />
+                  <BackdropCard key={item.id} data={item}/>
                 )
               )}
             </div>

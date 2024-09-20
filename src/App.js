@@ -1,20 +1,20 @@
-import { useContext, useEffect, useState } from "react";
+import {useContext, useEffect, useState} from "react";
 
 import "./App.css";
 import "./components.css";
 
-import { SearchContext, SideMenuContext } from "./context";
+import {SearchContext, SideMenuContext} from "./context";
 
-import { useLocation } from "react-router-dom";
+import {useLocation} from "react-router-dom";
 
 import Routes from "./Routes";
 
-import { SideBar, NavBar, BottomNav } from "./components/sections";
-import { SearchBox, VoiceSearch } from "./components/Search";
+import {SideBar, NavBar, BottomNav} from "./components/sections";
+import {SearchBox, VoiceSearch} from "./components/Search";
 
 const App = () => {
-  const { menuOpen } = useContext(SideMenuContext);
-  const { voiceSearch } = useContext(SearchContext);
+  const {menuOpen} = useContext(SideMenuContext);
+  const {voiceSearch} = useContext(SearchContext);
 
   const location = useLocation();
 
@@ -41,26 +41,26 @@ const App = () => {
     <>
       {hidden ? (
         <main className="flex min-h-screen w-full">
-          <SideBar />
+          <SideBar/>
 
           <section
             className={`w-full pb-32 sm:pb-16 ${
               menuOpen ? "xl:pl-72" : "xl:pl-20"
             } transition-[padding] duration-300`}
           >
-            <NavBar />
+            <NavBar/>
 
-            <Routes />
+            <Routes/>
 
-            <BottomNav />
+            <BottomNav/>
           </section>
 
-          <SearchBox />
-          {voiceSearch && <VoiceSearch />}
+          <SearchBox/>
+          {voiceSearch && <VoiceSearch/>}
         </main>
       ) : (
         <main>
-          <Routes />
+          <Routes/>
         </main>
       )}
     </>

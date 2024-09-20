@@ -1,6 +1,6 @@
-import { BackdropCard } from "../cards";
+import {BackdropCard} from "../cards";
 
-const PersonCredits = ({ castCredits, crewCredits, title }) => {
+const PersonCredits = ({castCredits, crewCredits, title}) => {
   return (
     <div>
       <h4 className="font-medium px-10 md:px-28 lg:px-0">{title}</h4>
@@ -12,7 +12,7 @@ const PersonCredits = ({ castCredits, crewCredits, title }) => {
         {castCredits ? (
           <div className="flex gap-3 px-10 md:px-28 lg:px-0 mt-3 overflow-auto">
             {castCredits.reverse().map((item) => (
-              <BackdropCard key={item.credit_id} data={item} />
+              <BackdropCard key={item.credit_id} data={item}/>
             ))}
           </div>
         ) : (
@@ -27,7 +27,7 @@ const PersonCredits = ({ castCredits, crewCredits, title }) => {
         {crewCredits ? (
           <div className="flex gap-3 px-10 md:px-28 lg:px-0 mt-3 overflow-auto">
             {crewCredits.reverse().map((item) => (
-              <BackdropCard key={item.credit_id} data={item} />
+              <BackdropCard key={item.credit_id} data={item}/>
             ))}
           </div>
         ) : (

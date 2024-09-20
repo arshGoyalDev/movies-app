@@ -1,18 +1,21 @@
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
-import { ImageIcon } from "../icons";
+import {ImageIcon} from "../icons";
 
-const TrendingLarge = ({ loading, data, activeNum, setActiveNum }) => {
+const TrendingLarge = ({loading, data, activeNum, setActiveNum}) => {
   const navigate = useNavigate();
 
   return (
     <div className="relative hidden sm:block h-[90vw] md:h-[74vw] xl:h-[55vw] mt-10 overflow-hidden">
       {loading ? (
         <>
-          <div className="animate-skeleton absolute -translate-x-[75%] translate-y-[10vw] min-w-[300px] h-[440px] -rotate-6 rounded-2xl"></div>
+          <div
+            className="animate-skeleton absolute -translate-x-[75%] translate-y-[10vw] min-w-[300px] h-[440px] -rotate-6 rounded-2xl"></div>
           <div className="animate-skeleton absolute left-1/2 -translate-x-1/2 w-[80%] h-[39vw] rounded-2xl"></div>
-          <div className="animate-skeleton absolute top-[41vw] left-1/2 -translate-x-1/2 min-w-[360px] h-12 rounded-md"></div>
-          <div className="animate-skeleton absolute right-0 translate-x-[75%] translate-y-[10vw] min-w-[300px] h-[440px] rotate-6 rounded-2xl"></div>
+          <div
+            className="animate-skeleton absolute top-[41vw] left-1/2 -translate-x-1/2 min-w-[360px] h-12 rounded-md"></div>
+          <div
+            className="animate-skeleton absolute right-0 translate-x-[75%] translate-y-[10vw] min-w-[300px] h-[440px] rotate-6 rounded-2xl"></div>
         </>
       ) : (
         <>
@@ -50,7 +53,8 @@ const TrendingLarge = ({ loading, data, activeNum, setActiveNum }) => {
             }}
             className="w-[80%] absolute left-1/2 -translate-x-1/2 h-max cursor-pointer"
           >
-            <div className="w-full grid place-content-center bg-gray-50 dark:bg-neutral-900 rounded-3xl overflow-hidden">
+            <div
+              className="w-full grid place-content-center bg-gray-50 dark:bg-neutral-900 rounded-3xl overflow-hidden">
               {data[activeNum].backdrop_path ? (
                 <img
                   loading="lazy"
@@ -60,7 +64,7 @@ const TrendingLarge = ({ loading, data, activeNum, setActiveNum }) => {
                 />
               ) : (
                 <div className="h-[39vw] grid place-content-center">
-                  <ImageIcon className="icon w-20 h-20" />
+                  <ImageIcon className="icon w-20 h-20"/>
                 </div>
               )}
             </div>

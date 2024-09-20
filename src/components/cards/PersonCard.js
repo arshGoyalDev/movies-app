@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 
-import { UserIcon } from "../icons";
+import {UserIcon} from "../icons";
 
-const PersonCard = ({ data }) => {
+const PersonCard = ({data}) => {
   return (
     <Link
       to={`/people/${data.id}`}
@@ -17,7 +17,7 @@ const PersonCard = ({ data }) => {
             className="w-full"
           />
         ) : (
-          <UserIcon className="w-10 h-10 icon" />
+          <UserIcon className="w-10 h-10 icon"/>
         )}
       </div>
       <div

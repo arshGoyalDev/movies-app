@@ -1,14 +1,15 @@
-import { useContext } from "react";
+import {useContext} from "react";
 
-import { SearchContext } from "../../context";
+import {SearchContext} from "../../context";
 
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
-import { ImageIcon, StarSolidIcon } from "../icons";
+import {ImageIcon, StarSolidIcon} from "../icons";
 
-const SearchBackdropCard = ({ data }) => {
+const SearchBackdropCard = ({data}) => {
   const navigate = useNavigate();
-  const { setSearch } = useContext(SearchContext);
+  
+  const {setSearch} = useContext(SearchContext);
 
   return (
     <div
@@ -28,7 +29,7 @@ const SearchBackdropCard = ({ data }) => {
             className="w-full h-full"
           />
         ) : (
-          <ImageIcon className="icon w-8 h-8" />
+          <ImageIcon className="icon w-8 h-8"/>
         )}
       </div>
       <div
@@ -38,7 +39,8 @@ const SearchBackdropCard = ({ data }) => {
             : "bg-opacity-20 dark:bg-opacity-40"
         }`}
       >
-        <div className="flex flex-row justify-between py-2 px-3 bg-black bg-opacity-20 dark:bg-opacity-30 backdrop-blur-2xl mx-2 rounded-xl">
+        <div
+          className="flex flex-row justify-between py-2 px-3 bg-black bg-opacity-20 dark:bg-opacity-30 backdrop-blur-2xl mx-2 rounded-xl">
           {data.title ? (
             <h4 className="font-medium text-white">
               {data.title.length > 15
@@ -54,7 +56,7 @@ const SearchBackdropCard = ({ data }) => {
           )}
           {data.vote_average !== 0 && (
             <div className="flex items-center gap-2">
-              <StarSolidIcon className="w-3 h-3 rating-icon" />
+              <StarSolidIcon className="w-3 h-3 rating-icon"/>
               <span className="text-white text-xs font-medium pt-0.5">
                 {data.vote_average.toFixed(1)}
               </span>

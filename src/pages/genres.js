@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
-import { useFetch } from "../hooks";
+import {useEffect, useState} from "react";
+import {useFetch} from "../hooks";
 
-import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import {Outlet, useLocation, useNavigate} from "react-router-dom";
 
 import OptionsBar from "../components/OptionsBar";
-import { GenresList } from "../components/genres";
+import {GenresList} from "../components/genres";
 
 const Genres = () => {
   const location = useLocation();
@@ -33,7 +33,7 @@ const Genres = () => {
 
   return (
     <div>
-      <OptionsBar />
+      <OptionsBar/>
 
       <div className="flex flex-col gap-8">
         <GenresList
@@ -50,7 +50,7 @@ const Genres = () => {
         />
       </div>
 
-      <Outlet />
+      <Outlet/>
     </div>
   );
 };

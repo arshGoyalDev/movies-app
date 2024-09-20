@@ -1,13 +1,13 @@
-import { useContext, useEffect, useState } from "react";
-import { SearchContext } from "../../context";
+import {useContext, useEffect, useState} from "react";
+import {SearchContext} from "../../context";
 
-import { SearchIcon, VoiceIcon } from "../icons";
+import {SearchIcon, VoiceIcon} from "../icons";
 import searchIllustration from "../../assets/images/search-illustration.svg";
 
 import SearchResults from "./SearchResults";
 
 const SearchBox = () => {
-  const { search, setSearch, searchQuery, setSearchQuery, setVoiceSearch } =
+  const {search, setSearch, searchQuery, setSearchQuery, setVoiceSearch} =
     useContext(SearchContext);
 
   const [startSearch, setStartSearch] = useState(false);
@@ -62,12 +62,13 @@ const SearchBox = () => {
         } transition-all duration-300`}
       >
         <div className="px-6 xl:px-8">
-          <div className="w-[100%] flex items-center border-2 border-solid border-gray-400 dark:border-neutral-800 rounded-md mt-4">
+          <div
+            className="w-[100%] flex items-center border-2 border-solid border-gray-400 dark:border-neutral-800 rounded-md mt-4">
             <button
               onClick={getResults}
               className="ml-2 w-10 h-10 grid place-items-center"
             >
-              <SearchIcon className="icon w-4 h-4" />
+              <SearchIcon className="icon w-4 h-4"/>
             </button>
             <div className="relative w-full">
               <input
@@ -96,7 +97,7 @@ const SearchBox = () => {
               }}
               className="w-10 h-10 grid place-items-center rounded mr-2"
             >
-              <VoiceIcon className="w-4 h-4 icon" />
+              <VoiceIcon className="w-4 h-4 icon"/>
             </button>
           </div>
         </div>

@@ -1,4 +1,4 @@
-const ImagesList = ({ imagesList }) => {
+const ImagesList = ({imagesList}) => {
   return (
     <div className="px-1">
       <h3 className="capitalize font-medium px-10 md:px-28 lg:px-0">Images</h3>
